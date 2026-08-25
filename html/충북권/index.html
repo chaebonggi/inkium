@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>충청권 내일이음</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="site-header">
+    <div class="inner-wrap">
+        <div class="header-inner flex-between">
+        
+        <div class="header-left">
+            <a href="index.html" class="brand-logo">
+            <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img">
+            </a>
+
+            <nav class="header-nav">
+            <a href="about.html" class="nav-link">소개</a>
+
+            <div class="nav-item-dropdown">
+                <a href="pavilions.html" class="nav-link">
+                <span>온라인채용관</span>
+                <i data-lucide="chevron-down"></i>
+                </a>
+                <div class="nav-dropdown-menu">
+                <a href="pavilion-mobility.html" class="dropdown-link">미래모빌리티채용관</a>
+                <a href="pavilion-bio.html" class="dropdown-link">바이오채용관</a>
+                <a href="pavilion-chungcheong.html" class="dropdown-link">충청권 내일이음 취업박람회</a>
+                </div>
+            </div>
+
+            <a href="jobs.html" class="nav-link">채용공고</a>
+            <a href="companies.html" class="nav-link">기업</a>
+            <a href="mypage.html" class="nav-link">마이페이지</a>
+
+            <div class="nav-item-dropdown">
+                <a href="notices.html" class="nav-link">
+                <span>고객센터</span>
+                <i data-lucide="chevron-down"></i>
+                </a>
+                <div class="nav-dropdown-menu">
+                <a href="notices.html" class="dropdown-link">공지사항</a>
+                <a href="faq.html" class="dropdown-link">자주 묻는 질문(FAQ)</a>
+                </div>
+            </div>
+            </nav>
+        </div>
+
+        <div class="header-actions">
+            <a href="login.html" class="btn-auth-link">
+            <i data-lucide="user-circle-2"></i>
+            <span>로그인 / 회원가입</span>
+            </a>
+
+            <!-- 비로그인
+                <a href="corporate.html" class="btn btn-dark btn-md">기업 서비스</a>        
+            -->
+        </div>
+
+        <div class="header-m-actions">
+            <button type="button" class="btn-m-icon" id="btnDrawerOpen" aria-label="메뉴 열기">
+            <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        </div>
+    </div>
+
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="drawer-menu" id="drawerMenu">
+        <div class="drawer-header flex-between">
+        <a href="index.html" class="brand-logo">
+            <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img drawer-logo-img">
+        </a>
+        <button type="button" class="btn-drawer-close" id="btnDrawerClose" aria-label="메뉴 닫기">
+            <i data-lucide="x"></i>
+        </button>
+        </div>
+
+        <div class="drawer-body">
+
+        <!-- 로그인 상태 -->
+        <div class="drawer-user-card">
+            <div class="user-profile-row">
+            <div class="user-avatar flex-center">홍</div>
+            <div class="user-info">
+                <p class="user-name">홍길동 님</p>
+                <p class="user-role">구직자 (온라인 패스 활성)</p>
+            </div>
+            </div>
+            <div class="user-quick-btns">
+            <a href="mypage.html" class="btn-drawer-quick">마이페이지</a>
+            <a href="login.html" class="btn-drawer-quick">로그아웃</a>
+            </div>
+        </div>
+
+        <!-- 비로그인 상태 -->
+        <!-- 
+        <div class="drawer-auth-box">
+            <a href="login.html" class="btn btn-primary btn-drawer-auth">
+            <i data-lucide="user-circle-2"></i>
+            <span>로그인 / 회원가입</span>
+            </a>
+        </div> 
+        -->
+
+        <nav class="drawer-nav-group">
+            <a href="about.html" class="drawer-nav-item">
+            <span class="left-icon-text">
+                <i data-lucide="sparkles"></i>
+                <span>소개</span>
+            </span>
+            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+            </a>
+
+            <div class="drawer-acc-box" id="drawerPavilionAcc">
+            <button type="button" class="drawer-nav-item btn-drawer-acc">
+                <span class="left-icon-text">
+                <i data-lucide="building-2"></i>
+                <span>온라인채용관</span>
+                </span>
+                <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+            </button>
+            <div class="drawer-sub-menu">
+                <a href="pavilion-mobility.html" class="drawer-sub-link">미래모빌리티채용관</a>
+                <a href="pavilion-bio.html" class="drawer-sub-link">바이오채용관</a>
+                <a href="pavilion-chungcheong.html" class="drawer-sub-link">충청권 내일이음 취업박람회</a>
+            </div>
+            </div>
+
+            <a href="jobs.html" class="drawer-nav-item">
+            <span class="left-icon-text">
+                <i data-lucide="briefcase"></i>
+                <span>채용공고</span>
+            </span>
+            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+            </a>
+
+            <a href="companies.html" class="drawer-nav-item">
+            <span class="left-icon-text">
+                <i data-lucide="building"></i>
+                <span>기업 탐색</span>
+            </span>
+            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+            </a>
+
+            <a href="mypage.html" class="drawer-nav-item">
+            <span class="left-icon-text">
+                <i data-lucide="user"></i>
+                <span>마이페이지</span>
+            </span>
+            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+            </a>
+
+            <div class="drawer-acc-box" id="drawerCsAcc">
+            <button type="button" class="drawer-nav-item btn-drawer-acc">
+                <span class="left-icon-text">
+                <i data-lucide="help-circle"></i>
+                <span>고객센터</span>
+                </span>
+                <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+            </button>
+            <div class="drawer-sub-menu">
+                <a href="notices.html" class="drawer-sub-link">공지사항</a>
+                <a href="faq.html" class="drawer-sub-link">자주 묻는 질문(FAQ)</a>
+            </div>
+            </div>
+        </nav>
+        </div>
+
+        <div class="drawer-footer">
+        <a href="corporate.html" class="btn btn-dark btn-drawer-corporate">
+            <span>기업 서비스</span>
+        </a>
+        </div>
+    </aside>
+    </header>
+
+    <main>
+        <p style="height: calc(100vh - 360px);">
+            메인컨텐츠
+        </p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="inner-wrap">
+            <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="brand-logo">
+                    <img src="./images/footer_logo.png" alt="충청권 내일이음 온라인 채용관" class="brand-logo-img footer-logo-img">
+                </a>
+                <p class="footer-desc">충청북도와 기업진흥원이 함께 만드는 충북 지역 우수 중소·중견기업 통합 온라인 채용관입니다.</p>
+            </div>
+
+            <div class="footer-links-group">
+                <div class="footer-col">
+                <p class="footer-col-title">바로가기</p>
+                <ul class="footer-link-list">
+                    <li><a href="about.html">소개</a></li>
+                    <li><a href="pavilion-mobility.html">미래모빌리티채용관</a></li>
+                    <li><a href="pavilion-bio.html">바이오채용관</a></li>
+                    <li><a href="pavilion-chungcheong.html">충청권 내일이음 취업박람회</a></li>
+                    <li><a href="jobs.html">참여 기업 채용공고</a></li>
+                </ul>
+                </div>
+
+                <div class="footer-col">
+                <p class="footer-col-title">고객센터</p>
+                <ul class="footer-link-list">
+                    <li><a href="notices.html">공지사항</a></li>
+                    <li><a href="faq.html">자주 묻는 질문</a></li>
+                    <li><a href="qna.html">1:1 문의</a></li>
+                </ul>
+                </div>
+            </div>
+            </div>
+
+            <div class="footer-bottom flex-between">
+            <p class="footer-copy">&copy; 2026 충청북도기업진흥원. All rights reserved.</p>
+            <div class="footer-terms">
+                <button type="button" class="btn-terms-modal" data-modal="modalTerms">이용약관</button>
+                <button type="button" class="btn-terms-modal text-strong" data-modal="modalPrivacy">개인정보처리방침</button>
+            </div>
+            </div>
+        </div>
+        </footer>
+
+        <!-- 이용약관 팝업 모달 -->
+        <div class="site-modal" id="modalTerms">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+            <h3 class="modal-title">이용약관</h3>
+            <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+            <p class="modal-section-title">제 1 조 (목적)</p>
+            <p class="modal-text">본 약관은 충청권 내일이음 온라인 채용관(이하 "플랫폼")이 제공하는 모든 제반 서비스의 이용 조건 및 절차에 관한 사항을 규정함을 목적으로 합니다.</p>
+            <p class="modal-section-title">제 2 조 (회원의 의무)</p>
+            <p class="modal-text">회원은 관계 법령, 본 약관의 규정, 이용 안내 및 주의사항 등 플랫폼이 통지하는 사항을 준수하여야 하며, 기타 플랫폼의 업무에 방해되는 행위를 하여서는 안 됩니다.</p>
+            </div>
+        </div>
+        </div>
+
+        <!-- 개인정보처리방침 팝업 모달 -->
+        <div class="site-modal" id="modalPrivacy">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+            <h3 class="modal-title">개인정보처리방침</h3>
+            <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+            <p class="modal-section-title">1. 개인정보의 수집 및 이용 목적</p>
+            <p class="modal-text">플랫폼은 구직자 회원가입, 입사지원 서비스 제공, 맞춤형 채용정보 추천 및 서비스 개선을 위해 최소한의 개인정보를 수집하고 있습니다.</p>
+            <p class="modal-section-title">2. 보유 및 이용 기간</p>
+            <p class="modal-text">회원 탈퇴 시 또는 수집 목적이 달성된 때에는 해당 정보를 지체 없이 파기합니다. 단, 관계 법령에 의해 보존할 필요가 있는 경우 지정된 기간 동안 보관합니다.</p>
+            </div>
+        </div>
+        </div>
+
+    <script src="./js/lucide.min.js"></script>
+    <script src="./js/style.js"></script>
+</body>
+</html>
