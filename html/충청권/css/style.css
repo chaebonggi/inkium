@@ -285,7 +285,6 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
   .hero-title { font-size: 4.8rem; }
 }
 @media (max-width: 640px) {
-  .main-hero-sec { padding: 4.0rem 0 4.8rem; }
   .hero-pill { font-size: 1.2rem; padding: 0.6rem 1.6rem; margin-bottom: 1.6rem; }
   .hero-title { font-size: 3.6rem; margin-bottom: 3rem; }
   .hero-desc { font-size: 1.4rem; margin-bottom: 3.2rem; }
