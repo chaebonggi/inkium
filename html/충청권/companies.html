@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>충청권 내일이음 - 기업</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="inner-wrap">
+            <div class="header-inner flex-between">
+            
+                <div class="header-left">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img">
+                    </a>
+
+                    <nav class="header-nav">
+                        <a href="about.html" class="nav-link">소개</a>
+
+                        <div class="nav-item-dropdown">
+                            <a href="pavilions.html" class="nav-link">
+                                <span>온라인채용관</span>
+                                <i data-lucide="chevron-down"></i>
+                            </a>
+                            <div class="nav-dropdown-menu">
+                                <a href="pavilion-bio.html" class="dropdown-link">바이오채용관</a>
+                                <a href="pavilion-mobility.html" class="dropdown-link">미래모빌리티채용관</a>
+                                <a href="pavilion-chungcheong.html" class="dropdown-link">충청권 일자리박람회</a>
+                            </div>
+                        </div>
+
+                        <a href="jobs.html" class="nav-link">채용공고</a>
+                        <a href="companies.html" class="nav-link">기업</a>
+
+                        <div class="nav-item-dropdown">
+                            <a href="notices.html" class="nav-link">
+                                <span>고객센터</span>
+                                <i data-lucide="chevron-down"></i>
+                            </a>
+                            <div class="nav-dropdown-menu">
+                                <a href="notices.html" class="dropdown-link">공지사항</a>
+                                <a href="faq.html" class="dropdown-link">자주 묻는 질문(FAQ)</a>
+                                <a href="resources.html" class="dropdown-link">자료실</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+            <div class="header-actions">
+                <a href="login.html" class="btn-auth-link">
+                    <i data-lucide="user-circle-2"></i>
+                    <span>로그아웃</span>
+                </a>
+
+                <a href="corporate.html" class="btn btn-dark btn-md">기업 서비스</a>
+            </div>
+
+            <div class="header-m-actions">
+                <button type="button" class="btn-m-icon" id="btnDrawerOpen" aria-label="메뉴 열기">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+            </div>
+        </div>
+
+        <div class="drawer-overlay" id="drawerOverlay"></div>
+        <aside class="drawer-menu" id="drawerMenu">
+            <div class="drawer-header flex-between">
+                <a href="index.html" class="brand-logo">
+                    <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img drawer-logo-img">
+                </a>
+                <button type="button" class="btn-drawer-close" id="btnDrawerClose" aria-label="메뉴 닫기">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+
+            <div class="drawer-body">
+
+                <!-- 로그인 상태 -->
+                <div class="drawer-user-card">
+                    <div class="user-profile-row">
+                        <div class="user-avatar">
+                            <!-- 등록된 사진이 있을 때 또는 기본 아바타 이미지 -->
+                            <img src="./images/default_avatar.png" alt="홍길동 님 프로필" class="avatar-img">
+                        </div>
+                        <div class="user-info">
+                            <p class="user-name">홍길동 님</p>
+                            <p class="user-role">구직자 (온라인 패스 활성)</p>
+                        </div>
+                    </div>
+                    <div class="user-quick-btns">
+                        <a href="mypage.html" class="btn-drawer-quick">마이페이지</a>
+                        <a href="login.html" class="btn-drawer-quick">로그아웃</a>
+                    </div>
+                </div>
+
+                <!-- 비로그인 상태 -->
+                <!-- 
+                <div class="drawer-auth-box">
+                    <a href="login.html" class="btn btn-primary btn-drawer-auth">
+                    <i data-lucide="user-circle-2"></i>
+                    <span>로그인 / 회원가입</span>
+                    </a>
+                </div> 
+                -->
+
+                <nav class="drawer-nav-group">
+                    <a href="about.html" class="drawer-nav-item">
+                        <span class="left-icon-text">
+                            <i data-lucide="sparkles"></i>
+                            <span>소개</span>
+                        </span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+
+                    <div class="drawer-acc-box" id="drawerPavilionAcc">
+                        <button type="button" class="drawer-nav-item btn-drawer-acc">
+                            <span class="left-icon-text">
+                                <i data-lucide="building-2"></i>
+                                <span>온라인채용관</span>
+                            </span>
+                            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                        </button>
+                        <div class="drawer-sub-menu">
+                            <a href="pavilion-mobility.html" class="drawer-sub-link">미래모빌리티채용관</a>
+                            <a href="pavilion-bio.html" class="drawer-sub-link">바이오채용관</a>
+                            <a href="pavilion-chungcheong.html" class="drawer-sub-link">충청권 내일이음 취업박람회</a>
+                        </div>
+                    </div>
+
+                    <a href="jobs.html" class="drawer-nav-item">
+                        <span class="left-icon-text">
+                            <i data-lucide="briefcase"></i>
+                            <span>채용공고</span>
+                        </span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+
+                    <a href="companies.html" class="drawer-nav-item">
+                        <span class="left-icon-text">
+                            <i data-lucide="building"></i>
+                            <span>기업 탐색</span>
+                        </span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+
+                    <div class="drawer-acc-box" id="drawerCsAcc">
+                        <button type="button" class="drawer-nav-item btn-drawer-acc">
+                            <span class="left-icon-text">
+                                <i data-lucide="help-circle"></i>
+                                <span>고객센터</span>
+                            </span>
+                            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                        </button>
+                        <div class="drawer-sub-menu">
+                            <a href="notices.html" class="drawer-sub-link">공지사항</a>
+                            <a href="faq.html" class="drawer-sub-link">자주 묻는 질문(FAQ)</a>
+                            <a href="resources.html" class="drawer-sub-link">자료실</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="drawer-footer">
+            <a href="corporate.html" class="btn btn-dark btn-drawer-corporate">
+                <span>기업 서비스</span>
+            </a>
+            </div>
+        </aside>
+    </header>
+
+    <main class="site-main">
+        <!-- 1. 기업 탐색 헤더 & 검색 영역 -->
+        <section class="company-search-sec pd6">
+            <div class="inner-wrap">
+                <div class="company-search-header">
+                    <h1 class="c-main-page-title">전략산업 기업 탐색</h1>
+                    <p class="c-main-page-desc">미래를 함께할 혁신 기업들을 만나보세요. 다양한 산업 분야의 우수 기업들이 여러분을 기다립니다.</p>
+                </div>
+
+                <div class="company-search-box">
+                    <div class="search-input-wrap">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input type="text" class="search-input" placeholder="기업명, 업종, 지역 검색">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 기업 목록 및 필터 컨트롤 섹션 -->
+        <section class="company-list-sec pd6">
+            <div class="inner-wrap">
+                <!-- 필터 컨트롤 바 -->
+                <div class="company-filter-bar">
+                    <div class="filter-left">
+                        <span class="search-count">검색 결과 <strong>18</strong>건</span>
+                        <div class="filter-chip-group">
+                            <button type="button" class="btn-filter-chip active" onclick="this.classList.toggle('active')">미래모빌리티</button>
+                            <button type="button" class="btn-filter-chip" onclick="this.classList.toggle('active')">바이오·헬스케어</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-right">
+                        <select class="company-sort-select">
+                            <option value="recent">최근 등록순</option>
+                            <option value="popular">인기순</option>
+                            <option value="name">가나다순</option>
+                            <option value="wish">나의 관심 기업</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 기업 카드 3열 그리드 (18개 중 6개 샘플 배치) -->
+                <div class="company-cards-grid mt6">
+                    
+                    <div class="c-card-company-item">
+                        <div class="c-corp-head">
+                            <div class="c-corp-profile">
+                                <div class="c-corp-logo">
+                                    <img src="./images/default_company.jpg" alt="오토디펜스 모빌리티">
+                                </div>
+                                <div class="c-corp-info">
+                                    <h3 class="c-corp-name">오토디펜스 모빌리티</h3>
+                                    <span class="c-corp-badge">미래모빌리티</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-corp-wish" aria-label="관심기업 등록" onclick="this.classList.toggle('active')">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                        
+                        <p class="c-corp-intro">자율주행 인지 AI 및 차세대 모빌리티 플랫폼을 선도합니다.</p>
+                        
+                        <div class="c-corp-meta-grid">
+                            <span><i data-lucide="map-pin"></i> 충북 청주</span>
+                            <span><i data-lucide="users"></i> 사원수 120명</span>
+                            <span><i data-lucide="calendar"></i> 설립 2015년</span>
+                            <span><i data-lucide="coins"></i> 매출 150억</span>
+                        </div>
+
+                        <div class="c-corp-foot flex-between">
+                            <span class="c-corp-jobs">채용 중 <strong>1건</strong></span>
+                            <a href="company-detail.html" class="c-corp-link">기업 상세 &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="c-card-company-item">
+                        <div class="c-corp-head">
+                            <div class="c-corp-profile">
+                                <div class="c-corp-logo">
+                                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=120" alt="(주)제네틱스바이오">
+                                </div>
+                                <div class="c-corp-info">
+                                    <h3 class="c-corp-name">(주)제네틱스바이오</h3>
+                                    <span class="c-corp-badge badge-teal">바이오·헬스케어</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-corp-wish" aria-label="관심기업 등록" onclick="this.classList.toggle('active')">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                        
+                        <p class="c-corp-intro">AI 기반 신약 후보물질 발굴 및 난치성 질환 치료제를 연구합니다.</p>
+                        
+                        <div class="c-corp-meta-grid">
+                            <span><i data-lucide="map-pin"></i> 충북 오송</span>
+                            <span><i data-lucide="users"></i> 사원수 150명</span>
+                            <span><i data-lucide="calendar"></i> 설립 2010년</span>
+                            <span><i data-lucide="coins"></i> 매출 240억</span>
+                        </div>
+
+                        <div class="c-corp-foot flex-between">
+                            <span class="c-corp-jobs">채용 중 <strong>3건</strong></span>
+                            <a href="company-detail.html" class="c-corp-link">기업 상세 &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="c-card-company-item">
+                        <div class="c-corp-head">
+                            <div class="c-corp-profile">
+                                <div class="c-corp-logo">
+                                    <img src="https://images.unsplash.com/photo-1558244402-286dd748c593?auto=format&fit=crop&q=80&w=120" alt="넥스트에너지 솔루션">
+                                </div>
+                                <div class="c-corp-info">
+                                    <h3 class="c-corp-name">넥스트에너지 솔루션</h3>
+                                    <span class="c-corp-badge">미래모빌리티</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-corp-wish" aria-label="관심기업 등록" onclick="this.classList.toggle('active')">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                        
+                        <p class="c-corp-intro">고효율 전기차 배터리 팩 및 차세대 에너지 저장장치를 설계합니다.</p>
+                        
+                        <div class="c-corp-meta-grid">
+                            <span><i data-lucide="map-pin"></i> 충북 청주</span>
+                            <span><i data-lucide="users"></i> 사원수 89명</span>
+                            <span><i data-lucide="calendar"></i> 설립 2018년</span>
+                            <span><i data-lucide="coins"></i> 매출 120억</span>
+                        </div>
+
+                        <div class="c-corp-foot flex-between">
+                            <span class="c-corp-jobs">채용 중 <strong>1건</strong></span>
+                            <a href="company-detail.html" class="c-corp-link">기업 상세 &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="c-card-company-item">
+                        <div class="c-corp-head">
+                            <div class="c-corp-profile">
+                                <div class="c-corp-logo">
+                                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=120" alt="글로벌파마 코리아">
+                                </div>
+                                <div class="c-corp-info">
+                                    <h3 class="c-corp-name">글로벌파마 코리아</h3>
+                                    <span class="c-corp-badge badge-teal">바이오·헬스케어</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-corp-wish" aria-label="관심기업 등록" onclick="this.classList.toggle('active')">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                        
+                        <p class="c-corp-intro">글로벌 임상시험 관리 및 첨단 바이오 의약품을 개발합니다.</p>
+                        
+                        <div class="c-corp-meta-grid">
+                            <span><i data-lucide="map-pin"></i> 충북 충주</span>
+                            <span><i data-lucide="users"></i> 사원수 72명</span>
+                            <span><i data-lucide="calendar"></i> 설립 2013년</span>
+                            <span><i data-lucide="coins"></i> 매출 90억</span>
+                        </div>
+
+                        <div class="c-corp-foot flex-between">
+                            <span class="c-corp-jobs">채용 중 <strong>1건</strong></span>
+                            <a href="company-detail.html" class="c-corp-link">기업 상세 &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="c-card-company-item">
+                        <div class="c-corp-head">
+                            <div class="c-corp-profile">
+                                <div class="c-corp-logo">
+                                    <img src="./images/default_company.jpg" alt="충청 모빌리티 혁신기업1">
+                                </div>
+                                <div class="c-corp-info">
+                                    <h3 class="c-corp-name">충청 모빌리티 혁신기업1</h3>
+                                    <span class="c-corp-badge">미래모빌리티</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-corp-wish" aria-label="관심기업 등록" onclick="this.classList.toggle('active')">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                        
+                        <p class="c-corp-intro">자율주행, 커넥티드, 전동화 등 미래 모빌리티 기술을 선도하는 혁신 기업입니다.</p>
+                        
+                        <div class="c-corp-meta-grid">
+                            <span><i data-lucide="map-pin"></i> 충북 괴산</span>
+                            <span><i data-lucide="users"></i> 사원수 100명</span>
+                            <span><i data-lucide="calendar"></i> 설립 2012년</span>
+                            <span><i data-lucide="coins"></i> 매출 140억</span>
+                        </div>
+
+                        <div class="c-corp-foot flex-between">
+                            <span class="c-corp-jobs">채용 중 <strong>3건</strong></span>
+                            <a href="company-detail.html" class="c-corp-link">기업 상세 &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="c-card-company-item">
+                        <div class="c-corp-head">
+                            <div class="c-corp-profile">
+                                <div class="c-corp-logo">
+                                    <img src="./images/default_company.jpg" alt="충청 모빌리티 혁신기업2">
+                                </div>
+                                <div class="c-corp-info">
+                                    <h3 class="c-corp-name">충청 모빌리티 혁신기업2</h3>
+                                    <span class="c-corp-badge">미래모빌리티</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-corp-wish" aria-label="관심기업 등록" onclick="this.classList.toggle('active')">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                        
+                        <p class="c-corp-intro">자율주행, 커넥티드, 전동화 등 미래 모빌리티 기술을 선도하는 혁신 기업입니다.</p>
+                        
+                        <div class="c-corp-meta-grid">
+                            <span><i data-lucide="map-pin"></i> 충북 청주</span>
+                            <span><i data-lucide="users"></i> 사원수 65명</span>
+                            <span><i data-lucide="calendar"></i> 설립 2017년</span>
+                            <span><i data-lucide="coins"></i> 매출 99억</span>
+                        </div>
+
+                        <div class="c-corp-foot flex-between">
+                            <span class="c-corp-jobs">채용 중 <strong>1건</strong></span>
+                            <a href="company-detail.html" class="c-corp-link">기업 상세 &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="inner-wrap">
+            <div class="footer-top flex-between">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/footer_logo.png" alt="충북권역 전략사업 특화 온라인 채용관" class="brand-logo-img">
+                    </a>
+                    <p class="footer-desc">충청북도 기업진흥원이 함께 만드는 충북 지역 우수 중소·중견기업 통합 온라인 채용관입니다.</p>
+                </div>
+
+                <div class="footer-selects">
+                    <div class="footer-select-box">
+                        <select class="footer-select" onchange="if(this.value) location.href=this.value;">
+                            <option value="">바로가기</option>
+                            <option value="about.html">소개</option>
+                            <option value="pavilion-bio.html">바이오 채용관</option>
+                            <option value="pavilion-mobility.html">미래모빌리티 채용관</option>
+                            <option value="companies.html">참여기업 탐색</option>
+                        </select>
+                    </div>
+
+                    <div class="footer-select-box">
+                        <select class="footer-select" onchange="if(this.value) location.href=this.value;">
+                            <option value="">고객센터</option>
+                            <option value="notices.html">공지사항</option>
+                            <option value="faq.html">자주묻는 질문</option>
+                            <option value="resources.html">자료실</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom flex-between">
+                <p class="footer-copy">&copy; 2026 충청북도기업진흥원. All Rights Reserved.</p>
+                <div class="footer-terms">
+                    <button type="button" class="btn-terms-modal" data-modal="modalTerms">이용약관</button>
+                    <button type="button" class="btn-terms-modal text-strong" data-modal="modalPrivacy">개인정보처리방침</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 이용약관 팝업 모달 -->
+    <div class="site-modal" id="modalTerms">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+            <h3 class="modal-title">이용약관</h3>
+            <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+            <p class="modal-section-title">제 1 조 (목적)</p>
+            <p class="modal-text">본 약관은 충청권 내일이음 온라인 채용관(이하 "플랫폼")이 제공하는 모든 제반 서비스의 이용 조건 및 절차에 관한 사항을 규정함을 목적으로 합니다.</p>
+            <p class="modal-section-title">제 2 조 (회원의 의무)</p>
+            <p class="modal-text">회원은 관계 법령, 본 약관의 규정, 이용 안내 및 주의사항 등 플랫폼이 통지하는 사항을 준수하여야 하며, 기타 플랫폼의 업무에 방해되는 행위를 하여서는 안 됩니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 개인정보처리방침 팝업 모달 -->
+    <div class="site-modal" id="modalPrivacy">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+            <h3 class="modal-title">개인정보처리방침</h3>
+            <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+            <p class="modal-section-title">1. 개인정보의 수집 및 이용 목적</p>
+            <p class="modal-text">플랫폼은 구직자 회원가입, 입사지원 서비스 제공, 맞춤형 채용정보 추천 및 서비스 개선을 위해 최소한의 개인정보를 수집하고 있습니다.</p>
+            <p class="modal-section-title">2. 보유 및 이용 기간</p>
+            <p class="modal-text">회원 탈퇴 시 또는 수집 목적이 달성된 때에는 해당 정보를 지체 없이 파기합니다. 단, 관계 법령에 의해 보존할 필요가 있는 경우 지정된 기간 동안 보관합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/lucide.min.js"></script>
+    <script src="./js/style.js"></script>
+</body>
+</html>
