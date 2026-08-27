@@ -28,13 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btnClose) btnClose.addEventListener('click', closeDrawer);
   if (overlay) overlay.addEventListener('click', closeDrawer);
 
-  document.querySelectorAll('.btn-drawer-acc').forEach(btn => {
+  /*document.querySelectorAll('.btn-drawer-acc').forEach(btn => {
     btn.addEventListener('click', () => {
       const parentAcc = btn.closest('.drawer-acc-box');
       if (parentAcc) {
         parentAcc.classList.toggle('open');
       }
     });
+  });*/
+  document.addEventListener('click', (e) => {
+    // 클릭된 요소가 .btn-drawer-acc 이거나 그 자식(아이콘, 텍스트 등)인지 확인
+    const btn = e.target.closest('.btn-drawer-acc');
+    
+    if (btn) {
+      const parentAcc = btn.closest('.drawer-acc-box');
+      if (parentAcc) {
+        parentAcc.classList.toggle('open');
+      }
+    }
   });
   
   // 약관 모달 제어
