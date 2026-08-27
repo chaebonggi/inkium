@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>충청권 내일이음 - 개인회원 가입</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="inner-wrap">
+            <div class="header-inner flex-between">
+                <!-- 로고 & GNB 네비게이션 -->
+                <div class="header-left">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img">
+                    </a>
+
+                    <nav class="header-nav">
+                        <a href="about.html" class="nav-link">소개</a>
+
+                        <div class="nav-item-dropdown">
+                            <a href="pavilions.html" class="nav-link">
+                                <span>온라인채용관</span>
+                                <i data-lucide="chevron-down"></i>
+                            </a>
+                            <div class="nav-dropdown-menu">
+                                <a href="pavilion-bio.html" class="dropdown-link">바이오채용관</a>
+                                <a href="pavilion-mobility.html" class="dropdown-link">미래모빌리티채용관</a>
+                                <a href="pavilion-chungcheong.html" class="dropdown-link">충청권 일자리박람회</a>
+                            </div>
+                        </div>
+
+                        <a href="jobs.html" class="nav-link">채용공고</a>
+                        <a href="companies.html" class="nav-link">기업</a>
+
+                        <div class="nav-item-dropdown">
+                            <a href="notices.html" class="nav-link">
+                                <span>고객센터</span>
+                                <i data-lucide="chevron-down"></i>
+                            </a>
+                            <div class="nav-dropdown-menu">
+                                <a href="notices.html" class="dropdown-link">공지사항</a>
+                                <a href="faq.html" class="dropdown-link">자주 묻는 질문(FAQ)</a>
+                                <a href="resources.html" class="dropdown-link">자료실</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- PC 우측 로그인 / 기업서비스 -->
+                <div class="header-actions">
+                    <a href="login.html" class="btn-auth-link">
+                        <i data-lucide="user-circle-2"></i>
+                        <span>로그인</span>
+                    </a>
+                    <a href="corporate.html" class="btn btn-dark btn-md">기업 서비스</a>
+                </div>
+
+                <!-- 모바일 햄버거 메뉴 버튼 -->
+                <div class="header-m-actions">
+                    <button type="button" class="btn-m-icon" id="btnDrawerOpen" aria-label="메뉴 열기">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 모바일 사이드 드로어 메뉴 -->
+        <div class="drawer-overlay" id="drawerOverlay"></div>
+        <aside class="drawer-menu" id="drawerMenu">
+            <div class="drawer-header flex-between">
+                <a href="index.html" class="brand-logo">
+                    <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img drawer-logo-img">
+                </a>
+                <button type="button" class="btn-drawer-close" id="btnDrawerClose" aria-label="메뉴 닫기">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="drawer-body">
+                <div class="drawer-auth-box">
+                    <a href="login.html" class="btn btn-primary btn-drawer-auth flex-center">
+                        <i data-lucide="log-in"></i>
+                        <span>로그인 / 회원가입</span>
+                    </a>
+                </div>
+                <nav class="drawer-nav-group">
+                    <a href="about.html" class="drawer-nav-item">
+                        <span class="left-icon-text"><i data-lucide="sparkles"></i><span>소개</span></span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <div class="drawer-acc-box" id="drawerPavilionAcc">
+                        <button type="button" class="drawer-nav-item btn-drawer-acc">
+                            <span class="left-icon-text"><i data-lucide="building-2"></i><span>온라인채용관</span></span>
+                            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                        </button>
+                        <div class="drawer-sub-menu">
+                            <a href="pavilion-mobility.html" class="drawer-sub-link">미래모빌리티채용관</a>
+                            <a href="pavilion-bio.html" class="drawer-sub-link">바이오채용관</a>
+                            <a href="pavilion-chungcheong.html" class="drawer-sub-link">충청권 내일이음 취업박람회</a>
+                        </div>
+                    </div>
+                    <a href="jobs.html" class="drawer-nav-item">
+                        <span class="left-icon-text"><i data-lucide="briefcase"></i><span>채용공고</span></span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <a href="companies.html" class="drawer-nav-item">
+                        <span class="left-icon-text"><i data-lucide="building"></i><span>기업 탐색</span></span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <div class="drawer-acc-box" id="drawerCsAcc">
+                        <button type="button" class="drawer-nav-item btn-drawer-acc">
+                            <span class="left-icon-text"><i data-lucide="help-circle"></i><span>고객센터</span></span>
+                            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                        </button>
+                        <div class="drawer-sub-menu">
+                            <a href="notices.html" class="drawer-sub-link">공지사항</a>
+                            <a href="faq.html" class="drawer-sub-link">자주 묻는 질문(FAQ)</a>
+                            <a href="resources.html" class="drawer-sub-link">자료실</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="drawer-footer">
+                <a href="corporate.html" class="btn btn-dark btn-drawer-corporate"><span>기업 서비스</span></a>
+            </div>
+        </aside>
+    </header>
+
+    <main class="site-main">
+        <section class="signup-sec pd6">
+            <div class="inner-wrap">
+                <!-- 상단 네비게이션: 1, 2단계에서 노출, 3단계(완료) 시 숨김 처리 -->
+                <div class="signup-top-bar flex-between" id="signupTopNav">
+                    <a href="login.html" class="btn-back-link">
+                        <i data-lucide="arrow-left"></i>
+                        <span>로그인으로 돌아가기</span>
+                    </a>
+                </div>
+
+                <div class="signup-card">
+                    <!-- 단계 표시 스텝 바 (Step Indicator) -->
+                    <div class="signup-step-indicator" id="stepIndicator">
+                        <div class="step-item step-item-1 active">
+                            <span class="step-num">1</span>
+                            <span class="step-label">약관동의</span>
+                        </div>
+                        <div class="step-line step-line-1"></div>
+                        <div class="step-item step-item-2">
+                            <span class="step-num">2</span>
+                            <span class="step-label">정보입력</span>
+                        </div>
+                        <div class="step-line step-line-2"></div>
+                        <div class="step-item step-item-3">
+                            <span class="step-num">3</span>
+                            <span class="step-label">가입완료</span>
+                        </div>
+                    </div>
+
+                    <!-- [Step 1] 약관동의 영역 -->
+                    <div class="signup-step-panel step-1 active">
+                        <div class="signup-panel-head">
+                            <h1 class="signup-main-title">약관동의</h1>
+                            <p class="signup-sub-desc">충청권 내일이음 서비스 이용을 위해 약관에 동의해 주세요.</p>
+                        </div>
+
+                        <div class="terms-agree-container">
+                            <div class="terms-all-box">
+                                <label class="custom-check-label inline-check">
+                                    <input type="checkbox" id="chkAllTerms">
+                                    <span class="custom-checkbox"></span>
+                                    <strong class="check-txt text-strong">이용약관 및 개인정보 수집·이용에 모두 동의합니다.</strong>
+                                </label>
+                            </div>
+
+                            <!-- 개별 약관 목록 -->
+                            <div class="terms-list-group">
+                                <!-- 약관 1: 서비스 이용약관 (필수) -->
+                                <div class="terms-row-item flex-between">
+                                    <label class="custom-check-label inline-check">
+                                        <input type="checkbox" class="chk-term req-term" id="chkTerm1">
+                                        <span class="custom-checkbox"></span>
+                                        <span class="check-txt"><strong class="badge-req-term">(필수)</strong> 서비스 이용약관 동의</span>
+                                    </label>
+                                    <button type="button" class="btn-term-view btn-terms-modal" data-modal="modalTermService">내용보기 &gt;</button>
+                                </div>
+
+                                <!-- 약관 2: 개인정보 수집 및 이용 (필수) -->
+                                <div class="terms-row-item flex-between">
+                                    <label class="custom-check-label inline-check">
+                                        <input type="checkbox" class="chk-term req-term" id="chkTerm2">
+                                        <span class="custom-checkbox"></span>
+                                        <span class="check-txt"><strong class="badge-req-term">(필수)</strong> 개인정보 수집 및 이용 동의</span>
+                                    </label>
+                                    <button type="button" class="btn-term-view btn-terms-modal" data-modal="modalTermPrivacy">내용보기 &gt;</button>
+                                </div>
+
+                                <!-- 약관 3: 개인정보 제3자 제공 (필수) -->
+                                <div class="terms-row-item flex-between">
+                                    <label class="custom-check-label inline-check">
+                                        <input type="checkbox" class="chk-term req-term" id="chkTerm3">
+                                        <span class="custom-checkbox"></span>
+                                        <span class="check-txt"><strong class="badge-req-term">(필수)</strong> 개인정보 제3자(채용기업) 제공 동의</span>
+                                    </label>
+                                    <button type="button" class="btn-term-view btn-terms-modal" data-modal="modalTermThirdParty">내용보기 &gt;</button>
+                                </div>
+
+                                <!-- 약관 4: 마케팅 알림 수신 (선택) -->
+                                <div class="terms-row-item flex-between">
+                                    <label class="custom-check-label inline-check">
+                                        <input type="checkbox" class="chk-term" id="chkTerm4">
+                                        <span class="custom-checkbox"></span>
+                                        <span class="check-txt"><span class="badge-opt-term">(선택)</span> 마케팅 및 채용정보 알림 수신 동의</span>
+                                    </label>
+                                    <button type="button" class="btn-term-view btn-terms-modal" data-modal="modalTermMarketing">내용보기 &gt;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 1단계 하단 액션 버튼 -->
+                        <div class="signup-btn-group flex-center mt-3">
+                            <button type="button" class="btn btn-primary btn-signup-action" id="btnStep1Next" disabled>다음 단계</button>
+                        </div>
+                    </div>
+
+                    <!-- [Step 2] 회원정보 입력 및 본인인증 -->
+                    <div class="signup-step-panel step-2">
+                        <div class="signup-panel-head">
+                            <h1 class="signup-main-title">정보입력</h1>
+                            <p class="signup-sub-desc">회원가입에 필요한 기본 정보를 정확하게 입력해 주세요.</p>
+                        </div>
+
+                        <form class="signup-form-body" onsubmit="event.preventDefault();">
+                            <!-- 휴대폰 본인인증 박스 -->
+                            <div class="c-form-group">
+                                <label class="c-form-label">본인인증 <span class="text-emerald">*</span></label>
+                                <div class="auth-cert-box flex-between">
+                                    <div class="cert-info-txt">
+                                        <strong class="cert-title">휴대폰 본인인증</strong>
+                                        <span class="cert-desc">본인 명의의 휴대폰으로 인증을 진행해 주세요.</span>
+                                    </div>
+                                    <button type="button" class="btn btn-dark btn-cert-action" id="btnCertPhone">
+                                        <i data-lucide="smartphone"></i>
+                                        <span>본인인증하기</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 아이디 입력 및 중복확인 -->
+                            <div class="c-form-group mt-2">
+                                <label class="c-form-label">아이디 <span class="text-emerald">*</span></label>
+                                <div class="input-with-btn">
+                                    <input type="text" id="regId" class="c-input" placeholder="영문, 숫자 포함 6~12자">
+                                    <button type="button" class="btn btn-dark btn-dup-check">중복확인</button>
+                                </div>
+                            </div>
+
+                            <!-- 비밀번호 & 비밀번호 확인 -->
+                            <div class="r-grid-2 mt-2">
+                                <div class="c-form-group">
+                                    <label class="c-form-label">비밀번호 <span class="text-emerald">*</span></label>
+                                    <input type="password" id="regPw" class="c-input" placeholder="8~16자 영문, 숫자, 특수문자 조합">
+                                </div>
+                                <div class="c-form-group">
+                                    <label class="c-form-label">비밀번호 확인 <span class="text-emerald">*</span></label>
+                                    <input type="password" id="regPwConfirm" class="c-input" placeholder="비밀번호 재입력">
+                                </div>
+                            </div>
+
+                            <!-- 이름 (인증 연동) & 생년월일 -->
+                            <div class="r-grid-2 mt-2">
+                                <div class="c-form-group">
+                                    <label class="c-form-label">이름 <span class="text-emerald">*</span></label>
+                                    <input type="text" id="regName" class="c-input" placeholder="본인인증 시 자동입력" value="홍길동" readonly>
+                                </div>
+                                <div class="c-form-group">
+                                    <label class="c-form-label">생년월일 <span class="text-emerald">*</span></label>
+                                    <input type="date" class="c-input" value="1995-05-12">
+                                </div>
+                            </div>
+
+                            <!-- 이메일 주소 -->
+                            <div class="c-form-group mt-2">
+                                <label class="c-form-label">이메일 <span class="text-emerald">*</span></label>
+                                <input type="email" class="c-input" placeholder="example@email.com">
+                            </div>
+
+                            <div class="signup-btn-group flex-center mt-3">
+                                <button type="button" class="btn btn-signup-prev" id="btnStep2Prev">이전</button>
+                                <button type="button" class="btn btn-primary btn-signup-action" id="btnStep2Submit">가입완료</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- [Step 3] 가입완료 안내 -->
+                    <div class="signup-step-panel step-3">
+                        <div class="signup-complete-container tct">
+                            <div class="complete-badge-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <h1 class="complete-head-tit"><span class="text-emerald" id="summaryName">홍길동</span> 님, 환영합니다!</h1>
+                            <p class="complete-head-desc">충청권 내일이음의 회원가입이 성공적으로 완료되었습니다.</p>
+
+                            <div class="naver-style-profile-card">
+                                <div class="user-profile-circle">
+                                    <i data-lucide="user"></i>
+                                </div>
+                                <div class="user-profile-meta">
+                                    <div class="profile-id-badge">
+                                        <span class="badge-role">개인회원</span>
+                                        <strong class="profile-id" id="summaryId">kildong</strong>
+                                    </div>
+                                    <p class="profile-guide-txt">충청권 일자리 매칭 및 취업 지원 서비스를 이용하실 수 있습니다.</p>
+                                </div>
+                            </div>
+
+                            <div class="complete-action-btns flex-center">
+                                <a href="index.html" class="btn btn-complete-sub">메인 페이지</a>
+                                <a href="login.html" class="btn btn-primary btn-complete-main">로그인하러 가기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="inner-wrap">
+            <div class="footer-top flex-between">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/footer_logo.png" alt="충북권역 전략사업 특화 온라인 채용관" class="brand-logo-img">
+                    </a>
+                    <p class="footer-desc">충청북도 기업진흥원이 함께 만드는 충북 지역 우수 중소·중견기업 통합 온라인 채용관입니다.</p>
+                </div>
+                <div class="footer-selects">
+                    <div class="footer-select-box">
+                        <select class="footer-select" onchange="if(this.value) location.href=this.value;">
+                            <option value="">바로가기</option>
+                            <option value="about.html">소개</option>
+                            <option value="pavilion-bio.html">바이오 채용관</option>
+                            <option value="pavilion-mobility.html">미래모빌리티 채용관</option>
+                            <option value="companies.html">참여기업 탐색</option>
+                        </select>
+                    </div>
+                    <div class="footer-select-box">
+                        <select class="footer-select" onchange="if(this.value) location.href=this.value;">
+                            <option value="">고객센터</option>
+                            <option value="notices.html">공지사항</option>
+                            <option value="faq.html">자주묻는 질문</option>
+                            <option value="resources.html">자료실</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom flex-between">
+                <p class="footer-copy">&copy; 2026 충청북도기업진흥원. All Rights Reserved.</p>
+                <div class="footer-terms">
+                    <button type="button" class="btn-terms-modal" data-modal="modalTerms">이용약관</button>
+                    <button type="button" class="btn-terms-modal text-strong" data-modal="modalPrivacy">개인정보처리방침</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 푸터용 기본 모달 -->
+    <div class="site-modal" id="modalTerms">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">이용약관</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-section-title">제 1 조 (목적)</p>
+                <p class="modal-text">본 약관은 충청권 내일이음 온라인 채용관이 제공하는 제반 서비스의 이용 조건을 규정합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-modal" id="modalPrivacy">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">개인정보처리방침</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-section-title">1. 개인정보 수집 목적</p>
+                <p class="modal-text">플랫폼은 회원가입 및 맞춤 취업 지원 서비스를 위해 최소한의 정보를 수집합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 약관동의 1단계 [내용보기] 전용 팝업 모달 4종 -->
+    <div class="site-modal" id="modalTermService">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">서비스 이용약관</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body custom-scroll">
+                <p class="modal-section-title">제 1 조 (목적)</p>
+                <p class="modal-text">본 약관은 충청권 내일이음 온라인 채용관(이하 "플랫폼")이 제공하는 구인·구직 서비스 및 제반 온라인 기능의 이용 조건과 절차를 규정함을 목적으로 합니다.</p>
+                <p class="modal-section-title">제 2 조 (용어의 정의)</p>
+                <p class="modal-text">1. "회원"이란 플랫폼에 개인정보를 제공하여 회원 등록을 한 자로서 플랫폼의 정보를 지속적으로 제공받으며 서비스를 이용할 수 있는 자를 말합니다.</p>
+                <p class="modal-text">2. "아이디(ID)"라 함은 회원의 식별과 서비스 이용을 위해 회원이 정하고 플랫폼이 승인하는 문자와 숫자의 조합을 의미합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-modal" id="modalTermPrivacy">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">개인정보 수집 및 이용 동의</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body custom-scroll">
+                <p class="modal-section-title">1. 수집하는 개인정보 항목</p>
+                <p class="modal-text">- 필수항목: 이름, 생년월일, 아이디, 비밀번호, 휴대폰 번호, 이메일 주소</p>
+                <p class="modal-section-title">2. 개인정보 수집 및 이용 목적</p>
+                <p class="modal-text">- 구직자 본인 식별 및 회원관리, 입사지원 서비스 제공, 맞춤 취업 지원 프로그램 안내</p>
+                <p class="modal-section-title">3. 개인정보의 보유 및 이용 기간</p>
+                <p class="modal-text">- 회원 탈퇴 시까지 보관하며, 관계 법령에 따라 보존할 필요가 있는 경우 해당 법령이 정한 기간 동안 보관합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-modal" id="modalTermThirdParty">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">개인정보 제3자 제공 동의</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body custom-scroll">
+                <p class="modal-section-title">1. 제공받는 자</p>
+                <p class="modal-text">- 구직자가 직접 입사지원한 충청권 내일이음 참여 기업</p>
+                <p class="modal-section-title">2. 제공 목적</p>
+                <p class="modal-text">- 지원자의 채용 전형 진행, 서류 심사, 면접 일정 안내 및 채용 결과 통보</p>
+                <p class="modal-section-title">3. 제공하는 개인정보 항목</p>
+                <p class="modal-text">- 입사지원서에 기재된 모든 정보 (이름, 연락처, 이메일, 학력, 경력, 자격사항, 자기소개서 등)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-modal" id="modalTermMarketing">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">마케팅 및 채용정보 알림 수신 동의</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body custom-scroll">
+                <p class="modal-section-title">1. 수신 목적</p>
+                <p class="modal-text">- 충북권역 신규 우수 채용공고 추천, 취업박람회 및 일자리 지원 정책 이벤트 안내</p>
+                <p class="modal-section-title">2. 발송 매체</p>
+                <p class="modal-text">- 이메일, 카카오톡 알림톡, SMS/LMS</p>
+                <p class="modal-section-title">3. 철회 안내</p>
+                <p class="modal-text">- 마이페이지 회원정보 수정 메뉴에서 언제든지 수신 동의를 철회하실 수 있습니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/lucide.min.js"></script>
+    <script src="./js/style.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 단계별 패널 요소
+        const step1 = document.querySelector('.signup-step-panel.step-1');
+        const step2 = document.querySelector('.signup-step-panel.step-2');
+        const step3 = document.querySelector('.signup-step-panel.step-3');
+
+        // 스텝 바 번호 및 라인
+        const stepItem1 = document.querySelector('.step-item-1');
+        const stepItem2 = document.querySelector('.step-item-2');
+        const stepItem3 = document.querySelector('.step-item-3');
+        const stepLine1 = document.querySelector('.step-line-1');
+        const stepLine2 = document.querySelector('.step-line-2');
+
+        // 제어 버튼들
+        const btnStep1Next = document.getElementById('btnStep1Next');
+        const btnStep2Prev = document.getElementById('btnStep2Prev');
+        const btnStep2Submit = document.getElementById('btnStep2Submit');
+        const btnCertPhone = document.getElementById('btnCertPhone');
+
+        // 체크박스 요소들
+        const chkAll = document.getElementById('chkAllTerms');
+        const chkTerms = document.querySelectorAll('.chk-term');
+        const reqTerms = document.querySelectorAll('.req-term');
+
+        // [로직 1] 필수 약관 동의 체크 여부 확인
+        const checkReqTerms = () => {
+          let allReqChecked = true;
+          reqTerms.forEach(chk => { if (!chk.checked) allReqChecked = false; });
+          if (btnStep1Next) btnStep1Next.disabled = !allReqChecked;
+        };
+
+        // 전체 동의 클릭 이벤트
+        chkAll?.addEventListener('change', (e) => {
+          chkTerms.forEach(chk => chk.checked = e.target.checked);
+          checkReqTerms();
+        });
+
+        // 개별 약관 동의 클릭 이벤트
+        chkTerms.forEach(chk => {
+          chk.addEventListener('change', () => {
+            const allChecked = Array.from(chkTerms).every(c => c.checked);
+            if (chkAll) chkAll.checked = allChecked;
+            checkReqTerms();
+          });
+        });
+
+        // [로직 2] 1단계 -> 2단계 이동
+        btnStep1Next?.addEventListener('click', () => {
+          step1.classList.remove('active');
+          step2.classList.add('active');
+
+          stepItem2.classList.add('active');
+          stepLine1.classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // [로직 3] 본인인증 버튼 클릭 이벤트 (API 연동 영역)
+        btnCertPhone?.addEventListener('click', () => {
+          alert('휴대폰 본인인증이 완료되었습니다.');
+          btnCertPhone.classList.remove('btn-dark');
+          btnCertPhone.classList.add('btn-primary');
+          btnCertPhone.innerHTML = '<i data-lucide="check"></i><span>인증완료</span>';
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        });
+
+        // [로직 4] 2단계 -> 1단계 이전 이동
+        btnStep2Prev?.addEventListener('click', () => {
+          step2.classList.remove('active');
+          step1.classList.add('active');
+
+          stepItem2.classList.remove('active');
+          stepLine1.classList.remove('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // [로직 5] 2단계 -> 3단계 가입완료 화면 전환
+        btnStep2Submit?.addEventListener('click', () => {
+          const inputId = document.getElementById('regId')?.value;
+          const inputName = document.getElementById('regName')?.value;
+
+          if (inputId) document.getElementById('summaryId').textContent = inputId;
+          if (inputName) document.getElementById('summaryName').textContent = inputName;
+
+          step2.classList.remove('active');
+          step3.classList.add('active');
+
+          stepItem3.classList.add('active');
+          stepLine2.classList.add('active');
+          
+          // 완료 화면 진입 시 상단 이전 네비게이션 숨김
+          const topNav = document.getElementById('signupTopNav');
+          if (topNav) topNav.style.display = 'none';
+
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    </script>
+</body>
+</html>
