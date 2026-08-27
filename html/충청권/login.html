@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>충청권 내일이음 - 로그인</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="auth-page-body">
+    <div class="auth-container">
+        <!-- 좌측: 비주얼 브랜딩 배너 영역 -->
+        <div class="auth-side-banner">
+            <div class="banner-overlay"></div>
+            <div class="banner-content">
+                <a href="index.html" class="auth-brand-logo">
+                    <img src="./images/footer_logo.png" alt="충청권 내일이음" class="auth-logo-img">
+                </a>
+                <div class="banner-text-box">
+                    <span class="banner-pill">온라인 일자리 플랫폼</span>
+                    <h2 class="banner-title">충북권역 전략산업 특화<br><span class="text-gradient-teal">온라인 채용관</span></h2>
+                    <p class="banner-desc">미래모빌리티와 바이오·헬스케어 산업의 중심, 충북에서 당신의 새로운 내일을 시작하세요.</p>
+                </div>
+                <p class="banner-copy">&copy; 2026 충청북도기업진흥원. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <!-- 우측: 로그인 폼 영역 -->
+        <div class="auth-form-panel">
+            <div class="auth-form-inner">
+                <!-- 모바일 전용 상단 로고 -->
+                <div class="auth-m-header">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img">
+                    </a>
+                </div>
+
+                <div class="auth-form-header">
+                    <h1 class="auth-title">로그인</h1>
+                    <p class="auth-subtitle">서비스 이용을 위해 로그인해주세요.</p>
+                </div>
+
+                <!-- 로그인 입력 폼 -->
+                <form class="auth-main-form" onsubmit="event.preventDefault(); location.href='index.html';">
+                    <!-- 회원 유형 3분할 세그먼트 탭 -->
+                    <div class="auth-segment-group">
+                        <label class="segment-btn">
+                            <input type="radio" name="userRole" value="personal" checked>
+                            <span class="segment-label">개인회원</span>
+                        </label>
+                        <label class="segment-btn">
+                            <input type="radio" name="userRole" value="corp">
+                            <span class="segment-label">기업회원</span>
+                        </label>
+                        <label class="segment-btn">
+                            <input type="radio" name="userRole" value="admin">
+                            <span class="segment-label">관리자(상담사)</span>
+                        </label>
+                    </div>
+
+                    <!-- 아이디 / 비밀번호 입력창 -->
+                    <div class="auth-inputs-wrap">
+                        <div class="c-form-group">
+                            <input type="text" id="loginId" class="c-input auth-input" placeholder="아이디 입력" required>
+                        </div>
+                        <div class="c-form-group mt-1">
+                            <div class="auth-pw-box">
+                                <input type="password" id="loginPw" class="c-input auth-input" placeholder="비밀번호 입력" required>
+                                <button type="button" class="btn-toggle-pw" id="btnTogglePw" aria-label="비밀번호 보기">
+                                    <i data-lucide="eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 로그인 버튼 -->
+                    <button type="submit" class="btn btn-dark btn-auth-submit mt-3">로그인</button>
+
+                    <!-- 하단 유틸 링크: 아이디/비밀번호 찾기 & 회원가입 모달 트리거 -->
+                    <div class="auth-links-row flex-between mt-3">
+                        <div class="auth-find-group">
+                            <a href="find-id.html" class="auth-link">아이디 찾기</a>
+                            <span class="link-divider">·</span>
+                            <a href="find-pw.html" class="auth-link">비밀번호 찾기</a>
+                        </div>
+                        <div class="auth-join-group">
+                            <button type="button" class="btn-terms-modal auth-link text-strong" data-modal="modalJoinType">회원가입</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- 홈으로 돌아가기 -->
+                <div class="auth-back-home tct">
+                    <a href="index.html" class="btn-back-home">
+                        <i data-lucide="arrow-left"></i>
+                        <span>메인 페이지로 돌아가기</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 회원가입 종류 선택 모달 (USR-621) -->
+    <div class="site-modal" id="modalJoinType">
+        <div class="modal-dim"></div>
+        <div class="modal-box modal-jointype-box">
+            <div class="modal-jointype-head flex-between">
+                <h3 class="jointype-modal-title">회원가입 종류 선택</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-jointype-body">
+                <div class="jointype-card-grid">
+                    <!-- 개인회원 가입 링크 -->
+                    <a href="signup-user.html" class="jointype-card">
+                        <div class="jointype-icon-box">
+                            <i data-lucide="user"></i>
+                        </div>
+                        <strong class="jointype-name">개인 회원</strong>
+                        <span class="jointype-desc">구직 및 취업 지원 서비스</span>
+                    </a>
+
+                    <!-- 기업회원 가입 링크 -->
+                    <a href="signup-corp.html" class="jointype-card">
+                        <div class="jointype-icon-box">
+                            <i data-lucide="building-2"></i>
+                        </div>
+                        <strong class="jointype-name">기업 회원</strong>
+                        <span class="jointype-desc">인재 채용 및 기업 전용 서비스</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/lucide.min.js"></script>
+    <script src="./js/style.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 비밀번호 보이기/숨기기 토글
+        const btnTogglePw = document.getElementById('btnTogglePw');
+        const loginPw = document.getElementById('loginPw');
+        btnTogglePw?.addEventListener('click', () => {
+          const isPw = loginPw.type === 'password';
+          loginPw.type = isPw ? 'text' : 'password';
+          btnTogglePw.innerHTML = isPw ? '<i data-lucide="eye-off"></i>' : '<i data-lucide="eye"></i>';
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        });
+      });
+    </script>
+</body>
+</html>
