@@ -996,22 +996,23 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
 .btn-signup-prev:hover { background-color: #f1f5f9; border-color: #94a3b8; }
 .btn-signup-action { width: 18.0rem; height: 4.8rem; font-size: 1.5rem; font-weight: 700; border-radius: 0.8rem; }
 .signup-complete-container { padding: 1.0rem 0; }
-.complete-badge-icon { width: 6.4rem; height: 6.4rem; border-radius: 50%; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); color: #059669; display: flex; align-items: center; justify-content: center; margin: 0 auto 2.0rem; box-shadow: 0 8px 20px rgba(5, 150, 105, 0.15); }
+.complete-badge-icon { width: 6.4rem; height: 6.4rem; border-radius: 50%; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); color: #059669; display: flex; align-items: center; justify-content: center; margin: 0 auto 2.4rem; box-shadow: 0 8px 20px rgba(5, 150, 105, 0.15); }
 .complete-badge-icon svg { width: 3.2rem; height: 3.2rem; stroke-width: 3; }
 .complete-head-tit { font-size: 2.6rem; font-weight: 800; color: #111827; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
-.complete-head-desc { font-size: 1.45rem; color: #64748b; margin-bottom: 3.2rem; }
-.naver-style-profile-card { max-width: 40.0rem; margin: 0 auto 3.6rem; padding: 2.8rem 2.4rem; background-color: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 1.6rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.6rem; }
-.user-profile-circle { width: 6.4rem; height: 6.4rem; border-radius: 50%; background-color: #ffffff; border: 2px solid #cbd5e1; color: #64748b; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04); }
-.user-profile-circle svg { width: 3.2rem; height: 3.2rem; }
-.user-profile-meta { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
-.profile-id-badge { display: inline-flex; align-items: center; gap: 0.8rem; background-color: #ffffff; padding: 0.6rem 1.4rem; border-radius: 9999px; border: 1px solid #e2e8f0; }
-.profile-id-badge .badge-role { font-size: 1.2rem; font-weight: 700; color: #059669; background-color: #ecfdf5; padding: 0.2rem 0.8rem; border-radius: 9999px; }
-.profile-id-badge .profile-id { font-size: 1.5rem; font-weight: 800; color: #111827; }
-.profile-guide-txt { font-size: 1.3rem; color: #64748b; margin: 0; word-break: keep-all; }
+.complete-head-desc { font-size: 1.45rem; color: #64748b; margin-bottom: 3.6rem; word-break: keep-all; }
+
+/* 슬림 미니 정보 패스 (균형감 있는 2열 구조) */
+.complete-mini-pass { display: inline-flex; align-items: center; justify-content: center; background-color: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 1.2rem; padding: 1.6rem 3.6rem; margin-bottom: 4.0rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02); }
+.pass-col { display: flex; align-items: center; gap: 1.2rem; font-size: 1.45rem; }
+.pass-col .p-label { color: #64748b; font-weight: 500; font-size: 1.35rem; }
+.pass-col .p-val { color: #111827; font-weight: 700; font-size: 1.5rem; }
+.pass-divider { width: 1px; height: 2.0rem; background-color: #cbd5e1; margin: 0 3.2rem; }
+
 .complete-action-btns { display: flex; align-items: center; justify-content: center; gap: 1.2rem; }
 .btn-complete-sub { width: 16.0rem; height: 4.8rem; background-color: #ffffff; color: #475569; border: 1px solid #cbd5e1; font-size: 1.45rem; font-weight: 700; border-radius: 0.8rem; transition: all 0.2s ease; }
 .btn-complete-sub:hover { background-color: #f1f5f9; border-color: #94a3b8; }
 .btn-complete-main { width: 16.0rem; height: 4.8rem; font-size: 1.45rem; font-weight: 700; border-radius: 0.8rem; }
+
 @media (max-width: 640px) {
   .signup-card { padding: 3.2rem 2.0rem; }
   .signup-step-indicator { margin-bottom: 2.8rem; padding-bottom: 2.0rem; }
@@ -1023,7 +1024,8 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
   .signup-btn-group { width: 100%; }
   .btn-signup-prev { flex: 1; width: auto; }
   .btn-signup-action { flex: 2; width: auto; }
-  .naver-style-profile-card { width: 100%; padding: 2.4rem 1.6rem; }
+  .complete-mini-pass { display: flex; width: 100%; padding: 1.6rem 2.0rem; justify-content: space-around; }
+  .pass-divider { margin: 0 1.2rem; }
   .complete-action-btns { flex-direction: column; width: 100%; }
   .btn-complete-sub, .btn-complete-main { width: 100%; justify-content: center; }
 }
