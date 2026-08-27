@@ -172,14 +172,14 @@
                     </a>
                 </div>
 
-                <div class="job-header-box">
-                    <h1 class="job-title">자율주행 인지 AI 연구원</h1>
-                    <a href="company-detail.html" class="job-corp-link">오토디펜스 모빌리티</a>
-                </div>
-
                 <div class="job-detail-layout">
                     
-                    <!-- 퀵메뉴 지원하기 -->
+                    <div class="job-header-box">
+                        <h1 class="job-title">자율주행 인지 AI 연구원</h1>
+                        <a href="company-detail.html" class="job-corp-link">오토디펜스 모빌리티</a>
+                    </div>
+
+                    <!-- 퀵메뉴 지원 패널 -->
                     <aside class="job-side-panel">
                         <div class="side-info-table">
                             <div class="side-info-row">
@@ -221,7 +221,7 @@
                         </div>
 
                         <div class="side-action-group">
-                            <button type="button" class="btn-job-apply-main">지원하기</button>
+                            <button type="button" class="btn-job-apply-main btn-terms-modal" data-modal="modalApply">지원하기</button>
                             <button type="button" class="btn-job-icon" aria-label="관심공고 등록" onclick="this.classList.toggle('active')">
                                 <i data-lucide="heart"></i>
                             </button>
@@ -231,7 +231,7 @@
                         </div>
                     </aside>
 
-
+                    <!-- 3. 에디터 영역 및 하단 상세 본문 -->
                     <div class="job-detail-main">
                         <!-- 에디터 내용 영역 -->
                         <div class="job-editor-area">                            
@@ -305,7 +305,7 @@
                             </div>
                         </div>
 
-                        <!-- 768px 이하 모바일 전용 100% 하단 지원하기 버튼 -->
+                        <!-- 하단 지원하기 버튼 -->
                         <div class="mobile-bottom-apply-wrap">
                             <button type="button" class="btn-job-apply-main w-full">지원하기</button>
                         </div>
@@ -316,7 +316,7 @@
         </section>
     </main>
 
-    <!-- 공유하기 팝업 모달 -->
+    <!-- 공통 공유하기 팝업 모달 -->
     <div class="site-modal" id="modalShare">
         <div class="modal-dim"></div>
         <div class="modal-box modal-sm">
@@ -325,12 +325,179 @@
                 <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
             </div>
             <div class="modal-body">
-                <p class="modal-text mb-4">현재 채용공고의 링크를 복사하여 공유할 수 있습니다.</p>
+                <p class="modal-text mb-4">현재 페이지의 링크를 복사하여 공유할 수 있습니다.</p>
                 <div class="share-copy-box">
-                    <input type="text" class="share-url-input" value="https://job.chungcheong.go.kr/job-detail.html" readonly>
-                    <button type="button" class="btn btn-primary btn-sm" onclick="alert('링크가 복사되었습니다.')">복사</button>
+                    <input type="text" class="share-url-input" id="shareCurrentUrl" value="" readonly>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="navigator.clipboard.writeText(location.href); alert('링크가 복사되었습니다.');">복사</button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- 온라인 입사지원 멀티스텝 모달 (USR-311) -->
+    <div class="site-modal" id="modalApply">
+        <div class="modal-dim"></div>
+        <div class="modal-box modal-apply-box">
+            
+            <!-- [1단계] 이력서 및 파일 선택 -->
+            <div class="apply-step step-1 active">
+                <div class="modal-header flex-between">
+                    <div class="modal-tit-group">
+                        <h3 class="modal-title">온라인 입사지원</h3>
+                    </div>
+                    <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+                </div>
+
+                <div class="modal-body custom-scroll">
+                    <!-- 지원공고 확인 -->
+                    <div class="apply-sec-group">
+                        <h4 class="apply-sec-tit">지원공고 확인</h4>
+                        <div class="apply-confirm-table">
+                            <div class="ac-row">
+                                <span class="ac-th">지원 공고명</span>
+                                <strong class="ac-td">자율주행인지 AI연구원</strong>
+                            </div>
+                            <div class="ac-row">
+                                <span class="ac-th">지원 기업</span>
+                                <span class="ac-td">오토디펜스 모빌리티</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 이력서 선택 -->
+                    <div class="apply-sec-group mt4">
+                        <div class="flex-between mb-2">
+                            <h4 class="apply-sec-tit">이력서 선택 <span class="text-red">*</span></h4>
+                            <a href="resume-write.html" class="btn-new-resume">
+                                <i data-lucide="plus"></i>
+                                <span>새 이력서 작성</span>
+                            </a>
+                        </div>
+
+                        <div class="apply-resume-list">
+                            <!-- 등록된 이력서 1 -->
+                            <label class="resume-select-card">
+                                <input type="radio" name="selectResume" value="resume_1" checked>
+                                <span class="custom-radio"></span>
+                                <div class="resume-info">
+                                    <div class="r-head">
+                                        <i data-lucide="file-text" class="r-icon"></i>
+                                        <strong class="r-title">기본 이력서 (미래모빌리티)</strong>
+                                    </div>
+                                    <span class="r-date">최종 수정일: 2026.07.20</span>
+                                </div>
+                            </label>
+
+                            <!-- 등록된 이력서 2 -->
+                            <label class="resume-select-card">
+                                <input type="radio" name="selectResume" value="resume_2">
+                                <span class="custom-radio"></span>
+                                <div class="resume-info">
+                                    <div class="r-head">
+                                        <i data-lucide="file-text" class="r-icon"></i>
+                                        <strong class="r-title">바이오 분야 맞춤 이력서</strong>
+                                    </div>
+                                    <span class="r-date">최종 수정일: 2026.07.15</span>
+                                </div>
+                            </label>
+
+                            <!-- 파일 직접 첨부 -->
+                            <label class="resume-select-card">
+                                <input type="radio" name="selectResume" value="resume_file" id="radioCustomFile">
+                                <span class="custom-radio"></span>
+                                <div class="resume-info">
+                                    <div class="r-head">
+                                        <i data-lucide="file-text" class="r-icon"></i>
+                                        <strong class="r-title">파일첨부 이력서</strong>
+                                    </div>
+                                    <span class="r-desc">PDF, DOCX 파일을 직접 업로드하여 지원합니다.</span>
+                                </div>
+                            </label>
+
+                            <!-- 파일 업로드 인풋 박스 -->
+                            <div class="custom-file-box" id="customFileBox">
+                                <div class="file-input-row">
+                                    <input type="text" class="file-name-preview" id="fileNamePreview" placeholder="선택된 파일이 없습니다." readonly>
+                                    <label for="attachFileInput" class="btn-file-search">찾아보기</label>
+                                    <input type="file" id="attachFileInput" class="blind-file-input">
+                                </div>
+                                <p class="file-guide-text">허용되는 확장자 포맷: hwp, hwpx, doc, docx, ppt, pptx, pdf, zip</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer flex-end">
+                    <button type="button" class="btn-modal-action btn-outline btn-modal-close">취소</button>
+                    <button type="button" class="btn-modal-action btn-primary btn-step-next">다음 단계</button>
+                </div>
+            </div>
+
+            <!-- [2단계] 지원내용 확인 및 동의 -->
+            <div class="apply-step step-2">
+                <div class="modal-header flex-between">
+                    <div class="modal-tit-group">
+                        <h3 class="modal-title">온라인 입사지원</h3>
+                    </div>
+                    <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+                </div>
+
+                <div class="modal-body custom-scroll">
+                    <div class="apply-notice-box">
+                        <strong class="notice-tit">※ 지원 전 마지막으로 확인해 주세요.</strong>
+                        <ul class="notice-list">
+                            <li>이력서에 연락처가 정확하게 기재되어 있는지 확인해 주세요.</li>
+                            <li>한 번 제출된 지원서는 수정할 수 없습니다. (취소 후 재지원 가능)</li>
+                        </ul>
+                    </div>
+
+                    <div class="apply-sec-group mt4">
+                        <h4 class="apply-sec-tit">지원내용 확인</h4>
+                        <div class="apply-confirm-table">
+                            <div class="ac-row">
+                                <span class="ac-th">지원 공고명</span>
+                                <strong class="ac-td">자율주행인지 AI연구원</strong>
+                            </div>
+                            <div class="ac-row">
+                                <span class="ac-th">지원 기업</span>
+                                <span class="ac-td">오토디펜스 모빌리티</span>
+                            </div>
+                            <div class="ac-row">
+                                <span class="ac-th">선택 이력서</span>
+                                <span class="ac-td text-emerald font-bold" id="confirmResumeName">기본 이력서 (미래모빌리티)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="apply-agree-wrap mt4">
+                        <label class="custom-check-label">
+                            <input type="checkbox" id="chkApplyAgree">
+                            <span class="custom-checkbox"></span>
+                            <span class="agree-text">(필수) 개인정보 제3자(지원 기업) 제공에 동의하며, 작성된 내용이 사실과 다름없음을 확인합니다. 허위 사실 기재 시 채용이 취소될 수 있습니다.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="modal-footer flex-end">
+                    <button type="button" class="btn-modal-action btn-outline btn-step-prev">이전</button>
+                    <button type="button" class="btn-modal-action btn-primary btn-step-submit" id="btnFinalSubmit" disabled>최종 지원하기</button>
+                </div>
+            </div>
+
+            <!-- [3단계] 지원 완료 화면 -->
+            <div class="apply-step step-3">
+                <div class="modal-body complete-body tct">
+                    <div class="complete-icon-circle">
+                        <i data-lucide="check"></i>
+                    </div>
+                    <h3 class="complete-title">지원이 완료되었습니다.</h3>
+                    <p class="complete-desc">지원 결과는 마이페이지에서 확인하실 수 있습니다.</p>
+                    <div class="complete-btn-wrap">
+                        <a href="jobs.html" class="btn-modal-action btn-dark btn-complete-action">목록으로 돌아가기</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
