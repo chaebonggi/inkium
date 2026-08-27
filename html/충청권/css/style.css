@@ -811,3 +811,74 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
   .custom-check-label input[type="checkbox"]:checked + .custom-checkbox::after { left: 4px; top: 1px; width: 5px; height: 8px; border-width: 0 2px 2px 0; }
 }
 /* === //Apply Modal === */
+
+/* === 새 이력서 작성페이지 === */
+.resume-write-sec { background-color: #f8fafc; }
+.resume-top-bar { max-width: 86.0rem; margin: 0 auto 2.4rem; }
+.resume-head-btns { display: flex; align-items: center; gap: 0.8rem; }
+.btn-resume-temp { height: 4.2rem; padding: 0 1.8rem; background-color: #ffffff; color: #475569; border: 1px solid #cbd5e1; font-size: 1.35rem; font-weight: 700; border-radius: 0.8rem; cursor: pointer; transition: all 0.2s ease; }
+.btn-resume-temp:hover { background-color: #f1f5f9; border-color: #94a3b8; }
+.btn-resume-save { height: 4.2rem; padding: 0 2.2rem; background-color: #059669; color: #ffffff; border: 1px solid #059669; font-size: 1.35rem; font-weight: 700; border-radius: 0.8rem; cursor: pointer; transition: all 0.2s ease; }
+.btn-resume-save:hover { background-color: #047857; border-color: #047857; }
+.resume-form-card { max-width: 86.0rem; margin: 0 auto; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 2.0rem; padding: 4.8rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); }
+.resume-main-tit { font-size: 2.6rem; font-weight: 800; color: #111827; letter-spacing: -0.02em; margin-bottom: 3.6rem; padding-bottom: 2.0rem; border-bottom: 2px solid #111827; }
+.resume-sec-item { margin-bottom: 4.0rem; }
+.r-sec-head { display: flex; align-items: center; gap: 1.0rem; margin-bottom: 1.6rem; }
+.r-sec-tit { font-size: 1.7rem; font-weight: 700; color: #111827; display: inline-flex; align-items: center; gap: 0.8rem; }
+.badge-req { font-size: 1.15rem; font-weight: 600; color: #059669; background-color: #ecfdf5; padding: 0.2rem 0.6rem; border-radius: 0.4rem; }
+.r-sec-guide { font-size: 1.3rem; color: #94a3b8; }
+.btn-r-add { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 1.35rem; font-weight: 700; color: #059669; background: transparent; border: none; cursor: pointer; padding: 0.4rem 0.6rem; border-radius: 0.4rem; transition: color 0.15s ease, opacity 0.15s ease; }
+.btn-r-add:hover { color: #047857; opacity: 0.8; }
+.btn-r-add svg { width: 1.5rem; height: 1.5rem; }
+.c-form-group { display: flex; flex-direction: column; gap: 0.6rem; width: 100%; }
+.c-form-label { font-size: 1.3rem; font-weight: 600; color: #4b5563; white-space: nowrap; }
+.c-form-label-row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.c-input { width: 100%; height: 4.4rem; padding: 0 1.4rem; font-size: 1.4rem; color: #111827; background-color: #ffffff; border: 1px solid #d1d5db; border-radius: 0.8rem; box-sizing: border-box; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.c-input:focus { border-color: #059669; box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1); }
+.c-input::placeholder { color: #9ca3af; font-size: 1.35rem; }
+.c-input.readonly { background-color: #f8fafc; color: #64748b; cursor: default; }
+.c-input:disabled { background-color: #f1f5f9; color: #94a3b8; cursor: not-allowed; border-color: #e2e8f0; }
+.c-select { width: 100%; height: 4.4rem; padding: 0 3.6rem 0 1.4rem; font-size: 1.4rem; font-weight: 500; color: #111827; background-color: #ffffff; border: 1px solid #d1d5db; border-radius: 0.8rem; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1.2rem center; cursor: pointer; outline: none; box-sizing: border-box; }
+.c-select:focus { border-color: #059669; }
+.r-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem; }
+.r-grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem; }
+.mt-2 { margin-top: 0.8rem; }
+.mt-3 { margin-top: 1.2rem; }
+.address-input-wrap { display: flex; gap: 0.8rem; }
+.btn-addr-search { height: 4.4rem; padding: 0 1.8rem; font-size: 1.35rem; font-weight: 600; border-radius: 0.8rem; flex-shrink: 0; }
+.disability-field-wrap { display: grid; grid-template-columns: 12.0rem 1fr; gap: 0.8rem; }
+.dynamic-group-list { display: flex; flex-direction: column; gap: 1.6rem; }
+.r-dynamic-card { position: relative; background-color: #fdfdfd; border: 1px solid #e2e8f0; border-radius: 1.4rem; padding: 2.4rem; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.r-dynamic-card:hover { border-color: #cbd5e1; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); }
+.btn-r-del { position: absolute; top: 1.6rem; right: 1.6rem; width: 3.2rem; height: 3.2rem; border-radius: 0.6rem; border: none; background: transparent; color: #94a3b8; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; transition: all 0.15s ease; }
+.r-dynamic-card:hover .btn-r-del { opacity: 1; }
+.btn-r-del:hover { background-color: #fef2f2; color: #ef4444; }
+.btn-r-del svg { width: 1.8rem; height: 1.8rem; }
+.score-input-wrap { display: grid; grid-template-columns: 1fr 10.0rem; gap: 0.8rem; }
+.inline-check { display: inline-flex; align-items: center; gap: 0.6rem; cursor: pointer; white-space: nowrap; margin: 0; width: auto; position: relative; }
+.inline-check input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; }
+.inline-check .custom-checkbox { width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid #cbd5e1; background-color: #ffffff; flex-shrink: 0; position: relative; transition: all 0.15s ease; box-sizing: border-box; }
+.inline-check input[type="checkbox"]:checked + .custom-checkbox { background-color: #059669; border-color: #059669; }
+.inline-check input[type="checkbox"]:checked + .custom-checkbox::after { content: ''; position: absolute; left: 4px; top: 1px; width: 4px; height: 8px; border: solid #ffffff; border-width: 0 2px 2px 0; transform: rotate(45deg); box-sizing: content-box; }
+.inline-check .check-txt { font-size: 1.25rem; font-weight: 600; color: #4b5563; }
+.cover-letter-wrap { position: relative; border: 1px solid #d1d5db; border-radius: 1.0rem; overflow: hidden; background-color: #ffffff; }
+.c-textarea { width: 100%; height: 22.0rem; padding: 1.6rem; font-size: 1.4rem; color: #111827; border: none; outline: none; resize: vertical; line-height: 1.7; box-sizing: border-box; }
+.char-count-wrap { padding: 0.8rem 1.6rem 1.2rem; text-align: right; font-size: 1.25rem; color: #94a3b8; border-top: 1px solid #f1f5f9; background-color: #fdfdfd; }
+.resume-bottom-btns { display: flex; gap: 1.2rem; margin-top: 4.8rem; padding-top: 3.2rem; border-top: 1px solid #f1f5f9; }
+@media (max-width: 768px) {
+  .resume-form-card { padding: 2.8rem 2.0rem; }
+  .r-grid-2, .r-grid-3 { grid-template-columns: 1fr; gap: 1.2rem; }
+  .btn-r-del { opacity: 1; }
+  .r-dynamic-card { padding: 2.0rem 1.6rem; }
+  .score-input-wrap { grid-template-columns: 1fr 12.0rem; }
+}
+@media (max-width: 640px) {
+  .resume-main-tit { font-size: 2.2rem; margin-bottom: 2.4rem; }
+  .resume-top-bar { flex-direction: column; align-items: flex-start; gap: 1.4rem; }
+  .resume-head-btns { width: 100%; }
+  .resume-head-btns .btn { flex: 1; }
+  .resume-bottom-btns { width: 100%; }
+  .resume-bottom-btns .btn { flex: 1; }
+  .disability-field-wrap { grid-template-columns: 1fr; }
+}
+/* === //새 이력서 작성페이지 === */
