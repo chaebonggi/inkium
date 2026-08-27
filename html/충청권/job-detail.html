@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>충청권 내일이음 - 자율주행 인지 AI 연구원</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="inner-wrap">
+            <div class="header-inner flex-between">
+            
+                <div class="header-left">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img">
+                    </a>
+
+                    <nav class="header-nav">
+                        <a href="about.html" class="nav-link">소개</a>
+
+                        <div class="nav-item-dropdown">
+                            <a href="pavilions.html" class="nav-link">
+                                <span>온라인채용관</span>
+                                <i data-lucide="chevron-down"></i>
+                            </a>
+                            <div class="nav-dropdown-menu">
+                                <a href="pavilion-bio.html" class="dropdown-link">바이오채용관</a>
+                                <a href="pavilion-mobility.html" class="dropdown-link">미래모빌리티채용관</a>
+                                <a href="pavilion-chungcheong.html" class="dropdown-link">충청권 일자리박람회</a>
+                            </div>
+                        </div>
+
+                        <a href="jobs.html" class="nav-link active">채용공고</a>
+                        <a href="companies.html" class="nav-link">기업</a>
+
+                        <div class="nav-item-dropdown">
+                            <a href="notices.html" class="nav-link">
+                                <span>고객센터</span>
+                                <i data-lucide="chevron-down"></i>
+                            </a>
+                            <div class="nav-dropdown-menu">
+                                <a href="notices.html" class="dropdown-link">공지사항</a>
+                                <a href="faq.html" class="dropdown-link">자주 묻는 질문(FAQ)</a>
+                                <a href="resources.html" class="dropdown-link">자료실</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="header-actions">
+                    <a href="login.html" class="btn-auth-link">
+                        <i data-lucide="user-circle-2"></i>
+                        <span>로그아웃</span>
+                    </a>
+
+                    <a href="corporate.html" class="btn btn-dark btn-md">기업 서비스</a>
+                </div>
+
+                <div class="header-m-actions">
+                    <button type="button" class="btn-m-icon" id="btnDrawerOpen" aria-label="메뉴 열기">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="drawer-overlay" id="drawerOverlay"></div>
+        <aside class="drawer-menu" id="drawerMenu">
+            <div class="drawer-header flex-between">
+                <a href="index.html" class="brand-logo">
+                    <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img drawer-logo-img">
+                </a>
+                <button type="button" class="btn-drawer-close" id="btnDrawerClose" aria-label="메뉴 닫기">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+
+            <div class="drawer-body">
+                <div class="drawer-user-card">
+                    <div class="user-profile-row">
+                        <div class="user-avatar">
+                            <img src="./images/default_avatar.png" alt="홍길동 님 프로필" class="avatar-img">
+                        </div>
+                        <div class="user-info">
+                            <p class="user-name">홍길동 님</p>
+                            <p class="user-role">구직자 (온라인 패스 활성)</p>
+                        </div>
+                    </div>
+                    <div class="user-quick-btns">
+                        <a href="mypage.html" class="btn-drawer-quick">마이페이지</a>
+                        <a href="login.html" class="btn-drawer-quick">로그아웃</a>
+                    </div>
+                </div>
+
+                <nav class="drawer-nav-group">
+                    <a href="about.html" class="drawer-nav-item">
+                        <span class="left-icon-text">
+                            <i data-lucide="sparkles"></i>
+                            <span>소개</span>
+                        </span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+
+                    <div class="drawer-acc-box" id="drawerPavilionAcc">
+                        <button type="button" class="drawer-nav-item btn-drawer-acc">
+                            <span class="left-icon-text">
+                                <i data-lucide="building-2"></i>
+                                <span>온라인채용관</span>
+                            </span>
+                            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                        </button>
+                        <div class="drawer-sub-menu">
+                            <a href="pavilion-mobility.html" class="drawer-sub-link">미래모빌리티채용관</a>
+                            <a href="pavilion-bio.html" class="drawer-sub-link">바이오채용관</a>
+                            <a href="pavilion-chungcheong.html" class="drawer-sub-link">충청권 내일이음 취업박람회</a>
+                        </div>
+                    </div>
+
+                    <a href="jobs.html" class="drawer-nav-item active">
+                        <span class="left-icon-text">
+                            <i data-lucide="briefcase"></i>
+                            <span>채용공고</span>
+                        </span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+
+                    <a href="companies.html" class="drawer-nav-item">
+                        <span class="left-icon-text">
+                            <i data-lucide="building"></i>
+                            <span>기업 탐색</span>
+                        </span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+
+                    <div class="drawer-acc-box" id="drawerCsAcc">
+                        <button type="button" class="drawer-nav-item btn-drawer-acc">
+                            <span class="left-icon-text">
+                                <i data-lucide="help-circle"></i>
+                                <span>고객센터</span>
+                            </span>
+                            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                        </button>
+                        <div class="drawer-sub-menu">
+                            <a href="notices.html" class="drawer-sub-link">공지사항</a>
+                            <a href="faq.html" class="drawer-sub-link">자주 묻는 질문(FAQ)</a>
+                            <a href="resources.html" class="drawer-sub-link">자료실</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="drawer-footer">
+                <a href="corporate.html" class="btn btn-dark btn-drawer-corporate">
+                    <span>기업 서비스</span>
+                </a>
+            </div>
+        </aside>
+    </header>
+
+    <main class="site-main job-detail-page-main">
+        <section class="job-detail-sec pd6">
+            <div class="inner-wrap">
+                <div class="back-nav-wrap">
+                    <a href="jobs.html" class="btn-back-link">
+                        <i data-lucide="arrow-left"></i>
+                        <span>목록으로 돌아가기</span>
+                    </a>
+                </div>
+
+                <div class="job-header-box">
+                    <h1 class="job-title">자율주행 인지 AI 연구원</h1>
+                    <a href="company-detail.html" class="job-corp-link">오토디펜스 모빌리티</a>
+                </div>
+
+                <div class="job-detail-layout">
+                    
+                    <!-- 퀵메뉴 지원하기 -->
+                    <aside class="job-side-panel">
+                        <div class="side-info-table">
+                            <div class="side-info-row">
+                                <span class="si-label">모집 직군</span>
+                                <span class="si-val">연구원</span>
+                            </div>
+                            <div class="side-info-row">
+                                <span class="si-label">모집 인원</span>
+                                <span class="si-val">1명</span>
+                            </div>
+                            <div class="side-info-row">
+                                <span class="si-label">고용 형태</span>
+                                <span class="si-val">정규직</span>
+                            </div>
+                            <div class="side-info-row">
+                                <span class="si-label">경력</span>
+                                <span class="si-val">무관</span>
+                            </div>
+                            <div class="side-info-row">
+                                <span class="si-label">학력</span>
+                                <span class="si-val">무관</span>
+                            </div>
+                            <div class="side-info-row">
+                                <span class="si-label">성별</span>
+                                <span class="si-val">무관</span>
+                            </div>
+                            <div class="side-info-row">
+                                <span class="si-label">연령</span>
+                                <span class="si-val">무관</span>
+                            </div>
+                            <div class="side-info-row">
+                                <span class="si-label">급여</span>
+                                <span class="si-val">(연봉) 6,000만원</span>
+                            </div>
+                            <div class="side-info-row">
+                                <span class="si-label">근무지</span>
+                                <span class="si-val">충북 청주시 흥덕구 풍산로 50, 충북기업진흥원 A동</span>
+                            </div>
+                        </div>
+
+                        <div class="side-action-group">
+                            <button type="button" class="btn-job-apply-main">지원하기</button>
+                            <button type="button" class="btn-job-icon" aria-label="관심공고 등록" onclick="this.classList.toggle('active')">
+                                <i data-lucide="heart"></i>
+                            </button>
+                            <button type="button" class="btn-job-icon btn-terms-modal" data-modal="modalShare" aria-label="공유하기">
+                                <i data-lucide="share-2"></i>
+                            </button>
+                        </div>
+                    </aside>
+
+
+                    <div class="job-detail-main">
+                        <!-- 에디터 내용 영역 -->
+                        <div class="job-editor-area">                            
+                            <p>에디터 영역</p>
+                        </div>
+
+                        <!-- 우대사항 -->
+                        <div class="job-section-block">
+                            <h3 class="block-tit">우대사항</h3>
+                            <div class="block-desc">
+                                <p>우대사항 필드에 값이 있을 경우 해당 내용을 출력합니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- 복리후생 -->
+                        <div class="job-section-block">
+                            <h3 class="block-tit">복리후생</h3>
+                            <div class="block-desc">
+                                <p>복리후생 필드에 값이 있을 경우 해당 내용을 출력합니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- 채용 담당자 -->
+                        <div class="job-manager-card">
+                            <h3 class="block-tit">채용 담당자</h3>
+                            <div class="manager-info-row">
+                                <strong class="manager-name">홍길동</strong>
+                                <span class="manager-pos">인사팀 / 과장</span>
+                            </div>
+                            <div class="manager-contact-list">
+                                <span class="contact-item"><i data-lucide="phone"></i> 043-123-5678</span>
+                                <span class="contact-item"><i data-lucide="mail"></i> insa001@example.com</span>
+                            </div>
+                        </div>
+
+                        <!-- 추천 채용공고 -->
+                        <div class="job-recommend-sec mt6">
+                            <h3 class="sec-subtitle">추천 채용공고</h3>
+                            <div class="recommend-cards-grid">
+                                <a href="job-detail.html" class="c-card-job">
+                                    <div class="c-job-logo">
+                                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=120" alt="(주)제네틱스바이오">
+                                    </div>
+                                    <p class="c-job-company">(주)제네틱스바이오</p>
+                                    <h4 class="c-job-title">신약후보물질 발굴 연구원(AI/Bio)</h4>
+                                    <div class="c-job-meta">
+                                        <span><i data-lucide="map-pin"></i> 충북 오송</span>
+                                        <span><i data-lucide="briefcase"></i> 경력 5년 이상</span>
+                                    </div>
+                                    <div class="c-job-foot flex-between">
+                                        <span class="time"><i data-lucide="clock"></i> 5시간 전</span>
+                                        <p class="c-job-apply">지원하기 &rarr;</p>
+                                    </div>
+                                </a>
+
+                                <a href="job-detail.html" class="c-card-job">
+                                    <div class="c-job-logo">
+                                        <img src="https://images.unsplash.com/photo-1558244402-286dd748c593?auto=format&fit=crop&q=80&w=120" alt="넥스트에너지솔루션">
+                                    </div>
+                                    <p class="c-job-company">넥스트에너지솔루션</p>
+                                    <h4 class="c-job-title">전기차(EV) 배터리 팩 설계 엔지니어</h4>
+                                    <div class="c-job-meta">
+                                        <span><i data-lucide="map-pin"></i> 충북 청주</span>
+                                        <span><i data-lucide="briefcase"></i> 신입/경력</span>
+                                    </div>
+                                    <div class="c-job-foot flex-between">
+                                        <span class="time"><i data-lucide="clock"></i> 7시간 전</span>
+                                        <p class="c-job-apply">지원하기 &rarr;</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 768px 이하 모바일 전용 100% 하단 지원하기 버튼 -->
+                        <div class="mobile-bottom-apply-wrap">
+                            <button type="button" class="btn-job-apply-main w-full">지원하기</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 공유하기 팝업 모달 -->
+    <div class="site-modal" id="modalShare">
+        <div class="modal-dim"></div>
+        <div class="modal-box modal-sm">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">공고 공유하기</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-text mb-4">현재 채용공고의 링크를 복사하여 공유할 수 있습니다.</p>
+                <div class="share-copy-box">
+                    <input type="text" class="share-url-input" value="https://job.chungcheong.go.kr/job-detail.html" readonly>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="alert('링크가 복사되었습니다.')">복사</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="inner-wrap">
+            <div class="footer-top flex-between">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/footer_logo.png" alt="충북권역 전략사업 특화 온라인 채용관" class="brand-logo-img">
+                    </a>
+                    <p class="footer-desc">충청북도 기업진흥원이 함께 만드는 충북 지역 우수 중소·중견기업 통합 온라인 채용관입니다.</p>
+                </div>
+
+                <div class="footer-selects">
+                    <div class="footer-select-box">
+                        <select class="footer-select" onchange="if(this.value) location.href=this.value;">
+                            <option value="">바로가기</option>
+                            <option value="about.html">소개</option>
+                            <option value="pavilion-bio.html">바이오 채용관</option>
+                            <option value="pavilion-mobility.html">미래모빌리티 채용관</option>
+                            <option value="companies.html">참여기업 탐색</option>
+                        </select>
+                    </div>
+
+                    <div class="footer-select-box">
+                        <select class="footer-select" onchange="if(this.value) location.href=this.value;">
+                            <option value="">고객센터</option>
+                            <option value="notices.html">공지사항</option>
+                            <option value="faq.html">자주묻는 질문</option>
+                            <option value="resources.html">자료실</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom flex-between">
+                <p class="footer-copy">&copy; 2026 충청북도기업진흥원. All Rights Reserved.</p>
+                <div class="footer-terms">
+                    <button type="button" class="btn-terms-modal" data-modal="modalTerms">이용약관</button>
+                    <button type="button" class="btn-terms-modal text-strong" data-modal="modalPrivacy">개인정보처리방침</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 이용약관 팝업 모달 -->
+    <div class="site-modal" id="modalTerms">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">이용약관</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-section-title">제 1 조 (목적)</p>
+                <p class="modal-text">본 약관은 충청권 내일이음 온라인 채용관(이하 "플랫폼")이 제공하는 모든 제반 서비스의 이용 조건 및 절차에 관한 사항을 규정함을 목적으로 합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 개인정보처리방침 팝업 모달 -->
+    <div class="site-modal" id="modalPrivacy">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">개인정보처리방침</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-section-title">1. 개인정보의 수집 및 이용 목적</p>
+                <p class="modal-text">플랫폼은 구직자 회원가입, 입사지원 서비스 제공, 맞춤형 채용정보 추천 및 서비스 개선을 위해 최소한의 개인정보를 수집하고 있습니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/lucide.min.js"></script>
+    <script src="./js/style.js"></script>
+</body>
+</html>
