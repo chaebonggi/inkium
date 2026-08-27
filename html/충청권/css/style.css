@@ -561,7 +561,8 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
 .btn-back-link:hover { color: #111827; }
 .btn-back-link svg { width: 1.8rem; height: 1.8rem; }
 .comp-detail-card { background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 2.0rem; overflow: hidden; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); }
-.comp-cover-banner { width: 100%; height: 20.0rem; background: radial-gradient(ellipse at top left, #10b981 0%, #064e3b 35%, #0b1329 100%); }
+.comp-cover-banner { position: relative; width: 100%; height: 20.0rem; background: radial-gradient(ellipse at top left, #10b981 0%, #064e3b 35%, #0b1329 100%); overflow: hidden; }
+.comp-cover-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 .comp-body-wrap { padding: 0 4.0rem 4.0rem; position: relative; }
 .comp-floating-logo { width: 12.0rem; height: 12.0rem; border-radius: 2.0rem; background-color: #ffffff; border: 4px solid #ffffff; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08); overflow: hidden; display: flex; align-items: center; justify-content: center; margin-top: -6.0rem; margin-bottom: 2.4rem; }
 .comp-floating-logo img { width: 100%; height: 100%; object-fit: cover; }
