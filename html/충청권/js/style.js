@@ -145,3 +145,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// 사전 참석신청 모달 열기
+const btnOpenPreApply = document.getElementById('btnOpenPreApply');
+const modalPreApply = document.getElementById('modalPreApply');
+btnOpenPreApply?.addEventListener('click', () => {
+  modalPreApply?.classList.add('active');
+});
+
+const btnSubmitPreApply = document.getElementById('btnSubmitPreApply');
+btnSubmitPreApply?.addEventListener('click', () => {
+  alert('사전 참석신청이 완료되었습니다.');
+  modalPreApply?.classList.remove('active');
+});

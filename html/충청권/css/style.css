@@ -1112,3 +1112,213 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
   .find-fail-guide-box { flex-direction: column; gap: 0.4rem; }
 }
 /* === //아이디/비밀번호 찾기 공통 === */
+
+/* === 온라인 채용관  === */
+
+/* 템플릿 */
+.pavilion-detail-hero-sec { background-color: #f8fafc; }
+
+/* 1. 상단 단일 통이미지 히어로 보드 */
+.pav-hero-unified-board { position: relative; width: 100%; border-radius: 2.4rem; overflow: hidden; background-color: #0b1528; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); }
+.pav-hero-unified-board.theme-mobility-bg { background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80') center center / cover no-repeat; }
+.pav-hero-unified-board.theme-bio-bg { background: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80') center center / cover no-repeat; }
+.pav-hero-unified-board.theme-chungcheong-bg { background: url('https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?auto=format&fit=crop&q=80') center center / cover no-repeat; }
+
+.pav-unified-overlay { position: absolute; inset: 0; background: radial-gradient(circle at 50% 30%, rgba(13, 34, 58, 0.75) 0%, rgba(8, 17, 31, 0.94) 80%, #040913 100%); backdrop-filter: blur(3px); }
+.pav-unified-content { position: relative; z-index: 2; padding: 6.4rem 3.2rem 4.8rem; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+/* 타이틀 & 슬로건 */
+.pav-pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.8rem 2.0rem; border-radius: 9999px; background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.4); color: #ffffff; font-size: 1.35rem; font-weight: 600; margin-bottom: 2.4rem; }
+.pav-pill span { color: #38bdf8; font-weight: 700; }
+.pav-main-title { font-size: 7rem; font-weight: 900; color: #ffffff; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 2.0rem; }
+.text-gradient-cyan { background: linear-gradient(135deg, #38bdf8 0%, #22d3ee 50%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+.pav-main-desc { font-size: 1.65rem; color: #cbd5e1; line-height: 1.6; word-break: keep-all; margin-bottom: 3.6rem; font-weight: 500; }
+
+/* 3종 퀵 카드 */
+.pav-fields-grid { display: flex; gap: 1.4rem; width: 100%; max-width: 44.0rem; justify-content: center; }
+.field-item-card { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); padding: 1.6rem 1.0rem; border-radius: 1.4rem; backdrop-filter: blur(10px); transition: all 0.2s ease; }
+.field-item-card:hover { transform: translateY(-4px); border-color: #38bdf8; background: rgba(15, 23, 42, 0.95); box-shadow: 0 8px 20px rgba(6, 182, 212, 0.2); }
+.field-icon { width: 2.6rem; height: 2.6rem; color: #38bdf8; margin-bottom: 0.8rem; }
+.field-txt { font-size: 1.35rem; font-weight: 700; color: #f8fafc; white-space: nowrap; }
+
+/* 하단 슬로건 띠 바 */
+.pav-board-bottom {  background-color: #050d1a; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 2.4rem 4.0rem; }
+.pav-board-box {position: relative; z-index: 2; display: flex; align-items: center; gap: 2.4rem; max-width: 70rem; margin: 0 auto;}
+.pav-trophy-icon { width: 5.2rem; height: 5.2rem; border-radius: 50%; background: rgba(6, 182, 212, 0.15); border: 1.5px solid rgba(6, 182, 212, 0.4); color: #38bdf8; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.pav-trophy-icon svg { width: 2.8rem; height: 2.8rem; }
+.pav-bottom-wrap { border: 1px solid red; }
+.pav-bottom-txts .b-tit { display: block; font-size: 1.65rem; font-weight: 800; color: #ffffff; margin-bottom: 0.4rem; word-break: keep-all; letter-spacing: -0.01em; }
+.pav-bottom-txts .b-desc { font-size: 1.35rem; color: #94a3b8; line-height: 1.55; margin: 0; word-break: keep-all; }
+
+/* 2. 기획서 필수 명세 화이트 안내 보드 */
+.pav-white-guide-board { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 2.4rem; padding: 4.8rem 4.0rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); }
+.p-guide-head { margin-bottom: 3.6rem; }
+.p-guide-title-row { display: flex; align-items: center; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
+.p-deco-dots { color: #cbd5e1; font-size: 1.4rem; letter-spacing: 0.2em; }
+.p-guide-main-tit { font-size: 2.2rem; font-weight: 800; color: #111827; margin: 0; letter-spacing: -0.02em; }
+.p-title-cyan-line { width: 12.0rem; height: 3px; background-color: #06b6d4; margin: 1.2rem auto 0; border-radius: 2px; }
+
+/* 4단 카드 그리드 */
+.pav-info-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.0rem; }
+.p-grid-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 3.2rem 2.0rem; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 1.8rem; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.p-grid-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); border-color: #38bdf8; }
+.card-icon-circle { width: 5.6rem; height: 5.6rem; border-radius: 1.6rem; display: flex; align-items: center; justify-content: center; margin-bottom: 2.0rem; }
+.card-icon-circle svg { width: 2.6rem; height: 2.6rem; }
+.ic-blue { background-color: #eff6ff; color: #2563eb; }
+.ic-cyan { background-color: #ecfeff; color: #0891b2; }
+.ic-sky { background-color: #f0f9ff; color: #0284c7; }
+.ic-indigo { background-color: #eef2ff; color: #4f46e5; }
+.card-tit { font-size: 1.7rem; font-weight: 800; color: #111827; margin-bottom: 1.0rem; }
+.card-desc { font-size: 1.35rem; color: #64748b; line-height: 1.55; margin: 0; word-break: keep-all; }
+
+/* 하단 서브 디테일 박스 (프로그램 & 프로세스) */
+.pav-detail-sub-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1.6rem; padding: 2.4rem 2.8rem; }
+.box-sec-tit { display: flex; align-items: center; gap: 0.6rem; font-size: 1.5rem; font-weight: 800; color: #0891b2; margin-bottom: 1.4rem; }
+.box-sec-tit svg { width: 1.7rem; height: 1.7rem; }
+
+.pav-clean-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+.pav-clean-list li { position: relative; padding-left: 1.6rem; font-size: 1.35rem; color: #475569; line-height: 1.55; }
+.pav-clean-list li::before { content: ''; position: absolute; left: 0; top: 0.8rem; width: 5px; height: 5px; border-radius: 50%; background-color: #06b6d4; }
+.pav-clean-list strong { color: #111827; font-weight: 700; }
+
+.p-proc-line-steps { display: flex; align-items: center; justify-content: space-between; gap: 1.0rem; }
+.step-card { flex: 1; display: flex; flex-direction: column; align-items: center; background-color: #ffffff; border: 1px solid #e2e8f0; padding: 1.4rem 1.0rem; border-radius: 1.2rem; text-align: center; }
+.step-badge { font-size: 1.1rem; font-weight: 800; color: #0284c7; margin-bottom: 0.4rem; }
+.step-txt { font-size: 1.35rem; font-weight: 700; color: #1e293b; word-break: keep-all; }
+.step-arrow { color: #94a3b8; width: 1.8rem; height: 1.8rem; flex-shrink: 0; }
+
+/* 유의사항 */
+.pav-detail-notice { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.6rem 2.0rem; background-color: #fef2f2; border: 1px solid #fecaca; border-radius: 1.2rem; }
+.pav-detail-notice .notice-ic { width: 2.0rem; height: 2.0rem; color: #ef4444; flex-shrink: 0; margin-top: 0.2rem; }
+.notice-txts strong { display: block; font-size: 1.35rem; font-weight: 700; color: #991b1b; margin-bottom: 0.4rem; }
+.notice-txts p { font-size: 1.25rem; color: #b91c1c; line-height: 1.55; margin: 0; word-break: keep-all; }
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .pav-info-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .p-proc-line-steps { flex-direction: column; gap: 0.8rem; }
+  .step-card { width: 100%; flex-direction: row; justify-content: space-between; padding: 1.2rem 1.6rem; box-sizing: border-box; }
+  .step-badge { margin-bottom: 0; }
+  .step-arrow { transform: rotate(90deg); }
+}
+
+@media (max-width: 768px) {
+  .pav-main-title { font-size: 3.6rem; }
+  .pav-board-bottom { flex-direction: column; align-items: center; text-align: center; padding: 2.4rem 2.0rem; }
+  .pav-bottom-txts { text-align: center; }
+  .pav-white-guide-board { padding: 3.2rem 1.6rem; }
+  .p-guide-main-tit { font-size: 1.8rem; }
+  .pav-info-grid-4 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .pav-main-title { font-size: 2.8rem; }
+  .pav-fields-grid { flex-direction: column; gap: 0.8rem; }
+  .field-item-card { flex-direction: row; gap: 1.0rem; padding: 1.2rem; }
+  .field-icon { margin-bottom: 0; }
+}
+
+/* 관리자 등록 포스터 영역 */
+.pavilion-poster-sec { background-color: #fff;}
+.pavilion-poster-box { width: 100%; border-radius: 2.0rem; overflow: hidden; background-color: #ffffff; border: 1px solid #e5e7eb; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); }
+.pavilion-poster-img { width: 100%; height: auto; display: block; object-fit: contain; }
+
+.pavilion-companies-sec { background-color: #ffffff; border-bottom: 1px solid #e5e7eb; }
+.pavilion-jobs-sec { background-color: #f8fafc; }
+.pavilion-sec-head { flex-wrap: wrap; gap: 1.6rem; padding-bottom: 2.0rem; border-bottom: 2px solid #111827; }
+.pavilion-sec-tit { font-size: 2.4rem; font-weight: 800; color: #111827; letter-spacing: -0.02em; margin: 0; }
+.pavilion-search-bar { display: flex; align-items: center; gap: 0.8rem; width: 100%; max-width: 36.0rem; }
+.pav-search-input { height: 4.2rem; font-size: 1.35rem; }
+.btn-pav-search { height: 4.2rem; padding: 0 1.8rem; font-size: 1.35rem; border-radius: 0.8rem; flex-shrink: 0; }
+
+/* 참여기업 5열 그리드 카드 */
+.pav-comp-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.6rem; }
+.c-card-pav-comp { display: flex; flex-direction: column; align-items: center; text-align: center; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 1.4rem; padding: 2.4rem 1.6rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); transition: all 0.2s ease; cursor: pointer; text-decoration: none; color: inherit; }
+.c-card-pav-comp:hover { transform: translateY(-4px); border-color: #059669; box-shadow: 0 10px 20px -4px rgba(5, 150, 105, 0.1); }
+.p-comp-logo { width: 5.6rem; height: 5.6rem; border-radius: 1.2rem; background-color: #f8fafc; border: 1px solid #f1f5f9; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-bottom: 1.6rem; flex-shrink: 0; }
+.p-comp-logo img { width: 100%; height: 100%; object-fit: cover; }
+.p-comp-name { font-size: 1.55rem; font-weight: 700; color: #111827; margin-bottom: 0.8rem; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: color 0.15s ease; }
+.c-card-pav-comp:hover .p-comp-name { color: #059669; }
+.p-comp-desc { font-size: 1.3rem; color: #64748b; line-height: 1.5; height: 3.9rem; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; margin-bottom: 1.6rem; word-break: keep-all; }
+.p-comp-badge { display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 3.4rem; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.6rem; font-size: 1.25rem; font-weight: 600; color: #475569; transition: all 0.15s ease; box-sizing: border-box; }
+.p-comp-badge strong { color: #059669; margin: 0 0.2rem; }
+.c-card-pav-comp:hover .p-comp-badge { background-color: #ecfdf5; border-color: #a7f3d0; color: #047857; }
+
+.btn-pav-more { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 1.0rem 3.2rem; background-color: #ffffff; border: 1px solid #d1d5db; border-radius: 9999px; font-size: 1.4rem; font-weight: 700; color: #374151; cursor: pointer; transition: all 0.2s ease; }
+.btn-pav-more:hover { border-color: #059669; color: #059669; background-color: #f0fdf4; }
+.btn-pav-more svg { width: 1.6rem; height: 1.6rem; }
+
+/* 반응형 */
+@media (max-width: 1200px) {
+  .pav-comp-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 1024px) {
+  .pav-comp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .pavilion-sec-head { flex-direction: column; align-items: flex-start; }
+  .pavilion-search-bar { max-width: 100%; }
+  .pav-comp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; }
+}
+@media (max-width: 480px) {
+  .pav-comp-grid { grid-template-columns: 1fr; }
+}
+/* 사전 참석신청하기 버튼 (기획서 명세) */
+.pav-apply-btn-wrap { display: flex; justify-content: center; padding-top: 1.6rem; } 
+.btn-pav-shimmer { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 1.0rem; padding: 1.6rem 3.6rem; background-color: #0f172a; color: #ffffff; font-size: 1.6rem; font-weight: 700; border-radius: 9999px; border: 1px solid #334155; cursor: pointer; overflow: hidden; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12); transition: all 0.25s ease; } 
+.btn-pav-shimmer:hover { background-color: #059669; border-color: #059669; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(5, 150, 105, 0.3); } 
+.btn-lead-icon { width: 1.8rem; height: 1.8rem; color: #38bdf8; transition: color 0.2s ease; } 
+.btn-pav-shimmer:hover .btn-lead-icon { color: #ffffff; } 
+.btn-tail-icon { width: 1.8rem; height: 1.8rem; color: #94a3b8; transition: transform 0.2s ease, color 0.2s ease; } 
+.btn-pav-shimmer:hover .btn-tail-icon { color: #ffffff; transform: translateX(4px); } 
+
+/* 쉬머 광택 효과 */
+.shimmer-effect { position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent); transform: skewX(-25deg); animation: btnShimmer 3.5s infinite; } 
+@keyframes btnShimmer { 
+ 0% { left: -100%; } 
+ 30%, 100% { left: 150%; } 
+ }
+
+@media (max-width: 640px){ .btn-pav-shimmer { width: 100%; padding: 1.4rem 2.0rem; font-size: 1.5rem; }  }
+
+/* 사전 참여신청 모달 전용 (헤더/푸터 고정 + 바디 스크롤 3단 구조) */
+.modal-preapply-box { width: 100%; max-width: 60.0rem; max-height: 85vh; display: flex; flex-direction: column; overflow: hidden; background-color: #ffffff; border-radius: 2.0rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); padding: 0; }
+.modal-preapply-box .modal-header { padding: 2.4rem 2.8rem 1.8rem; border-bottom: 1px solid #f1f5f9; flex-shrink: 0; align-items: flex-start; }
+.modal-preapply-box .modal-tit-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.modal-preapply-box .modal-title { font-size: 2.0rem; font-weight: 800; color: #111827; letter-spacing: -0.02em; margin: 0; }
+.modal-preapply-box .modal-sub-tit { font-size: 1.35rem; color: #64748b; margin: 0; }
+
+.modal-preapply-box .modal-body { flex: 1; padding: 2.4rem 2.8rem; overflow-y: auto; }
+
+.preapply-form-wrap { display: flex; flex-direction: column; }
+.preapply-row { display: flex; align-items: center; padding: 1.4rem 0.4rem; border-bottom: 1px solid #f1f5f9; font-size: 1.45rem; }
+.preapply-row.align-top { align-items: flex-start; padding-top: 1.8rem; }
+.preapply-row .p-label { width: 13.0rem; font-weight: 600; color: #111827; line-height: 1.4; flex-shrink: 0; }
+.preapply-row .p-val { flex: 1; color: #334155; }
+.preapply-row .p-val strong { font-weight: 600; color: #111827; }
+
+.preapply-textarea { width: 100%; height: 11.0rem; padding: 1.2rem 1.4rem; font-size: 1.35rem; color: #111827; border: 1px solid #d1d5db; border-radius: 0.8rem; outline: none; resize: none; box-sizing: border-box; transition: border-color 0.2s ease; }
+.preapply-textarea:focus { border-color: #059669; }
+.preapply-textarea::placeholder { color: #9ca3af; font-size: 1.3rem; }
+
+/* 유의사항 박스 */
+.preapply-notice-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1.2rem; padding: 1.8rem 2.0rem; }
+.p-notice-head { display: block; font-size: 1.35rem; font-weight: 700; color: #111827; margin-bottom: 1.0rem; }
+.p-notice-bullet-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+.p-notice-bullet-list li { position: relative; padding-left: 1.4rem; font-size: 1.25rem; color: #64748b; line-height: 1.55; word-break: keep-all; }
+.p-notice-bullet-list li::before { content: '•'; position: absolute; left: 0; top: 0; color: #64748b; font-size: 1.4rem; line-height: 1.4; }
+
+/* 하단 고정 푸터 */
+.modal-preapply-box .modal-footer { padding: 1.6rem 2.8rem 2.4rem; border-top: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background-color: #ffffff; }
+.btn-preapply-submit { width: 100%; height: 4.8rem; font-size: 1.55rem; font-weight: 700; border-radius: 0.8rem; }
+
+@media (max-width: 640px) {
+  .modal-preapply-box { max-height: 90vh; }
+  .modal-preapply-box .modal-header { padding: 2.0rem 1.6rem 1.4rem; }
+  .modal-preapply-box .modal-body { padding: 1.6rem; }
+  .modal-preapply-box .modal-footer { padding: 1.2rem 1.6rem 1.6rem; }
+  .preapply-row { flex-direction: column; align-items: flex-start; gap: 0.6rem; padding: 1.2rem 0; }
+  .preapply-row .p-label { width: 100%; }
+  .preapply-row .p-val { width: 100%; }
+}
+/* === //온라인 채용관 고정 시스템 영역 === */
