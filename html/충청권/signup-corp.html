@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>충청권 내일이음 - 개인회원 가입</title>
+  <title>충청권 내일이음 - 기업회원 가입</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -131,7 +131,7 @@
     <main class="site-main">
         <section class="signup-sec pd6">
             <div class="inner-wrap">
-                <!-- 상단 네비게이션: 1, 2단계에서 노출, 3단계(완료) 시 숨김 처리 -->
+                <!-- 상단 네비게이션 -->
                 <div class="signup-top-bar flex-between" id="signupTopNav">
                     <a href="login.html" class="btn-back-link">
                         <i data-lucide="arrow-left"></i>
@@ -140,8 +140,8 @@
                 </div>
 
                 <div class="signup-card">
-                    <!-- 단계 표시 스텝 바 (Step Indicator) -->
-                    <div class="signup-step-indicator" id="stepIndicator">
+                    <!-- 단계 표시 스텝 바 (4단계 인디케이터) -->
+                    <div class="signup-step-indicator corp-step-indicator" id="stepIndicator">
                         <div class="step-item step-item-1 active">
                             <span class="step-num">1</span>
                             <span class="step-label">약관동의</span>
@@ -149,20 +149,25 @@
                         <div class="step-line step-line-1"></div>
                         <div class="step-item step-item-2">
                             <span class="step-num">2</span>
-                            <span class="step-label">정보입력</span>
+                            <span class="step-label">기업인증</span>
                         </div>
                         <div class="step-line step-line-2"></div>
                         <div class="step-item step-item-3">
                             <span class="step-num">3</span>
+                            <span class="step-label">정보입력</span>
+                        </div>
+                        <div class="step-line step-line-3"></div>
+                        <div class="step-item step-item-4">
+                            <span class="step-num">4</span>
                             <span class="step-label">가입완료</span>
                         </div>
                     </div>
 
-                    <!-- [Step 1] 약관동의 영역 -->
+                    <!--  [Step 1] 약관동의 -->
                     <div class="signup-step-panel step-1 active">
                         <div class="signup-panel-head">
-                            <h1 class="signup-main-title">약관동의</h1>
-                            <p class="signup-sub-desc">충청권 내일이음 서비스 이용을 위해 약관에 동의해 주세요.</p>
+                            <h1 class="signup-main-title">기업회원 약관동의</h1>
+                            <p class="signup-sub-desc">충청권 내일이음 기업 서비스 이용을 위해 약관에 동의해 주세요.</p>
                         </div>
 
                         <div class="terms-agree-container">
@@ -170,150 +175,248 @@
                                 <label class="custom-check-label inline-check">
                                     <input type="checkbox" id="chkAllTerms">
                                     <span class="custom-checkbox"></span>
-                                    <strong class="check-txt text-strong">이용약관 및 개인정보 수집·이용에 모두 동의합니다.</strong>
+                                    <strong class="check-txt text-strong">기업회원 이용약관 및 개인정보 수집·이용에 모두 동의합니다.</strong>
                                 </label>
                             </div>
 
-                            <!-- 개별 약관 목록 -->
                             <div class="terms-list-group">
-                                <!-- 약관 1: 서비스 이용약관 (필수) -->
                                 <div class="terms-row-item flex-between">
                                     <label class="custom-check-label inline-check">
                                         <input type="checkbox" class="chk-term req-term" id="chkTerm1">
                                         <span class="custom-checkbox"></span>
-                                        <span class="check-txt"><strong class="badge-req-term">(필수)</strong> 서비스 이용약관 동의</span>
+                                        <span class="check-txt"><strong class="badge-req-term">(필수)</strong> 기업회원 이용약관 동의</span>
                                     </label>
-                                    <button type="button" class="btn-term-view btn-terms-modal" data-modal="modalTermService">내용보기 &gt;</button>
+                                    <button type="button" class="btn-term-view btn-terms-modal" data-modal="modalCorpTermService">내용보기 &gt;</button>
                                 </div>
 
-                                <!-- 약관 2: 개인정보 수집 및 이용 (필수) -->
                                 <div class="terms-row-item flex-between">
                                     <label class="custom-check-label inline-check">
                                         <input type="checkbox" class="chk-term req-term" id="chkTerm2">
                                         <span class="custom-checkbox"></span>
-                                        <span class="check-txt"><strong class="badge-req-term">(필수)</strong> 개인정보 수집 및 이용 동의</span>
+                                        <span class="check-txt"><strong class="badge-req-term">(필수)</strong> 기업정보 수집 및 이용 동의</span>
                                     </label>
-                                    <button type="button" class="btn-term-view btn-terms-modal" data-modal="modalTermPrivacy">내용보기 &gt;</button>
+                                    <button type="button" class="btn-term-view btn-terms-modal" data-modal="modalCorpTermPrivacy">내용보기 &gt;</button>
                                 </div>
 
-                                <!-- 약관 3: 개인정보 제3자 제공 (필수) -->
                                 <div class="terms-row-item flex-between">
                                     <label class="custom-check-label inline-check">
                                         <input type="checkbox" class="chk-term req-term" id="chkTerm3">
                                         <span class="custom-checkbox"></span>
-                                        <span class="check-txt"><strong class="badge-req-term">(필수)</strong> 개인정보 제3자(채용기업) 제공 동의</span>
+                                        <span class="check-txt"><strong class="badge-req-term">(필수)</strong> 개인정보의 제3자 제공 동의</span>
                                     </label>
-                                    <button type="button" class="btn-term-view btn-terms-modal" data-modal="modalTermThirdParty">내용보기 &gt;</button>
+                                    <button type="button" class="btn-term-view btn-terms-modal" data-modal="modalCorpTermThirdParty">내용보기 &gt;</button>
                                 </div>
 
-                                <!-- 약관 4: 마케팅 알림 수신 (선택) -->
                                 <div class="terms-row-item flex-between">
                                     <label class="custom-check-label inline-check">
                                         <input type="checkbox" class="chk-term" id="chkTerm4">
                                         <span class="custom-checkbox"></span>
-                                        <span class="check-txt"><span class="badge-opt-term">(선택)</span> 마케팅 및 채용정보 알림 수신 동의</span>
+                                        <span class="check-txt"><span class="badge-opt-term">(선택)</span> 마케팅 정보 수신 동의</span>
                                     </label>
-                                    <button type="button" class="btn-term-view btn-terms-modal" data-modal="modalTermMarketing">내용보기 &gt;</button>
+                                    <button type="button" class="btn-term-view btn-terms-modal" data-modal="modalCorpTermMarketing">내용보기 &gt;</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 1단계 하단 액션 버튼 -->
                         <div class="signup-btn-group flex-center mt-3">
                             <button type="button" class="btn btn-primary btn-signup-action" id="btnStep1Next" disabled>다음 단계</button>
                         </div>
                     </div>
 
-                    <!-- [Step 2] 회원정보 입력 및 본인인증 -->
+                    <!-- [Step 2] 기업인증 -->
                     <div class="signup-step-panel step-2">
                         <div class="signup-panel-head">
-                            <h1 class="signup-main-title">정보입력</h1>
-                            <p class="signup-sub-desc">회원가입에 필요한 기본 정보를 정확하게 입력해 주세요.</p>
+                            <h1 class="signup-main-title">기업인증</h1>
+                            <p class="signup-sub-desc">사업자등록번호를 입력하여 기업 등록 여부를 확인해 주세요.</p>
+                        </div>
+
+                        <div class="corp-cert-container">
+                            <!-- [1] 사업자등록번호 입력 -->
+                            <div class="c-form-group">
+                                <label class="c-form-label">사업자등록번호 <span class="text-emerald">*</span></label>
+                                <div class="input-with-btn">
+                                    <input type="text" id="corpBizNum" class="c-input" placeholder="사업자등록번호 입력 (예: 123-00-45678)" value="301-82-12345">
+                                    <button type="button" class="btn btn-dark btn-dup-check" id="btnCheckBizNum">확인</button>
+                                </div>
+                            </div>
+
+                            <!-- [2] 소속 회원 목록 박스 -->
+                            <div class="corp-member-box mt-3">
+                                <h3 class="corp-box-title">‘(주)글로벌파마 코리아’ 소속 회원</h3>
+                                <div class="corp-member-list">
+                                    <div class="corp-member-item flex-between">
+                                        <label class="custom-check-label inline-radio">
+                                            <input type="radio" name="corpMemberRadio" checked>
+                                            <span class="custom-radio"></span>
+                                            <span class="check-txt">홍*동 (kil**** / 010-****-1234)</span>
+                                        </label>
+                                        <a href="login.html" class="btn btn-dark btn-sm btn-corp-login">로그인 하기</a>
+                                    </div>
+                                    <div class="corp-member-item flex-between">
+                                        <label class="custom-check-label inline-radio">
+                                            <input type="radio" name="corpMemberRadio">
+                                            <span class="custom-radio"></span>
+                                            <span class="check-txt">김*수 (kim**** / 010-****-5678)</span>
+                                        </label>
+                                        <a href="login.html" class="btn btn-dark btn-sm btn-corp-login">로그인 하기</a>
+                                    </div>
+                                    <div class="corp-empty-member-txt tct">
+                                        <span>소속회원이 없습니다.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- [4] 등록된 기업정보 없음 안내 박스 -->
+                            <div class="corp-unregistered-box mt-3 tct">
+                                <div class="unreg-icon"><i data-lucide="alert-circle"></i></div>
+                                <strong class="unreg-tit">등록된 기업정보가 없습니다.</strong>
+                                <p class="unreg-desc">관리자에게 연락하여 기업등록을 먼저 진행해 주세요.<br>문의처: <strong>info@bizinfo.com</strong> (충청북도기업진흥원)</p>
+                            </div>
+
+                            <!-- [3] 이전 및 아이디 만들기 버튼 -->
+                            <div class="signup-btn-group flex-center mt-3">
+                                <button type="button" class="btn btn-signup-prev" id="btnStep2Prev">이전</button>
+                                <button type="button" class="btn btn-primary btn-signup-action" id="btnStep2Next">아이디 만들기</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [Step 3] 회원정보 입력 -->
+                    <div class="signup-step-panel step-3">
+                        <div class="signup-panel-head">
+                            <h1 class="signup-main-title">회원정보 입력</h1>
+                            <p class="signup-sub-desc">기업 채용 담당자 기본 정보 및 인증 서류를 입력해 주세요.</p>
                         </div>
 
                         <form class="signup-form-body" onsubmit="event.preventDefault();">
-                            <!-- 휴대폰 본인인증 박스 -->
-                            <div class="c-form-group">
-                                <label class="c-form-label">본인인증 <span class="text-emerald">*</span></label>
-                                <div class="auth-cert-box flex-between">
-                                    <div class="cert-info-txt">
-                                        <strong class="cert-title">휴대폰 본인인증</strong>
-                                        <span class="cert-desc">본인 명의의 휴대폰으로 인증을 진행해 주세요.</span>
+                            <!-- 섹션 1: 담당자 필수 정보 -->
+                            <div class="form-sub-section">
+                                <h3 class="form-sub-title">1. 필수 정보</h3>
+
+                                <div class="r-grid-2">
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">이름 <span class="text-emerald">*</span></label>
+                                        <input type="text" id="corpUserName" class="c-input" placeholder="이름 입력" value="홍길동">
                                     </div>
-                                    <button type="button" class="btn btn-dark btn-cert-action" id="btnCertPhone">
-                                        <i data-lucide="smartphone"></i>
-                                        <span>본인인증하기</span>
-                                    </button>
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">생년월일 <span class="text-emerald">*</span></label>
+                                        <input type="date" class="c-input" value="1990-03-03">
+                                    </div>
+                                </div>
+
+                                <div class="r-grid-2 mt-2">
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">연락처 <span class="text-emerald">*</span></label>
+                                        <input type="tel" class="c-input" placeholder="휴대폰 번호 입력" value="010-1234-5678">
+                                    </div>
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">이메일 <span class="text-emerald">*</span></label>
+                                        <input type="email" class="c-input" placeholder="이메일 주소 입력" value="hr@globalpharma.co.kr">
+                                    </div>
+                                </div>
+
+                                <div class="c-form-group mt-2">
+                                    <label class="c-form-label">아이디 <span class="text-emerald">*</span></label>
+                                    <div class="input-with-btn">
+                                        <input type="text" id="corpUserId" class="c-input" placeholder="영문, 숫자 포함 6~12자" value="global_hr">
+                                        <button type="button" class="btn btn-dark btn-dup-check">중복확인</button>
+                                    </div>
+                                    <span class="field-guide-msg text-emerald">※ 사용 가능한 아이디입니다.</span>
+                                </div>
+
+                                <div class="r-grid-2 mt-2">
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">비밀번호 <span class="text-emerald">*</span></label>
+                                        <input type="password" id="corpUserPw" class="c-input" placeholder="8~16자 영문, 숫자, 특수문자 조합">
+                                        <span class="field-guide-msg">※ 영문 대소문자, 숫자, 특수문자를 혼합하여 8자 이상</span>
+                                    </div>
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">비밀번호 확인 <span class="text-emerald">*</span></label>
+                                        <input type="password" id="corpUserPwConfirm" class="c-input" placeholder="비밀번호 재입력">
+                                        <span class="field-guide-msg text-emerald">※ 비밀번호 일치</span>
+                                    </div>
+                                </div>
+
+                                <div class="c-form-group mt-2">
+                                    <label class="c-form-label">사업장 주소 <span class="text-emerald">*</span></label>
+                                    <div class="address-input-wrap">
+                                        <input type="text" class="c-input" placeholder="기본 주소" value="충청북도 청주시 흥덕구 풍산로 50(가경동 1508-1)" readonly>
+                                        <button type="button" class="btn btn-dark btn-addr-search">우편번호 검색</button>
+                                    </div>
+                                    <input type="text" class="c-input" placeholder="상세 주소 입력" value="충청북도기업진흥원 A동 1108호">
+                                </div>
+
+                                <div class="c-form-group mt-2">
+                                    <label class="c-form-label">마케팅 수신 동의</label>
+                                    <div class="j-chips-wrap">
+                                        <label class="custom-check-label inline-check mr1">
+                                            <input type="checkbox" checked>
+                                            <span class="custom-checkbox"></span>
+                                            <span class="check-txt">문자(SMS)</span>
+                                        </label>
+                                        <label class="custom-check-label inline-check">
+                                            <input type="checkbox" checked>
+                                            <span class="custom-checkbox"></span>
+                                            <span class="check-txt">이메일</span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- 아이디 입력 및 중복확인 + 안내 문구 추가 -->
-                            <div class="c-form-group mt-2">
-                                <label class="c-form-label">아이디 <span class="text-emerald">*</span></label>
-                                <div class="input-with-btn">
-                                    <input type="text" id="regId" class="c-input" placeholder="영문, 숫자 포함 6~12자">
-                                    <button type="button" class="btn btn-dark btn-dup-check">중복확인</button>
-                                </div>
-                                <span class="field-guide-msg text-emerald">※ 사용 가능한 아이디입니다.</span>
-                            </div>
+                            <!-- 섹션 2: 기업확인 정보 서류 첨부 -->
+                            <div class="form-sub-section mt4">
+                                <h3 class="form-sub-title">2. 기업확인 정보</h3>
 
-                            <!-- 비밀번호 & 비밀번호 확인 + 안내 문구 추가 -->
-                            <div class="r-grid-2 mt-2">
-                                <div class="c-form-group">
-                                    <label class="c-form-label">비밀번호 <span class="text-emerald">*</span></label>
-                                    <input type="password" id="regPw" class="c-input" placeholder="8~16자 영문, 숫자, 특수문자 조합">
-                                    <span class="field-guide-msg">※ 영문 대소문자, 숫자, 특수문자를 혼합하여 8자 이상</span>
+                                <div class="c-form-group mt-2">
+                                    <label class="c-form-label">사업자등록증 <span class="text-emerald">*</span></label>
+                                    <div class="file-input-row">
+                                        <input type="text" class="file-name-preview" placeholder="파일을 선택해주세요." readonly id="bizLicenseFileName">
+                                        <label class="btn-file-search">
+                                            찾아보기
+                                            <input type="file" class="blind-file-input" onchange="document.getElementById('bizLicenseFileName').value = this.files[0]?.name || ''">
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="c-form-group">
-                                    <label class="c-form-label">비밀번호 확인 <span class="text-emerald">*</span></label>
-                                    <input type="password" id="regPwConfirm" class="c-input" placeholder="비밀번호 재입력">
-                                    <span class="field-guide-msg text-emerald">※ 비밀번호 일치</span>
-                                </div>
-                            </div>
 
-                            <!-- 이름 (인증 연동) & 생년월일 -->
-                            <div class="r-grid-2 mt-2">
-                                <div class="c-form-group">
-                                    <label class="c-form-label">이름 <span class="text-emerald">*</span></label>
-                                    <input type="text" id="regName" class="c-input" placeholder="본인인증 시 자동입력" value="홍길동" readonly>
-                                </div>
-                                <div class="c-form-group">
-                                    <label class="c-form-label">생년월일 <span class="text-emerald">*</span></label>
-                                    <input type="date" class="c-input" value="1995-05-12">
+                                <div class="c-form-group mt-2">
+                                    <label class="c-form-label">재직증명서 <span class="text-emerald">*</span></label>
+                                    <div class="file-input-row">
+                                        <input type="text" class="file-name-preview" placeholder="파일을 선택해주세요." readonly id="empCertFileName">
+                                        <label class="btn-file-search">
+                                            찾아보기
+                                            <input type="file" class="blind-file-input" onchange="document.getElementById('empCertFileName').value = this.files[0]?.name || ''">
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- 이메일 주소 -->
-                            <div class="c-form-group mt-2">
-                                <label class="c-form-label">이메일 <span class="text-emerald">*</span></label>
-                                <input type="email" class="c-input" placeholder="example@email.com">
-                            </div>
-
+                            <!-- 3단계 하단 액션 버튼 -->
                             <div class="signup-btn-group flex-center mt-3">
-                                <button type="button" class="btn btn-signup-prev" id="btnStep2Prev">이전</button>
-                                <button type="button" class="btn btn-primary btn-signup-action" id="btnStep2Submit">가입완료</button>
+                                <button type="button" class="btn btn-signup-prev" id="btnStep3Prev">이전</button>
+                                <button type="button" class="btn btn-primary btn-signup-action" id="btnStep3Submit">가입완료</button>
                             </div>
                         </form>
                     </div>
 
-                    <!-- [Step 3] 가입완료 안내 -->
-                    <div class="signup-step-panel step-3">
+                    <!-- [Step 4] 가입완료 안내 -->
+                    <div class="signup-step-panel step-4">
                         <div class="signup-complete-container tct">
                             <div class="complete-badge-icon">
                                 <i data-lucide="check"></i>
                             </div>
-                            <h1 class="complete-head-tit">회원가입이 완료되었습니다.</h1>
+                            <h1 class="complete-head-tit">기업회원 가입이 완료되었습니다.</h1>
                             <p class="complete-head-desc">충청권 내일이음의 다양한 채용 정보와 지원 서비스를 자유롭게 이용하실 수 있습니다.</p>
 
+                            <!-- 슬림 미니 정보 패스 -->
                             <div class="complete-mini-pass">
                                 <div class="pass-col">
-                                    <span class="p-label">이름</span>
-                                    <strong class="p-val" id="summaryName">홍길동</strong>
+                                    <span class="p-label">담당자</span>
+                                    <strong class="p-val" id="summaryCorpName">홍길동</strong>
                                 </div>
                                 <div class="pass-divider"></div>
                                 <div class="pass-col">
                                     <span class="p-label">아이디</span>
-                                    <strong class="p-val text-emerald" id="summaryId">kildong</strong>
+                                    <strong class="p-val text-emerald" id="summaryCorpId">global_hr</strong>
                                 </div>
                             </div>
 
@@ -397,74 +500,65 @@
         </div>
     </div>
 
-    <!-- 약관동의 1단계 [내용보기] 전용 팝업 모달 4종 -->
-    <div class="site-modal" id="modalTermService">
+    <!-- 기업회원 1단계 약관 팝업 모달 4종 -->
+    <div class="site-modal" id="modalCorpTermService">
         <div class="modal-dim"></div>
         <div class="modal-box">
             <div class="modal-header flex-between">
-                <h3 class="modal-title">서비스 이용약관</h3>
+                <h3 class="modal-title">기업회원 이용약관</h3>
                 <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
             </div>
             <div class="modal-body custom-scroll">
                 <p class="modal-section-title">제 1 조 (목적)</p>
-                <p class="modal-text">본 약관은 충청권 내일이음 온라인 채용관(이하 "플랫폼")이 제공하는 구인·구직 서비스 및 제반 온라인 기능의 이용 조건과 절차를 규정함을 목적으로 합니다.</p>
-                <p class="modal-section-title">제 2 조 (용어의 정의)</p>
-                <p class="modal-text">1. "회원"이란 플랫폼에 개인정보를 제공하여 회원 등록을 한 자로서 플랫폼의 정보를 지속적으로 제공받으며 서비스를 이용할 수 있는 자를 말합니다.</p>
-                <p class="modal-text">2. "아이디(ID)"라 함은 회원의 식별과 서비스 이용을 위해 회원이 정하고 플랫폼이 승인하는 문자와 숫자의 조합을 의미합니다.</p>
+                <p class="modal-text">본 약관은 기업회원이 충청권 내일이음 플랫폼의 구인 서비스 및 기업 지원 솔루션을 이용함에 있어 필요한 제반 사항을 규정함을 목적으로 합니다.</p>
+                <p class="modal-section-title">제 2 조 (기업회원의 의무)</p>
+                <p class="modal-text">1. 기업회원은 신뢰할 수 있는 정확한 채용 정보만을 등록하여야 하며, 구직자의 개인정보를 채용 전형 이외의 용도로 사용할 수 없습니다.</p>
             </div>
         </div>
     </div>
 
-    <div class="site-modal" id="modalTermPrivacy">
+    <div class="site-modal" id="modalCorpTermPrivacy">
         <div class="modal-dim"></div>
         <div class="modal-box">
             <div class="modal-header flex-between">
-                <h3 class="modal-title">개인정보 수집 및 이용 동의</h3>
+                <h3 class="modal-title">기업정보 수집 및 이용 동의</h3>
                 <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
             </div>
             <div class="modal-body custom-scroll">
-                <p class="modal-section-title">1. 수집하는 개인정보 항목</p>
-                <p class="modal-text">- 필수항목: 이름, 생년월일, 아이디, 비밀번호, 휴대폰 번호, 이메일 주소</p>
-                <p class="modal-section-title">2. 개인정보 수집 및 이용 목적</p>
-                <p class="modal-text">- 구직자 본인 식별 및 회원관리, 입사지원 서비스 제공, 맞춤 취업 지원 프로그램 안내</p>
-                <p class="modal-section-title">3. 개인정보의 보유 및 이용 기간</p>
-                <p class="modal-text">- 회원 탈퇴 시까지 보관하며, 관계 법령에 따라 보존할 필요가 있는 경우 해당 법령이 정한 기간 동안 보관합니다.</p>
+                <p class="modal-section-title">1. 수집 항목</p>
+                <p class="modal-text">- 사업자등록번호, 기업명, 대표자명, 사업장 주소, 담당자 이름, 연락처, 이메일, 사업자등록증, 재직증명서</p>
+                <p class="modal-section-title">2. 이용 목적</p>
+                <p class="modal-text">- 기업 신원 확인, 채용공고 관리 권한 부여, 인재 검색 및 채용 매칭 솔루션 제공</p>
             </div>
         </div>
     </div>
 
-    <div class="site-modal" id="modalTermThirdParty">
+    <div class="site-modal" id="modalCorpTermThirdParty">
         <div class="modal-dim"></div>
         <div class="modal-box">
             <div class="modal-header flex-between">
-                <h3 class="modal-title">개인정보 제3자 제공 동의</h3>
+                <h3 class="modal-title">개인정보의 제3자 제공 동의</h3>
                 <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
             </div>
             <div class="modal-body custom-scroll">
-                <p class="modal-section-title">1. 제공받는 자</p>
-                <p class="modal-text">- 구직자가 직접 입사지원한 충청권 내일이음 참여 기업</p>
-                <p class="modal-section-title">2. 제공 목적</p>
-                <p class="modal-text">- 지원자의 채용 전형 진행, 서류 심사, 면접 일정 안내 및 채용 결과 통보</p>
-                <p class="modal-section-title">3. 제공하는 개인정보 항목</p>
-                <p class="modal-text">- 입사지원서에 기재된 모든 정보 (이름, 연락처, 이메일, 학력, 경력, 자격사항, 자기소개서 등)</p>
+                <p class="modal-section-title">1. 제공 목적</p>
+                <p class="modal-text">- 충북권역 고용지원 지자체 사업 연계 및 채용 보조금 지원 심사</p>
+                <p class="modal-section-title">2. 제공받는 기관</p>
+                <p class="modal-text">- 충청북도, 충청북도기업진흥원, 고용노동부 유관 기관</p>
             </div>
         </div>
     </div>
 
-    <div class="site-modal" id="modalTermMarketing">
+    <div class="site-modal" id="modalCorpTermMarketing">
         <div class="modal-dim"></div>
         <div class="modal-box">
             <div class="modal-header flex-between">
-                <h3 class="modal-title">마케팅 및 채용정보 알림 수신 동의</h3>
+                <h3 class="modal-title">마케팅 정보 수신 동의</h3>
                 <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
             </div>
             <div class="modal-body custom-scroll">
-                <p class="modal-section-title">1. 수신 목적</p>
-                <p class="modal-text">- 충북권역 신규 우수 채용공고 추천, 취업박람회 및 일자리 지원 정책 이벤트 안내</p>
-                <p class="modal-section-title">2. 발송 매체</p>
-                <p class="modal-text">- 이메일, 카카오톡 알림톡, SMS/LMS</p>
-                <p class="modal-section-title">3. 철회 안내</p>
-                <p class="modal-text">- 마이페이지 회원정보 수정 메뉴에서 언제든지 수신 동의를 철회하실 수 있습니다.</p>
+                <p class="modal-section-title">1. 수신 안내</p>
+                <p class="modal-text">- 기업 채용 박람회 참가 안내, 청년 채용 장려금 정책 정보 및 세미나 소식을 안내합니다.</p>
             </div>
         </div>
     </div>
@@ -473,43 +567,47 @@
     <script src="./js/style.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        // 단계별 패널 요소
+        // 패널 요소들 (4단계)
         const step1 = document.querySelector('.signup-step-panel.step-1');
         const step2 = document.querySelector('.signup-step-panel.step-2');
         const step3 = document.querySelector('.signup-step-panel.step-3');
+        const step4 = document.querySelector('.signup-step-panel.step-4');
 
-        // 스텝 바 번호 및 라인
+        // 스텝 바 요소들
         const stepItem1 = document.querySelector('.step-item-1');
         const stepItem2 = document.querySelector('.step-item-2');
         const stepItem3 = document.querySelector('.step-item-3');
+        const stepItem4 = document.querySelector('.step-item-4');
+
         const stepLine1 = document.querySelector('.step-line-1');
         const stepLine2 = document.querySelector('.step-line-2');
+        const stepLine3 = document.querySelector('.step-line-3');
 
-        // 제어 버튼들
+        // 이동 제어 버튼들
         const btnStep1Next = document.getElementById('btnStep1Next');
         const btnStep2Prev = document.getElementById('btnStep2Prev');
-        const btnStep2Submit = document.getElementById('btnStep2Submit');
-        const btnCertPhone = document.getElementById('btnCertPhone');
+        const btnStep2Next = document.getElementById('btnStep2Next');
+        const btnStep3Prev = document.getElementById('btnStep3Prev');
+        const btnStep3Submit = document.getElementById('btnStep3Submit');
+        const btnCheckBizNum = document.getElementById('btnCheckBizNum');
 
-        // 체크박스 요소들
+        // 체크박스 제어
         const chkAll = document.getElementById('chkAllTerms');
         const chkTerms = document.querySelectorAll('.chk-term');
         const reqTerms = document.querySelectorAll('.req-term');
 
-        // [로직 1] 필수 약관 동의 체크 여부 확인
+        // [로직 1] 1단계 필수 약관 체크 확인
         const checkReqTerms = () => {
           let allReqChecked = true;
           reqTerms.forEach(chk => { if (!chk.checked) allReqChecked = false; });
           if (btnStep1Next) btnStep1Next.disabled = !allReqChecked;
         };
 
-        // 전체 동의 클릭 이벤트
         chkAll?.addEventListener('change', (e) => {
           chkTerms.forEach(chk => chk.checked = e.target.checked);
           checkReqTerms();
         });
 
-        // 개별 약관 동의 클릭 이벤트
         chkTerms.forEach(chk => {
           chk.addEventListener('change', () => {
             const allChecked = Array.from(chkTerms).every(c => c.checked);
@@ -528,13 +626,9 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // [로직 3] 본인인증 버튼 클릭 이벤트 (API 연동 영역)
-        btnCertPhone?.addEventListener('click', () => {
-          alert('휴대폰 본인인증이 완료되었습니다.');
-          btnCertPhone.classList.remove('btn-dark');
-          btnCertPhone.classList.add('btn-primary');
-          btnCertPhone.innerHTML = '<i data-lucide="check"></i><span>인증완료</span>';
-          if (typeof lucide !== 'undefined') lucide.createIcons();
+        // [로직 3] 2단계 사업자등록번호 확인 버튼 시뮬레이션
+        btnCheckBizNum?.addEventListener('click', () => {
+          alert('사업자등록번호 인증이 완료되었습니다.');
         });
 
         // [로직 4] 2단계 -> 1단계 이전 이동
@@ -547,21 +641,40 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // [로직 5] 2단계 -> 3단계 가입완료 화면 전환
-        btnStep2Submit?.addEventListener('click', () => {
-          const inputId = document.getElementById('regId')?.value;
-          const inputName = document.getElementById('regName')?.value;
-
-          if (inputId) document.getElementById('summaryId').textContent = inputId;
-          if (inputName) document.getElementById('summaryName').textContent = inputName;
-
+        // [로직 5] 2단계 -> 3단계 이동 (아이디 만들기)
+        btnStep2Next?.addEventListener('click', () => {
           step2.classList.remove('active');
           step3.classList.add('active');
 
           stepItem3.classList.add('active');
           stepLine2.classList.add('active');
-          
-          // 완료 화면 진입 시 상단 이전 네비게이션 숨김
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // [로직 6] 3단계 -> 2단계 이전 이동
+        btnStep3Prev?.addEventListener('click', () => {
+          step3.classList.remove('active');
+          step2.classList.add('active');
+
+          stepItem3.classList.remove('active');
+          stepLine2.classList.remove('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // [로직 7] 3단계 -> 4단계 가입완료 화면 전환
+        btnStep3Submit?.addEventListener('click', () => {
+          const inputCorpName = document.getElementById('corpUserName')?.value;
+          const inputCorpId = document.getElementById('corpUserId')?.value;
+
+          if (inputCorpName) document.getElementById('summaryCorpName').textContent = inputCorpName;
+          if (inputCorpId) document.getElementById('summaryCorpId').textContent = inputCorpId;
+
+          step3.classList.remove('active');
+          step4.classList.add('active');
+
+          stepItem4.classList.add('active');
+          stepLine3.classList.add('active');
+
           const topNav = document.getElementById('signupTopNav');
           if (topNav) topNav.style.display = 'none';
 
