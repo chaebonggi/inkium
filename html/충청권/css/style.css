@@ -1049,7 +1049,6 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
 .btn-complete-sub:hover { background-color: #f1f5f9; border-color: #94a3b8; }
 .btn-complete-main { width: 16.0rem; height: 4.8rem; font-size: 1.45rem; font-weight: 700; border-radius: 0.8rem; }
 
-/* 640px 이하 태블릿/모바일 */
 @media (max-width: 640px) {
   .signup-card { padding: 3.2rem 2.0rem; }
   .signup-step-indicator { margin-bottom: 2.8rem; padding-bottom: 2.0rem; }
@@ -1070,7 +1069,6 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
   .btn-complete-sub, .btn-complete-main { width: 100%; justify-content: center; }
 }
 
-/* 480px 이하 초소형 모바일 특화 반응형 */
 @media (max-width: 480px) {
   .signup-card { padding: 2.4rem 1.4rem; }
   .signup-main-title { font-size: 2.1rem; }
