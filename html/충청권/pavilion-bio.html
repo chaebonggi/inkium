@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>충청권 내일이음 - 미래모빌리티 온라인 채용관</title>
+  <title>충청권 내일이음 - 바이오·헬스케어 온라인 채용관</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -26,8 +26,8 @@
                                 <i data-lucide="chevron-down"></i>
                             </a>
                             <div class="nav-dropdown-menu">
-                                <a href="pavilion-bio.html" class="dropdown-link">바이오채용관</a>
-                                <a href="pavilion-mobility.html" class="dropdown-link active">미래모빌리티채용관</a>
+                                <a href="pavilion-bio.html" class="dropdown-link active">바이오채용관</a>
+                                <a href="pavilion-mobility.html" class="dropdown-link">미래모빌리티채용관</a>
                                 <a href="pavilion-chungcheong.html" class="dropdown-link">충청권 일자리박람회</a>
                             </div>
                         </div>
@@ -94,8 +94,8 @@
                             <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
                         </button>
                         <div class="drawer-sub-menu">
-                            <a href="pavilion-bio.html" class="drawer-sub-link">바이오채용관</a>
-                            <a href="pavilion-mobility.html" class="drawer-sub-link active">미래모빌리티채용관</a>
+                            <a href="pavilion-bio.html" class="drawer-sub-link active">바이오채용관</a>
+                            <a href="pavilion-mobility.html" class="drawer-sub-link">미래모빌리티채용관</a>
                             <a href="pavilion-chungcheong.html" class="drawer-sub-link">충청권 내일이음 취업박람회</a>
                         </div>
                     </div>
@@ -128,32 +128,28 @@
 
     <!-- 채용관 상세 본문 -->
     <main class="site-main">
-
         
-        <!-- 에디터 템플릿 -->
+        <!-- [에디터 템플릿] 바이오·헬스케어 테마 (관리자 에디터 등록 영역) -->
         <style>
             .pavilion-detail-hero-sec { background-color: #f8fafc; }
-            .pav-hero-unified-board { position: relative; width: 100%; border-radius: 2.4rem; overflow: hidden; background-color: #0b1528; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); }
-            .pav-hero-unified-board.theme-mobility-bg { background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80') center center / cover no-repeat; }
+            .pav-hero-unified-board { position: relative; width: 100%; border-radius: 2.4rem; overflow: hidden; background-color: #061e1b; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); }
             .pav-hero-unified-board.theme-bio-bg { background: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80') center center / cover no-repeat; }
-            .pav-hero-unified-board.theme-chungcheong-bg { background: url('https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?auto=format&fit=crop&q=80') center center / cover no-repeat; }
-            .pav-unified-overlay { position: absolute; inset: 0; background: radial-gradient(circle at 50% 30%, rgba(13, 34, 58, 0.75) 0%, rgba(8, 17, 31, 0.94) 80%, #040913 100%); backdrop-filter: blur(3px); }
+            .pav-unified-overlay { position: absolute; inset: 0; background: radial-gradient(circle at 50% 30%, rgba(6, 44, 38, 0.8) 0%, rgba(4, 25, 22, 0.95) 80%, #021210 100%); backdrop-filter: blur(3px); }
             .pav-unified-content { position: relative; z-index: 2; padding: 6.4rem 3.2rem 4.8rem; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-            .pav-pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.8rem 2.0rem; border-radius: 9999px; background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.4); color: #ffffff; font-size: 1.35rem; font-weight: 600; margin-bottom: 2.4rem; }
-            .pav-pill span { color: #38bdf8; font-weight: 700; }
+            .pav-pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.8rem 2.0rem; border-radius: 9999px; background: rgba(5, 150, 105, 0.2); border: 1px solid rgba(16, 185, 129, 0.45); color: #ffffff; font-size: 1.35rem; font-weight: 600; margin-bottom: 2.4rem; }
+            .pav-pill span { color: #34d399; font-weight: 700; }
             .pav-main-title { font-size: 7rem; font-weight: 900; color: #ffffff; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 2.0rem; }
-            .text-gradient-cyan { background: linear-gradient(135deg, #38bdf8 0%, #22d3ee 50%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+            .text-gradient-emerald { background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
             .pav-main-desc { font-size: 1.65rem; color: #cbd5e1; line-height: 1.6; word-break: keep-all; margin-bottom: 3.6rem; font-weight: 500; }
             .pav-fields-grid { display: flex; gap: 1.4rem; width: 100%; max-width: 44.0rem; justify-content: center; }
-            .field-item-card { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); padding: 1.6rem 1.0rem; border-radius: 1.4rem; backdrop-filter: blur(10px); transition: all 0.2s ease; }
-            .field-item-card:hover { transform: translateY(-4px); border-color: #38bdf8; background: rgba(15, 23, 42, 0.95); box-shadow: 0 8px 20px rgba(6, 182, 212, 0.2); }
-            .field-icon { width: 2.6rem; height: 2.6rem; color: #38bdf8; margin-bottom: 0.8rem; }
+            .field-item-card { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(6, 30, 26, 0.85); border: 1px solid rgba(52, 211, 153, 0.35); padding: 1.6rem 1.0rem; border-radius: 1.4rem; backdrop-filter: blur(10px); transition: all 0.2s ease; }
+            .field-item-card:hover { transform: translateY(-4px); border-color: #34d399; background: rgba(6, 30, 26, 0.95); box-shadow: 0 8px 20px rgba(5, 150, 105, 0.25); }
+            .field-icon { width: 2.6rem; height: 2.6rem; color: #34d399; margin-bottom: 0.8rem; }
             .field-txt { font-size: 1.35rem; font-weight: 700; color: #f8fafc; white-space: nowrap; }
-            .pav-board-bottom {  background-color: #050d1a; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 2.4rem 4.0rem; }
-            .pav-board-box {position: relative; z-index: 2; display: flex; align-items: center; gap: 2.4rem; max-width: 70rem; margin: 0 auto;}
-            .pav-trophy-icon { width: 5.2rem; height: 5.2rem; border-radius: 50%; background: rgba(6, 182, 212, 0.15); border: 1.5px solid rgba(6, 182, 212, 0.4); color: #38bdf8; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+            .pav-board-bottom { background-color: #031412; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 2.4rem 4.0rem; }
+            .pav-board-box { position: relative; z-index: 2; display: flex; align-items: center; gap: 2.4rem; max-width: 70rem; margin: 0 auto; }
+            .pav-trophy-icon { width: 5.2rem; height: 5.2rem; border-radius: 50%; background: rgba(5, 150, 105, 0.2); border: 1.5px solid rgba(52, 211, 153, 0.4); color: #34d399; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
             .pav-trophy-icon svg { width: 2.8rem; height: 2.8rem; }
-            .pav-bottom-wrap { border: 1px solid red; }
             .pav-bottom-txts .b-tit { display: block; font-size: 1.65rem; font-weight: 800; color: #ffffff; margin-bottom: 0.4rem; word-break: keep-all; letter-spacing: -0.01em; }
             .pav-bottom-txts .b-desc { font-size: 1.35rem; color: #94a3b8; line-height: 1.55; margin: 0; word-break: keep-all; }
             .pav-white-guide-board { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 2.4rem; padding: 4.8rem 4.0rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); }
@@ -161,28 +157,28 @@
             .p-guide-title-row { display: flex; align-items: center; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
             .p-deco-dots { color: #cbd5e1; font-size: 1.4rem; letter-spacing: 0.2em; }
             .p-guide-main-tit { font-size: 2.2rem; font-weight: 800; color: #111827; margin: 0; letter-spacing: -0.02em; }
-            .p-title-cyan-line { width: 12.0rem; height: 3px; background-color: #06b6d4; margin: 1.2rem auto 0; border-radius: 2px; }
+            .p-title-emerald-line { width: 12.0rem; height: 3px; background-color: #059669; margin: 1.2rem auto 0; border-radius: 2px; }
             .pav-info-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.0rem; }
             .p-grid-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 3.2rem 2.0rem; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 1.8rem; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
-            .p-grid-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); border-color: #38bdf8; }
+            .p-grid-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); border-color: #34d399; }
             .card-icon-circle { width: 5.6rem; height: 5.6rem; border-radius: 1.6rem; display: flex; align-items: center; justify-content: center; margin-bottom: 2.0rem; }
             .card-icon-circle svg { width: 2.6rem; height: 2.6rem; }
-            .ic-blue { background-color: #eff6ff; color: #2563eb; }
+            .ic-green { background-color: #ecfdf5; color: #059669; }
+            .ic-emerald { background-color: #d1fae5; color: #047857; }
+            .ic-teal { background-color: #f0fdfa; color: #0d9488; }
             .ic-cyan { background-color: #ecfeff; color: #0891b2; }
-            .ic-sky { background-color: #f0f9ff; color: #0284c7; }
-            .ic-indigo { background-color: #eef2ff; color: #4f46e5; }
             .card-tit { font-size: 1.7rem; font-weight: 800; color: #111827; margin-bottom: 1.0rem; }
             .card-desc { font-size: 1.35rem; color: #64748b; line-height: 1.55; margin: 0; word-break: keep-all; }
             .pav-detail-sub-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1.6rem; padding: 2.4rem 2.8rem; }
-            .box-sec-tit { display: flex; align-items: center; gap: 0.6rem; font-size: 1.5rem; font-weight: 800; color: #0891b2; margin-bottom: 1.4rem; }
+            .box-sec-tit { display: flex; align-items: center; gap: 0.6rem; font-size: 1.5rem; font-weight: 800; color: #059669; margin-bottom: 1.4rem; }
             .box-sec-tit svg { width: 1.7rem; height: 1.7rem; }
             .pav-clean-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem; }
             .pav-clean-list li { position: relative; padding-left: 1.6rem; font-size: 1.35rem; color: #475569; line-height: 1.55; }
-            .pav-clean-list li::before { content: ''; position: absolute; left: 0; top: 0.8rem; width: 5px; height: 5px; border-radius: 50%; background-color: #06b6d4; }
+            .pav-clean-list li::before { content: ''; position: absolute; left: 0; top: 0.8rem; width: 5px; height: 5px; border-radius: 50%; background-color: #059669; }
             .pav-clean-list strong { color: #111827; font-weight: 700; }
             .p-proc-line-steps { display: flex; align-items: center; justify-content: space-between; gap: 1.0rem; }
             .step-card { flex: 1; display: flex; flex-direction: column; align-items: center; background-color: #ffffff; border: 1px solid #e2e8f0; padding: 1.4rem 1.0rem; border-radius: 1.2rem; text-align: center; }
-            .step-badge { font-size: 1.1rem; font-weight: 800; color: #0284c7; margin-bottom: 0.4rem; }
+            .step-badge { font-size: 1.1rem; font-weight: 800; color: #059669; margin-bottom: 0.4rem; }
             .step-txt { font-size: 1.35rem; font-weight: 700; color: #1e293b; word-break: keep-all; }
             .step-arrow { color: #94a3b8; width: 1.8rem; height: 1.8rem; flex-shrink: 0; }
             .pav-detail-notice { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.6rem 2.0rem; background-color: #fef2f2; border: 1px solid #fecaca; border-radius: 1.2rem; }
@@ -192,72 +188,72 @@
 
             /* 반응형 */
             @media (max-width: 1024px) {
-            .pav-info-grid-4 { grid-template-columns: repeat(2, 1fr); }
-            .p-proc-line-steps { flex-direction: column; gap: 0.8rem; }
-            .step-card { width: 100%; flex-direction: row; justify-content: space-between; padding: 1.2rem 1.6rem; box-sizing: border-box; }
-            .step-badge { margin-bottom: 0; }
-            .step-arrow { transform: rotate(90deg); }
+              .pav-info-grid-4 { grid-template-columns: repeat(2, 1fr); }
+              .p-proc-line-steps { flex-direction: column; gap: 0.8rem; }
+              .step-card { width: 100%; flex-direction: row; justify-content: space-between; padding: 1.2rem 1.6rem; box-sizing: border-box; }
+              .step-badge { margin-bottom: 0; }
+              .step-arrow { transform: rotate(90deg); }
             }
-
             @media (max-width: 768px) {
-            .pav-main-title { font-size: 3.6rem; }
-            .pav-board-bottom { flex-direction: column; align-items: center; text-align: center; padding: 2.4rem 2.0rem; }
-            .pav-bottom-txts { text-align: center; }
-            .pav-white-guide-board { padding: 3.2rem 1.6rem; }
-            .p-guide-main-tit { font-size: 1.8rem; }
-            .pav-info-grid-4 { grid-template-columns: 1fr; }
+              .pav-main-title { font-size: 3.6rem; }
+              .pav-board-bottom { flex-direction: column; align-items: center; text-align: center; padding: 2.4rem 2.0rem; }
+              .pav-bottom-txts { text-align: center; }
+              .pav-white-guide-board { padding: 3.2rem 1.6rem; }
+              .p-guide-main-tit { font-size: 1.8rem; }
+              .pav-info-grid-4 { grid-template-columns: 1fr; }
             }
-
             @media (max-width: 480px) {
-            .pav-main-title { font-size: 2.8rem; }
-            .pav-fields-grid { flex-direction: column; gap: 0.8rem; }
-            .field-item-card { flex-direction: row; gap: 1.0rem; padding: 1.2rem; }
-            .field-icon { margin-bottom: 0; }
+              .pav-main-title { font-size: 2.8rem; }
+              .pav-fields-grid { flex-direction: column; gap: 0.8rem; }
+              .field-item-card { flex-direction: row; gap: 1.0rem; padding: 1.2rem; }
+              .field-icon { margin-bottom: 0; }
             }
         </style>
+        
         <section class="pavilion-detail-hero-sec pd3">
             <div class="inner-wrap">
-                <!-- 1. 상단 통이미지 히어로 배너 -->
-                <div class="pav-hero-unified-board theme-mobility-bg">
+                <!-- 1. 상단 통이미지 히어로 배너 (바이오) -->
+                <div class="pav-hero-unified-board theme-bio-bg">
                     <div class="pav-unified-overlay"></div>                    
                     <div class="pav-unified-content tct">
                         <span class="pav-pill">
-                            <span>미래를 움직이는 기술</span>, 당신이 주인공입니다</span>
+                            <span>생명과학의 미래를 연구할</span> 혁신 인재를 찾습니다
+                        </span>
                         <h1 class="pav-main-title">
-                            미래모빌리티<br>
-                            <span class="text-gradient-cyan">온라인 채용관</span>
+                            바이오·헬스케어<br>
+                            <span class="text-gradient-emerald">온라인 채용관</span>
                         </h1>
                         <p class="pav-main-desc">
-                            경쟁력을 갖춘 모빌리티 강소기업과 혁신 인재의<br>
+                            K-바이오를 선도하는 우수 기업들과 혁신 인재의<br>
                             ‘기분좋은 만남’이 시작됩니다.
                         </p>
 
-                        <!-- 핵심 분야 3종 퀵 카드 -->
+                        <!-- 핵심 분야 3종 퀵 카드 (바이오) -->
                         <div class="pav-fields-grid">
                             <div class="field-item-card">
-                                <i data-lucide="car" class="field-icon"></i>
-                                <span class="field-txt">자율주행</span>
+                                <i data-lucide="microscope" class="field-icon"></i>
+                                <span class="field-txt">신약개발</span>
                             </div>
                             <div class="field-item-card">
-                                <i data-lucide="zap" class="field-icon"></i>
-                                <span class="field-txt">전동화</span>
+                                <i data-lucide="activity" class="field-icon"></i>
+                                <span class="field-txt">디지털헬스</span>
                             </div>
                             <div class="field-item-card">
-                                <i data-lucide="cpu" class="field-icon"></i>
-                                <span class="field-txt">커넥티드</span>
+                                <i data-lucide="cross" class="field-icon"></i>
+                                <span class="field-txt">의료기기</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 하단 슬로건 띠 바 -->
+                    <!-- 하단 슬로건 띠 바 (바이오) -->
                     <div class="pav-board-bottom">
                         <div class="pav-board-box">
                             <div class="pav-trophy-icon">
                                 <i data-lucide="trophy"></i>
                             </div>
                             <div class="pav-bottom-txts">
-                                <strong class="b-tit">대한민국 미래 성장의 엔진, 미래모빌리티 산업의 주인공을 찾습니다.</strong>
-                                <p class="b-desc">미래모빌리티 우수기업 온라인 채용관은 자율주행, 전동화, 커넥티드 등 전 공정을 아우르는 고용창출 기업, 일자리관련 우수 등 기반 요건을 충족한 성장잠재 우수 강소기업을 모았습니다.</p>
+                                <strong class="b-tit">대한민국 미래 성장의 엔진, 바이오·헬스케어 산업의 주인공을 찾습니다.</strong>
+                                <p class="b-desc">바이오·헬스케어 우수기업 온라인 채용관은 신약개발, 디지털헬스, 의료기기 등 전 공정을 아우르는 고용창출 기업, 일자리관련 우수 등 기반 요건을 충족한 성장잠재 우수 강소기업을 모았습니다.</p>
                             </div>
                         </div>
                     </div>
@@ -268,34 +264,34 @@
                     <div class="p-guide-head tct">
                         <div class="p-guide-title-row">
                             <span class="p-deco-dots">•••••••••••</span>
-                            <h2 class="p-guide-main-tit">미래모빌리티 산업의 역사가 되는 곳, 이곳에서 미래를 설계해 보세요!</h2>
+                            <h2 class="p-guide-main-tit">바이오·헬스케어 산업의 역사가 되는 곳, 이곳에서 미래를 설계해 보세요!</h2>
                             <span class="p-deco-dots">•••••••••••</span>
                         </div>
-                        <div class="p-title-cyan-line"></div>
+                        <div class="p-title-emerald-line"></div>
                     </div>
 
                     <!-- 기본 정보 4단 그리드 카드 -->
                     <div class="pav-info-grid-4 mt-3">
                         <div class="p-grid-card">
-                            <div class="card-icon-circle ic-blue"><i data-lucide="calendar"></i></div>
+                            <div class="card-icon-circle ic-green"><i data-lucide="calendar"></i></div>
                             <strong class="card-tit">운영기간</strong>
                             <p class="card-desc">2026. 08. 01 ~ 10. 31<br>(온라인 상시 운영)</p>
                         </div>
 
                         <div class="p-grid-card">
-                            <div class="card-icon-circle ic-cyan"><i data-lucide="building-2"></i></div>
+                            <div class="card-icon-circle ic-emerald"><i data-lucide="building-2"></i></div>
                             <strong class="card-tit">참여대상</strong>
-                            <p class="card-desc">충청권 모빌리티·배터리<br>소부장 우수 중소·중견기업</p>
+                            <p class="card-desc">충청권 바이오·의약·의료<br>우수 중소·중견기업</p>
                         </div>
 
                         <div class="p-grid-card">
-                            <div class="card-icon-circle ic-sky"><i data-lucide="users"></i></div>
+                            <div class="card-icon-circle ic-teal"><i data-lucide="users"></i></div>
                             <strong class="card-tit">지원자격</strong>
-                            <p class="card-desc">모빌리티 산업 취업을<br>희망하는 구직자 누구나</p>
+                            <p class="card-desc">바이오·헬스케어 취업을<br>희망하는 구직자 누구나</p>
                         </div>
 
                         <div class="p-grid-card">
-                            <div class="card-icon-circle ic-indigo"><i data-lucide="map-pin"></i></div>
+                            <div class="card-icon-circle ic-cyan"><i data-lucide="map-pin"></i></div>
                             <strong class="card-tit">오프라인 연계</strong>
                             <p class="card-desc">충북기업진흥원 컨벤션홀<br>(매월 현장면접 진행)</p>
                         </div>
@@ -305,8 +301,8 @@
                     <div class="pav-detail-sub-box mt-3">
                         <strong class="box-sec-tit"><i data-lucide="sparkles"></i> 주요 운영 프로그램</strong>
                         <ul class="pav-clean-list">
-                            <li><strong>1:1 취업 컨설팅</strong> : 이력서/자기소개서 무료 첨삭 및 맞춤형 직무 코칭 지원</li>
-                            <li><strong>기업 온라인 채용설명회</strong> : 주요 참여기업 인사담당자 라이브 Q&A 및 채용 특강</li>
+                            <li><strong>1:1 취업 컨설팅</strong> : 이력서/자기소개서 무료 첨삭 및 바이오 직무 전문 코칭</li>
+                            <li><strong>바이오 채용설명회</strong> : 주요 참여기업 인사담당자 라이브 Q&A 및 채용 특강</li>
                             <li><strong>면접 지원금 혜택</strong> : 1차 서류 합격자 대상 오프라인 실전 면접비 지원</li>
                         </ul>
                     </div>
@@ -355,91 +351,91 @@
                 <div class="pav-comp-grid mt-3">
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="오토디맨스 모빌리티" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="./images/comp_logo_sample.png" alt="바이오메디텍" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=100&auto=format&fit=crop&q=60'">
                         </div>
-                        <h3 class="p-comp-name">오토디맨스 모빌리티</h3>
-                        <p class="p-comp-desc">자율주행 인지 AI 및 차세대 모빌리티 플랫폼을 선도합니다.</p>
+                        <h3 class="p-comp-name">바이오메디텍</h3>
+                        <p class="p-comp-desc">차세대 항암 면역 치료제 및 단백질 신약을 개발합니다.</p>
                         <span class="p-comp-badge">진행중 공고 <strong>2</strong>건</span>
                     </a>
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="넥스트에너지 솔루션" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="./images/comp_logo_sample.png" alt="셀루션 헬스케어" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=100&auto=format&fit=crop&q=60'">
                         </div>
-                        <h3 class="p-comp-name">넥스트에너지 솔루션</h3>
-                        <p class="p-comp-desc">고효율 전기차 배터리 팩 및 차세대 에너지 저장 장치를 설계합니다.</p>
+                        <h3 class="p-comp-name">셀루션 헬스케어</h3>
+                        <p class="p-comp-desc">AI 기반 실시간 디지털 헬스케어 진단 솔루션을 연구합니다.</p>
                         <span class="p-comp-badge">진행중 공고 <strong>1</strong>건</span>
                     </a>
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="충청 모빌리티 혁신기업1" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="./images/comp_logo_sample.png" alt="메디인사이트" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=100&auto=format&fit=crop&q=60'">
                         </div>
-                        <h3 class="p-comp-name">충청 모빌리티 혁신기업1</h3>
-                        <p class="p-comp-desc">자율주행, 커넥티드, 전동화 등 미래 모빌리티 기술을 선도합니다.</p>
+                        <h3 class="p-comp-name">메디인사이트</h3>
+                        <p class="p-comp-desc">첨단 체외진단 및 정밀 분자진단 키트를 제조 및 공급합니다.</p>
                         <span class="p-comp-badge">진행중 공고 <strong>3</strong>건</span>
                     </a>
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="충청 모빌리티 혁신기업2" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="./images/comp_logo_sample.png" alt="충청 바이오 혁신기업1" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=100&auto=format&fit=crop&q=60'">
                         </div>
-                        <h3 class="p-comp-name">충청 모빌리티 혁신기업2</h3>
-                        <p class="p-comp-desc">자율주행 인지 AI 및 차세대 모빌리티 플랫폼을 선도합니다.</p>
+                        <h3 class="p-comp-name">충청 바이오 혁신기업1</h3>
+                        <p class="p-comp-desc">세포 유전자 치료제(CGT) CDMO 생산 전문 기업입니다.</p>
                         <span class="p-comp-badge">진행중 공고 <strong>2</strong>건</span>
                     </a>
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="충청 모빌리티 혁신기업3" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="./images/comp_logo_sample.png" alt="충청 바이오 혁신기업2" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=100&auto=format&fit=crop&q=60'">
                         </div>
-                        <h3 class="p-comp-name">충청 모빌리티 혁신기업3</h3>
-                        <p class="p-comp-desc">고효율 전기차 배터리 팩 및 차세대 에너지 저장 장치를 설계합니다.</p>
+                        <h3 class="p-comp-name">충청 바이오 혁신기업2</h3>
+                        <p class="p-comp-desc">고정밀 바이오 센서 및 스마트 웨어러블 헬스케어 장비를 설계합니다.</p>
                         <span class="p-comp-badge">진행중 공고 <strong>1</strong>건</span>
                     </a>
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="모빌리티 스마트랩" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="./images/comp_logo_sample.png" alt="그린바이오 랩" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=100&auto=format&fit=crop&q=60'">
                         </div>
-                        <h3 class="p-comp-name">모빌리티 스마트랩</h3>
-                        <p class="p-comp-desc">자율주행 인지 AI 및 차세대 모빌리티 플랫폼을 선도합니다.</p>
+                        <h3 class="p-comp-name">그린바이오 랩</h3>
+                        <p class="p-comp-desc">천연물 유래 기능성 원료 및 코스메슈티컬 소재 연구 기업입니다.</p>
                         <span class="p-comp-badge">진행중 공고 <strong>2</strong>건</span>
                     </a>
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="충청 그린에너지" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="./images/comp_logo_sample.png" alt="휴먼젠 파마" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=100&auto=format&fit=crop&q=60'">
                         </div>
-                        <h3 class="p-comp-name">충청 그린에너지</h3>
-                        <p class="p-comp-desc">친환경 수소 연료전지 모빌리티 구동 시스템 연구 개발 전문 기업입니다.</p>
+                        <h3 class="p-comp-name">휴먼젠 파마</h3>
+                        <p class="p-comp-desc">희귀 난치성 질환 치료용 펩타이드 의약품을 개발합니다.</p>
                         <span class="p-comp-badge">진행중 공고 <strong>1</strong>건</span>
                     </a>
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="모빌리티 테크솔루션" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="./images/comp_logo_sample.png" alt="스마트의료시스템" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=100&auto=format&fit=crop&q=60'">
                         </div>
-                        <h3 class="p-comp-name">모빌리티 테크솔루션</h3>
-                        <p class="p-comp-desc">차량용 고정밀 센서 및 ECU 제어기 부품을 공급하는 전문 제조기업입니다.</p>
+                        <h3 class="p-comp-name">스마트의료시스템</h3>
+                        <p class="p-comp-desc">병원용 EMR 및 원격 모니터링 의료 소프트웨어를 서비스합니다.</p>
                         <span class="p-comp-badge">진행중 공고 <strong>4</strong>건</span>
                     </a>
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="에코모빌리티 연구소" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="./images/comp_logo_sample.png" alt="충북 메디컬랩" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=100&auto=format&fit=crop&q=60'">
                         </div>
-                        <h3 class="p-comp-name">에코모빌리티 연구소</h3>
-                        <p class="p-comp-desc">초경량 복합소재를 활용한 차체 프레임 구조 해석 및 제작 기업입니다.</p>
+                        <h3 class="p-comp-name">충북 메디컬랩</h3>
+                        <p class="p-comp-desc">치과용 고분자 임플란트 소재 및 생체 적합성 의료기기를 제조합니다.</p>
                         <span class="p-comp-badge">진행중 공고 <strong>2</strong>건</span>
                     </a>
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="퓨처비클 소프트" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="./images/comp_logo_sample.png" alt="네이처파마텍" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=100&auto=format&fit=crop&q=60'">
                         </div>
-                        <h3 class="p-comp-name">퓨처비클 소프트</h3>
-                        <p class="p-comp-desc">SDV 기반 차량용 임베디드 소프트웨어 및 OTA 통신 프로토콜 개발 기업입니다.</p>
+                        <h3 class="p-comp-name">네이처파마텍</h3>
+                        <p class="p-comp-desc">미생물 발효 공정 기반 고순도 프로바이오틱스 원료 공급 기업입니다.</p>
                         <span class="p-comp-badge">진행중 공고 <strong>1</strong>건</span>
                     </a>
                 </div>
@@ -470,51 +466,25 @@
                 <div class="job-row-list mt-3">
                     <div class="job-row-item">
                         <div class="j-col-corp">
-                            <span class="j-corp-name">오토디맨스 모빌리티</span>
+                            <span class="j-corp-name">바이오메디텍</span>
                             <button type="button" class="btn-wish-heart" aria-label="스크랩"><i data-lucide="heart"></i></button>
                         </div>
                         <div class="j-col-main">
-                            <h3 class="j-post-title"><a href="job-detail.html">자율주행 인지 AI 연구원</a></h3>
-                            <p class="j-post-tags">자율주행 | Computer Vision | PyTorch | 딥러닝 외</p>
+                            <h3 class="j-post-title"><a href="job-detail.html">바이오 신약 항체 분석 연구원</a></h3>
+                            <p class="j-post-tags">신약개발 | 단백질 정제 | HPLC | ELISA 외</p>
                             <div class="j-post-badges">
-                                <span class="j-badge j-badge-green">연봉 7,000만 ~ 1억</span>
+                                <span class="j-badge j-badge-green">연봉 5,500만 ~ 7,500만</span>
                             </div>
                         </div>
                         <div class="j-col-meta">
-                            <span><i data-lucide="map-pin"></i>충북 청주시</span>
-                            <span><i data-lucide="briefcase"></i>경력 3~7년, 정규직 외</span>
-                            <span><i data-lucide="graduation-cap"></i>학력 무관</span>
+                            <span><i data-lucide="map-pin"></i>충북 오송</span>
+                            <span><i data-lucide="briefcase"></i>석사 이상, 정규직</span>
+                            <span><i data-lucide="graduation-cap"></i>생명공학/약학 석사</span>
                         </div>
                         <div class="j-col-action">
                             <a href="job-detail.html" class="btn-apply-outline">입사지원</a>
                             <div class="j-date-box">
                                 <strong class="j-deadline text-red">오늘 마감</strong>
-                                <span class="j-regist-time">2일전 등록</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="job-row-item">
-                        <div class="j-col-corp">
-                            <span class="j-corp-name">넥스트에너지 솔루션</span>
-                            <button type="button" class="btn-wish-heart" aria-label="스크랩"><i data-lucide="heart"></i></button>
-                        </div>
-                        <div class="j-col-main">
-                            <h3 class="j-post-title"><a href="job-detail.html">전기차(EV) 배터리 팩 설계 엔지니어</a></h3>
-                            <p class="j-post-tags">전기차 | 2차전지 | 기구설계 | CATIA 외</p>
-                            <div class="j-post-badges">
-                                <span class="j-badge j-badge-green">회사내규에 따름</span>
-                            </div>
-                        </div>
-                        <div class="j-col-meta">
-                            <span><i data-lucide="map-pin"></i>충북 충주시</span>
-                            <span><i data-lucide="briefcase"></i>신입/경력, 정규직 외</span>
-                            <span><i data-lucide="graduation-cap"></i>학력 무관</span>
-                        </div>
-                        <div class="j-col-action">
-                            <a href="job-detail.html" class="btn-apply-outline">입사지원</a>
-                            <div class="j-date-box">
-                                <strong class="j-deadline">채용시</strong>
                                 <span class="j-regist-time">1일전 등록</span>
                             </div>
                         </div>
@@ -522,20 +492,46 @@
 
                     <div class="job-row-item">
                         <div class="j-col-corp">
-                            <span class="j-corp-name">아반모빌리티</span>
+                            <span class="j-corp-name">셀루션 헬스케어</span>
                             <button type="button" class="btn-wish-heart" aria-label="스크랩"><i data-lucide="heart"></i></button>
                         </div>
                         <div class="j-col-main">
-                            <h3 class="j-post-title"><a href="job-detail.html">모빌리티 플랫폼 백엔드 개발자</a></h3>
-                            <p class="j-post-tags">Mobility | Java | Spring Boot | MSA 외</p>
+                            <h3 class="j-post-title"><a href="job-detail.html">의료 AI 알고리즘 개발자</a></h3>
+                            <p class="j-post-tags">AI 진단 | Python | PyTorch | 생체신호 분석 외</p>
                             <div class="j-post-badges">
-                                <span class="j-badge j-badge-green">연봉 6,000만 ~ 8,000만</span>
+                                <span class="j-badge j-badge-green">회사내규에 따름</span>
                             </div>
                         </div>
                         <div class="j-col-meta">
                             <span><i data-lucide="map-pin"></i>충북 청주시</span>
-                            <span><i data-lucide="briefcase"></i>경력 3년, 계약/정규직 외</span>
+                            <span><i data-lucide="briefcase"></i>경력 2년 이상, 정규직</span>
                             <span><i data-lucide="graduation-cap"></i>학력 무관</span>
+                        </div>
+                        <div class="j-col-action">
+                            <a href="job-detail.html" class="btn-apply-outline">입사지원</a>
+                            <div class="j-date-box">
+                                <strong class="j-deadline">채용시</strong>
+                                <span class="j-regist-time">2일전 등록</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-row-item">
+                        <div class="j-col-corp">
+                            <span class="j-corp-name">메디인사이트</span>
+                            <button type="button" class="btn-wish-heart" aria-label="스크랩"><i data-lucide="heart"></i></button>
+                        </div>
+                        <div class="j-col-main">
+                            <h3 class="j-post-title"><a href="job-detail.html">체외진단용 의료기기 RA/QA 인허가 담당자</a></h3>
+                            <p class="j-post-tags">의료기기 | GMP | MFDS | ISO 13485 외</p>
+                            <div class="j-post-badges">
+                                <span class="j-badge j-badge-green">연봉 4,800만 ~ 6,500만</span>
+                            </div>
+                        </div>
+                        <div class="j-col-meta">
+                            <span><i data-lucide="map-pin"></i>충북 오창</span>
+                            <span><i data-lucide="briefcase"></i>경력 3년 이상, 정규직</span>
+                            <span><i data-lucide="graduation-cap"></i>대졸 이상</span>
                         </div>
                         <div class="j-col-action">
                             <a href="job-detail.html" class="btn-apply-outline">입사지원</a>
@@ -561,6 +557,8 @@
                 </div>
             </div>
         </section>
+
+    
 
     </main>
 
@@ -604,35 +602,6 @@
         </div>
     </footer>
 
-    <!-- 약관 모달 -->
-    <div class="site-modal" id="modalTerms">
-        <div class="modal-dim"></div>
-        <div class="modal-box">
-            <div class="modal-header flex-between">
-                <h3 class="modal-title">이용약관</h3>
-                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
-            </div>
-            <div class="modal-body">
-                <p class="modal-section-title">제 1 조 (목적)</p>
-                <p class="modal-text">본 약관은 충청권 내일이음 온라인 채용관이 제공하는 제반 서비스의 이용 조건을 규정합니다.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="site-modal" id="modalPrivacy">
-        <div class="modal-dim"></div>
-        <div class="modal-box">
-            <div class="modal-header flex-between">
-                <h3 class="modal-title">개인정보처리방침</h3>
-                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
-            </div>
-            <div class="modal-body">
-                <p class="modal-section-title">1. 개인정보 수집 목적</p>
-                <p class="modal-text">플랫폼은 회원가입 및 맞춤 취업 지원 서비스를 위해 최소한의 정보를 수집합니다.</p>
-            </div>
-        </div>
-    </div>
-
     <!-- 스크립트 -->
     <script src="./js/lucide.min.js"></script>
     <script src="./js/style.js"></script>
@@ -645,12 +614,6 @@
             e.preventDefault();
             btn.classList.toggle('active');
           });
-        });
-
-        // 참여기업 더보기 버튼 토글 시뮬레이션
-        const btnMoreCompanies = document.getElementById('btnMoreCompanies');
-        btnMoreCompanies?.addEventListener('click', () => {
-          alert('참여기업 목록을 더 불러옵니다.');
         });
       });
     </script>
