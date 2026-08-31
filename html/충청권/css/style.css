@@ -657,6 +657,7 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
 .j-col-action { width: 13.0rem; display: flex; flex-direction: column; align-items: center; gap: 1.0rem; flex-shrink: 0; }
 .btn-apply-outline { display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 3.8rem; border: 1px solid #ef4444; color: #ef4444; font-size: 1.35rem; font-weight: 700; border-radius: 0.8rem; background-color: #ffffff; transition: all 0.2s ease; box-sizing: border-box; }
 .btn-apply-outline:hover { background-color: #ef4444; color: #ffffff; }
+.btn-apply-outline.disabled, button.btn-apply-outline:disabled { background-color: #f1f5f9; border-color: #cbd5e1; color: #94a3b8; cursor: not-allowed; pointer-events: none;}
 .j-date-box { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; font-size: 1.2rem; }
 .j-deadline { font-weight: 700; color: #374151; }
 .j-deadline.text-red { color: #ef4444; }
