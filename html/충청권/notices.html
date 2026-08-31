@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>충청권 내일이음 - 공지사항</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- 공통 헤더 -->
+    <header class="site-header">
+        <div class="inner-wrap">
+            <div class="header-inner flex-between">
+                <div class="header-left">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img">
+                    </a>
+                    <nav class="header-nav">
+                        <a href="about.html" class="nav-link">소개</a>
+                        <div class="nav-item-dropdown">
+                            <a href="pavilions.html" class="nav-link">
+                                <span>온라인채용관</span>
+                                <i data-lucide="chevron-down"></i>
+                            </a>
+                            <div class="nav-dropdown-menu">
+                                <a href="pavilion-bio.html" class="dropdown-link">바이오채용관</a>
+                                <a href="pavilion-mobility.html" class="dropdown-link">미래모빌리티채용관</a>
+                                <a href="pavilion-chungcheong.html" class="dropdown-link">충청권 일자리박람회</a>
+                            </div>
+                        </div>
+                        <a href="jobs.html" class="nav-link">채용공고</a>
+                        <a href="companies.html" class="nav-link">기업</a>
+                        <div class="nav-item-dropdown">
+                            <a href="notices.html" class="nav-link active">
+                                <span>고객센터</span>
+                                <i data-lucide="chevron-down"></i>
+                            </a>
+                            <div class="nav-dropdown-menu">
+                                <a href="notices.html" class="dropdown-link active">공지사항</a>
+                                <a href="faq.html" class="dropdown-link">자주 묻는 질문(FAQ)</a>
+                                <a href="resources.html" class="dropdown-link">자료실</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="header-actions">
+                    <a href="login.html" class="btn-auth-link">
+                        <i data-lucide="user-circle-2"></i>
+                        <span>로그인</span>
+                    </a>
+                    <a href="corporate.html" class="btn btn-dark btn-md">기업 서비스</a>
+                </div>
+                <div class="header-m-actions">
+                    <button type="button" class="btn-m-icon" id="btnDrawerOpen" aria-label="메뉴 열기">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="drawer-overlay" id="drawerOverlay"></div>
+        <aside class="drawer-menu" id="drawerMenu">
+            <div class="drawer-header flex-between">
+                <a href="index.html" class="brand-logo">
+                    <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img drawer-logo-img">
+                </a>
+                <button type="button" class="btn-drawer-close" id="btnDrawerClose" aria-label="메뉴 닫기">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="drawer-body">
+                <div class="drawer-auth-box">
+                    <a href="login.html" class="btn btn-primary btn-drawer-auth flex-center">
+                        <i data-lucide="log-in"></i>
+                        <span>로그인 / 회원가입</span>
+                    </a>
+                </div>
+                <nav class="drawer-nav-group">
+                    <a href="about.html" class="drawer-nav-item">
+                        <span class="left-icon-text"><i data-lucide="sparkles"></i><span>소개</span></span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <div class="drawer-acc-box" id="drawerPavilionAcc">
+                        <button type="button" class="drawer-nav-item btn-drawer-acc">
+                            <span class="left-icon-text"><i data-lucide="building-2"></i><span>온라인채용관</span></span>
+                            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                        </button>
+                        <div class="drawer-sub-menu">
+                            <a href="pavilion-bio.html" class="drawer-sub-link">바이오채용관</a>
+                            <a href="pavilion-mobility.html" class="drawer-sub-link">미래모빌리티채용관</a>
+                            <a href="pavilion-chungcheong.html" class="drawer-sub-link">충청권 내일이음 취업박람회</a>
+                        </div>
+                    </div>
+                    <a href="jobs.html" class="drawer-nav-item">
+                        <span class="left-icon-text"><i data-lucide="briefcase"></i><span>채용공고</span></span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <a href="companies.html" class="drawer-nav-item">
+                        <span class="left-icon-text"><i data-lucide="building"></i><span>기업 탐색</span></span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <div class="drawer-acc-box open" id="drawerCsAcc">
+                        <button type="button" class="drawer-nav-item btn-drawer-acc active">
+                            <span class="left-icon-text"><i data-lucide="help-circle"></i><span>고객센터</span></span>
+                            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                        </button>
+                        <div class="drawer-sub-menu">
+                            <a href="notices.html" class="drawer-sub-link active">공지사항</a>
+                            <a href="faq.html" class="drawer-sub-link">자주 묻는 질문(FAQ)</a>
+                            <a href="resources.html" class="drawer-sub-link">자료실</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="drawer-footer">
+                <a href="corporate.html" class="btn btn-dark btn-drawer-corporate"><span>기업 서비스</span></a>
+            </div>
+        </aside>
+    </header>
+
+    <!-- 공지사항 본문 -->
+    <main class="site-main">
+        <section class="cs-sec pd6">
+            <div class="inner-wrap">
+                <div class="cs-header">
+                    <h1 class="cs-title">공지사항</h1>
+                    <p class="cs-desc">충청북도기업진흥원의 다양한 소식 및 주요 행사, 일정 등을 공유합니다.</p>
+                </div>
+
+                <!-- 1. 검색 영역 -->
+                <div class="cs-search-box">
+                    <input type="text" class="cs-search-input" placeholder="제목, 내용 검색">
+                    <button type="button" class="cs-search-btn" aria-label="검색">
+                        <i data-lucide="search"></i>
+                    </button>
+                </div>
+
+                <!-- 2. 공지사항 게시물 목록 -->
+                <div class="cs-board-list">
+                    <!-- 상단 고정 공지 1 -->
+                    <a href="notice-detail.html" class="cs-board-item">
+                        <div class="cs-col-num"><span class="cs-badge-notice">공지</span></div>
+                        <div class="cs-col-title">
+                            <span class="cs-post-name">[점검] 시스템 정기 점검 안내(08/15 00:00~06:00)</span>
+                        </div>
+                        <div class="cs-col-date">2026-08-10</div>
+                    </a>
+
+                    <!-- 일반 공지 6 -->
+                    <a href="notice-detail.html" class="cs-board-item">
+                        <div class="cs-col-num">6</div>
+                        <div class="cs-col-title">
+                            <span class="cs-post-name">[안내] 충청권 내일이음 온라인 채용 박람회 일정</span>
+                        </div>
+                        <div class="cs-col-date">2026-08-12</div>
+                    </a>
+
+                    <!-- 일반 공지 5 (첨부파일 있음) -->
+                    <a href="notice-detail.html" class="cs-board-item">
+                        <div class="cs-col-num">5</div>
+                        <div class="cs-col-title">
+                            <span class="cs-post-name">[결과발표] 기업회원 가입 이벤트 당첨자 발표</span>
+                            <i data-lucide="paperclip" class="cs-file-ic"></i>
+                        </div>
+                        <div class="cs-col-date">2026-07-15</div>
+                    </a>
+
+                    <!-- 일반 공지 4 (첨부파일 있음) -->
+                    <a href="notice-detail.html" class="cs-board-item">
+                        <div class="cs-col-num">4</div>
+                        <div class="cs-col-title">
+                            <span class="cs-post-name">[이벤트] 기업회원 가입 이벤트 진행 안내</span>
+                            <i data-lucide="paperclip" class="cs-file-ic"></i>
+                        </div>
+                        <div class="cs-col-date">2026-07-01</div>
+                    </a>
+                </div>
+
+                <!-- 하단 페이지네이션 -->
+                <div class="c-pagination-wrap">
+                    <button type="button" class="page-ctrl-btn" aria-label="처음"><i data-lucide="chevrons-left"></i></button>
+                    <button type="button" class="page-ctrl-btn" aria-label="이전"><i data-lucide="chevron-left"></i></button>
+                    <div class="page-numbers">
+                        <button type="button" class="page-num-btn active">1</button>
+                        <button type="button" class="page-num-btn">2</button>
+                        <button type="button" class="page-num-btn">3</button>
+                    </div>
+                    <button type="button" class="page-ctrl-btn" aria-label="다음"><i data-lucide="chevron-right"></i></button>
+                    <button type="button" class="page-ctrl-btn" aria-label="마지막"><i data-lucide="chevrons-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 공통 푸터 -->
+    <footer class="site-footer">
+        <div class="inner-wrap">
+            <div class="footer-top flex-between">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/footer_logo.png" alt="충북권역 전략사업 특화 온라인 채용관" class="brand-logo-img">
+                    </a>
+                    <p class="footer-desc">충청북도 기업진흥원이 함께 만드는 충북 지역 우수 중소·중견기업 통합 온라인 채용관입니다.</p>
+                </div>
+                <div class="footer-selects">
+                    <div class="footer-select-box">
+                        <select class="footer-select" onchange="if(this.value) location.href=this.value;">
+                            <option value="">바로가기</option>
+                            <option value="about.html">소개</option>
+                            <option value="pavilion-bio.html">바이오 채용관</option>
+                            <option value="pavilion-mobility.html">미래모빌리티 채용관</option>
+                            <option value="companies.html">참여기업 탐색</option>
+                        </select>
+                    </div>
+                    <div class="footer-select-box">
+                        <select class="footer-select" onchange="if(this.value) location.href=this.value;">
+                            <option value="">고객센터</option>
+                            <option value="notices.html" selected>공지사항</option>
+                            <option value="faq.html">자주묻는 질문</option>
+                            <option value="resources.html">자료실</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom flex-between">
+                <p class="footer-copy">&copy; 2026 충청북도기업진흥원. All Rights Reserved.</p>
+                <div class="footer-terms">
+                    <button type="button" class="btn-terms-modal" data-modal="modalTerms">이용약관</button>
+                    <button type="button" class="btn-terms-modal text-strong" data-modal="modalPrivacy">개인정보처리방침</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/lucide.min.js"></script>
+    <script src="./js/style.js"></script>
+</body>
+</html>
