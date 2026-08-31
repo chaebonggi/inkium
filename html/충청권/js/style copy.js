@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 3. 임시 공유하기 URL 자동 세팅
-  /*const shareInput = document.getElementById('shareCurrentUrl');
-  if (shareInput) shareInput.value = window.location.href;*/
+  const shareInput = document.getElementById('shareCurrentUrl');
+  if (shareInput) shareInput.value = window.location.href;
 
   // 4. 임시 입사지원 단계 전환 스크립트
   const modalApply = document.getElementById('modalApply');

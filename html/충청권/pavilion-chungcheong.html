@@ -195,16 +195,21 @@
                 display: flex;
                 align-items: center;
                 gap: 1.6rem;
+                font-size: 2.2rem;
+                font-family: 'Hiikr', sans-serif, system-ui;
             }
-            .poster-side-v-badge.pos-top { top: 4.8rem; font-size: 1.8rem; color: #e0f2fe; }
-            .poster-side-v-badge.pos-bot { bottom: 8.0rem; font-size: 1.8rem; color: #fde047; }
+            .poster-side-v-badge.pos-top { top: 4.8rem;  color: #e0f2fe; }
+            .poster-side-v-badge.pos-bot { bottom: 12rem; color: #fde047; }
             .poster-side-v-badge::after {
                 content: '';
                 display: block;
                 width: 1px;
-                height: 6.0rem;
+                height: 10rem;
                 background-color: rgba(255, 255, 255, 0.4);
                 margin-top: 1.0rem;
+            }
+            .poster-side-v-badge.pos-bot::after {
+                content: none;
             }
 
             /* 포스터 중앙 메인 타이틀 영역 */
@@ -244,7 +249,7 @@
             .poster-en-tit {
                 font-size: 1.8rem;
                 font-weight: 600;
-                color: #bae6fd;
+                color: #fff;
                 letter-spacing: 0.02em;
                 margin-bottom: 3.6rem;
             }
@@ -288,7 +293,7 @@
                 flex-wrap: wrap;
             }
             .poster-bottom-hosts .host-lbl {
-                font-size: 1.35rem;
+                font-size: 1.2rem;
                 font-weight: 800;
                 color: #ffffff;
                 background: rgba(0, 0, 0, 0.35);
@@ -309,6 +314,9 @@
                 align-items: center;
                 gap: 0.4rem;
             }
+            .host-names-list span img {
+                max-height: 3rem;
+            }
 
             /* 2. 기획서 필수 명세 화이트 안내 보드 */
             .pav-white-guide-board { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 2.4rem; padding: 4.8rem 4.0rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); }
@@ -317,6 +325,9 @@
             .p-deco-dots { color: #cbd5e1; font-size: 1.4rem; letter-spacing: 0.2em; }
             .p-guide-main-tit { font-size: 2.2rem; font-weight: 800; color: #111827; margin: 0; letter-spacing: -0.02em; word-break: keep-all; }
             .p-title-blue-line { width: 12.0rem; height: 3px; background-color: #0284c7; margin: 1.2rem auto 0; border-radius: 2px; }
+
+            /* 3단 카드 */
+            .pav-info-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.0rem; }
 
             /* 4단 카드 그리드 */
             .pav-info-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.0rem; }
@@ -416,12 +427,12 @@
                     <div class="poster-bottom-hosts">
                         <span class="host-lbl">주최</span>
                         <div class="host-names-list">
-                            <span>고용노동부</span>
-                            <span>충청북도</span>
-                            <span>대전광역시</span>
-                            <span>충청남도</span>
-                            <span>세종특별자치시</span>
-                            <span>충북지방중소벤처기업청</span>
+                            <span><img src="./images/tlogo_01.png" alt="고용노동부"></span>
+                            <span><img src="./images/tlogo_02.png" alt="충청북도"></span>
+                            <span><img src="./images/tlogo_03.png" alt="대전광역시"></span>
+                            <span><img src="./images/tlogo_04.png" alt="충청남도"></span>
+                            <span><img src="./images/tlogo_05.png" alt="세종특별자치시"></span>
+                            <span><img src="./images/tlogo_06.png" alt="충북지방중소벤처기업청"></span>
                         </div>
                     </div>
                 </div>
@@ -431,18 +442,18 @@
                     <div class="p-guide-head tct">
                         <div class="p-guide-title-row">
                             <span class="p-deco-dots">•••••••••••</span>
-                            <h2 class="p-guide-main-tit">2026 충청북도 &amp; 충청권 내일이음 취업박람회 안내</h2>
+                            <h2 class="p-guide-main-tit">주요 프로그램</h2>
                             <span class="p-deco-dots">•••••••••••</span>
                         </div>
                         <div class="p-title-blue-line"></div>
                     </div>
 
                     <!-- 기본 정보 4단 그리드 카드 -->
-                    <div class="pav-info-grid-4 mt-3">
+                    <div class="pav-info-grid-3 mt-3">
                         <div class="p-grid-card">
                             <div class="card-icon-circle ic-blue"><i data-lucide="calendar"></i></div>
-                            <strong class="card-tit">행사일시</strong>
-                            <p class="card-desc">2026. 10. 16(금)<br>10:00 ~ 17:00 (1일간)</p>
+                            <strong class="card-tit">취업 역량상담</strong>
+                            <p class="card-desc">이력서, 자기소개서 컨설팅 및<br> 전문 직업상담사의 맞춤형 취업 상담</p>
                         </div>
 
                         <div class="p-grid-card">
