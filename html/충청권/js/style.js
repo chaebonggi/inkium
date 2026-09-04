@@ -147,14 +147,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // 사전 참석신청 모달 열기
-const btnOpenPreApply = document.getElementById('btnOpenPreApply');
 const modalPreApply = document.getElementById('modalPreApply');
-btnOpenPreApply?.addEventListener('click', () => {
-  modalPreApply?.classList.add('active');
-});
+  const preApplyTriggers = document.querySelectorAll('.btn-open-preapply-trigger');
+  const btnCloseModal = modalPreApply?.querySelector('.btn-modal-close');
+  const modalDim = modalPreApply?.querySelector('.modal-dim');
+  const btnSubmitPreApply = document.getElementById('btnSubmitPreApply');
 
-const btnSubmitPreApply = document.getElementById('btnSubmitPreApply');
-btnSubmitPreApply?.addEventListener('click', () => {
-  alert('사전 참석신청이 완료되었습니다.');
-  modalPreApply?.classList.remove('active');
-});
+  // 1. 페이지 내 모든 사전신청 버튼에 모달 열기 이벤트 연결
+  preApplyTriggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modalPreApply?.classList.add('active');
+    });
+  });
+
+  // 2. 모달 닫기 함수
+  const closeModal = () => {
+    modalPreApply?.classList.remove('active');
+  };
+
+  // 3. 닫기 버튼 및 배경(Dim) 클릭 시 닫기
+  btnCloseModal?.addEventListener('click', closeModal);
+  modalDim?.addEventListener('click', closeModal);
+
+  // 4. 신청 완료 버튼
+  btnSubmitPreApply?.addEventListener('click', () => {
+    alert('사전 참석신청이 완료되었습니다.');
+    closeModal();
+  });

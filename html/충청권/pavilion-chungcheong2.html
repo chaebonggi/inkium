@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>충청권 내일이음 - 미래모빌리티 온라인 채용관</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- 공통 헤더 -->
+    <header class="site-header">
+        <div class="inner-wrap">
+            <div class="header-inner flex-between">
+                <div class="header-left">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img">
+                    </a>
+
+                    <nav class="header-nav">
+                        <a href="about.html" class="nav-link">소개</a>
+
+                        <div class="nav-item-dropdown">
+                            <a href="pavilions.html" class="nav-link active">
+                                <span>온라인채용관</span>
+                                <i data-lucide="chevron-down"></i>
+                            </a>
+                            <div class="nav-dropdown-menu">
+                                <a href="pavilion-bio.html" class="dropdown-link">바이오채용관</a>
+                                <a href="pavilion-mobility.html" class="dropdown-link active">미래모빌리티채용관</a>
+                                <a href="pavilion-chungcheong.html" class="dropdown-link">충청권 일자리박람회</a>
+                            </div>
+                        </div>
+
+                        <a href="jobs.html" class="nav-link">채용공고</a>
+                        <a href="companies.html" class="nav-link">기업</a>
+
+                        <div class="nav-item-dropdown">
+                            <a href="notices.html" class="nav-link">
+                                <span>고객센터</span>
+                                <i data-lucide="chevron-down"></i>
+                            </a>
+                            <div class="nav-dropdown-menu">
+                                <a href="notices.html" class="dropdown-link">공지사항</a>
+                                <a href="faq.html" class="dropdown-link">자주 묻는 질문(FAQ)</a>
+                                <a href="resources.html" class="dropdown-link">자료실</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="header-actions">
+                    <a href="login.html" class="btn-auth-link">
+                        <i data-lucide="user-circle-2"></i>
+                        <span>로그인</span>
+                    </a>
+                    <a href="corporate.html" class="btn btn-dark btn-md">기업 서비스</a>
+                </div>
+
+                <div class="header-m-actions">
+                    <button type="button" class="btn-m-icon" id="btnDrawerOpen" aria-label="메뉴 열기">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 모바일 드로어 메뉴 -->
+        <div class="drawer-overlay" id="drawerOverlay"></div>
+        <aside class="drawer-menu" id="drawerMenu">
+            <div class="drawer-header flex-between">
+                <a href="index.html" class="brand-logo">
+                    <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img drawer-logo-img">
+                </a>
+                <button type="button" class="btn-drawer-close" id="btnDrawerClose" aria-label="메뉴 닫기">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="drawer-body">
+                <div class="drawer-auth-box">
+                    <a href="login.html" class="btn btn-primary btn-drawer-auth flex-center">
+                        <i data-lucide="log-in"></i>
+                        <span>로그인 / 회원가입</span>
+                    </a>
+                </div>
+                <nav class="drawer-nav-group">
+                    <a href="about.html" class="drawer-nav-item">
+                        <span class="left-icon-text"><i data-lucide="sparkles"></i><span>소개</span></span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <div class="drawer-acc-box open" id="drawerPavilionAcc">
+                        <button type="button" class="drawer-nav-item btn-drawer-acc active">
+                            <span class="left-icon-text"><i data-lucide="building-2"></i><span>온라인채용관</span></span>
+                            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                        </button>
+                        <div class="drawer-sub-menu">
+                            <a href="pavilion-bio.html" class="drawer-sub-link">바이오채용관</a>
+                            <a href="pavilion-mobility.html" class="drawer-sub-link active">미래모빌리티채용관</a>
+                            <a href="pavilion-chungcheong.html" class="drawer-sub-link">충청권 내일이음 취업박람회</a>
+                        </div>
+                    </div>
+                    <a href="jobs.html" class="drawer-nav-item">
+                        <span class="left-icon-text"><i data-lucide="briefcase"></i><span>채용공고</span></span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <a href="companies.html" class="drawer-nav-item">
+                        <span class="left-icon-text"><i data-lucide="building"></i><span>기업 탐색</span></span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <div class="drawer-acc-box" id="drawerCsAcc">
+                        <button type="button" class="drawer-nav-item btn-drawer-acc">
+                            <span class="left-icon-text"><i data-lucide="help-circle"></i><span>고객센터</span></span>
+                            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                        </button>
+                        <div class="drawer-sub-menu">
+                            <a href="notices.html" class="drawer-sub-link">공지사항</a>
+                            <a href="faq.html" class="drawer-sub-link">자주 묻는 질문(FAQ)</a>
+                            <a href="resources.html" class="drawer-sub-link">자료실</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="drawer-footer">
+                <a href="corporate.html" class="btn btn-dark btn-drawer-corporate"><span>기업 서비스</span></a>
+            </div>
+        </aside>
+    </header>
+
+    <!-- 채용관 상세 본문 -->
+    <main class="site-main">
+   <!-- 에디터 영역 -->
+<style>
+  html { scroll-behavior: smooth; }
+  .site-main { overflow-x: initial; }
+  .site-header { display: none !important; }
+  #secPrograms, #secCompanies, #secJobs, #secLocation { scroll-margin-top: 7.2rem; }
+
+  @font-face { font-family: 'Hiikr'; src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101609@hikr-extrabold/hikr-extrabold/HiKR-ExtraBold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+  .jobfair-wrap { width: 100%; position: relative; overflow-x: clip; padding-top: 7.2rem; }
+
+  .jobfair-custom-nav { position: fixed; top: 0; left: 0; width: 100%; height: 7.2rem; background-color: rgba(255, 255, 255, 0.96); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; z-index: 990; }
+  .jobfair-nav-container { max-width: 128.0rem; height: 100%; margin: 0 auto; padding: 0 2.0rem; display: flex; align-items: center; justify-content: space-between; }
+  .jobfair-nav-logo { display: flex; align-items: center; }
+  .jobfair-nav-logo img { height: 4.6rem; width: auto; object-fit: contain; }
+  .jobfair-nav-menu { display: flex; align-items: center; gap: 3.6rem; list-style: none; margin: 0; padding: 0; }
+  .jobfair-nav-menu a { font-size: 1.8rem; font-weight: 700; color: #1f2937; text-decoration: none; transition: color 0.2s ease; }
+  .jobfair-nav-menu a:hover { color: #0284c7; }
+  .jobfair-nav-actions { display: flex; align-items: center; gap: 1.2rem; }
+  .jobfair-nav-btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.9rem 2.0rem; background-color: #0b1e4f; color: #ffffff; font-size: 1.4rem; font-weight: 700; border-radius: 0.8rem; text-decoration: none; transition: background-color 0.2s ease; }
+  .jobfair-nav-btn:hover { background-color: #0284c7; }
+
+  .jobfair-btn-hamburger { display: none; width: 4.0rem; height: 4.0rem; border-radius: 0.8rem; border: 1px solid #e5e7eb; background: #ffffff; color: #1f2937; align-items: center; justify-content: center; cursor: pointer; }
+  .jobfair-btn-hamburger svg { width: 2.2rem; height: 2.2rem; }
+
+  .jobfair-m-dim { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 998; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+  .jobfair-m-dim.active { opacity: 1; pointer-events: auto; }
+  .jobfair-m-drawer { position: fixed; top: 0; right: 0; width: 80%; max-width: 32.0rem; height: 100vh; background-color: #ffffff; z-index: 999; box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15); transform: translateX(100%); transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; }
+  .jobfair-m-drawer.active { transform: translateX(0); }
+  .jobfair-m-head { height: 6.4rem; padding: 0 2.0rem; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: space-between; }
+  .jobfair-m-head img { height: 3.2rem; }
+  .jobfair-m-close { width: 3.6rem; height: 3.6rem; display: flex; align-items: center; justify-content: center; color: #64748b; background: none; border: none; cursor: pointer; }
+  .jobfair-m-close svg { width: 2.2rem; height: 2.2rem; }
+  .jobfair-m-body { padding: 2.4rem 2.0rem; flex: 1; display: flex; flex-direction: column; gap: 1.2rem; overflow-y: auto; }
+  .jobfair-m-link { display: flex; align-items: center; justify-content: space-between; padding: 1.4rem 1.6rem; font-size: 1.6rem; font-weight: 700; color: #1f2937; border-radius: 1.0rem; background-color: #f8fafc; text-decoration: none; transition: all 0.2s ease; }
+  .jobfair-m-link:hover, .jobfair-m-link:active { background-color: #e0f2fe; color: #0284c7; }
+  .jobfair-m-link svg { width: 1.8rem; height: 1.8rem; color: #94a3b8; }
+  .jobfair-m-foot { padding: 2.0rem; border-top: 1px solid #f1f5f9; }
+  .jobfair-m-btn-pass { width: 100%; height: 4.8rem; display: flex; align-items: center; justify-content: center; gap: 0.6rem; background-color: #0b1e4f; color: #ffffff; font-size: 1.5rem; font-weight: 700; border-radius: 0.8rem; border: none; cursor: pointer; }
+
+  .jobfair-hero-full { position: relative; width: 100vw; margin-left: calc(-50vw + 50%); background: #05070d url('./images/pavilion_bg.jpg') center 40% / cover no-repeat; color: #ffffff; padding: 7.0rem 0 7.0rem; }
+  .jobfair-hero-full::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5, 7, 13, 0.25) 0%, rgba(5, 7, 13, 0.25) 60%, #0b0f19 100%); z-index: 1; }
+  .jobfair-container { position: relative; z-index: 2; max-width: 128.0rem; margin: 0 auto; padding: 0 2.0rem; }
+  .jobfair-hero-body { display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 4.8rem; align-items: flex-end; margin-bottom: 5.6rem; }
+  .jobfair-year { font-family: 'Hiikr', sans-serif; font-size: 8.4rem; line-height: 1; font-weight: 900; color: #ffffff; text-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); margin-bottom: 0.8rem; }
+  .jobfair-sub-title { font-family: 'Hiikr', sans-serif; font-size: 4.4rem; font-weight: 900; letter-spacing: -0.03em; color: #ffffff; text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); }
+  .jobfair-main-title { font-family: 'Hiikr', sans-serif; font-size: 8.4rem; font-weight: 900; line-height: 1.05; letter-spacing: -0.04em; color: #ffffff; text-shadow: 0 8px 24px rgba(0, 16, 60, 0.6); word-break: keep-all; }
+  .jobfair-main-title .tit-word { display: block; }
+  .jobfair-pass { background: rgba(17, 24, 39, 0.75); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 1.6rem; padding: 2.8rem; backdrop-filter: blur(16px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
+  .jobfair-pass-head { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed rgba(255, 255, 255, 0.15); padding-bottom: 1.4rem; margin-bottom: 2.0rem; }
+  .jobfair-pass-badge { font-size: 1.2rem; font-weight: 800; color: #fde047; letter-spacing: 0.08em; }
+  .jobfair-pass-status { font-size: 1.2rem; color: #38bdf8; font-weight: 700; }
+  .jobfair-pass-grid { display: flex; align-items: center; gap: 2.0rem; }
+  .jobfair-pass-qr { width: 10.0rem; height: 10.0rem; background: #ffffff; border-radius: 1.0rem; padding: 0.6rem; flex-shrink: 0; }
+  .jobfair-pass-qr img { width: 100%; height: 100%; object-fit: contain; }
+  .jobfair-pass-txt strong { display: block; font-size: 1.65rem; color: #ffffff; margin-bottom: 0.6rem; font-weight: 700; }
+  .jobfair-pass-txt p { font-size: 1.3rem; color: #94a3b8; line-height: 1.45; word-break: keep-all; }
+  .jobfair-btn-pass { width: 100%; height: 4.8rem; margin-top: 2.2rem; background-color: #ffffff; color: #05070d; border-radius: 0.8rem; font-size: 1.5rem; font-weight: 800; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 0.6rem; }
+  .jobfair-btn-pass:hover { background-color: #38bdf8; color: #ffffff; }
+  .jobfair-spec-bar { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255, 255, 255, 0.12); border-bottom: 1px solid rgba(255, 255, 255, 0.12); margin-bottom: 4.4rem; }
+  .jobfair-spec-col { padding: 2.4rem 2.0rem; border-right: 1px solid rgba(255, 255, 255, 0.12); }
+  .jobfair-spec-col:last-child { border-right: none; }
+  .jobfair-spec-label { display: block; font-size: 1.2rem; font-weight: 700; color: #fff; letter-spacing: 0.08em; margin-bottom: 0.8rem; }
+  .jobfair-spec-val { font-size: 2.0rem; font-weight: 800; color: #ffffff; line-height: 1.25; margin-bottom: 0.4rem; }
+  .jobfair-spec-sub { font-size: 1.35rem; color: #94a3b8; }
+  .jobfair-org-group { display: flex; flex-direction: column; gap: 2.4rem; }
+  .jobfair-sponsors { display: flex; align-items: center; gap: 1.6rem; flex-wrap: wrap; }
+  .jobfair-sponsors-label { font-size: 1.2rem; font-weight: 800; color: #64748b; letter-spacing: 0.08em; flex-shrink: 0; }
+  .jobfair-sponsors-list { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
+  .jobfair-sponsors-item { background: rgba(255, 255, 255, 0.95); padding: 0.5rem 1.2rem; border-radius: 0.6rem; height: 3.6rem; display: inline-flex; align-items: center; }
+  .jobfair-sponsors-item img { max-height: 2.2rem; max-width: 11.0rem; object-fit: contain; }
+  .jobfair-supervisors { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+  .jobfair-supervisors-label { font-size: 1.2rem; font-weight: 800; color: #64748b; letter-spacing: 0.08em; flex-shrink: 0; }
+  .jobfair-supervisors-badge { display: inline-flex; align-items: center; background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.15); padding: 0.6rem 1.4rem; border-radius: 0.6rem; color: #cbd5e1; font-size: 1.25rem; font-weight: 600; width: fit-content; }
+
+  .jobfair-board-wrap { width: 100%; }
+  .jobfair-board { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 2.4rem; padding: 4.8rem 4.0rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); }
+  .jobfair-section-head { text-align: center; margin-bottom: 3.6rem; }
+  .jobfair-section-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; }
+  .jobfair-section-line { width: 10.0rem; height: 3px; margin: 1.2rem auto 0; border-radius: 2px; }
+  .line-blue { background-color: #0284c7; }
+  .line-yellow { background-color: #eab308; }
+  .jobfair-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.0rem; }
+  .jobfair-card { background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 1.8rem; padding: 3.2rem 2.0rem; text-align: center; display: flex; flex-direction: column; align-items: center; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
+  .jobfair-card:hover { transform: translateY(-4px); border-color: #38bdf8; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); }
+  .jobfair-card-side:hover { border-color: #eab308; box-shadow: 0 10px 25px rgba(234, 179, 8, 0.15); }
+  .jobfair-icon { width: 5.6rem; height: 5.6rem; border-radius: 1.6rem; display: flex; align-items: center; justify-content: center; margin-bottom: 2.0rem; }
+  .jobfair-icon svg { width: 2.6rem; height: 2.6rem; }
+  .ic-blue { background-color: #eff6ff; color: #0284c7; }
+  .ic-cyan { background-color: #ecfeff; color: #0891b2; }
+  .ic-indigo { background-color: #eef2ff; color: #4f46e5; }
+  .ic-yellow { background-color: #fefce8; color: #ca8a04; }
+  .jobfair-card-tit { display: block; font-size: 1.7rem; font-weight: 800; margin-bottom: 1.0rem; }
+  .jobfair-card-desc { font-size: 1.35rem; color: #64748b; line-height: 1.55; word-break: keep-all; }
+  .jobfair-btn-card { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 15.0rem; height: 3.8rem; margin-top: 2.0rem; background-color: #fefce8; color: #854d0e; border: 1.5px solid #fde047; border-radius: 0.8rem; font-size: 1.35rem; font-weight: 700; transition: all 0.2s ease; }
+  .jobfair-btn-card:hover { background-color: #eab308; color: #ffffff; border-color: #eab308; }
+  .jobfair-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1.6rem; padding: 2.4rem 2.8rem; margin-top: 2.4rem; }
+  .jobfair-box-tit { display: flex; align-items: center; gap: 0.6rem; font-size: 1.5rem; font-weight: 800; color: #0284c7; margin-bottom: 1.4rem; }
+  .jobfair-box-tit svg { width: 1.8rem; height: 1.8rem; }
+  .jobfair-list { display: flex; flex-direction: column; gap: 0.8rem; }
+  .jobfair-list li { position: relative; padding-left: 1.6rem; font-size: 1.35rem; color: #475569; line-height: 1.55; }
+  .jobfair-list li::before { content: ''; position: absolute; left: 0; top: 0.8rem; width: 5px; height: 5px; border-radius: 50%; background-color: #0284c7; }
+  .jobfair-list strong { color: #111827; font-weight: 700; }
+  .jobfair-steps { display: flex; align-items: center; justify-content: space-between; gap: 1.0rem; }
+  .jobfair-step-card { flex: 1; background-color: #ffffff; border: 1px solid #e2e8f0; padding: 1.4rem 1.0rem; border-radius: 1.2rem; text-align: center; }
+  .jobfair-step-num { display: block; font-size: 1.1rem; font-weight: 800; color: #0284c7; margin-bottom: 0.4rem; }
+  .jobfair-step-txt { font-size: 1.35rem; font-weight: 700; color: #1e293b; word-break: keep-all; }
+  .jobfair-step-arrow { color: #94a3b8; width: 1.8rem; height: 1.8rem; flex-shrink: 0; }
+  .jobfair-notice { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.6rem 2.0rem; background-color: #fef2f2; border: 1px solid #fecaca; border-radius: 1.2rem; margin-top: 2.0rem; }
+  .jobfair-notice-ic { width: 2.0rem; height: 2.0rem; color: #ef4444; flex-shrink: 0; margin-top: 0.2rem; }
+  .jobfair-notice-txt strong { display: block; font-size: 1.35rem; font-weight: 700; color: #991b1b; margin-bottom: 0.4rem; }
+  .jobfair-notice-txt p { font-size: 1.25rem; color: #b91c1c; line-height: 1.55; word-break: keep-all; }
+  .jobfair-action-wrap { display: flex; justify-content: center; margin-top: 4.0rem; }
+  .jobfair-btn-main { display: inline-flex; align-items: center; justify-content: center; gap: 0.8rem; padding: 1.4rem 4.0rem; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; font-size: 1.6rem; font-weight: 800; border-radius: 3.0rem; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .jobfair-btn-main:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45); }
+
+  @media (max-width: 1024px) {
+    .jobfair-nav-menu { display: none; }
+    .jobfair-nav-btn { display: none; }
+    .jobfair-btn-hamburger { display: inline-flex; }
+    .jobfair-hero-body { grid-template-columns: 1fr; gap: 3.6rem; }
+    .jobfair-year { font-size: 6.4rem; }
+    .jobfair-main-title { font-size: 6.4rem; }
+    .jobfair-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .jobfair-custom-nav { height: 6.4rem; }
+    .jobfair-wrap { padding-top: 6.4rem; }
+    #secPrograms, #secCompanies, #secJobs, #secLocation { scroll-margin-top: 6.4rem; }
+    .jobfair-hero-full { padding: 4.8rem 0 5.6rem; }
+    .jobfair-spec-bar { grid-template-columns: 1fr; }
+    .jobfair-spec-col { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.12); padding: 1.6rem 0; }
+    .jobfair-spec-col:last-child { border-bottom: none; }
+    .jobfair-board { padding: 3.2rem 2.0rem; }
+    .jobfair-grid-3 { grid-template-columns: 1fr; }
+    .jobfair-steps { flex-direction: column; }
+    .jobfair-step-card { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 1.6rem; }
+    .jobfair-step-arrow { transform: rotate(90deg); }
+  }
+
+  @media (max-width: 640px) {
+    .jobfair-hero-full { padding: 4.0rem 0 4.8rem; }
+    .jobfair-title-group { text-align: center; }
+    .jobfair-year { font-size: 4.0rem; margin-bottom: 0.4rem; }
+    .jobfair-sub-title { font-size: 2.2rem; margin-bottom: 0.4rem; }
+    .jobfair-main-title { font-size: 3.6rem; letter-spacing: -0.02em; }
+    .jobfair-main-title .tit-word { display: inline-block; }
+    .jobfair-pass { padding: 2.0rem 1.6rem; }
+    .jobfair-pass-grid { flex-direction: column; text-align: center; }
+    .jobfair-supervisors { gap: 0.8rem; }
+    .jobfair-sponsors-list { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; gap: 0.6rem; }
+    .jobfair-sponsors-item { width: 100%; justify-content: center; padding: 0.4rem 0.6rem; height: 3.2rem; }
+    .jobfair-sponsors-item img { max-height: 1.8rem; max-width: 100%; }
+  }
+</style>
+
+<div class="jobfair-wrap">
+  <div class="jobfair-custom-nav">
+    <div class="jobfair-nav-container">
+      <a href="index.html" class="jobfair-nav-logo">
+        <img src="./images/chungcheon_logo.jpg" alt="충청권 내일이음">
+      </a>
+      <ul class="jobfair-nav-menu">
+        <li><a href="#secCompanies">참여기업</a></li>
+        <li><a href="#secJobs">채용정보</a></li>
+        <li><a href="#secPrograms">프로그램</a></li>
+        <li><a href="javascript:void(0);" onclick="alert('오시는 길 안내 페이지는 준비 중입니다.');">오시는 길</a></li>
+      </ul>
+      <div class="jobfair-nav-actions">
+        <button type="button" class="jobfair-nav-btn btn-open-preapply-trigger">
+          <span>사전등록</span>
+          <i data-lucide="chevron-right"></i>
+        </button>
+        <button type="button" class="jobfair-btn-hamburger" id="btnJobfairMenuOpen" aria-label="메뉴 열기">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="jobfair-m-dim" id="jobfairDim"></div>
+  <aside class="jobfair-m-drawer" id="jobfairDrawer">
+    <div class="jobfair-m-head">
+      <img src="./images/chungcheon_logo.jpg" alt="충청권 내일이음">
+      <button type="button" class="jobfair-m-close" id="btnJobfairMenuClose" aria-label="메뉴 닫기">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <div class="jobfair-m-body">
+      <a href="#secCompanies" class="jobfair-m-link"><span>참여기업</span><i data-lucide="chevron-right"></i></a>
+      <a href="#secJobs" class="jobfair-m-link"><span>채용정보</span><i data-lucide="chevron-right"></i></a>
+      <a href="#secPrograms" class="jobfair-m-link"><span>프로그램</span><i data-lucide="chevron-right"></i></a>
+      <a href="javascript:void(0);" onclick="alert('오시는 길 안내 페이지는 준비 중입니다.');" class="jobfair-m-link"><span>오시는 길</span><i data-lucide="chevron-right"></i></a>
+    </div>
+    <div class="jobfair-m-foot">
+      <button type="button" class="jobfair-m-btn-pass btn-open-preapply-trigger">
+        <span>사전등록 바로가기</span>
+        <i data-lucide="arrow-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <section class="jobfair-hero-full">
+    <div class="jobfair-container">
+      <div class="jobfair-hero-body">
+        <div class="jobfair-title-group">
+          <p class="jobfair-year">2026</p>
+          <p class="jobfair-sub-title">충청북도 &amp; 충청권</p>
+          <h2 class="jobfair-main-title">
+            <span class="tit-word">내일이음</span>
+            <span class="tit-word">취업박람회</span>
+          </h2>
+        </div>
+        <div class="jobfair-pass">
+          <div class="jobfair-pass-head">
+            <span class="jobfair-pass-badge">Official Fast Pass</span>
+            <span class="jobfair-pass-status">&bull; 사전등록 진행중</span>
+          </div>
+          <div class="jobfair-pass-grid">
+            <div class="jobfair-pass-qr">
+              <img src="./images/pavilion_qr.png" alt="사전등록 QR코드">
+            </div>
+            <div class="jobfair-pass-txt">
+              <strong>스마트 패스 사전등록</strong>
+              <p>QR 스캔 또는 버튼 신청으로 대기 없는 현장 면접과 부대 프로그램 우선 예약이 가능합니다.</p>
+            </div>
+          </div>
+          <button type="button" class="jobfair-btn-pass btn-open-preapply-trigger">
+            <span>사전등록 신청하기</span>
+            <i data-lucide="arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="jobfair-spec-bar">
+        <div class="jobfair-spec-col">
+          <span class="jobfair-spec-label">01 / DATE</span>
+          <div class="jobfair-spec-val">2026. 10. 16. (금)</div>
+          <span class="jobfair-spec-sub">10:00 – 17:00 (1Day)</span>
+        </div>
+        <div class="jobfair-spec-col">
+          <span class="jobfair-spec-label">02 / VENUE</span>
+          <div class="jobfair-spec-val">청주 오스코(OSCO)</div>
+          <span class="jobfair-spec-sub">제3전시장 전관</span>
+        </div>
+        <div class="jobfair-spec-col">
+          <span class="jobfair-spec-label">03 / SCALE</span>
+          <div class="jobfair-spec-val">120개 우수기업 채용관</div>
+          <span class="jobfair-spec-sub">바이오 · 모빌리티 · 반도체 · 식품</span>
+        </div>
+      </div>
+
+      <div class="jobfair-org-group">
+        <div class="jobfair-supervisors">
+          <span class="jobfair-supervisors-label">주관</span>
+          <span class="jobfair-supervisors-badge">충청북도기업진흥원 · 충북일자리지원센터</span>
+        </div>
+        <div class="jobfair-sponsors">
+          <span class="jobfair-sponsors-label">주최</span>
+          <div class="jobfair-sponsors-list">
+            <span class="jobfair-sponsors-item"><img src="./images/tlogo_01.png" alt="고용노동부"></span>
+            <span class="jobfair-sponsors-item"><img src="./images/tlogo_02.png" alt="충청북도"></span>
+            <span class="jobfair-sponsors-item"><img src="./images/tlogo_03.png" alt="대전광역시"></span>
+            <span class="jobfair-sponsors-item"><img src="./images/tlogo_04.png" alt="충청남도"></span>
+            <span class="jobfair-sponsors-item"><img src="./images/tlogo_05.png" alt="세종특별자치시"></span>
+            <span class="jobfair-sponsors-item"><img src="./images/tlogo_06.png" alt="충북지방중소벤처기업청"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="jobfair-board-wrap pd6" id="secPrograms">
+    <div class="inner-wrap">
+      <div class="jobfair-board">
+        <div class="jobfair-section-head">
+          <h3 class="jobfair-section-title">주요 프로그램</h3>
+          <div class="jobfair-section-line line-blue"></div>
+        </div>
+        <div class="jobfair-grid-3">
+          <div class="jobfair-card">
+            <div class="jobfair-icon ic-blue"><i data-lucide="briefcase"></i></div>
+            <strong class="jobfair-card-tit">1:1 현장 채용면접</strong>
+            <p class="jobfair-card-desc">충청권 120개 기업 인사담당자와의<br> 1:1 심층 면접 및 현장 채용</p>
+          </div>
+          <div class="jobfair-card">
+            <div class="jobfair-icon ic-cyan"><i data-lucide="presentation"></i></div>
+            <strong class="jobfair-card-tit">채용설명회</strong>
+            <p class="jobfair-card-desc">반도체·바이오·모빌리티 대표기업<br> 비전 및 채용 프로세스 안내 (오스코 2층)</p>
+          </div>
+          <div class="jobfair-card">
+            <div class="jobfair-icon ic-indigo"><i data-lucide="building"></i></div>
+            <strong class="jobfair-card-tit">초광역 정책홍보관</strong>
+            <p class="jobfair-card-desc">대전·세종·충북·충남 4개 지자체<br> 청년 일자리 지원 정책 및 광역이음 사업 안내</p>
+          </div>
+        </div>
+
+        <div class="jobfair-section-head" style="margin-top: 4.8rem;">
+          <h3 class="jobfair-section-title">부대 프로그램</h3>
+          <div class="jobfair-section-line line-yellow"></div>
+        </div>
+        <div class="jobfair-grid-3">
+          <div class="jobfair-card jobfair-card-side">
+            <div class="jobfair-icon ic-yellow"><i data-lucide="palette"></i></div>
+            <strong class="jobfair-card-tit">퍼스널 컬러 진단</strong>
+            <p class="jobfair-card-desc">나에게 맞는 면접 복장과<br> 이미지 메이킹 톤 찾기</p>
+            <button type="button" class="jobfair-btn-card btn-open-preapply-trigger">사전예약</button>
+          </div>
+          <div class="jobfair-card jobfair-card-side">
+            <div class="jobfair-icon ic-yellow"><i data-lucide="camera"></i></div>
+            <strong class="jobfair-card-tit">이력서 사진 촬영</strong>
+            <p class="jobfair-card-desc">전문 포토그래퍼가 촬영하고<br> 바로 인화하는 무료 사진관</p>
+            <button type="button" class="jobfair-btn-card btn-open-preapply-trigger">사전예약</button>
+          </div>
+          <div class="jobfair-card jobfair-card-side">
+            <div class="jobfair-icon ic-yellow"><i data-lucide="bot"></i></div>
+            <strong class="jobfair-card-tit">AI 취업지원 코칭</strong>
+            <p class="jobfair-card-desc">생성형 AI 자소서 코칭 및<br> 실전 모의면접 피드백 체험</p>
+            <button type="button" class="jobfair-btn-card btn-open-preapply-trigger">사전예약</button>
+          </div>
+          <div class="jobfair-card jobfair-card-side">
+            <div class="jobfair-icon ic-yellow"><i data-lucide="sparkles"></i></div>
+            <strong class="jobfair-card-tit">취업 운세 · 타로</strong>
+            <p class="jobfair-card-desc">마음 충전을 위한 취업운 상담 및<br> 직무 스트레스 완화 멘토링</p>
+            <button type="button" class="jobfair-btn-card btn-open-preapply-trigger">사전예약</button>
+          </div>
+          <div class="jobfair-card jobfair-card-side">
+            <div class="jobfair-icon ic-yellow"><i data-lucide="file-text"></i></div>
+            <strong class="jobfair-card-tit">입사지원 컨설팅</strong>
+            <p class="jobfair-card-desc">전문 직업상담사의 이력서 첨삭 및<br> 스피치 면접 집중 코칭</p>
+            <button type="button" class="jobfair-btn-card btn-open-preapply-trigger">사전예약</button>
+          </div>
+          <div class="jobfair-card jobfair-card-side">
+            <div class="jobfair-icon ic-yellow"><i data-lucide="smile"></i></div>
+            <strong class="jobfair-card-tit">현장 이벤트존</strong>
+            <p class="jobfair-card-desc">스탬프 투어, 에어볼 추첨 등<br> 다채로운 힐링 체험 프로그램</p>
+            <button type="button" class="jobfair-btn-card btn-open-preapply-trigger">현장참여</button>
+          </div>
+        </div>
+
+        <div class="jobfair-box">
+          <strong class="jobfair-box-tit"><i data-lucide="sparkles"></i> 주요 프로그램 및 현장 운영 안내</strong>
+          <ul class="jobfair-list">
+            <li><strong>현장 채용 면접관</strong> : 충청권 핵심전략 산업(미래모빌리티, 첨단바이오헬스, 반도체, 식품) 120개 부스 1:1 현장면접 진행</li>
+            <li><strong>채용설명회</strong> : 주요 선도기업 채용 비전 발표 및 Q&amp;A (오스코 2층 회의장)</li>
+            <li><strong>취업 컨설팅관</strong> : 서류 첨삭, 스피치 면접, 인·적성 및 중장년 직무설계 컨설팅 상시 지원</li>
+            <li><strong>스마트 패스 운영</strong> : 현장 키오스크 및 QR코드를 활용한 종이 없는 대기·예약 시스템 가동</li>
+          </ul>
+        </div>
+
+        <div class="jobfair-box" style="margin-top: 1.6rem;">
+          <strong class="jobfair-box-tit"><i data-lucide="check-circle-2"></i> 박람회 참여 방법</strong>
+          <div class="jobfair-steps">
+            <div class="jobfair-step-card">
+              <span class="jobfair-step-num">STEP 1</span>
+              <span class="jobfair-step-txt">온라인 사전등록</span>
+            </div>
+            <i data-lucide="chevron-right" class="jobfair-step-arrow"></i>
+            <div class="jobfair-step-card">
+              <span class="jobfair-step-num">STEP 2</span>
+              <span class="jobfair-step-txt">스마트 QR 패스 발급</span>
+            </div>
+            <i data-lucide="chevron-right" class="jobfair-step-arrow"></i>
+            <div class="jobfair-step-card">
+              <span class="jobfair-step-num">STEP 3</span>
+              <span class="jobfair-step-txt">오스코 제3전시장 방문</span>
+            </div>
+            <i data-lucide="chevron-right" class="jobfair-step-arrow"></i>
+            <div class="jobfair-step-card">
+              <span class="jobfair-step-num">STEP 4</span>
+              <span class="jobfair-step-txt">1:1 현장면접 및 부대행사</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="jobfair-notice">
+          <i data-lucide="alert-circle" class="jobfair-notice-ic"></i>
+          <div class="jobfair-notice-txt">
+            <strong>참여자 안내사항</strong>
+            <p>사전등록 완료 시 카카오 알림톡/문자로 현장 입장용 스마트 패스가 전송됩니다. 현장 면접 희망자는 단정한 복장 권장 및 온라인 사전 이력서 등록을 권장합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="jobfair-action-wrap">
+        <button type="button" class="jobfair-btn-main btn-open-preapply-trigger">
+          <span>사전 참가신청 바로가기</span>
+          <i data-lucide="chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  (function() {
+    const btnOpen = document.getElementById('btnJobfairMenuOpen');
+    const btnClose = document.getElementById('btnJobfairMenuClose');
+    const drawer = document.getElementById('jobfairDrawer');
+    const dim = document.getElementById('jobfairDim');
+    const links = document.querySelectorAll('.jobfair-m-link, .jobfair-m-btn-pass');
+
+    function openDrawer() {
+      drawer?.classList.add('active');
+      dim?.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer?.classList.remove('active');
+      dim?.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    btnOpen?.addEventListener('click', openDrawer);
+    btnClose?.addEventListener('click', closeDrawer);
+    dim?.addEventListener('click', closeDrawer);
+    links.forEach(link => link.addEventListener('click', closeDrawer));
+  })();
+</script>
+<!-- //에디터 영역 -->
+
+        <!-- 참여기업 소개 -->
+        <section class="pavilion-section pavilion-companies-sec pd6" id="secCompanies">
+            <div class="inner-wrap">
+                <div class="pavilion-sec-head flex-between">
+                    <h2 class="pavilion-sec-tit">참여기업 소개</h2>
+                    
+                    <div class="pavilion-search-bar">
+                        <input type="text" id="compSearchInput" class="c-input pav-search-input" placeholder="기업명을 입력하세요">
+                        <button type="button" class="btn btn-dark btn-pav-search" id="btnCompSearch">검색</button>
+                    </div>
+                </div>
+
+                <!-- 참여기업 5열 그리드 카드 리스트 -->
+                <div class="pav-comp-grid mt-3">
+                    <a href="company-detail.html" class="c-card-pav-comp">
+                        <div class="p-comp-logo">
+                            <img src="./images/comp_logo_sample.png" alt="오토디맨스 모빌리티" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                        </div>
+                        <h3 class="p-comp-name">오토디맨스 모빌리티</h3>
+                        <p class="p-comp-desc">자율주행 인지 AI 및 차세대 모빌리티 플랫폼을 선도합니다.</p>
+                        <span class="p-comp-badge">진행중 공고 <strong>2</strong>건</span>
+                    </a>
+
+                    <a href="company-detail.html" class="c-card-pav-comp">
+                        <div class="p-comp-logo">
+                            <img src="./images/comp_logo_sample.png" alt="넥스트에너지 솔루션" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                        </div>
+                        <h3 class="p-comp-name">넥스트에너지 솔루션</h3>
+                        <p class="p-comp-desc">고효율 전기차 배터리 팩 및 차세대 에너지 저장 장치를 설계합니다.</p>
+                        <span class="p-comp-badge">진행중 공고 <strong>1</strong>건</span>
+                    </a>
+
+                    <a href="company-detail.html" class="c-card-pav-comp">
+                        <div class="p-comp-logo">
+                            <img src="./images/comp_logo_sample.png" alt="충청 모빌리티 혁신기업1" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                        </div>
+                        <h3 class="p-comp-name">충청 모빌리티 혁신기업1</h3>
+                        <p class="p-comp-desc">자율주행, 커넥티드, 전동화 등 미래 모빌리티 기술을 선도합니다.</p>
+                        <span class="p-comp-badge">진행중 공고 <strong>3</strong>건</span>
+                    </a>
+
+                    <a href="company-detail.html" class="c-card-pav-comp">
+                        <div class="p-comp-logo">
+                            <img src="./images/comp_logo_sample.png" alt="충청 모빌리티 혁신기업2" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                        </div>
+                        <h3 class="p-comp-name">충청 모빌리티 혁신기업2</h3>
+                        <p class="p-comp-desc">자율주행 인지 AI 및 차세대 모빌리티 플랫폼을 선도합니다.</p>
+                        <span class="p-comp-badge">진행중 공고 <strong>2</strong>건</span>
+                    </a>
+
+                    <a href="company-detail.html" class="c-card-pav-comp">
+                        <div class="p-comp-logo">
+                            <img src="./images/comp_logo_sample.png" alt="충청 모빌리티 혁신기업3" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                        </div>
+                        <h3 class="p-comp-name">충청 모빌리티 혁신기업3</h3>
+                        <p class="p-comp-desc">고효율 전기차 배터리 팩 및 차세대 에너지 저장 장치를 설계합니다.</p>
+                        <span class="p-comp-badge">진행중 공고 <strong>1</strong>건</span>
+                    </a>
+
+                    <a href="company-detail.html" class="c-card-pav-comp">
+                        <div class="p-comp-logo">
+                            <img src="./images/comp_logo_sample.png" alt="모빌리티 스마트랩" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                        </div>
+                        <h3 class="p-comp-name">모빌리티 스마트랩</h3>
+                        <p class="p-comp-desc">자율주행 인지 AI 및 차세대 모빌리티 플랫폼을 선도합니다.</p>
+                        <span class="p-comp-badge">진행중 공고 <strong>2</strong>건</span>
+                    </a>
+
+                    <a href="company-detail.html" class="c-card-pav-comp">
+                        <div class="p-comp-logo">
+                            <img src="./images/comp_logo_sample.png" alt="충청 그린에너지" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                        </div>
+                        <h3 class="p-comp-name">충청 그린에너지</h3>
+                        <p class="p-comp-desc">친환경 수소 연료전지 모빌리티 구동 시스템 연구 개발 전문 기업입니다.</p>
+                        <span class="p-comp-badge">진행중 공고 <strong>1</strong>건</span>
+                    </a>
+
+                    <a href="company-detail.html" class="c-card-pav-comp">
+                        <div class="p-comp-logo">
+                            <img src="./images/comp_logo_sample.png" alt="모빌리티 테크솔루션" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                        </div>
+                        <h3 class="p-comp-name">모빌리티 테크솔루션</h3>
+                        <p class="p-comp-desc">차량용 고정밀 센서 및 ECU 제어기 부품을 공급하는 전문 제조기업입니다.</p>
+                        <span class="p-comp-badge">진행중 공고 <strong>4</strong>건</span>
+                    </a>
+
+                    <a href="company-detail.html" class="c-card-pav-comp">
+                        <div class="p-comp-logo">
+                            <img src="./images/comp_logo_sample.png" alt="에코모빌리티 연구소" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                        </div>
+                        <h3 class="p-comp-name">에코모빌리티 연구소</h3>
+                        <p class="p-comp-desc">초경량 복합소재를 활용한 차체 프레임 구조 해석 및 제작 기업입니다.</p>
+                        <span class="p-comp-badge">진행중 공고 <strong>2</strong>건</span>
+                    </a>
+
+                    <a href="company-detail.html" class="c-card-pav-comp">
+                        <div class="p-comp-logo">
+                            <img src="./images/comp_logo_sample.png" alt="퓨처비클 소프트" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                        </div>
+                        <h3 class="p-comp-name">퓨처비클 소프트</h3>
+                        <p class="p-comp-desc">SDV 기반 차량용 임베디드 소프트웨어 및 OTA 통신 프로토콜 개발 기업입니다.</p>
+                        <span class="p-comp-badge">진행중 공고 <strong>1</strong>건</span>
+                    </a>
+                </div>
+
+                <!-- 참여기업 더보기 버튼 -->
+                <div class="pav-more-wrap tct mt-3">
+                    <button type="button" class="btn-pav-more" id="btnMoreCompanies">
+                        <span>더 보기</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 채용 공고 -->
+        <section class="pavilion-section pavilion-jobs-sec pd6" id="secJobs">
+            <div class="inner-wrap">
+                <div class="pavilion-sec-head flex-between">
+                    <h2 class="pavilion-sec-tit">채용 공고</h2>
+                    
+                    <div class="pavilion-search-bar">
+                        <input type="text" id="jobSearchInput" class="c-input pav-search-input" placeholder="공고명, 기업명, 직무 등을 입력하세요.">
+                        <button type="button" class="btn btn-dark btn-pav-search" id="btnJobSearch">검색</button>
+                    </div>
+                </div>
+
+                <!-- 가로형 채용 공고 리스트 -->
+                <div class="job-row-list mt-3">
+                    <div class="job-row-item">
+                        <div class="j-col-corp">
+                            <span class="j-corp-name">오토디맨스 모빌리티</span>
+                            <button type="button" class="btn-wish-star" aria-label="공고 스크랩" onclick="this.classList.toggle('active')">
+                                <i data-lucide="star"></i>
+                            </button>
+                        </div>
+                        <div class="j-col-main">
+                            <h3 class="j-post-title"><a href="job-detail.html">자율주행 인지 AI 연구원</a></h3>
+                            <p class="j-post-tags">자율주행 | Computer Vision | PyTorch | 딥러닝 외</p>
+                            <div class="j-post-badges">
+                                <span class="j-badge j-badge-green">연봉 7,000만 ~ 1억</span>
+                            </div>
+                        </div>
+                        <div class="j-col-meta">
+                            <span><i data-lucide="map-pin"></i>충북 청주시</span>
+                            <span><i data-lucide="briefcase"></i>경력 3~7년, 정규직 외</span>
+                            <span><i data-lucide="graduation-cap"></i>학력 무관</span>
+                        </div>
+                        <div class="j-col-action">
+                            <a href="job-detail.html" class="btn-apply-outline">입사지원</a>
+                            <div class="j-date-box">
+                                <strong class="j-deadline text-red">오늘 마감</strong>
+                                <span class="j-regist-time">2일전 등록</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-row-item">
+                        <div class="j-col-corp">
+                            <span class="j-corp-name">넥스트에너지 솔루션</span>
+                            <button type="button" class="btn-wish-star" aria-label="공고 스크랩" onclick="this.classList.toggle('active')">
+                                <i data-lucide="star"></i>
+                            </button>
+                        </div>
+                        <div class="j-col-main">
+                            <h3 class="j-post-title"><a href="job-detail.html">전기차(EV) 배터리 팩 설계 엔지니어</a></h3>
+                            <p class="j-post-tags">전기차 | 2차전지 | 기구설계 | CATIA 외</p>
+                            <div class="j-post-badges">
+                                <span class="j-badge j-badge-green">회사내규에 따름</span>
+                            </div>
+                        </div>
+                        <div class="j-col-meta">
+                            <span><i data-lucide="map-pin"></i>충북 충주시</span>
+                            <span><i data-lucide="briefcase"></i>신입/경력, 정규직 외</span>
+                            <span><i data-lucide="graduation-cap"></i>학력 무관</span>
+                        </div>
+                        <div class="j-col-action">
+                            <a href="job-detail.html" class="btn-apply-outline">입사지원</a>
+                            <div class="j-date-box">
+                                <strong class="j-deadline">채용시</strong>
+                                <span class="j-regist-time">1일전 등록</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-row-item">
+                        <div class="j-col-corp">
+                            <span class="j-corp-name">아반모빌리티</span>
+                            <button type="button" class="btn-wish-star" aria-label="공고 스크랩" onclick="this.classList.toggle('active')">
+                                <i data-lucide="star"></i>
+                            </button>
+                        </div>
+                        <div class="j-col-main">
+                            <h3 class="j-post-title"><a href="job-detail.html">모빌리티 플랫폼 백엔드 개발자</a></h3>
+                            <p class="j-post-tags">Mobility | Java | Spring Boot | MSA 외</p>
+                            <div class="j-post-badges">
+                                <span class="j-badge j-badge-green">연봉 6,000만 ~ 8,000만</span>
+                            </div>
+                        </div>
+                        <div class="j-col-meta">
+                            <span><i data-lucide="map-pin"></i>충북 청주시</span>
+                            <span><i data-lucide="briefcase"></i>경력 3년, 계약/정규직 외</span>
+                            <span><i data-lucide="graduation-cap"></i>학력 무관</span>
+                        </div>
+                        <div class="j-col-action">
+                            <a href="job-detail.html" class="btn-apply-outline">입사지원</a>
+                            <div class="j-date-box">
+                                <strong class="j-deadline">채용시</strong>
+                                <span class="j-regist-time">3일전 등록</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 하단 페이지네이션 -->
+                <div class="c-pagination-wrap mt-3">
+                    <button type="button" class="page-ctrl-btn" aria-label="처음 페이지"><i data-lucide="chevrons-left"></i></button>
+                    <button type="button" class="page-ctrl-btn" aria-label="이전 페이지"><i data-lucide="chevron-left"></i></button>
+                    <div class="page-numbers">
+                        <button type="button" class="page-num-btn active">1</button>
+                        <button type="button" class="page-num-btn">2</button>
+                        <button type="button" class="page-num-btn">3</button>
+                    </div>
+                    <button type="button" class="page-ctrl-btn" aria-label="다음 페이지"><i data-lucide="chevron-right"></i></button>
+                    <button type="button" class="page-ctrl-btn" aria-label="마지막 페이지"><i data-lucide="chevrons-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 사전 참여신청 모달 -->
+        <div class="site-modal" id="modalPreApply">
+            <div class="modal-dim"></div>
+            <div class="modal-box modal-preapply-box">
+                <!-- 1. 고정 헤더 영역 -->
+                <div class="modal-header flex-between">
+                    <div class="modal-tit-group">
+                        <h3 class="modal-title">사전 참여신청</h3>
+                        <p class="modal-sub-tit">기본 정보 확인 후 추가 정보를 입력해 주세요.</p>
+                    </div>
+                    <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+                </div>
+                
+                <!-- 2. 중앙 스크롤 바디 영역 -->
+                <div class="modal-body custom-scroll">
+                    <div class="preapply-form-wrap">
+                        <!-- 기본 정보 행 -->
+                        <div class="preapply-row">
+                            <span class="p-label">이름(아이디)</span>
+                            <div class="p-val"><strong>홍길동(kildong)</strong></div>
+                        </div>
+
+                        <div class="preapply-row">
+                            <span class="p-label">연락처</span>
+                            <div class="p-val"><strong>010-1234-5678</strong></div>
+                        </div>
+
+                        <div class="preapply-row">
+                            <span class="p-label">이메일</span>
+                            <div class="p-val"><strong>user@example.com</strong></div>
+                        </div>
+
+                        <!-- 장애인 편의제공 요청(선택) -->
+                        <div class="preapply-row align-top">
+                            <span class="p-label">장애인 편의제공<br>요청(선택)</span>
+                            <div class="p-val">
+                                <textarea class="preapply-textarea" placeholder="필요하신 편의지원 내용을 입력해 주세요."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- 신청 시 유의사항 박스 -->
+                        <div class="preapply-notice-box mt-3">
+                            <strong class="p-notice-head">※ 신청 시 유의사항</strong>
+                            <ul class="p-notice-bullet-list">
+                                <li>신청 후 입장용 모바일 QR코드 전송을 위해 입력된 연락처 정보인지 확인바랍니다. 만약 연락처가 변경되었거나 마이페이지 &gt; 개인정보 수정을 통해 연락처 수정 후 신청해 주세요.</li>
+                                <li>신청하신 편의지원은 장애 유형, 신청 내용, 행사장 환경 및 인원 여건 등을 종합적으로 검토하여 제공여부가 결정됩니다.</li>
+                                <li>모든 요청사항이 반드시 제공되는 것은 아니며, 신청 내용에 따라 일부 지원이 제한되거나 대체 지원될 수 있습니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 하단 고정 푸터 버튼 영역 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark btn-preapply-submit" id="btnSubmitPreApply">신청하기</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 공통 푸터 -->
+    <footer class="site-footer">
+        <div class="inner-wrap">
+            <div class="footer-top flex-between">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/footer_logo.png" alt="충북권역 전략사업 특화 온라인 채용관" class="brand-logo-img">
+                    </a>
+                    <p class="footer-desc">충청북도 기업진흥원이 함께 만드는 충북 지역 우수 중소·중견기업 통합 온라인 채용관입니다.</p>
+                </div>
+                <div class="footer-selects">
+                    <div class="footer-select-box">
+                        <select class="footer-select" onchange="if(this.value) location.href=this.value;">
+                            <option value="">바로가기</option>
+                            <option value="about.html">소개</option>
+                            <option value="pavilion-bio.html">바이오 채용관</option>
+                            <option value="pavilion-mobility.html">미래모빌리티 채용관</option>
+                            <option value="companies.html">참여기업 탐색</option>
+                        </select>
+                    </div>
+                    <div class="footer-select-box">
+                        <select class="footer-select" onchange="if(this.value) location.href=this.value;">
+                            <option value="">고객센터</option>
+                            <option value="notices.html">공지사항</option>
+                            <option value="faq.html">자주묻는 질문</option>
+                            <option value="resources.html">자료실</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom flex-between">
+                <p class="footer-copy">&copy; 2026 충청북도기업진흥원. All Rights Reserved.</p>
+                <div class="footer-terms">
+                    <button type="button" class="btn-terms-modal" data-modal="modalTerms">이용약관</button>
+                    <button type="button" class="btn-terms-modal text-strong" data-modal="modalPrivacy">개인정보처리방침</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 약관 모달 -->
+    <div class="site-modal" id="modalTerms">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">이용약관</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-section-title">제 1 조 (목적)</p>
+                <p class="modal-text">본 약관은 충청권 내일이음 온라인 채용관이 제공하는 제반 서비스의 이용 조건을 규정합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-modal" id="modalPrivacy">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">개인정보처리방침</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-section-title">1. 개인정보 수집 목적</p>
+                <p class="modal-text">플랫폼은 회원가입 및 맞춤 취업 지원 서비스를 위해 최소한의 정보를 수집합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="./js/lucide.min.js"></script>
+    <script src="./js/style.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 관심 공고 스크랩 하트 토글
+        const wishButtons = document.querySelectorAll('.btn-wish-heart');
+        wishButtons.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            btn.classList.toggle('active');
+          });
+        });
+
+        // 임시 참여기업 더보기 버튼
+        const btnMoreCompanies = document.getElementById('btnMoreCompanies');
+        btnMoreCompanies?.addEventListener('click', () => {
+          alert('참여기업 목록을 더 불러옵니다.');
+        });
+      });
+    </script>
+</body>
+</html>
