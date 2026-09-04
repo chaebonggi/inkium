@@ -157,7 +157,7 @@
   .jobfair-m-drawer { position: fixed; top: 0; right: 0; width: 80%; max-width: 32.0rem; height: 100vh; background-color: #ffffff; z-index: 999; box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15); transform: translateX(100%); transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; }
   .jobfair-m-drawer.active { transform: translateX(0); }
   .jobfair-m-head { height: 6.4rem; padding: 0 2.0rem; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: space-between; }
-  .jobfair-m-head img { height: 3.2rem; }
+  .jobfair-m-head img { height: 32px; }
   .jobfair-m-close { width: 3.6rem; height: 3.6rem; display: flex; align-items: center; justify-content: center; color: #64748b; background: none; border: none; cursor: pointer; }
   .jobfair-m-close svg { width: 2.2rem; height: 2.2rem; }
   .jobfair-m-body { padding: 2.4rem 2.0rem; flex: 1; display: flex; flex-direction: column; gap: 1.2rem; overflow-y: auto; }
@@ -171,7 +171,7 @@
   .jobfair-hero-full::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5, 7, 13, 0.25) 0%, rgba(5, 7, 13, 0.25) 60%, #0b0f19 100%); z-index: 1; }
   .jobfair-container { position: relative; z-index: 2; max-width: 128.0rem; margin: 0 auto; padding: 0 2.0rem; }
   .jobfair-hero-body { display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 4.8rem; align-items: flex-end; margin-bottom: 5.6rem; }
-  .jobfair-year { font-family: 'Hiikr', sans-serif; font-size: 8.4rem; line-height: 1; font-weight: 900; color: #ffffff; text-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); margin-bottom: 0.8rem; }
+  .jobfair-year { font-family: 'Hiikr', sans-serif; font-size: 8.4rem; line-height: 1; font-weight: 900; color: #ffffff; text-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); }
   .jobfair-sub-title { font-family: 'Hiikr', sans-serif; font-size: 4.4rem; font-weight: 900; letter-spacing: -0.03em; color: #ffffff; text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); }
   .jobfair-main-title { font-family: 'Hiikr', sans-serif; font-size: 8.4rem; font-weight: 900; line-height: 1.05; letter-spacing: -0.04em; color: #ffffff; text-shadow: 0 8px 24px rgba(0, 16, 60, 0.6); word-break: keep-all; }
   .jobfair-main-title .tit-word { display: block; }
@@ -254,6 +254,7 @@
   }
 
   @media (max-width: 768px) {
+    .jobfair-nav-logo img {height: 32px;}
     .jobfair-custom-nav { height: 6.4rem; }
     .jobfair-wrap { padding-top: 6.4rem; }
     #secPrograms, #secCompanies, #secJobs, #secLocation { scroll-margin-top: 6.4rem; }
@@ -270,10 +271,10 @@
 
   @media (max-width: 640px) {
     .jobfair-hero-full { padding: 4.0rem 0 4.8rem; }
-    .jobfair-title-group { text-align: center; }
-    .jobfair-year { font-size: 4.0rem; margin-bottom: 0.4rem; }
-    .jobfair-sub-title { font-size: 2.2rem; margin-bottom: 0.4rem; }
-    .jobfair-main-title { font-size: 3.6rem; letter-spacing: -0.02em; }
+    .jobfair-title-group {padding: 4rem 0; text-align: center; }
+    .jobfair-year { font-size: 5.0rem; }
+    .jobfair-sub-title { font-size: 3rem; }
+    .jobfair-main-title { font-size: 5rem; letter-spacing: -0.02em; }
     .jobfair-main-title .tit-word { display: inline-block; }
     .jobfair-pass { padding: 2.0rem 1.6rem; }
     .jobfair-pass-grid { flex-direction: column; text-align: center; }
