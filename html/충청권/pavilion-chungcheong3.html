@@ -130,100 +130,164 @@
     <main class="site-main">
         <!-- 에디터 영역 -->
         <style>
-            @font-face { font-family: 'Hiikr'; src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101609@hikr-extrabold/hikr-extrabold/HiKR-ExtraBold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-            .mt8 { margin-top: 8rem; }
-            .pavilion-detail-hero-sec { background-color: #f8fafc; overflow-x: hidden; padding-bottom: 6.0rem; }
-            .pav-global-expo { position: relative; width: 100vw; margin-left: calc(-50vw + 50%); background: #05070d url('./images/pavilion_bg.jpg') center 40% / cover no-repeat; padding: 6.0rem 0 0; color: #ffffff; }
-            .pav-global-expo::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5, 7, 13, 0.3) 0%, rgba(5, 7, 13, 0.3) 60%, #0b0f19 100%); z-index: 1; }
-            .global-expo-inner { position: relative; z-index: 2; max-width: 128.0rem; margin: 0 auto; padding: 0 3.2rem; box-sizing: border-box; }
-            .expo-brand { border-bottom: 1px solid rgba(255, 255, 255, 0.12); padding-bottom: 2.0rem; margin-bottom: 4.8rem; font-size: 1.3rem; letter-spacing: 0.08em; text-transform: uppercase; color: #eee; }
-            .expo-brand-meta {text-align: right;}
-            .hero-left-editorial {line-height: 1.2;}
-            .poster-year-num { display: inline-block; font-family: 'Hiikr', sans-serif, system-ui; font-size: 9rem; font-weight: 900; letter-spacing: 0.04em; color: #ffffff; text-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); }
-            .poster-sub-tit { font-size: 5.0rem; font-weight: 900; font-family: 'Hiikr', sans-serif, system-ui; color: #ffffff; letter-spacing: -0.03em; text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); }
-            .poster-hero-tit { font-size: 9rem; font-weight: 900; font-family: 'Hiikr', sans-serif, system-ui; color: #ffffff; text-shadow: 0 8px 24px rgba(0, 16, 60, 0.6); word-break: keep-all; line-height: 1;}
-            .meta-live-flag { display: inline-flex; align-items: center; gap: 0.6rem; color: #38bdf8; font-weight: 800; }
-            .meta-live-flag::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: #38bdf8; }
-            .expo-editorial-hero { display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 5.6rem; align-items: end; margin-bottom: 5.6rem; }
-            .hero-kicker-txt { font-size: 1.5rem; font-weight: 700; color: #38bdf8; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.6rem; display: block; }
-            .hero-title-main { font-family: 'Hiikr', sans-serif, system-ui; font-size: 8.8rem; font-weight: 900; line-height: 0.98; letter-spacing: -0.04em; color: #ffffff; margin: 0 0 2.4rem; word-break: keep-all; }
-            .hero-title-main span.accent-year { color: #38bdf8; display: block; font-size: 6.4rem; letter-spacing: 0.02em; margin-bottom: 0.8rem; }
-            .hero-title-sub { font-size: 1.7rem; font-weight: 400; color: #94a3b8; line-height: 1.6; margin: 0; max-width: 58.0rem; word-break: keep-all; }
-            .expo-pass-card { background: rgba(17, 24, 39, 0.75); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 1.6rem; padding: 2.8rem; backdrop-filter: blur(16px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
-            .pass-card-head { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed rgba(255, 255, 255, 0.15); padding-bottom: 1.6rem; margin-bottom: 2.0rem; }
-            .pass-card-head .pass-badge { font-size: 1.2rem; font-weight: 800; letter-spacing: 0.1em; color: #fde047; text-transform: uppercase; }
-            .pass-card-head .pass-status { font-size: 1.2rem; color: #38bdf8; font-weight: 700; }
-            .pass-body-layout { display: flex; align-items: center; gap: 2.0rem; }
-            .pass-qr-frame { width: 10.4rem; height: 10.4rem; background: #ffffff; border-radius: 1.0rem; padding: 0.6rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-            .pass-qr-frame img { width: 100%; height: 100%; object-fit: contain; }
-            .pass-info-lines { display: flex; flex-direction: column; gap: 0.6rem; }
-            .pass-info-lines strong { font-size: 1.65rem; font-weight: 800; color: #ffffff; line-height: 1.35; word-break: keep-all; }
-            .pass-info-lines p { font-size: 1.3rem; color: #94a3b8; line-height: 1.45; margin: 0; word-break: keep-all; }
-            .btn-expo-ticket { width: 100%; height: 4.8rem; margin-top: 2.2rem; background: #ffffff; color: #05070d; border: none; border-radius: 0.8rem; font-size: 1.5rem; font-weight: 800; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; letter-spacing: -0.01em; }
-            .btn-expo-ticket:hover { background: #38bdf8; color: #ffffff; }
-            .expo-spec-ticker { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255, 255, 255, 0.12); border-bottom: 1px solid rgba(255, 255, 255, 0.12); margin-bottom: 4.8rem; }
-            .spec-item { padding: 2.8rem 2.0rem; border-right: 1px solid rgba(255, 255, 255, 0.12); display: flex; flex-direction: column; gap: 0.8rem; }
-            .spec-item:last-child { border-right: none; }
-            .spec-num-label { font-size: 1.2rem; font-weight: 700; color: #64748b; letter-spacing: 0.08em; }
-            .spec-main-val { font-size: 2.0rem; font-weight: 800; color: #ffffff; letter-spacing: -0.01em; line-height: 1.3; }
-            .spec-sub-val { font-size: 1.35rem; color: #94a3b8; }
-            .expo-sponsors-editorial { display: flex; align-items: center; gap: 2.0rem; flex-wrap: wrap; padding-bottom: 4.8rem; }
-            .sponsors-tag-label { font-size: 1.2rem; font-weight: 800; letter-spacing: 0.08em; color: #64748b; text-transform: uppercase; }
-            .sponsors-inline-logos { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
-            .sponsors-inline-logos span { display: inline-flex; align-items: center; background: rgba(255, 255, 255, 0.95); padding: 0.6rem 1.2rem; border-radius: 0.6rem; height: 3.6rem; box-sizing: border-box; }
-            .sponsors-inline-logos span img { max-height: 2.2rem; max-width: 11.0rem; object-fit: contain; }
-            .pav-white-guide-board { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 2.4rem; padding: 4.8rem 4.0rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); }
-            .p-guide-head { margin-bottom: 3.6rem; }
-            .p-guide-title-row { display: flex; align-items: center; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
-            .p-deco-dots { color: #cbd5e1; font-size: 1.4rem; letter-spacing: 0.2em; }
-            .p-guide-main-tit { font-size: 2.2rem; font-weight: 800; color: #111827; margin: 0; letter-spacing: -0.02em; word-break: keep-all; }
-            .p-title-blue-line { width: 12.0rem; height: 3px; background-color: #0284c7; margin: 1.2rem auto 0; border-radius: 2px; }
-            .p-title-yellow-line { width: 12.0rem; height: 3px; background-color: #eab308; margin: 1.2rem auto 0; border-radius: 2px; }
-            .pav-info-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.0rem; }
-            .p-grid-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 3.2rem 2.0rem; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 1.8rem; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
-            .p-grid-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); border-color: #38bdf8; }
-            .p-grid-card.card-side-event:hover { border-color: #eab308; box-shadow: 0 10px 25px rgba(234, 179, 8, 0.15); }
-            .card-icon-circle { width: 5.6rem; height: 5.6rem; border-radius: 1.6rem; display: flex; align-items: center; justify-content: center; margin-bottom: 2.0rem; }
-            .card-icon-circle svg { width: 2.6rem; height: 2.6rem; }
-            .ic-blue { background-color: #eff6ff; color: #0284c7; }
-            .ic-cyan { background-color: #ecfeff; color: #0891b2; }
-            .ic-indigo { background-color: #eef2ff; color: #4f46e5; }
-            .ic-yellow { background-color: #fefce8; color: #ca8a04; }
-            .card-tit { font-size: 1.7rem; font-weight: 800; color: #111827; margin-bottom: 1.0rem; }
-            .card-desc { font-size: 1.35rem; color: #64748b; line-height: 1.55; margin: 0; word-break: keep-all; }
-            .btn-card-reserve { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; width: 100%; max-width: 16.0rem; height: 3.8rem; margin-top: 2.0rem; background-color: #fefce8; color: #854d0e; border: 1.5px solid #fde047; border-radius: 0.8rem; font-size: 1.35rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; }
-            .btn-card-reserve:hover { background-color: #eab308; color: #ffffff; border-color: #eab308; }
-            .pav-detail-sub-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1.6rem; padding: 2.4rem 2.8rem; }
-            .box-sec-tit { display: flex; align-items: center; gap: 0.6rem; font-size: 1.5rem; font-weight: 800; color: #0284c7; margin-bottom: 1.4rem; }
-            .box-sec-tit svg { width: 1.7rem; height: 1.7rem; }
-            .pav-clean-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem; }
-            .pav-clean-list li { position: relative; padding-left: 1.6rem; font-size: 1.35rem; color: #475569; line-height: 1.55; }
-            .pav-clean-list li::before { content: ''; position: absolute; left: 0; top: 0.8rem; width: 5px; height: 5px; border-radius: 50%; background-color: #0284c7; }
-            .pav-clean-list strong { color: #111827; font-weight: 700; }
-            .p-proc-line-steps { display: flex; align-items: center; justify-content: space-between; gap: 1.0rem; }
-            .step-card { flex: 1; display: flex; flex-direction: column; align-items: center; background-color: #ffffff; border: 1px solid #e2e8f0; padding: 1.4rem 1.0rem; border-radius: 1.2rem; text-align: center; }
-            .step-badge { font-size: 1.1rem; font-weight: 800; color: #0284c7; margin-bottom: 0.4rem; }
-            .step-txt { font-size: 1.35rem; font-weight: 700; color: #1e293b; word-break: keep-all; }
-            .step-arrow { color: #94a3b8; width: 1.8rem; height: 1.8rem; flex-shrink: 0; }
-            .pav-detail-notice { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.6rem 2.0rem; background-color: #fef2f2; border: 1px solid #fecaca; border-radius: 1.2rem; }
-            .pav-detail-notice .notice-ic { width: 2.0rem; height: 2.0rem; color: #ef4444; flex-shrink: 0; margin-top: 0.2rem; }
-            .notice-txts strong { display: block; font-size: 1.35rem; font-weight: 700; color: #991b1b; margin-bottom: 0.4rem; }
-            .notice-txts p { font-size: 1.25rem; color: #b91c1c; line-height: 1.55; margin: 0; word-break: keep-all; }
-            .pav-apply-btn-wrap { display: flex; justify-content: center; }
-            @media (max-width: 1024px) { .expo-editorial-hero { grid-template-columns: 1fr; gap: 4.0rem; } .hero-title-main { font-size: 7.2rem; } .expo-spec-ticker { grid-template-columns: 1fr; } .spec-item { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.12); padding: 2.0rem 0; } .spec-item:last-child { border-bottom: none; } .pav-info-grid-3 { grid-template-columns: repeat(2, 1fr); } .p-proc-line-steps { flex-direction: column; gap: 0.8rem; } .step-card { width: 100%; justify-content: space-between; padding: 1.2rem 1.6rem; box-sizing: border-box; } .step-badge { margin-bottom: 0; } .step-arrow { transform: rotate(90deg); } }
-            @media (max-width: 768px) { .pav-global-expo { padding: 4.0rem 0 0; } .expo-brand-meta { flex-direction: column; align-items: flex-start; gap: 0.8rem; } .hero-title-main { font-size: 4.6rem; } .hero-title-main span.accent-year { font-size: 3.6rem; } .pass-body-layout { flex-direction: column; text-align: center; } .pav-white-guide-board { padding: 3.2rem 1.6rem; margin-top: 3.2rem; } .p-guide-main-tit { font-size: 1.8rem; } .pav-info-grid-3 { grid-template-columns: 1fr; } }
+           @font-face { font-family: 'Hiikr'; src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101609@hikr-extrabold/hikr-extrabold/HiKR-ExtraBold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+.mt8 { margin-top: 8rem; }
+.pavilion-detail-hero-sec { background-color: #f8fafc; overflow-x: hidden; padding-bottom: 6.0rem; }
+.pav-global-expo { position: relative; width: 100vw; margin-left: calc(-50vw + 50%); background: #05070d url('./images/pavilion_bg.jpg') center 40% / cover no-repeat; padding: 4rem 0 0; color: #ffffff; }
+.pav-global-expo::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5, 7, 13, 0.45) 0%, rgba(5, 7, 13, 0.6) 60%, #0b0f19 100%); z-index: 1; }
+.global-expo-inner { position: relative; z-index: 2; max-width: 128.0rem; margin: 0 auto; padding: 0 3.2rem; box-sizing: border-box; }
+.hero-left-editorial { line-height: 1.2; }
+.poster-year-num { display: inline-block; font-family: 'Hiikr', sans-serif, system-ui; font-size: 11rem; font-weight: 900; letter-spacing: 0.04em; color: #ffffff; }
+.poster-sub-tit { font-size: 6rem; font-weight: 900; font-family: 'Hiikr', sans-serif, system-ui; color: #ffffff; letter-spacing: -0.03em; margin-top: 0.4rem; }
+.poster-hero-tit { font-size: 12rem; font-weight: 900; font-family: 'Hiikr', sans-serif, system-ui; color: #38f0e2; word-break: keep-all; line-height: 1.05; }
+.expo-editorial-hero { display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 5.6rem; align-items: end; margin-bottom: 5.6rem; }
+.expo-pass-card { background: rgba(15, 23, 42, 0.9); border: 2px solid rgba(255, 255, 255, 0.25); border-radius: 1.8rem; padding: 3.2rem; backdrop-filter: blur(16px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); }
+.pass-card-head { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed rgba(255, 255, 255, 0.3); padding-bottom: 1.6rem; margin-bottom: 2.2rem; }
+.pass-card-head .pass-badge { font-size: 1.4rem; font-weight: 900; letter-spacing: 0.1em; color: #fde047; text-transform: uppercase; }
+.pass-card-head .pass-status { font-size: 1.4rem; color: #38bdf8; font-weight: 800; }
+.pass-body-layout { display: flex; align-items: center; gap: 2.2rem; }
+.pass-qr-frame { width: 11.4rem; height: 11.4rem; background: #ffffff; border-radius: 1.2rem; padding: 0.6rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.pass-qr-frame img { width: 100%; height: 100%; object-fit: contain; }
+.pass-info-lines { display: flex; flex-direction: column; gap: 0.8rem; }
+.pass-info-lines strong { font-size: 1.85rem; font-weight: 800; color: #ffffff; line-height: 1.35; word-break: keep-all; }
+.pass-info-lines p { font-size: 1.45rem; color: #e2e8f0; line-height: 1.5; margin: 0; word-break: keep-all; }
+.btn-expo-ticket { width: 100%; height: 5.2rem; margin-top: 2.4rem; background: #38bdf8; color: #05070d; border: none; border-radius: 1.0rem; font-size: 1.65rem; font-weight: 900; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 0.8rem; }
+.btn-expo-ticket:hover { background: #ffffff; color: #0284c7; }
+.expo-spec-ticker { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid rgba(255, 255, 255, 0.25); border-bottom: 2px solid rgba(255, 255, 255, 0.25); margin-bottom: 4.8rem; }
+.spec-item { padding: 3.2rem 2.4rem; border-right: 1px solid rgba(255, 255, 255, 0.2); display: flex; flex-direction: column; gap: 1.0rem; }
+.spec-item:last-child { border-right: none; }
+.spec-num-label { font-size: 1.4rem; font-weight: 900; color: #38bdf8; letter-spacing: 0.1em; }
+.spec-main-val { font-size: 2.6rem; font-weight: 900; color: #ffffff; letter-spacing: -0.01em; line-height: 1.25; }
+.spec-sub-val { font-size: 1.6rem; font-weight: 700; color: #f1f5f9; }
+.expo-agencies-container { display: flex; flex-direction: column; gap: 2.0rem; padding-bottom: 5.6rem; }
+.expo-sponsors-editorial { display: flex; align-items: center; gap: 2.4rem; flex-wrap: wrap; }
+.sponsors-tag-label { font-size: 1.6rem; font-weight: 900; letter-spacing: 0.08em; color: #ffffff; padding: 0.4rem 0; text-transform: uppercase; flex-shrink: 0; background: transparent; }
+.sponsors-inline-logos { display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+.sponsors-inline-logos span { display: inline-flex; align-items: center; justify-content: center; background: #ffffff; padding: 0.8rem 1.6rem; border-radius: 0.8rem; height: 4.6rem; box-sizing: border-box; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); }
+.sponsors-inline-logos span img { max-height: 3.0rem; max-width: 16.0rem; object-fit: contain; }
+.sponsors-inline-logos span.sponsor-logo-lg img { max-height: 3.4rem; max-width: 26.0rem; }
+.pav-white-guide-board { background-color: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 2.4rem; padding: 5.6rem 4.8rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
+.p-guide-head { margin-bottom: 4.0rem; }
+.p-guide-title-row { display: flex; align-items: center; justify-content: center; gap: 1.4rem; flex-wrap: wrap; }
+.p-deco-dots { color: #94a3b8; font-size: 1.6rem; letter-spacing: 0.2em; font-weight: 900; }
+.p-guide-main-tit { font-size: 2.8rem; font-weight: 900; color: #0f172a; margin: 0; letter-spacing: -0.02em; word-break: keep-all; }
+.p-title-blue-line { width: 14.0rem; height: 4px; background-color: #0284c7; margin: 1.4rem auto 0; border-radius: 2px; }
+.p-title-yellow-line { width: 14.0rem; height: 4px; background-color: #eab308; margin: 1.4rem auto 0; border-radius: 2px; }
+.pav-info-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4rem; }
+.p-grid-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 3.6rem 2.4rem; background-color: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 2.0rem; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.p-grid-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); border-color: #0284c7; }
+.p-grid-card.card-side-event:hover { border-color: #eab308; box-shadow: 0 12px 30px rgba(234, 179, 8, 0.2); }
+.card-icon-circle { width: 6.8rem; height: 6.8rem; border-radius: 2.0rem; display: flex; align-items: center; justify-content: center; margin-bottom: 2.2rem; }
+.card-icon-circle svg { width: 3.2rem; height: 3.2rem; stroke-width: 2.3; }
+.ic-blue { background-color: #eff6ff; color: #0284c7; }
+.ic-cyan { background-color: #ecfeff; color: #0891b2; }
+.ic-indigo { background-color: #eef2ff; color: #4f46e5; }
+.ic-yellow { background-color: #fefce8; color: #ca8a04; }
+.card-tit { font-size: 2.1rem; font-weight: 900; color: #0f172a; margin-bottom: 1.2rem; }
+.card-desc { font-size: 1.55rem; font-weight: 600; color: #334155; line-height: 1.6; margin: 0; word-break: keep-all; }
+.btn-card-action { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; width: 100%; max-width: 17.0rem; height: 4.2rem; margin-top: 2.2rem; background-color: #ffffff; color: #1e293b; border: 1.5px solid #cbd5e1; border-radius: 0.8rem; font-size: 1.45rem; font-weight: 700; text-decoration: none; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; }
+.btn-card-action:hover { background-color: #0284c7; color: #ffffff; border-color: #0284c7; }
+.btn-card-action svg { width: 1.6rem; height: 1.6rem; }
+.btn-card-reserve { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; width: 100%; max-width: 18.0rem; height: 4.4rem; margin-top: 2.4rem; background-color: #fefce8; color: #713f12; border: 1px solid #eab308; border-radius: 0.8rem; font-size: 1.5rem; font-weight: 800; cursor: pointer; transition: all 0.2s ease; }
+.btn-card-reserve:hover { background-color: #eab308; color: #ffffff; }
+.pav-detail-sub-box { background-color: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 1.8rem; padding: 2.8rem 3.2rem; }
+.box-sec-tit { display: flex; align-items: center; gap: 0.8rem; font-size: 1.75rem; font-weight: 900; color: #0284c7; margin-bottom: 1.6rem; }
+.box-sec-tit svg { width: 2.0rem; height: 2.0rem; }
+.pav-clean-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.2rem; }
+.pav-clean-list li { position: relative; padding-left: 2.0rem; font-size: 1.55rem; font-weight: 600; color: #334155; line-height: 1.6; }
+.pav-clean-list li::before { content: ''; position: absolute; left: 0; top: 0.9rem; width: 6px; height: 6px; border-radius: 50%; background-color: #0284c7; }
+.pav-clean-list strong { color: #0f172a; font-weight: 800; }
+.p-proc-line-steps { display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; }
+.step-card { flex: 1; display: flex; flex-direction: column; align-items: center; background-color: #ffffff; border: 1.5px solid #cbd5e1; padding: 1.8rem 1.2rem; border-radius: 1.4rem; text-align: center; }
+.step-badge { font-size: 1.3rem; font-weight: 900; color: #0284c7; margin-bottom: 0.6rem; }
+.step-txt { font-size: 1.55rem; font-weight: 800; color: #0f172a; word-break: keep-all; }
+.step-arrow { color: #64748b; width: 2.2rem; height: 2.2rem; flex-shrink: 0; }
+.pav-detail-notice { display: flex; align-items: flex-start; gap: 1.4rem; padding: 2.0rem 2.4rem; background-color: #fef2f2; border: 1.5px solid #f87171; border-radius: 1.4rem; }
+.pav-detail-notice .notice-ic { width: 2.4rem; height: 2.4rem; color: #dc2626; flex-shrink: 0; margin-top: 0.2rem; }
+.notice-txts strong { display: block; font-size: 1.6rem; font-weight: 800; color: #991b1b; margin-bottom: 0.6rem; }
+.notice-txts p { font-size: 1.45rem; font-weight: 600; color: #b91c1c; line-height: 1.6; margin: 0; word-break: keep-all; }
+.modal-inst-box { width: 100%; max-width: 68.0rem; max-height: 85vh; border-radius: 2.0rem; background-color: #ffffff; display: flex; flex-direction: column; overflow: hidden; }
+.modal-inst-box .modal-header { padding: 2.2rem 2.8rem; border-bottom: 1px solid #e2e8f0; flex-shrink: 0; }
+.modal-inst-box .modal-title { font-size: 2.2rem; font-weight: 800; color: #0f172a; margin: 0; }
+.modal-inst-box .modal-body { padding: 2.8rem; flex: 1; overflow-y: auto; }
+.modal-inst-box .modal-footer { width: 100%; padding: 1.6rem 2.8rem 2.0rem; border-top: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; background-color: #ffffff; box-sizing: border-box; }
+.btn-inst-close { display: inline-flex; align-items: center; justify-content: center; margin: 0 auto; width: 100%; max-width: 16.0rem; height: 4.4rem; font-size: 1.45rem; font-weight: 700; color: #475569; background-color: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 0.8rem; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; }
+.btn-inst-close:hover { background-color: #f8fafc; border-color: #0284c7; color: #0284c7; }
+.inst-modal-intro { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1.2rem; padding: 2.0rem 2.4rem; text-align: left; }
+.inst-modal-intro .intro-tit { font-size: 1.45rem; font-weight: 700; color: #1e293b; line-height: 1.6; margin: 0 0 1.2rem; word-break: keep-all; }
+.inst-modal-intro .intro-bullet-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.inst-modal-intro .intro-bullet-list li { position: relative; padding-left: 1.4rem; font-size: 1.35rem; color: #475569; }
+.inst-modal-intro .intro-bullet-list li::before { content: '•'; position: absolute; left: 0; top: 0; color: #0284c7; font-weight: 700; }
+.inst-table-wrap { width: 100%; border: 1px solid #cbd5e1; border-radius: 1.0rem; overflow: hidden; }
+.inst-data-table { width: 100%; border-collapse: collapse; text-align: center; }
+.inst-data-table thead th { background-color: #e2e8f0; color: #1e293b; font-size: 1.4rem; font-weight: 800; padding: 1.2rem 1.0rem; border-bottom: 1px solid #cbd5e1; }
+.inst-data-table tbody td { padding: 1.2rem 1.0rem; font-size: 1.35rem; color: #334155; border-bottom: 1px solid #f1f5f9; }
+.inst-data-table tbody tr:last-child td { border-bottom: none; }
+.inst-data-table tbody tr:hover { background-color: #f8fafc; }
+.inst-data-table td.td-left { text-align: left; font-weight: 600; color: #0f172a; padding-left: 1.6rem; }
+.btn-inst-link { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem 1.2rem; background-color: #ffffff; color: #0284c7; border: 1px solid #bae6fd; border-radius: 0.6rem; font-size: 1.25rem; font-weight: 700; text-decoration: none; transition: all 0.2s ease; }
+.btn-inst-link:hover { background-color: #0284c7; color: #ffffff; border-color: #0284c7; }
+
+@media (max-width: 1024px) {
+  .expo-editorial-hero { grid-template-columns: 1fr; gap: 4.0rem; }
+  .poster-year-num { font-size: 8.4rem; }
+  .poster-sub-tit { font-size: 4.6rem; }
+  .poster-hero-tit { font-size: 8.8rem; }
+  .expo-spec-ticker { grid-template-columns: 1fr; }
+  .spec-item { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding: 2.2rem 0; }
+  .spec-item:last-child { border-bottom: none; }
+  .expo-sponsors-editorial { flex-direction: column; align-items: flex-start; gap: 1.6rem; }
+  .sponsors-inline-logos { display: flex; flex-wrap: wrap; gap: 1.2rem; width: 100%; justify-content: flex-start; }
+  .sponsors-inline-logos span { width: auto; flex: initial; }
+  .sponsors-inline-logos span.sponsor-logo-lg { width: auto; max-width: 100%; }
+  .pav-info-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .p-proc-line-steps { flex-direction: column; gap: 0.8rem; }
+  .step-card { width: 100%; justify-content: space-between; padding: 1.4rem 1.8rem; box-sizing: border-box; }
+  .step-arrow { transform: rotate(90deg); }
+}
+
+@media (max-width: 768px) {
+  .pav-global-expo { padding: 4.0rem 0 0; }
+  .hero-left-editorial { text-align: center; }
+  .poster-year-num { font-size: 7.2rem; }
+  .poster-sub-tit { font-size: 4.0rem; }
+  .poster-hero-tit { font-size: 7.2rem; }
+  .pass-body-layout { flex-direction: column; text-align: center; }
+  .spec-item { text-align: center; align-items: center; }
+  .expo-sponsors-editorial { align-items: flex-start; }
+  .sponsors-inline-logos { justify-content: flex-start; }
+  .pav-white-guide-board { padding: 3.6rem 2.0rem; margin-top: 3.2rem; }
+  .p-guide-main-tit { font-size: 2.2rem; }
+  .pav-info-grid-3 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .poster-year-num { font-size: 6.8rem; }
+  .poster-sub-tit { font-size: 3.6rem; }
+  .poster-hero-tit { font-size: 6.8rem; }
+  .expo-sponsors-editorial { align-items: flex-start; }
+  .sponsors-inline-logos { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 1.0rem; width: 100%; }
+  .sponsors-inline-logos span { width: auto; flex: initial; padding: 0.6rem 1.2rem; height: 4.0rem; }
+  .sponsors-inline-logos span img { max-height: 2.4rem; max-width: 13.0rem; }
+  .sponsors-inline-logos span.sponsor-logo-lg { width: auto; }
+  .sponsors-inline-logos span.sponsor-logo-lg img { max-height: 2.6rem; max-width: 22.0rem; }
+  .modal-inst-box { max-height: 90vh; }
+  .modal-inst-box .modal-header { padding: 1.8rem 1.6rem; }
+  .modal-inst-box .modal-body { padding: 1.6rem; }
+  .modal-inst-box .modal-footer { padding: 1.2rem 1.6rem 1.6rem; }
+  .btn-inst-close { max-width: 100%; height: 4.2rem; margin: 0; }
+  .inst-modal-intro { padding: 1.4rem 1.6rem; }
+  .inst-modal-intro .intro-tit { font-size: 1.35rem; }
+  .inst-data-table thead th { font-size: 1.25rem; padding: 1.0rem 0.6rem; }
+  .inst-data-table tbody td { font-size: 1.25rem; padding: 1.0rem 0.6rem; }
+  .inst-data-table td.td-left { padding-left: 1.0rem; }
+  .btn-inst-link { padding: 0.4rem 0.8rem; font-size: 1.15rem; }
+}
         </style>
 
         <section class="pavilion-detail-hero-sec">
-            <!-- 글로벌 테크 엑스포 에디토리얼 히어로 -->
             <div class="pav-global-expo">
                 <div class="global-expo-inner">
-                    <!-- 상단 메타 바 -->
-                    <div class="expo-brand">
-                        <div class="expo-brand-meta">
-                            <span>주관 | 충청북도기업진흥원 · 충북일자리지원센터</span>
-                        </div>
-                    </div>
 
                     <!-- 에디토리얼 헤드라인 & 티켓 패스 모듈 -->
                     <div class="expo-editorial-hero">
@@ -245,7 +309,7 @@
                                         <img src="./images/pavilion_qr.png" alt="사전등록 QR코드">
                                     </div>
                                     <div class="pass-info-lines">
-                                        <strong>온라인 사전등록 패스</strong>
+                                        <strong>온라인 사전등록</strong>
                                         <p>QR 스캔 또는 버튼 신청으로 대기 없는 현장 면접과 부대 프로그램 우선 예약이 가능합니다.</p>
                                     </div>
                                 </div>
@@ -276,22 +340,34 @@
                         </div>
                     </div>
 
-                    <!-- 주최 기관 로고 리스트 -->
-                    <div class="expo-sponsors-editorial">
-                        <span class="sponsors-tag-label">주최</span>
-                        <div class="sponsors-inline-logos">
-                            <span><img src="./images/tlogo_01.png" alt="고용노동부"></span>
-                            <span><img src="./images/tlogo_02.png" alt="충청북도"></span>
-                            <span><img src="./images/tlogo_03.png" alt="대전광역시"></span>
-                            <span><img src="./images/tlogo_04.png" alt="충청남도"></span>
-                            <span><img src="./images/tlogo_05.png" alt="세종특별자치시"></span>
-                            <span><img src="./images/tlogo_06.png" alt="충북지방중소벤처기업청"></span>
+                    <!-- 기관 로고 영역 (주관 상단 배치 + 주최 하단 배치) -->
+                    <div class="expo-agencies-container">
+                        <!-- 주관 기관 -->
+                        <div class="expo-sponsors-editorial">
+                            <span class="sponsors-tag-label">주관</span>
+                            <div class="sponsors-inline-logos">
+                                <span class="sponsor-logo-lg"><img src="./images/tlogo_07.png" alt="충청북도기업진흥원 · 충북일자리지원센터"></span>
+                            </div>
+                        </div>
+
+                        <!-- 주최 기관 -->
+                        <div class="expo-sponsors-editorial">
+                            <span class="sponsors-tag-label">주최</span>
+                            <div class="sponsors-inline-logos">
+                                <span><img src="./images/tlogo_01.png" alt="고용노동부"></span>
+                                <span><img src="./images/tlogo_02.png" alt="충청북도"></span>
+                                <span><img src="./images/tlogo_03.png" alt="대전광역시"></span>
+                                <span><img src="./images/tlogo_04.png" alt="충청남도"></span>
+                                <span><img src="./images/tlogo_05.png" alt="세종특별자치시"></span>
+                                <span><img src="./images/tlogo_06.png" alt="충북지방중소벤처기업청"></span>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
-            <!-- 주요 프로그램 이하 영역 (원형 유지) -->
+            <!-- 주요 프로그램 이하 영역 -->
             <div class="inner-wrap mt6">
                 <div class="pav-white-guide-board">
                     <div class="p-guide-head tct">
@@ -303,22 +379,28 @@
                         <div class="p-title-blue-line"></div>
                     </div>
                     <div class="pav-info-grid-3 mt-3">
+                        <!-- 카드 1. 취업 역량상담 -->
                         <div class="p-grid-card">
                             <div class="card-icon-circle ic-blue"><i data-lucide="user-check"></i></div>
                             <strong class="card-tit">취업 역량상담</strong>
-                            <p class="card-desc">이력서, 자기소개서 컨설팅 및<br> 전문 직업상담사의 맞춤형 취업 상담</p>
+                            <p class="card-desc">이력서, 자기소개서 컨설팅 및<br>전문 직업상담사의 맞춤형 취업 상담</p>
+                            <a href="#none" class="btn-card-action">바로가기 <i data-lucide="chevron-right"></i></a>
                         </div>
 
+                        <!-- 카드 2. 채용설명회 -->
                         <div class="p-grid-card">
                             <div class="card-icon-circle ic-cyan"><i data-lucide="presentation"></i></div>
                             <strong class="card-tit">채용설명회</strong>
-                            <p class="card-desc">우수 참여기업의 기업 비전 및<br> 인재상, 채용 프로세스 안내</p>
+                            <p class="card-desc">우수 참여기업의 기업 비전 및<br>인재상, 채용 프로세스 안내</p>
+                            <a href="#none" class="btn-card-action">바로가기 <i data-lucide="chevron-right"></i></a>
                         </div>
 
+                        <!-- 카드 3. 지방공공기관 채용설명존 -->
                         <div class="p-grid-card">
-                            <div class="card-icon-circle ic-indigo"><i data-lucide="megaphone"></i></div>
-                            <strong class="card-tit">정책 홍보</strong>
-                            <p class="card-desc">청년 일자리 지원 정책 및<br> 취업 연계 교육 프로그램 안내</p>
+                            <div class="card-icon-circle ic-indigo"><i data-lucide="building-2"></i></div>
+                            <strong class="card-tit">지방공공기관 채용설명존</strong>
+                            <p class="card-desc">지방공공기관 취업, 궁금한 모두를<br>한자리에서 만나보세요!</p>
+                            <button type="button" class="btn-card-action btn-open-inst-modal" data-modal="modalInstList">참여기관 확인 <i data-lucide="chevron-right"></i></button>
                         </div>
                     </div>
 
@@ -399,6 +481,133 @@
                 </div>
             </div>
         </section>
+        <!-- 지방공공기관 채용설명존 모달 -->
+        <div class="site-modal" id="modalInstList">
+            <div class="modal-dim"></div>
+            <div class="modal-box modal-inst-box">
+                <!-- 1. 고정 헤더 -->
+                <div class="modal-header flex-between">
+                    <h3 class="modal-title">지방공공기관 채용설명존</h3>
+                    <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+                </div>
+                
+                <!-- 2. 중앙 내부 스크롤 바디 -->
+                <div class="modal-body custom-scroll">
+                    <div class="inst-modal-intro">
+                        <p class="intro-tit">기관별 채용정보와 복리후생, 직무정보까지 알아보고<br>채용담당자와 직접 소통하여 취업의 궁금증을 해결해보세요.</p>
+                        <ul class="intro-bullet-list">
+                            <li>기관별 주요 채용 직무 및 인재상 소개</li>
+                            <li>채용 담당자 현장 상담</li>
+                            <li>채용절차, 시험과목 등 주요정보 안내</li>
+                        </ul>
+                    </div>
+
+                    <!-- 기관 테이블 (전달해주신 실제 기관명 및 링크 반영) -->
+                    <div class="inst-table-wrap mt-2">
+                        <table class="inst-data-table">
+                            <colgroup>
+                                <col style="width: 12%;">
+                                <col style="width: 18%;">
+                                <col style="width: 46%;">
+                                <col style="width: 24%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>권역</th>
+                                    <th>기관명</th>
+                                    <th>바로가기</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>충북</td>
+                                    <td class="td-left">(재)충북기업진흥원</td>
+                                    <td><a href="https://www.cba.ne.kr/" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>충북</td>
+                                    <td class="td-left">축산물품질평가원</td>
+                                    <td><a href="https://www.ekape.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>충북</td>
+                                    <td class="td-left">한국전기공사협회</td>
+                                    <td><a href="https://www.keca.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>충북</td>
+                                    <td class="td-left">(재)충청북도창조경제혁신센터</td>
+                                    <td><a href="https://ccei.creativekorea.or.kr/chungbuk" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>충북</td>
+                                    <td class="td-left">(사)충북바이오산학융합원</td>
+                                    <td><a href="https://osongbaio.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>충북</td>
+                                    <td class="td-left">재단법인 충북테크노파크</td>
+                                    <td><a href="https://www.cbtp.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>충북</td>
+                                    <td class="td-left">재단법인 충북인재평생교육진흥원</td>
+                                    <td><a href="https://www.cbitle.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>세종</td>
+                                    <td class="td-left">세종특별자치시시설관리공단</td>
+                                    <td><a href="https://www.sjfmc.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>대전</td>
+                                    <td class="td-left">한국산림복지진흥원</td>
+                                    <td><a href="https://www.fowi.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>충남</td>
+                                    <td class="td-left">(재)충남경제진흥원</td>
+                                    <td><a href="https://www.cepa.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3. 고정 푸터: 밝고 세련된 아웃라인 닫기 버튼 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn-inst-close btn-modal-close">닫기</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // 지방공공기관 확인 모달 열기
+                const btnOpenInst = document.querySelector('.btn-open-inst-modal');
+                const modalInst = document.getElementById('modalInstList');
+
+                btnOpenInst?.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modalInst?.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            });
+        </script>
         <!-- //에디터 영역 -->
 
         <!-- 참여기업 소개 -->
