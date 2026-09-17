@@ -75,7 +75,7 @@
 .tone-emerald:hover{border-color:#34d399;}
 .tone-purple:hover{border-color:#c084fc;}
 
-/* PC(기본): 원래 흰색 배경 유지 */
+/* PC(기본): 화이트 배경 및 슬림 페이드 */
 .card-bg-layer{position:absolute;top:0;bottom:0;width:55%;background-size:cover;background-position:center;z-index:1;}
 .split-showcase-card.bg-right .card-bg-layer{right:0;}
 .split-showcase-card.bg-left .card-bg-layer{left:0;}
@@ -88,7 +88,7 @@
 .split-showcase-card.bg-right .card-gradient-mask{background:linear-gradient(to right,#ffffff 0%,#ffffff 45%,rgba(255,255,255,0.85) 60%,rgba(255,255,255,0.0) 90%);}
 .split-showcase-card.bg-left .card-gradient-mask{background:linear-gradient(to left,#ffffff 0%,#ffffff 45%,rgba(255,255,255,0.85) 60%,rgba(255,255,255,0.0) 90%);}
 
-.showcase-content{position:relative;z-index:3;max-width:58.0rem;padding:4.0rem;}
+.showcase-content{position:relative;z-index:3;max-width:65rem;max-height:65.0rem;padding:4.0rem;box-sizing:border-box;}
 .split-showcase-card.bg-left .showcase-content{margin-left:auto;padding:4.0rem 4.0rem 4.0rem 2.0rem;}
 
 .showcase-tag-row{display:flex;align-items:center;gap:1.0rem;margin-bottom:1.4rem;}
@@ -106,7 +106,7 @@
 .showcase-lead{font-size:1.45rem;color:#475569;line-height:1.55;margin:0 0 2.2rem;word-break:keep-all;}
 
 .showcase-meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;background:rgba(248,250,252,0.92);backdrop-filter:blur(4px);border:1px solid #f1f5f9;border-radius:1.6rem;padding:2.0rem;}
-.meta-block{display:flex;flex-direction:column;gap:0.4rem;}
+.meta-block{display:flex;flex-direction:column;gap:0.6rem;}
 .meta-block.col-span-2{grid-column:span 2;border-top:1px dashed #e2e8f0;padding-top:1.2rem;margin-top:0.2rem;}
 .meta-caption{display:flex;align-items:center;gap:0.6rem;font-size:1.25rem;font-weight:800;color:#0f172a;text-transform:uppercase;}
 .meta-caption svg{width:1.4rem;height:1.4rem;}
@@ -116,13 +116,14 @@
 .meta-val{font-size:1.3rem;color:#475569;line-height:1.5;margin:0;word-break:keep-all;}
 .meta-val strong{color:#1e293b;}
 
-.meta-bullet-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;}
-.meta-bullet-list li{position:relative;padding-left:1.2rem;font-size:1.3rem;color:#334155;line-height:1.5;word-break:keep-all;}
-.meta-bullet-list li::before{content:'•';position:absolute;left:0;top:0;font-size:1.4rem;}
-.tone-blue .meta-bullet-list li::before{color:#0284c7;}
-.tone-emerald .meta-bullet-list li::before{color:#059669;}
-.tone-purple .meta-bullet-list li::before{color:#9333ea;}
-.meta-bullet-list strong{color:#0f172a;}
+/* 지원 대상 및 핵심 실행 내용 불릿 리스트 공통 통일 */
+.meta-target-list, .meta-bullet-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;}
+.meta-target-list li, .meta-bullet-list li{position:relative;padding-left:1.2rem;font-size:1.3rem;color:#334155;line-height:1.5;word-break:keep-all;}
+.meta-target-list li::before, .meta-bullet-list li::before{content:'•';position:absolute;left:0;top:0;font-size:1.4rem;}
+.tone-blue .meta-target-list li::before, .tone-blue .meta-bullet-list li::before{color:#0284c7;}
+.tone-emerald .meta-target-list li::before, .tone-emerald .meta-bullet-list li::before{color:#059669;}
+.tone-purple .meta-target-list li::before, .tone-purple .meta-bullet-list li::before{color:#9333ea;}
+.meta-target-list strong, .meta-bullet-list strong{color:#0f172a;}
 
 .floating-stat-badge{position:absolute;bottom:2.4rem;z-index:4;background:rgba(15,23,42,0.85);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);padding:1.2rem 1.8rem;border-radius:1.2rem;color:#ffffff;display:flex;flex-direction:column;gap:0.2rem;box-shadow:0 10px 25px rgba(0,0,0,0.25);}
 .split-showcase-card.bg-right .floating-stat-badge{right:2.4rem;}
@@ -136,6 +137,7 @@
 .btn-cta-inquiry{display:inline-flex;align-items:center;justify-content:center;gap:0.8rem;padding:1.4rem 3.2rem;background-color:#059669;color:#ffffff;font-size:1.55rem;font-weight:800;border-radius:1.0rem;text-decoration:none;transition:all 0.2s ease;flex-shrink:0;}
 .btn-cta-inquiry:hover{background-color:#047857;}
 
+/* 1024px 이하: 다크 배경 오버레이 + 뱃지 제거 + 텍스트 반전 */
 @media (max-width:1024px){
 .about-hero-grid{grid-template-columns:1fr;text-align:center;gap:3.2rem;}
 .about-hero-visual{order:-1;}
@@ -143,12 +145,22 @@
 .purpose-card-wrap{grid-template-columns:1fr;}
 .about-metric-grid{grid-template-columns:repeat(2,1fr);}
 .strategy-composite-wrap{grid-template-columns:1fr;gap:3.2rem;}
-.card-bg-layer{width:100%;opacity:0.18;}
-.showcase-content{max-width:100%;padding:3.2rem 2.4rem;}
-.split-showcase-card.bg-left .showcase-content{padding:3.2rem 2.4rem;}
 .card-gradient-mask{display:none;}
-.floating-stat-badge{position:static;margin:0 2.4rem 2.4rem;width:fit-content;}
+.floating-stat-badge{display:none;}
+.card-bg-layer{width:100%;opacity:1;}
+.card-bg-layer::after{content:'';position:absolute;inset:0;background:rgba(15,23,42,0.85);z-index:2;}
+.showcase-content{max-width:100%;max-height:none;padding:3.6rem 2.8rem;}
+.split-showcase-card.bg-left .showcase-content{padding:3.6rem 2.8rem;}
+.showcase-title{color:#ffffff;}
+.showcase-lead{color:#94a3b8;}
+.showcase-meta-grid{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);}
+.meta-caption{color:#ffffff;}
+.meta-val{color:#cbd5e1;}
+.meta-val strong{color:#ffffff;}
+.meta-target-list li, .meta-bullet-list li{color:#cbd5e1;}
+.meta-target-list strong, .meta-bullet-list strong{color:#ffffff;}
 }
+
 @media (max-width:768px){
 .about-main-title{font-size:3.2rem;}
 .about-main-desc{font-size:1.5rem;}
@@ -159,6 +171,7 @@
 .showcase-meta-grid{grid-template-columns:1fr;}
 .meta-block.col-span-2{grid-column:span 1;}
 }
+
 @media (max-width:640px){
 .about-main-title{font-size:2.6rem;}
 .purpose-item-card{padding:2.4rem 1.8rem;flex-direction:column;}
@@ -169,19 +182,6 @@
 .st-num-tit{font-size:1.65rem;}
 .st-right-tit{font-size:2.4rem;}
 .cta-left h3{font-size:2.2rem;}
-
-/* 640px 이하 모바일 전용: 다크 배경 오버레이 + 뱃지 제거 */
-.floating-stat-badge{display:none;}
-.card-bg-layer{opacity:1;}
-.card-bg-layer::after{content:'';position:absolute;inset:0;background:rgba(15,23,42,0.85);z-index:2;}
-.showcase-title{color:#ffffff;}
-.showcase-lead{color:#94a3b8;}
-.showcase-meta-grid{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);}
-.meta-caption{color:#ffffff;}
-.meta-val{color:#cbd5e1;}
-.meta-val strong{color:#ffffff;}
-.meta-bullet-list li{color:#cbd5e1;}
-.meta-bullet-list strong{color:#ffffff;}
 }
   </style>
 </head>
@@ -479,13 +479,16 @@
                                     <span class="idx-circle">01</span>
                                     <span class="topic-tag">기업 &middot; 인재 동반성장</span>
                                 </div>
-                                <h3 class="showcase-title">광역이음 기업-인재<br>동반 성장 지원사업</h3>
+                                <h3 class="showcase-title">광역이음 기업-인재 동반 성장 지원사업</h3>
                                 <p class="showcase-lead">첨단바이오헬스와 미래모빌리티 기업의 경쟁력을 강화하고 전문 인재의 지역 정착을 지원합니다.</p>
 
                                 <div class="showcase-meta-grid">
                                     <div class="meta-block">
                                         <span class="meta-caption"><i data-lucide="crosshair"></i> 지원 대상</span>
-                                        <p class="meta-val"><strong>기업:</strong> 첨단바이오헬스 &middot; 미래모빌리티 우수기업<br><strong>구직자:</strong> 해당분야 신규취업자 대상</p>
+                                        <ul class="meta-target-list">
+                                            <li><strong>기업:</strong> 첨단바이오헬스 &middot; 미래모빌리티 우수기업</li>
+                                            <li><strong>구직자:</strong> 해당분야 신규취업자 대상</li>
+                                        </ul>
                                     </div>
                                     <div class="meta-block">
                                         <span class="meta-caption"><i data-lucide="compass"></i> 추진 목적</span>
@@ -517,13 +520,16 @@
                                     <span class="idx-circle">02</span>
                                     <span class="topic-tag">고용 인프라 매칭</span>
                                 </div>
-                                <h3 class="showcase-title">충청권 성장산업<br>맞춤형 고용서비스 지원</h3>
+                                <h3 class="showcase-title">충청권 성장산업 맞춤형 고용서비스 지원</h3>
                                 <p class="showcase-lead">초광역 일자리 거버넌스와 온&middot;오프라인 채용 인프라로 청년 취업과 정착을 원스톱 지원합니다.</p>
 
                                 <div class="showcase-meta-grid">
                                     <div class="meta-block">
                                         <span class="meta-caption"><i data-lucide="crosshair"></i> 지원 대상</span>
-                                        <p class="meta-val"><strong>기업:</strong> 첨단바이오헬스 &middot; 미래모빌리티 분야 기업<br><strong>구직자:</strong> 해당분야 취업을 희망하는 전문 구직자</p>
+                                        <ul class="meta-target-list">
+                                            <li><strong>기업:</strong> 첨단바이오헬스 &middot; 미래모빌리티 분야 기업</li>
+                                            <li><strong>구직자:</strong> 해당분야 취업을 희망하는 전문 구직자</li>
+                                        </ul>
                                     </div>
                                     <div class="meta-block">
                                         <span class="meta-caption"><i data-lucide="compass"></i> 추진 목적</span>
@@ -555,13 +561,16 @@
                                     <span class="idx-circle">03</span>
                                     <span class="topic-tag">실무 Pre-인턴십</span>
                                 </div>
-                                <h3 class="showcase-title">광역이음 산업 인프라<br>연계 Pre-인턴십 지원사업</h3>
+                                <h3 class="showcase-title">광역이음 산업 인프라 연계 Pre-인턴십 지원사업</h3>
                                 <p class="showcase-lead">선도 기업과 연구 인프라를 연계한 실무 경험으로 지역 완결형 인재를 육성하고 유출을 방지합니다.</p>
 
                                 <div class="showcase-meta-grid">
                                     <div class="meta-block">
                                         <span class="meta-caption"><i data-lucide="crosshair"></i> 지원 대상</span>
-                                        <p class="meta-val"><strong>기업:</strong> 전략 연구기관 및 선도 인프라 보유 기업<br><strong>구직자:</strong> 해당분야 청년 구직자 (대학 졸업예정자)</p>
+                                        <ul class="meta-target-list">
+                                            <li><strong>기업:</strong> 전략 연구기관 및 선도 인프라 보유 기업</li>
+                                            <li><strong>구직자:</strong> 해당분야 청년 구직자 (대학 졸업예정자)</li>
+                                        </ul>
                                     </div>
                                     <div class="meta-block">
                                         <span class="meta-caption"><i data-lucide="compass"></i> 추진 목적</span>
