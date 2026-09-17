@@ -378,10 +378,7 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
 /* === //Main Page === */
 
 /* === About Page === */
-
-
-/* about-hero-sec */
-.about-hero-sec { background-color: #ffffff; }
+/* .about-hero-sec { background-color: #ffffff; }
 .about-hero-content { max-width: 86.0rem; margin: 0 auto; }
 .text-gradient-blue {background: linear-gradient(to right, #059669 0%, #0284c7 45%, #2563eb 100%);  -webkit-background-clip: text;  -webkit-text-fill-color: transparent;  display: inline-block;}
 .about-hero-pill { display: inline-flex; align-items: center; padding: 0.6rem 1.6rem; border-radius: 9999px; background-color: #d1fae5; color: #059669; font-size: 1.35rem; font-weight: 700; margin-bottom: 2.4rem; }
@@ -397,9 +394,6 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
 .k-purple { background-color: #fbf5ff; color: #a855f7; }
 .key-card-tit { font-size: 2.0rem; font-weight: 700; color: #111827; margin-bottom: 1.2rem; }
 .key-card-desc { font-size: 1.45rem; color: #6b7280; line-height: 1.6; word-break: keep-all; }
-/* //about-hero-sec */
-
-/* about-box-sec */
 .about-box-sec { background-color: #f8fafc; }
 .about-composite-card { display: flex; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 2.4rem; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04); }
 .composite-left { flex: 1.15; padding: 5.6rem 4.8rem; display: flex; flex-direction: column; justify-content: center; }
@@ -424,9 +418,6 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
 .btn-career-apply { display: inline-flex; align-items: center; justify-content: center; padding: 1.4rem 3.2rem; background-color: #059669; color: #ffffff; font-size: 1.5rem; font-weight: 700; border-radius: 1.0rem; transition: background-color 0.2s ease; }
 .btn-career-apply:hover { background-color: #047857; }
 @keyframes orbPulse { 0% { transform: scale(0.7); opacity: 0.35; } 50% { transform: scale(1.25); opacity: 1; } 100% { transform: scale(0.8); opacity: 0.45; } }
-/* //about-box-sec */
-
-/* about-region-sec */
 .about-region-sec { background-color: #ffffff; }
 .region-cards-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2.0rem; }
 .region-card { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 2.0rem; padding: 3.2rem 2.0rem; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); transition: transform 0.2s ease; }
@@ -439,23 +430,18 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
 .r-purple { background-color: #faf5ff; color: #a855f7; }
 .region-name { font-size: 1.8rem; font-weight: 700; color: #111827; margin-bottom: 0.8rem; }
 .region-desc { font-size: 1.35rem; color: #64748b; line-height: 1.5; word-break: keep-all; }
-/* //about-region-sec */
-
-/* 소개 페이지 반응형 */
 @media (max-width: 1024px) {
   .about-composite-card { flex-direction: column; }
   .composite-left { padding: 4.0rem 3.2rem; }
   .composite-right { padding: 4.8rem 3.2rem; }
   .region-cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-
 @media (max-width: 768px) {
   .about-hero-title { font-size: 3.6rem; }
   .about-key-grid { grid-template-columns: 1fr; }
   .composite-title { font-size: 2.4rem; }
   .region-cards-grid { grid-template-columns: 1fr; }
 }
-
 @media (max-width: 640px) {
   .about-hero-title { font-size: 2.8rem; }
   .about-hero-desc { font-size: 1.45rem; }
@@ -465,7 +451,7 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
   .about-key-grid {gap: 1.5rem;}
   .composite-title {text-align: center;}
   .region-cards-grid {gap: 1.5rem;}
-}
+} */
 /* === //About Page === */
 
 /* === Pavilions Page === */

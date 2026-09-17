@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>충청권 내일이음 - 소개</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    /* 소개 페이지 전용 스타일 */
+    .about-new-wrap{background-color:#ffffff;padding-bottom:8.0rem;}
+.about-new-hero{padding:5.0rem 0 6.0rem;}
+.about-hero-grid{display:grid;grid-template-columns:1.25fr 0.95fr;gap:4.0rem;align-items:center;}
+.about-hero-pill-badge{display:inline-flex;align-items:center;padding:0.6rem 1.4rem;background-color:#ecfdf5;color:#059669;border:1px solid #a7f3d0;border-radius:9999px;font-size:1.35rem;font-weight:700;margin-bottom:2.0rem;}
+.about-main-title{font-size:4.4rem;font-weight:900;color:#0f172a;line-height:1.25;letter-spacing:-0.03em;margin:0 0 2.4rem;word-break:keep-all;}
+.text-gradient-blue{background:linear-gradient(to right,#059669 0%,#0284c7 45%,#2563eb 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;}
+.about-main-desc{font-size:1.7rem;color:#475569;line-height:1.65;margin:0;word-break:keep-all;font-weight:500;}
+.about-hero-visual{display:flex;align-items:center;justify-content:center;position:relative;}
+.about-hero-img{width:100%;max-width:48.0rem;height:auto;object-fit:contain;}
+.about-sec-title-row{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.6rem;}
+.sec-bar-mark{font-size:2.2rem;font-weight:900;color:#059669;line-height:1;}
+.sec-num-txt{font-size:2.2rem;font-weight:900;color:#059669;}
+.sec-head-tit{font-size:2.2rem;font-weight:900;color:#0f172a;margin-left:0.4rem;}
+.sec-head-tit.text-white{color:#ffffff;}
+.sec-sub-lead{font-size:1.55rem;color:#475569;line-height:1.6;margin:0 0 2.8rem;word-break:keep-all;}
+.about-purpose-sec{padding:4.0rem 0;}
+.purpose-card-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:2.0rem;}
+.purpose-item-card{display:flex;align-items:flex-start;gap:2.0rem;background-color:#ffffff;border:1.5px solid #e2e8f0;border-radius:1.8rem;padding:3.2rem 2.8rem;transition:all 0.2s ease;}
+.purpose-item-card:hover{border-color:#059669;box-shadow:0 10px 24px rgba(5,150,105,0.08);transform:translateY(-3px);}
+.purpose-ic-box{width:5.2rem;height:5.2rem;border-radius:1.4rem;background-color:#ecfdf5;color:#059669;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.purpose-ic-box svg{width:2.6rem;height:2.6rem;}
+.purpose-txt-box{flex:1;}
+.purpose-lead-tit{display:block;font-size:1.75rem;font-weight:800;color:#0f172a;line-height:1.45;margin-bottom:0.8rem;word-break:keep-all;}
+.purpose-desc{font-size:1.45rem;color:#475569;line-height:1.65;margin:0;word-break:keep-all;}
+.about-scale-sec{padding:4.0rem 0 5.0rem;}
+.about-metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;}
+.metric-card{background-color:#ffffff;border:1.5px solid #e2e8f0;border-radius:1.6rem;padding:2.8rem 2.0rem;text-align:left;display:flex;flex-direction:column;transition:all 0.2s ease;}
+.metric-card:hover{border-color:#059669;box-shadow:0 10px 25px rgba(5,150,105,0.08);}
+.metric-top-row{display:flex;align-items:center;gap:1.0rem;margin-bottom:1.6rem;}
+.metric-ic-box{width:4.4rem;height:4.4rem;border-radius:1.0rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.metric-ic-box svg{width:2.2rem;height:2.2rem;}
+.mic-blue{background-color:#eff6ff;color:#0284c7;}
+.mic-emerald{background-color:#ecfdf5;color:#059669;}
+.mic-cyan{background-color:#ecfeff;color:#0891b2;}
+.mic-indigo{background-color:#eef2ff;color:#4f46e5;}
+.metric-label{font-size:1.6rem;font-weight:800;color:#1e293b;}
+.metric-main-val{font-size:1.85rem;font-weight:900;color:#0f172a;line-height:1.35;margin-bottom:0.8rem;word-break:keep-all;}
+.metric-sub-detail{font-size:1.3rem;color:#64748b;margin:0;line-height:1.5;word-break:keep-all;}
+.about-strategy-sec{width:100vw;margin-left:calc(-50vw + 50%);background:radial-gradient(ellipse at 80% 30%,#0f1f38 0%,#090d16 100%);padding:6.4rem 0;color:#ffffff;box-sizing:border-box;}
+.strategy-composite-wrap{display:grid;grid-template-columns:1.2fr 0.8fr;gap:4.8rem;align-items:center;}
+.strategy-left-list{display:flex;flex-direction:column;gap:2.4rem;}
+.st-num-item{display:flex;align-items:flex-start;gap:1.8rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:1.6rem;padding:2.4rem 2.8rem;transition:all 0.2s ease;}
+.st-num-item:hover{background:rgba(255,255,255,0.06);border-color:rgba(52,211,153,0.4);transform:translateX(4px);}
+.st-num-badge{width:3.2rem;height:3.2rem;border-radius:0.8rem;background:#059669;color:#ffffff;font-size:1.5rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.st-num-body{flex:1;}
+.st-num-tit{display:block;font-size:1.8rem;font-weight:800;color:#ffffff;margin-bottom:0.8rem;line-height:1.35;word-break:keep-all;}
+.st-num-desc{font-size:1.45rem;color:#94a3b8;line-height:1.65;margin:0;word-break:keep-all;}
+.strategy-right-card{height:100%;position:relative;background:radial-gradient(circle at 70% 30%,rgba(15,35,60,0.95) 0%,rgba(9,15,26,0.95) 75%);border:1px solid rgba(255,255,255,0.12);border-radius:2.4rem;padding:6.4rem 4.0rem;text-align:center;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;}
+.strategy-card-inner{position:relative;z-index:2;max-width:34.0rem;}
+.st-right-tit{font-size:2.8rem;font-weight:900;color:#ffffff;line-height:1.35;margin:0 0 1.4rem;word-break:keep-all;}
+.st-right-desc{font-size:1.5rem;color:#94a3b8;line-height:1.65;margin:0 0 3.2rem;word-break:keep-all;}
+.btn-st-link{display:inline-flex;align-items:center;justify-content:center;padding:1.4rem 3.2rem;background-color:#059669;color:#ffffff;font-size:1.55rem;font-weight:800;border-radius:1.0rem;text-decoration:none;transition:all 0.2s ease;}
+.btn-st-link:hover{background-color:#047857;transform:translateY(-2px);box-shadow:0 8px 20px rgba(5,150,105,0.3);}
+.glow-orb{position:absolute;border-radius:50%;pointer-events:none;}
+.orb-green{width:1.2rem;height:1.2rem;top:20%;left:15%;background-color:#34d399;box-shadow:0 0 16px 4px rgba(52,211,153,0.85),0 0 32px 10px rgba(52,211,153,0.35);animation:orbPulse 3.5s ease-in-out infinite alternate;}
+.orb-purple{width:0.8rem;height:0.8rem;top:40%;right:20%;background-color:#c084fc;box-shadow:0 0 14px 3px rgba(192,132,252,0.8),0 0 24px 8px rgba(192,132,252,0.3);animation:orbPulse 4.2s ease-in-out infinite alternate 1.2s;}
+.orb-blue{width:1.4rem;height:1.4rem;bottom:22%;right:25%;background-color:#38bdf8;box-shadow:0 0 20px 6px rgba(56,189,248,0.9),0 0 40px 14px rgba(56,189,248,0.4);animation:orbPulse 3.8s ease-in-out infinite alternate 0.6s;}
+@keyframes orbPulse{0%{transform:scale(0.7);opacity:0.35;}50%{transform:scale(1.25);opacity:1;}100%{transform:scale(0.8);opacity:0.45;}}
+
+.about-subproject-sec{padding:6.0rem 0 4.0rem;}
+.split-showcase-container{display:flex;flex-direction:column;gap:3.2rem;}
+.split-showcase-card{position:relative;background:#ffffff;border:1.5px solid #e2e8f0;border-radius:2.4rem;overflow:hidden;box-shadow:0 8px 25px rgba(15,23,42,0.04);transition:all 0.25s ease;}
+.split-showcase-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(15,23,42,0.08);}
+.tone-blue:hover{border-color:#38bdf8;}
+.tone-emerald:hover{border-color:#34d399;}
+.tone-purple:hover{border-color:#c084fc;}
+
+/* PC(기본): 원래 흰색 배경 유지 */
+.card-bg-layer{position:absolute;top:0;bottom:0;width:55%;background-size:cover;background-position:center;z-index:1;}
+.split-showcase-card.bg-right .card-bg-layer{right:0;}
+.split-showcase-card.bg-left .card-bg-layer{left:0;}
+
+.bg-sp-01{background-image:url('./images/about_02.jpg');}
+.bg-sp-02{background-image:url('./images/about_01.jpg');}
+.bg-sp-03{background-image:url('./images/about_03.jpg');}
+
+.card-gradient-mask{position:absolute;inset:0;z-index:2;pointer-events:none;}
+.split-showcase-card.bg-right .card-gradient-mask{background:linear-gradient(to right,#ffffff 0%,#ffffff 45%,rgba(255,255,255,0.85) 60%,rgba(255,255,255,0.0) 90%);}
+.split-showcase-card.bg-left .card-gradient-mask{background:linear-gradient(to left,#ffffff 0%,#ffffff 45%,rgba(255,255,255,0.85) 60%,rgba(255,255,255,0.0) 90%);}
+
+.showcase-content{position:relative;z-index:3;max-width:58.0rem;padding:4.0rem;}
+.split-showcase-card.bg-left .showcase-content{margin-left:auto;padding:4.0rem 4.0rem 4.0rem 2.0rem;}
+
+.showcase-tag-row{display:flex;align-items:center;gap:1.0rem;margin-bottom:1.4rem;}
+.idx-circle{width:2.8rem;height:2.8rem;border-radius:50%;font-size:1.3rem;font-weight:900;display:flex;align-items:center;justify-content:center;color:#ffffff;}
+.tone-blue .idx-circle{background:#0284c7;}
+.tone-emerald .idx-circle{background:#059669;}
+.tone-purple .idx-circle{background:#9333ea;}
+
+.topic-tag{font-size:1.3rem;font-weight:800;padding:0.35rem 1.0rem;border-radius:0.6rem;}
+.tone-blue .topic-tag{background:#eff6ff;color:#0284c7;}
+.tone-emerald .topic-tag{background:#ecfdf5;color:#059669;}
+.tone-purple .topic-tag{background:#faf5ff;color:#9333ea;}
+
+.showcase-title{font-size:2.5rem;font-weight:900;color:#0f172a;line-height:1.28;letter-spacing:-0.02em;margin:0 0 1.0rem;word-break:keep-all;}
+.showcase-lead{font-size:1.45rem;color:#475569;line-height:1.55;margin:0 0 2.2rem;word-break:keep-all;}
+
+.showcase-meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;background:rgba(248,250,252,0.92);backdrop-filter:blur(4px);border:1px solid #f1f5f9;border-radius:1.6rem;padding:2.0rem;}
+.meta-block{display:flex;flex-direction:column;gap:0.4rem;}
+.meta-block.col-span-2{grid-column:span 2;border-top:1px dashed #e2e8f0;padding-top:1.2rem;margin-top:0.2rem;}
+.meta-caption{display:flex;align-items:center;gap:0.6rem;font-size:1.25rem;font-weight:800;color:#0f172a;text-transform:uppercase;}
+.meta-caption svg{width:1.4rem;height:1.4rem;}
+.tone-blue .meta-caption svg{color:#0284c7;}
+.tone-emerald .meta-caption svg{color:#059669;}
+.tone-purple .meta-caption svg{color:#9333ea;}
+.meta-val{font-size:1.3rem;color:#475569;line-height:1.5;margin:0;word-break:keep-all;}
+.meta-val strong{color:#1e293b;}
+
+.meta-bullet-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;}
+.meta-bullet-list li{position:relative;padding-left:1.2rem;font-size:1.3rem;color:#334155;line-height:1.5;word-break:keep-all;}
+.meta-bullet-list li::before{content:'•';position:absolute;left:0;top:0;font-size:1.4rem;}
+.tone-blue .meta-bullet-list li::before{color:#0284c7;}
+.tone-emerald .meta-bullet-list li::before{color:#059669;}
+.tone-purple .meta-bullet-list li::before{color:#9333ea;}
+.meta-bullet-list strong{color:#0f172a;}
+
+.floating-stat-badge{position:absolute;bottom:2.4rem;z-index:4;background:rgba(15,23,42,0.85);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);padding:1.2rem 1.8rem;border-radius:1.2rem;color:#ffffff;display:flex;flex-direction:column;gap:0.2rem;box-shadow:0 10px 25px rgba(0,0,0,0.25);}
+.split-showcase-card.bg-right .floating-stat-badge{right:2.4rem;}
+.split-showcase-card.bg-left .floating-stat-badge{left:2.4rem;}
+.stat-lbl{font-size:1.15rem;color:#94a3b8;font-weight:700;}
+.stat-num{font-size:1.65rem;font-weight:900;color:#ffffff;letter-spacing:-0.01em;}
+
+.about-bottom-cta{margin-top:6.0rem;background:linear-gradient(135deg,#ecfdf5 0%,#f0fdf4 100%);border:1.5px solid #a7f3d0;border-radius:2.0rem;padding:4.0rem 4.8rem;display:flex;align-items:center;justify-content:space-between;gap:2.4rem;}
+.cta-left h3{font-size:2.6rem;font-weight:900;color:#0f172a;margin:0 0 0.8rem;}
+.cta-left p{font-size:1.55rem;color:#475569;margin:0;}
+.btn-cta-inquiry{display:inline-flex;align-items:center;justify-content:center;gap:0.8rem;padding:1.4rem 3.2rem;background-color:#059669;color:#ffffff;font-size:1.55rem;font-weight:800;border-radius:1.0rem;text-decoration:none;transition:all 0.2s ease;flex-shrink:0;}
+.btn-cta-inquiry:hover{background-color:#047857;}
+
+@media (max-width:1024px){
+.about-hero-grid{grid-template-columns:1fr;text-align:center;gap:3.2rem;}
+.about-hero-visual{order:-1;}
+.about-hero-img{max-width:40.0rem;}
+.purpose-card-wrap{grid-template-columns:1fr;}
+.about-metric-grid{grid-template-columns:repeat(2,1fr);}
+.strategy-composite-wrap{grid-template-columns:1fr;gap:3.2rem;}
+.card-bg-layer{width:100%;opacity:0.18;}
+.showcase-content{max-width:100%;padding:3.2rem 2.4rem;}
+.split-showcase-card.bg-left .showcase-content{padding:3.2rem 2.4rem;}
+.card-gradient-mask{display:none;}
+.floating-stat-badge{position:static;margin:0 2.4rem 2.4rem;width:fit-content;}
+}
+@media (max-width:768px){
+.about-main-title{font-size:3.2rem;}
+.about-main-desc{font-size:1.5rem;}
+.about-bottom-cta{flex-direction:column;text-align:center;padding:3.2rem 2.0rem;}
+.btn-cta-inquiry{width:100%;}
+.strategy-right-card{padding:4.8rem 2.4rem;}
+.showcase-title{font-size:2.2rem;}
+.showcase-meta-grid{grid-template-columns:1fr;}
+.meta-block.col-span-2{grid-column:span 1;}
+}
+@media (max-width:640px){
+.about-main-title{font-size:2.6rem;}
+.purpose-item-card{padding:2.4rem 1.8rem;flex-direction:column;}
+.purpose-lead-tit{font-size:1.6rem;}
+.about-metric-grid{grid-template-columns:1fr;}
+.metric-card{align-items:center;text-align:center;}
+.st-num-item{padding:2.0rem 1.6rem;}
+.st-num-tit{font-size:1.65rem;}
+.st-right-tit{font-size:2.4rem;}
+.cta-left h3{font-size:2.2rem;}
+
+/* 640px 이하 모바일 전용: 다크 배경 오버레이 + 뱃지 제거 */
+.floating-stat-badge{display:none;}
+.card-bg-layer{opacity:1;}
+.card-bg-layer::after{content:'';position:absolute;inset:0;background:rgba(15,23,42,0.85);z-index:2;}
+.showcase-title{color:#ffffff;}
+.showcase-lead{color:#94a3b8;}
+.showcase-meta-grid{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);}
+.meta-caption{color:#ffffff;}
+.meta-val{color:#cbd5e1;}
+.meta-val strong{color:#ffffff;}
+.meta-bullet-list li{color:#cbd5e1;}
+.meta-bullet-list strong{color:#ffffff;}
+}
+  </style>
+</head>
+<body>
+    <!-- 공통 헤더 -->
+    <header class="site-header">
+        <div class="inner-wrap">
+            <div class="header-inner flex-between">
+                <div class="header-left">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img">
+                    </a>
+
+                    <nav class="header-nav">
+                        <a href="about.html" class="nav-link active">소개</a>
+
+                        <div class="nav-item-dropdown">
+                            <a href="pavilions.html" class="nav-link">
+                                <span>온라인채용관</span>
+                                <i data-lucide="chevron-down"></i>
+                            </a>
+                            <div class="nav-dropdown-menu">
+                                <a href="pavilion-bio.html" class="dropdown-link">바이오채용관</a>
+                                <a href="pavilion-mobility.html" class="dropdown-link">미래모빌리티채용관</a>
+                                <a href="pavilion-chungcheong.html" class="dropdown-link">충청권 일자리박람회</a>
+                            </div>
+                        </div>
+
+                        <a href="jobs.html" class="nav-link">채용공고</a>
+                        <a href="companies.html" class="nav-link">기업</a>
+
+                        <div class="nav-item-dropdown">
+                            <a href="notices.html" class="nav-link">
+                                <span>고객센터</span>
+                                <i data-lucide="chevron-down"></i>
+                            </a>
+                            <div class="nav-dropdown-menu">
+                                <a href="notices.html" class="dropdown-link">공지사항</a>
+                                <a href="faq.html" class="dropdown-link">자주 묻는 질문(FAQ)</a>
+                                <a href="resources.html" class="dropdown-link">자료실</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="header-actions">
+                    <a href="login.html" class="btn-auth-link">
+                        <i data-lucide="user-circle-2"></i>
+                        <span>로그인</span>
+                    </a>
+                    <a href="corporate.html" class="btn btn-dark btn-md">기업 서비스</a>
+                </div>
+
+                <div class="header-m-actions">
+                    <button type="button" class="btn-m-icon" id="btnDrawerOpen" aria-label="메뉴 열기">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 모바일 드로어 메뉴 -->
+        <div class="drawer-overlay" id="drawerOverlay"></div>
+        <aside class="drawer-menu" id="drawerMenu">
+            <div class="drawer-header flex-between">
+                <a href="index.html" class="brand-logo">
+                    <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img drawer-logo-img">
+                </a>
+                <button type="button" class="btn-drawer-close" id="btnDrawerClose" aria-label="메뉴 닫기">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="drawer-body">
+                <div class="drawer-auth-box">
+                    <a href="login.html" class="btn btn-primary btn-drawer-auth flex-center">
+                        <i data-lucide="log-in"></i>
+                        <span>로그인 / 회원가입</span>
+                    </a>
+                </div>
+                <nav class="drawer-nav-group">
+                    <a href="about.html" class="drawer-nav-item active">
+                        <span class="left-icon-text"><i data-lucide="sparkles"></i><span>소개</span></span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <div class="drawer-acc-box" id="drawerPavilionAcc">
+                        <button type="button" class="drawer-nav-item btn-drawer-acc">
+                            <span class="left-icon-text"><i data-lucide="building-2"></i><span>온라인채용관</span></span>
+                            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                        </button>
+                        <div class="drawer-sub-menu">
+                            <a href="pavilion-bio.html" class="drawer-sub-link">바이오채용관</a>
+                            <a href="pavilion-mobility.html" class="drawer-sub-link">미래모빌리티채용관</a>
+                            <a href="pavilion-chungcheong.html" class="drawer-sub-link">충청권 내일이음 취업박람회</a>
+                        </div>
+                    </div>
+                    <a href="jobs.html" class="drawer-nav-item">
+                        <span class="left-icon-text"><i data-lucide="briefcase"></i><span>채용공고</span></span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <a href="companies.html" class="drawer-nav-item">
+                        <span class="left-icon-text"><i data-lucide="building"></i><span>기업 탐색</span></span>
+                        <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <div class="drawer-acc-box" id="drawerCsAcc">
+                        <button type="button" class="drawer-nav-item btn-drawer-acc">
+                            <span class="left-icon-text"><i data-lucide="help-circle"></i><span>고객센터</span></span>
+                            <span class="arrow-icon"><i data-lucide="chevron-right"></i></span>
+                        </button>
+                        <div class="drawer-sub-menu">
+                            <a href="notices.html" class="drawer-sub-link">공지사항</a>
+                            <a href="faq.html" class="drawer-sub-link">자주 묻는 질문(FAQ)</a>
+                            <a href="resources.html" class="drawer-sub-link">자료실</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="drawer-footer">
+                <a href="corporate.html" class="btn btn-dark btn-drawer-corporate"><span>기업 서비스</span></a>
+            </div>
+        </aside>
+    </header>
+
+    <!-- 소개 본문 영역 -->
+    <main class="site-main about-new-wrap">
+        <div class="inner-wrap">
+            
+            <!-- 1. 히어로 영역 -->
+            <section class="about-new-hero">
+                <div class="about-hero-grid">
+                    <div class="about-hero-text">
+                        <div class="about-hero-pill-badge">충청권 성장산업 일자리 프로젝트</div>
+                        <h1 class="about-main-title">
+                            충청권 성장산업<br>
+                            <span class="text-gradient-blue">내일(Job&amp;Future) 이음</span> 프로젝트
+                        </h1>
+                        <p class="about-main-desc">
+                            충청권의 미래를 이끌어갈 핵심 인재를 육성하고,<br>
+                            지역 기업과 함께 지속가능한 일자리 생태계를 만들어갑니다.
+                        </p>
+                    </div>
+                    <div class="about-hero-visual">
+                        <img src="./images/about.png" alt="지역과 사람을 이어 내일의 성장을 만듭니다." class="about-hero-img">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 프로젝트 목적 -->
+            <section class="about-purpose-sec">
+                <div class="inner-wrap">
+                    <div class="about-sec-title-row">
+                        <span class="sec-bar-mark">|</span>
+                        <span class="sec-num-txt">01</span>
+                        <h2 class="sec-head-tit">프로젝트 목적</h2>
+                    </div>
+
+                    <div class="purpose-card-wrap mt-2">
+                        <div class="purpose-item-card">
+                            <div class="purpose-ic-box"><i data-lucide="target"></i></div>
+                            <div class="purpose-txt-box">
+                                <strong class="purpose-lead-tit">국가균형성장 연계 우수기업 육성 및 일자리 활성화</strong>
+                                <p class="purpose-desc">정부 5극3특 국가균형성장 전략에 맞춰 충청권 성장산업(첨단바이오헬스·미래모빌리티) 분야를 중앙부처 및 자치단체 정책과 연계하여, 우수기업 육성 및 일자리 창출을 도모합니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="purpose-item-card">
+                            <div class="purpose-ic-box"><i data-lucide="sparkles"></i></div>
+                            <div class="purpose-txt-box">
+                                <strong class="purpose-lead-tit">전문인력 확충과 지역 정주를 위한 신규 일자리 모델 발굴</strong>
+                                <p class="purpose-desc">성장산업 분야의 기업 성장과 인재 확보, 지역 정주를 위해 각 자치단체별 다양한 정책과 연계하여 집중 지원함으로써 충청권 맞춤형 신규 일자리 모델을 발굴합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 사업 추진 규모 -->
+            <section class="about-scale-sec">
+                <div class="inner-wrap">
+                    <div class="about-sec-title-row">
+                        <span class="sec-bar-mark">|</span>
+                        <span class="sec-num-txt">02</span>
+                        <h2 class="sec-head-tit">사업 추진 규모</h2>
+                    </div>
+
+                    <div class="about-metric-grid">
+                        <div class="metric-card">
+                            <div class="metric-top-row">
+                                <div class="metric-ic-box mic-blue"><i data-lucide="calendar"></i></div>
+                                <span class="metric-label">사업기간</span>
+                            </div>
+                            <div class="metric-main-val">2026. 5. ~ 12. (8개월)</div>
+                            <p class="metric-sub-detail">※ 총 사업기간: 2026~2029년 (4년)</p>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-top-row">
+                                <div class="metric-ic-box mic-emerald"><i data-lucide="coins"></i></div>
+                                <span class="metric-label">사업예산</span>
+                            </div>
+                            <div class="metric-main-val">4,000,000천원</div>
+                            <p class="metric-sub-detail">(국 3,200,000 / 지 800,000)<br>※ 2026년 예산</p>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-top-row">
+                                <div class="metric-ic-box mic-cyan"><i data-lucide="users"></i></div>
+                                <span class="metric-label">사업목표</span>
+                            </div>
+                            <div class="metric-main-val">312명 일자리창출 및 지원</div>
+                            <p class="metric-sub-detail">핵심 전략산업 중심 맞춤 연계</p>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-top-row">
+                                <div class="metric-ic-box mic-indigo"><i data-lucide="building"></i></div>
+                                <span class="metric-label">사업 수행기관</span>
+                            </div>
+                            <div class="metric-main-val">총 11개 기관</div>
+                            <p class="metric-sub-detail">충북지역인적자원개발위원회 외 10개 기관<br>(대전3, 세종2, 충북3, 충남3)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. 프로젝트 전략 -->
+            <section class="about-strategy-sec">
+                <div class="inner-wrap">
+                    <div class="about-sec-title-row">
+                        <span class="sec-bar-mark">|</span>
+                        <span class="sec-num-txt">03</span>
+                        <h2 class="sec-head-tit text-white">프로젝트 전략</h2>
+                    </div>
+
+                    <div class="strategy-composite-wrap mt-2">
+                        <div class="strategy-left-list">
+                            <div class="st-num-item">
+                                <span class="st-num-badge">1</span>
+                                <div class="st-num-body">
+                                    <strong class="st-num-tit">충청권 성장산업 전문인력 수급생태계 조성</strong>
+                                    <p class="st-num-desc">기업지원과 경력인재 동반 성장을 통한 기업경쟁력 강화, 광역일자리센터·고용센터·취업알선기관 간 네트워크 구축으로 초광역권 고용서비스 기반을 마련합니다.</p>
+                                </div>
+                            </div>
+
+                            <div class="st-num-item">
+                                <span class="st-num-badge">2</span>
+                                <div class="st-num-body">
+                                    <strong class="st-num-tit">성장 및 정주기반 강화로 인재정착 촉진</strong>
+                                    <p class="st-num-desc">R&amp;D 인프라와 전략산업 기업을 연계한 현장 맞춤형 인턴십으로 지역 정착형 인재 공급체계를 구축하고, 청년 이주 정착을 지원해 인구 유입을 확대합니다.</p>
+                                </div>
+                            </div>
+
+                            <div class="st-num-item">
+                                <span class="st-num-badge">3</span>
+                                <div class="st-num-body">
+                                    <strong class="st-num-tit">초광역 일자리 생태계 통합 체계 구축</strong>
+                                    <p class="st-num-desc">충청권 초광역권 일자리 거버넌스를 구성해 주력산업의 기업과 구직자를 집중 지원함으로써 정책 사각지대를 해소하고 정책 체감도를 높입니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 우측 하이라이트 카드 (글로우 오브 + 버튼) -->
+                        <div class="strategy-right-card">
+                            <div class="glow-orb orb-green"></div>
+                            <div class="glow-orb orb-blue"></div>
+                            <div class="glow-orb orb-purple"></div>
+
+                            <div class="strategy-card-inner">
+                                <h3 class="st-right-tit">세부사업으로<br>이어지는 전략</h3>
+                                <p class="st-right-desc">3대 전략은 3개의 세부사업으로 구체화되어 실제 채용과 인턴십, 박람회로 이어집니다.</p>
+                                <a href="#sectionSubprojects" class="btn-st-link">채용 공고 보러가기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. 세부사업 구성 -->
+            <section class="about-subproject-sec" id="sectionSubprojects">
+                <div class="inner-wrap">
+                    <div class="about-sec-title-row">
+                        <span class="sec-bar-mark">|</span>
+                        <span class="sec-num-txt">04</span>
+                        <h2 class="sec-head-tit">세부사업 구성</h2>
+                    </div>
+                    <p class="sec-sub-lead">충청권 미래 성장을 이끄는 3가지 핵심사업으로 지역과 기업, 인재를 유기적으로 연결합니다.</p>
+
+                    <div class="split-showcase-container mt-2">
+                        <!-- 사업 01 (우측 배경) -->
+                        <article class="split-showcase-card tone-blue bg-right">
+                            <div class="card-bg-layer bg-sp-01"></div>
+                            <div class="card-gradient-mask"></div>
+
+                            <div class="showcase-content">
+                                <div class="showcase-tag-row">
+                                    <span class="idx-circle">01</span>
+                                    <span class="topic-tag">기업 &middot; 인재 동반성장</span>
+                                </div>
+                                <h3 class="showcase-title">광역이음 기업-인재<br>동반 성장 지원사업</h3>
+                                <p class="showcase-lead">첨단바이오헬스와 미래모빌리티 기업의 경쟁력을 강화하고 전문 인재의 지역 정착을 지원합니다.</p>
+
+                                <div class="showcase-meta-grid">
+                                    <div class="meta-block">
+                                        <span class="meta-caption"><i data-lucide="crosshair"></i> 지원 대상</span>
+                                        <p class="meta-val"><strong>기업:</strong> 첨단바이오헬스 &middot; 미래모빌리티 우수기업<br><strong>구직자:</strong> 해당분야 신규취업자 대상</p>
+                                    </div>
+                                    <div class="meta-block">
+                                        <span class="meta-caption"><i data-lucide="compass"></i> 추진 목적</span>
+                                        <p class="meta-val">동반성장 지원을 통한 기업경쟁력 강화 및 지속가능한 산업 생태계 선순환 체계 구축</p>
+                                    </div>
+                                    <div class="meta-block col-span-2">
+                                        <span class="meta-caption"><i data-lucide="check-circle-2"></i> 핵심 실행 내용</span>
+                                        <ul class="meta-bullet-list">
+                                            <li><strong>채용약정형 R&amp;D 및 비R&amp;D 지원:</strong> 컨소시엄 참여 시 최대 4,500만원 사업화 자금 지원</li>
+                                            <li><strong>근로자 장려금 지원:</strong> 신규 취업자 대상 최대 180만원 (월 30만원 &times; 6개월) 지급</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="floating-stat-badge">
+                                <span class="stat-lbl">사업화 지원</span>
+                                <strong class="stat-num">최대 4,500만원</strong>
+                            </div>
+                        </article>
+
+                        <!-- 사업 02 (좌측 배경 - 리버스) -->
+                        <article class="split-showcase-card tone-emerald bg-left">
+                            <div class="card-bg-layer bg-sp-02"></div>
+                            <div class="card-gradient-mask"></div>
+
+                            <div class="showcase-content">
+                                <div class="showcase-tag-row">
+                                    <span class="idx-circle">02</span>
+                                    <span class="topic-tag">고용 인프라 매칭</span>
+                                </div>
+                                <h3 class="showcase-title">충청권 성장산업<br>맞춤형 고용서비스 지원</h3>
+                                <p class="showcase-lead">초광역 일자리 거버넌스와 온&middot;오프라인 채용 인프라로 청년 취업과 정착을 원스톱 지원합니다.</p>
+
+                                <div class="showcase-meta-grid">
+                                    <div class="meta-block">
+                                        <span class="meta-caption"><i data-lucide="crosshair"></i> 지원 대상</span>
+                                        <p class="meta-val"><strong>기업:</strong> 첨단바이오헬스 &middot; 미래모빌리티 분야 기업<br><strong>구직자:</strong> 해당분야 취업을 희망하는 전문 구직자</p>
+                                    </div>
+                                    <div class="meta-block">
+                                        <span class="meta-caption"><i data-lucide="compass"></i> 추진 목적</span>
+                                        <p class="meta-val">우수기업 발굴 및 온&middot;오프라인 구인-구직 정밀 매칭을 통한 지역 전문 인력 확보</p>
+                                    </div>
+                                    <div class="meta-block col-span-2">
+                                        <span class="meta-caption"><i data-lucide="check-circle-2"></i> 핵심 실행 내용</span>
+                                        <ul class="meta-bullet-list">
+                                            <li><strong>네트워크 구축 &amp; 플랫폼:</strong> 초광역권 취업지원망 구성 및 DB 연동 온라인 채용관 운영</li>
+                                            <li><strong>초광역 일자리박람회 ('26. 10. 16.):</strong> 1:1 심층 면접, 부대 컨설팅 및 <strong>취업성공수당 지원</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="floating-stat-badge">
+                                <span class="stat-lbl">초광역 박람회</span>
+                                <strong class="stat-num">1:1 현장 채용</strong>
+                            </div>
+                        </article>
+
+                        <!-- 사업 03 (우측 배경) -->
+                        <article class="split-showcase-card tone-purple bg-right">
+                            <div class="card-bg-layer bg-sp-03"></div>
+                            <div class="card-gradient-mask"></div>
+
+                            <div class="showcase-content">
+                                <div class="showcase-tag-row">
+                                    <span class="idx-circle">03</span>
+                                    <span class="topic-tag">실무 Pre-인턴십</span>
+                                </div>
+                                <h3 class="showcase-title">광역이음 산업 인프라<br>연계 Pre-인턴십 지원사업</h3>
+                                <p class="showcase-lead">선도 기업과 연구 인프라를 연계한 실무 경험으로 지역 완결형 인재를 육성하고 유출을 방지합니다.</p>
+
+                                <div class="showcase-meta-grid">
+                                    <div class="meta-block">
+                                        <span class="meta-caption"><i data-lucide="crosshair"></i> 지원 대상</span>
+                                        <p class="meta-val"><strong>기업:</strong> 전략 연구기관 및 선도 인프라 보유 기업<br><strong>구직자:</strong> 해당분야 청년 구직자 (대학 졸업예정자)</p>
+                                    </div>
+                                    <div class="meta-block">
+                                        <span class="meta-caption"><i data-lucide="compass"></i> 추진 목적</span>
+                                        <p class="meta-val">R&amp;D 인프라 기반 현장실습으로 지역 정착형 인재 공급체계 마련 및 수도권 인력 유출 방지</p>
+                                    </div>
+                                    <div class="meta-block col-span-2">
+                                        <span class="meta-caption"><i data-lucide="check-circle-2"></i> 핵심 실행 내용</span>
+                                        <ul class="meta-bullet-list">
+                                            <li><strong>교차 기업탐방 (1주):</strong> 바이오(대전+충북) 및 모빌리티(세종+충남) 선도기업 순회 기술 교육</li>
+                                            <li><strong>현장실습 &amp; 수당 (2개월):</strong> 참여기업 재료비 지원, <strong>실습생 수당 250만원</strong> 및 취업축하금 150만원 지원</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="floating-stat-badge">
+                                <span class="stat-lbl">인턴십 참여수당</span>
+                                <strong class="stat-num">1인당 250만원</strong>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+    </main>
+
+    <!-- 공통 푸터 -->
+    <footer class="site-footer">
+        <div class="inner-wrap">
+            <div class="footer-top flex-between">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <img src="./images/footer_logo.png" alt="충북권역 전략사업 특화 온라인 채용관" class="brand-logo-img">
+                    </a>
+                    <p class="footer-desc">충청북도 기업진흥원이 함께 만드는 충북 지역 우수 중소·중견기업 통합 온라인 채용관입니다.</p>
+                </div>
+                <div class="footer-selects">
+                    <div class="footer-select-box">
+                        <select class="footer-select" onchange="if(this.value) location.href=this.value;">
+                            <option value="">바로가기</option>
+                            <option value="about.html">소개</option>
+                            <option value="pavilion-bio.html">바이오 채용관</option>
+                            <option value="pavilion-mobility.html">미래모빌리티 채용관</option>
+                            <option value="companies.html">참여기업 탐색</option>
+                        </select>
+                    </div>
+                    <div class="footer-select-box">
+                        <select class="footer-select" onchange="if(this.value) location.href=this.value;">
+                            <option value="">고객센터</option>
+                            <option value="notices.html">공지사항</option>
+                            <option value="faq.html">자주묻는 질문</option>
+                            <option value="resources.html">자료실</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom flex-between">
+                <p class="footer-copy">&copy; 2026 충청북도기업진흥원. All Rights Reserved.</p>
+                <div class="footer-terms">
+                    <button type="button" class="btn-terms-modal" data-modal="modalTerms">이용약관</button>
+                    <button type="button" class="btn-terms-modal text-strong" data-modal="modalPrivacy">개인정보처리방침</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 약관 모달 -->
+    <div class="site-modal" id="modalTerms">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">이용약관</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-section-title">제 1 조 (목적)</p>
+                <p class="modal-text">본 약관은 충청권 내일이음 온라인 채용관이 제공하는 제반 서비스의 이용 조건을 규정합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-modal" id="modalPrivacy">
+        <div class="modal-dim"></div>
+        <div class="modal-box">
+            <div class="modal-header flex-between">
+                <h3 class="modal-title">개인정보처리방침</h3>
+                <button type="button" class="btn-modal-close" aria-label="닫기"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-section-title">1. 개인정보 수집 목적</p>
+                <p class="modal-text">플랫폼은 회원가입 및 맞춤 취업 지원 서비스를 위해 최소한의 정보를 수집합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/lucide.min.js"></script>
+    <script src="./js/style.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      });
+    </script>
+</body>
+</html>
