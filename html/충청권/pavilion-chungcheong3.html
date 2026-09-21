@@ -130,203 +130,215 @@
     <main class="site-main">
         <!-- 에디터 영역 -->
         <style>
-        @font-face { font-family: 'Hiikr'; src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101609@hikr-extrabold/hikr-extrabold/HiKR-ExtraBold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-        .mt8 { margin-top: 8rem; }
-        .pavilion-detail-hero-sec { background-color: #f8fafc; overflow-x: hidden; padding-bottom: 6.0rem; }
-        .pav-global-expo { position: relative; width: 100vw; margin-left: calc(-50vw + 50%); background: #05070d url('./images/pavilion_bg.jpg') center 40% / cover no-repeat; padding: 4rem 0 0; color: #ffffff; }
-        .pav-global-expo::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5, 7, 13, 0.45) 0%, rgba(5, 7, 13, 0.6) 60%, #0b0f19 100%); z-index: 1; }
-        .global-expo-inner { position: relative; z-index: 2; max-width: 128.0rem; margin: 0 auto; padding: 0 3.2rem; box-sizing: border-box; }
-        .hero-left-editorial { line-height: 1.2; }
-        .poster-year-num { display: inline-block; font-family: 'Hiikr', sans-serif, system-ui; font-size: 11rem; font-weight: 900; letter-spacing: 0.04em; color: #ffffff; }
-        .poster-sub-tit { font-size: 6rem; font-weight: 900; font-family: 'Hiikr', sans-serif, system-ui; color: #ffffff; letter-spacing: -0.03em; margin-top: 0.4rem; }
-        .poster-hero-tit { font-size: 12rem; font-weight: 900; font-family: 'Hiikr', sans-serif, system-ui; color: #38f0e2; word-break: keep-all; line-height: 1.05; }
-        .expo-editorial-hero { display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 5.6rem; align-items: end; margin-bottom: 5.6rem; }
-        .expo-pass-card { background: rgba(15, 23, 42, 0.9); border: 2px solid rgba(255, 255, 255, 0.25); border-radius: 1.8rem; padding: 3.2rem; backdrop-filter: blur(16px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); }
-        .pass-card-head { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed rgba(255, 255, 255, 0.3); padding-bottom: 1.6rem; margin-bottom: 2.2rem; }
-        .pass-card-head .pass-badge { font-size: 1.4rem; font-weight: 900; letter-spacing: 0.1em; color: #fde047; text-transform: uppercase; }
-        .pass-card-head .pass-status { font-size: 1.4rem; color: #38bdf8; font-weight: 800; }
-        .pass-body-layout { display: flex; align-items: center; gap: 2.2rem; }
-        .pass-qr-frame { width: 11.4rem; height: 11.4rem; background: #ffffff; border-radius: 1.2rem; padding: 0.6rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-        .pass-qr-frame img { width: 100%; height: 100%; object-fit: contain; }
-        .pass-info-lines { display: flex; flex-direction: column; gap: 0.8rem; }
-        .pass-info-lines strong { font-size: 1.85rem; font-weight: 800; color: #ffffff; line-height: 1.35; word-break: keep-all; }
-        .pass-info-lines p { font-size: 1.45rem; color: #e2e8f0; line-height: 1.5; margin: 0; word-break: keep-all; }
-        .btn-expo-ticket { width: 100%; height: 5.2rem; margin-top: 2.4rem; background: #38bdf8; color: #05070d; border: none; border-radius: 1.0rem; font-size: 1.65rem; font-weight: 900; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 0.8rem; }
-        .btn-expo-ticket:hover { background: #ffffff; color: #0284c7; }
-        .expo-spec-ticker { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid rgba(255, 255, 255, 0.25); border-bottom: 2px solid rgba(255, 255, 255, 0.25); margin-bottom: 4.8rem; }
-        .spec-item { padding: 3.2rem 2.4rem; border-right: 1px solid rgba(255, 255, 255, 0.2); display: flex; flex-direction: column; gap: 1.0rem; }
-        .spec-item:last-child { border-right: none; }
-        .spec-num-label { font-size: 1.4rem; font-weight: 900; color: #38bdf8; letter-spacing: 0.1em; }
-        .spec-main-val { font-size: 2.6rem; font-weight: 900; color: #ffffff; letter-spacing: -0.01em; line-height: 1.25; }
-        .spec-sub-val { font-size: 1.6rem; font-weight: 700; color: #f1f5f9; }
-        .expo-agencies-container { display: flex; flex-direction: column; gap: 2.0rem; padding-bottom: 5.6rem; }
-        .expo-sponsors-editorial { display: flex; align-items: center; gap: 2.4rem; flex-wrap: wrap; }
-        .sponsors-tag-label { font-size: 1.6rem; font-weight: 900; letter-spacing: 0.08em; color: #ffffff; padding: 0.4rem 0; text-transform: uppercase; flex-shrink: 0; background: transparent; }
-        .sponsors-inline-logos { display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
-        .sponsors-inline-logos span { display: inline-flex; align-items: center; justify-content: center; background: #ffffff; padding: 0.8rem 1.6rem; border-radius: 0.8rem; height: 4.6rem; box-sizing: border-box; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); }
-        .sponsors-inline-logos span img { max-height: 3.0rem; max-width: 16.0rem; object-fit: contain; }
-        .sponsors-inline-logos span.sponsor-logo-lg img { max-height: 3.4rem; max-width: 26.0rem; }
-        .pav-white-guide-board { background-color: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 2.4rem; padding: 5.6rem 4.8rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
-        .p-guide-head { margin-bottom: 4.0rem; }
-        .p-guide-title-row { display: flex; align-items: center; justify-content: center; gap: 1.4rem; flex-wrap: wrap; }
-        .p-deco-dots { color: #94a3b8; font-size: 1.6rem; letter-spacing: 0.2em; font-weight: 900; }
-        .p-guide-main-tit { font-size: 2.8rem; font-weight: 900; color: #0f172a; margin: 0; letter-spacing: -0.02em; word-break: keep-all; }
-        .p-title-blue-line { width: 14.0rem; height: 4px; background-color: #0284c7; margin: 1.4rem auto 0; border-radius: 2px; }
-        .p-title-yellow-line { width: 14.0rem; height: 4px; background-color: #eab308; margin: 1.4rem auto 0; border-radius: 2px; }
-        .pav-info-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4rem; }
-        .p-grid-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 3.6rem 2.4rem; background-color: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 2.0rem; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
-        .p-grid-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); border-color: #0284c7; }
-        .p-grid-card.card-side-event:hover { border-color: #eab308; box-shadow: 0 12px 30px rgba(234, 179, 8, 0.2); }
-        .card-icon-circle { width: 6.8rem; height: 6.8rem; border-radius: 2.0rem; display: flex; align-items: center; justify-content: center; margin-bottom: 2.2rem; }
-        .card-icon-circle svg { width: 3.2rem; height: 3.2rem; stroke-width: 2.3; }
-        .ic-blue { background-color: #eff6ff; color: #0284c7; }
-        .ic-cyan { background-color: #ecfeff; color: #0891b2; }
-        .ic-indigo { background-color: #eef2ff; color: #4f46e5; }
-        .ic-yellow { background-color: #fefce8; color: #ca8a04; }
-        .card-tit { font-size: 2.1rem; font-weight: 900; color: #0f172a; margin-bottom: 1.2rem; }
-        .card-desc { font-size: 1.55rem; font-weight: 600; color: #334155; line-height: 1.6; margin: 0; word-break: keep-all; }
-        .btn-card-action { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; width: 100%; max-width: 17.0rem; height: 4.2rem; margin-top: 2.2rem; background-color: #ffffff; color: #1e293b; border: 1.5px solid #cbd5e1; border-radius: 0.8rem; font-size: 1.45rem; font-weight: 700; text-decoration: none; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; }
-        .btn-card-action:hover { background-color: #0284c7; color: #ffffff; border-color: #0284c7; }
-        .btn-card-action svg { width: 1.6rem; height: 1.6rem; }
-        .btn-card-reserve { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; width: 100%; max-width: 18.0rem; height: 4.4rem; margin-top: 2.4rem; background-color: #fefce8; color: #713f12; border: 1px solid #eab308; border-radius: 0.8rem; font-size: 1.5rem; font-weight: 800; cursor: pointer; transition: all 0.2s ease; }
-        .btn-card-reserve:hover { background-color: #eab308; color: #ffffff; }
-        .pav-detail-sub-box { background-color: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 1.8rem; padding: 2.8rem 3.2rem; }
-        .box-sec-tit { display: flex; align-items: center; gap: 0.8rem; font-size: 1.75rem; font-weight: 900; color: #0284c7; margin-bottom: 1.6rem; }
-        .box-sec-tit svg { width: 2.0rem; height: 2.0rem; }
-        .pav-clean-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.2rem; }
-        .pav-clean-list li { position: relative; padding-left: 2.0rem; font-size: 1.55rem; font-weight: 600; color: #334155; line-height: 1.6; }
-        .pav-clean-list li::before { content: ''; position: absolute; left: 0; top: 0.9rem; width: 6px; height: 6px; border-radius: 50%; background-color: #0284c7; }
-        .pav-clean-list strong { color: #0f172a; font-weight: 800; }
-        .p-proc-line-steps { display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; }
-        .step-card { flex: 1; display: flex; flex-direction: column; align-items: center; background-color: #ffffff; border: 1.5px solid #cbd5e1; padding: 1.8rem 1.2rem; border-radius: 1.4rem; text-align: center; }
-        .step-badge { font-size: 1.3rem; font-weight: 900; color: #0284c7; margin-bottom: 0.6rem; }
-        .step-txt { font-size: 1.55rem; font-weight: 800; color: #0f172a; word-break: keep-all; }
-        .step-arrow { color: #64748b; width: 2.2rem; height: 2.2rem; flex-shrink: 0; }
-        .pav-detail-notice { display: flex; align-items: flex-start; gap: 1.4rem; padding: 2.0rem 2.4rem; background-color: #fef2f2; border: 1.5px solid #f87171; border-radius: 1.4rem; }
-        .pav-detail-notice .notice-ic { width: 2.4rem; height: 2.4rem; color: #dc2626; flex-shrink: 0; margin-top: 0.2rem; }
-        .notice-txts strong { display: block; font-size: 1.6rem; font-weight: 800; color: #991b1b; margin-bottom: 0.6rem; }
-        .notice-txts p { font-size: 1.45rem; font-weight: 600; color: #b91c1c; line-height: 1.6; margin: 0; word-break: keep-all; }
-        .modal-inst-box { width: 100%; max-width: 68.0rem; max-height: 85vh; border-radius: 2.0rem; background-color: #ffffff; display: flex; flex-direction: column; overflow: hidden; }
-        .modal-inst-box .modal-header { padding: 2.2rem 2.8rem; border-bottom: 1px solid #e2e8f0; flex-shrink: 0; }
-        .modal-inst-box .modal-title { font-size: 2.2rem; font-weight: 800; color: #0f172a; margin: 0; }
-        .modal-inst-box .modal-body { padding: 2.8rem; flex: 1; overflow-y: auto; }
-        .modal-inst-box .modal-footer { width: 100%; padding: 1.6rem 2.8rem 2.0rem; border-top: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; background-color: #ffffff; box-sizing: border-box; }
-        .btn-inst-close { display: inline-flex; align-items: center; justify-content: center; margin: 0 auto; width: 100%; max-width: 16.0rem; height: 4.4rem; font-size: 1.45rem; font-weight: 700; color: #475569; background-color: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 0.8rem; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; }
-        .btn-inst-close:hover { background-color: #f8fafc; border-color: #0284c7; color: #0284c7; }
-        .inst-modal-intro { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1.2rem; padding: 2.0rem 2.4rem; text-align: left; }
-        .inst-modal-intro .intro-tit { font-size: 1.45rem; font-weight: 700; color: #1e293b; line-height: 1.6; margin: 0 0 1.2rem; word-break: keep-all; }
-        .inst-modal-intro .intro-bullet-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
-        .inst-modal-intro .intro-bullet-list li { position: relative; padding-left: 1.4rem; font-size: 1.35rem; color: #475569; }
-        .inst-modal-intro .intro-bullet-list li::before { content: '•'; position: absolute; left: 0; top: 0; color: #0284c7; font-weight: 700; }
-        .inst-table-wrap { width: 100%; border: 1px solid #cbd5e1; border-radius: 1.0rem; overflow: hidden; }
-        .inst-data-table { width: 100%; border-collapse: collapse; text-align: center; }
-        .inst-data-table thead th { background-color: #e2e8f0; color: #1e293b; font-size: 1.4rem; font-weight: 800; padding: 1.2rem 1.0rem; border-bottom: 1px solid #cbd5e1; }
-        .inst-data-table tbody td { padding: 1.2rem 1.0rem; font-size: 1.35rem; color: #334155; border-bottom: 1px solid #f1f5f9; }
-        .inst-data-table tbody tr:last-child td { border-bottom: none; }
-        .inst-data-table tbody tr:hover { background-color: #f8fafc; }
-        .inst-data-table td.td-left { text-align: left; font-weight: 600; color: #0f172a; padding-left: 1.6rem; }
-        .btn-inst-link { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem 1.2rem; background-color: #ffffff; color: #0284c7; border: 1px solid #bae6fd; border-radius: 0.6rem; font-size: 1.25rem; font-weight: 700; text-decoration: none; transition: all 0.2s ease; }
-        .btn-inst-link:hover { background-color: #0284c7; color: #ffffff; border-color: #0284c7; }
+        @font-face{font-family:'Hiikr';src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101609@hikr-extrabold/hikr-extrabold/HiKR-ExtraBold.woff2') format('woff2');font-weight:700;font-display:swap;}
+        .mt8{margin-top:8.0rem;}
+        .pavilion-detail-hero-sec{background-color:#f8fafc;overflow-x:hidden;padding-bottom:6.0rem;}
+        .pav-global-expo{position:relative;width:100vw;margin-left:calc(-50vw + 50%);background:#05070d url('./images/pavilion_bg.jpg') center 40%/cover no-repeat;padding:4.0rem 0 0;color:#ffffff;}
+        .pav-global-expo::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,13,0.45) 0%,rgba(5,7,13,0.6) 60%,#0b0f19 100%);z-index:1;}
+        .global-expo-inner{position:relative;z-index:2;max-width:128.0rem;margin:0 auto;padding:0 3.2rem;box-sizing:border-box;}
+        .hero-left-editorial{line-height:1.2;}
+        .poster-year-num{display:inline-block;font-family:'Hiikr',sans-serif,system-ui;font-size:11.0rem;font-weight:900;letter-spacing:0.04em;color:#ffffff;}
+        .poster-sub-tit{font-size:6.0rem;font-weight:900;font-family:'Hiikr',sans-serif,system-ui;color:#f3fc61;letter-spacing:-0.03em;margin-top:0.4rem;}
+        .poster-hero-tit{font-size:12.0rem;font-weight:900;font-family:'Hiikr',sans-serif,system-ui;color:#fff;word-break:keep-all;line-height:1.05;}
+        .expo-editorial-hero{display:grid;grid-template-columns:1.35fr 0.85fr;gap:5.6rem;align-items:end;margin-bottom:5.6rem;}
+        .expo-pass-card{background:rgba(15,23,42,0.9);border:2px solid rgba(255,255,255,0.25);border-radius:1.8rem;padding:3.2rem;backdrop-filter:blur(16px);box-shadow:0 20px 50px rgba(0,0,0,0.6);}
+        .pass-card-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px dashed rgba(255,255,255,0.3);padding-bottom:1.6rem;margin-bottom:2.2rem;}
+        .pass-card-head .pass-badge{font-size:1.4rem;font-weight:900;letter-spacing:0.1em;color:#fde047;text-transform:uppercase;}
+        .pass-card-head .pass-status{font-size:1.4rem;color:#38bdf8;font-weight:800;}
+        .pass-body-layout{display:flex;align-items:center;gap:2.2rem;}
+        .pass-qr-frame{width:11.4rem;height:11.4rem;background:#ffffff;border-radius:1.2rem;padding:0.6rem;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+        .pass-qr-frame img{width:100%;height:100%;object-fit:contain;}
+        .pass-info-lines{display:flex;flex-direction:column;gap:0.8rem;}
+        .pass-info-lines strong{font-size:1.85rem;font-weight:800;color:#ffffff;line-height:1.35;word-break:keep-all;}
+        .pass-info-lines p{font-size:1.45rem;color:#e2e8f0;line-height:1.5;margin:0;word-break:keep-all;}
+        .btn-expo-ticket{width:100%;height:5.2rem;margin-top:2.4rem;background:#38bdf8;color:#05070d;border:none;border-radius:1.0rem;font-size:1.65rem;font-weight:900;cursor:pointer;transition:all 0.2s ease;display:inline-flex;align-items:center;justify-content:center;gap:0.8rem;}
+        .btn-expo-ticket:hover{background:#ffffff;color:#0284c7;}
+        .expo-spec-ticker{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid rgba(255,255,255,0.25);border-bottom:2px solid rgba(255,255,255,0.25);margin-bottom:4.8rem;}
+        .spec-item{padding:3.2rem 2.4rem;border-right:1px solid rgba(255,255,255,0.2);display:flex;flex-direction:column;gap:1.0rem;}
+        .spec-item:last-child{border-right:none;}
+        .spec-num-label{font-size:1.4rem;font-weight:900;color:#38bdf8;letter-spacing:0.1em;}
+        .spec-main-val{font-size:2.6rem;font-weight:900;color:#ffffff;letter-spacing:-0.01em;line-height:1.25;}
+        .spec-sub-val{font-size:1.6rem;font-weight:700;color:#f1f5f9;}
+        .expo-agencies-container{display:flex;flex-direction:column;gap:2.0rem;padding-bottom:5.6rem;}
+        .expo-sponsors-editorial{display:flex;align-items:center;gap:2.4rem;flex-wrap:wrap;}
+        .sponsors-tag-label{font-size:1.6rem;font-weight:900;letter-spacing:0.08em;color:#ffffff;padding:0.4rem 0;text-transform:uppercase;flex-shrink:0;background:transparent;}
+        .sponsors-inline-logos{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;}
+        .sponsors-inline-logos span{display:inline-flex;align-items:center;justify-content:center;background:#ffffff;padding:0.8rem 1.6rem;border-radius:0.8rem;height:4.6rem;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,0,0,0.15);}
+        .sponsors-inline-logos span img{max-height:3.0rem;max-width:16.0rem;object-fit:contain;}
+        .sponsors-inline-logos span.sponsor-logo-lg img{max-height:3.4rem;max-width:26.0rem;}
+        .pav-white-guide-board{background-color:#ffffff;border:1.5px solid #cbd5e1;border-radius:2.4rem;padding:5.6rem 4.8rem;box-shadow:0 10px 30px rgba(0,0,0,0.05);}
+        .p-guide-head{margin-bottom:4.0rem;}
+        .p-guide-title-row{display:flex;align-items:center;justify-content:center;gap:1.4rem;flex-wrap:wrap;}
+        .p-deco-dots{color:#94a3b8;font-size:1.6rem;letter-spacing:0.2em;font-weight:900;}
+        .p-guide-main-tit{font-size:2.8rem;font-weight:900;color:#0f172a;margin:0;letter-spacing:-0.02em;word-break:keep-all;}
+        .p-title-blue-line{width:14.0rem;height:4px;background-color:#0284c7;margin:1.4rem auto 0;border-radius:2px;}
+        .p-title-yellow-line{width:14.0rem;height:4px;background-color:#eab308;margin:1.4rem auto 0;border-radius:2px;}
+        .pav-info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;}
+        .p-grid-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:3.6rem 2.4rem;background-color:#ffffff;border:1.5px solid #cbd5e1;border-radius:2.0rem;transition:transform 0.2s ease,box-shadow 0.2s ease,border-color 0.2s ease;}
+        .p-grid-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.08);border-color:#0284c7;}
+        .p-grid-card.card-side-event:hover{border-color:#eab308;box-shadow:0 12px 30px rgba(234,179,8,0.2);}
+        .card-icon-circle{width:6.8rem;height:6.8rem;border-radius:2.0rem;display:flex;align-items:center;justify-content:center;margin-bottom:2.2rem;}
+        .card-icon-circle svg{width:3.2rem;height:3.2rem;}
+        .ic-blue{background-color:#eff6ff;color:#0284c7;}
+        .ic-cyan{background-color:#ecfeff;color:#0891b2;}
+        .ic-indigo{background-color:#eef2ff;color:#4f46e5;}
+        .ic-yellow{background-color:#fefce8;color:#ca8a04;}
+        .card-tit{font-size:2.1rem;font-weight:900;color:#0f172a;margin-bottom:1.2rem;}
+        .card-desc{font-size:1.55rem;font-weight:600;color:#334155;line-height:1.6;margin:0;word-break:keep-all;}
+        .btn-card-action{display:inline-flex;align-items:center;justify-content:center;gap:0.6rem;width:100%;max-width:17.0rem;height:4.2rem;margin-top:2.2rem;background-color:#ffffff;color:#1e293b;border:1.5px solid #cbd5e1;border-radius:0.8rem;font-size:1.45rem;font-weight:700;text-decoration:none;cursor:pointer;transition:all 0.2s ease;box-sizing:border-box;}
+        .btn-card-action:hover{background-color:#0284c7;color:#ffffff;border-color:#0284c7;}
+        .btn-card-action svg{width:1.6rem;height:1.6rem;}
+        .btn-card-reserve{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;width:100%;max-width:18.0rem;height:4.4rem;margin-top:2.4rem;background-color:#fefce8;color:#713f12;border:1px solid #eab308;border-radius:0.8rem;font-size:1.5rem;font-weight:800;cursor:pointer;transition:all 0.2s ease;}
+        .btn-card-reserve:hover{background-color:#eab308;color:#ffffff;}
+        .pav-detail-sub-box{background-color:#f8fafc;border:1.5px solid #cbd5e1;border-radius:1.8rem;padding:2.8rem 3.2rem;}
+        .box-sec-tit{display:flex;align-items:center;gap:0.8rem;font-size:1.75rem;font-weight:900;color:#0284c7;margin-bottom:1.6rem;}
+        .box-sec-tit svg{width:2.0rem;height:2.0rem;}
+        .pav-clean-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1.2rem;}
+        .pav-clean-list li{position:relative;padding-left:2.0rem;font-size:1.55rem;font-weight:600;color:#334155;line-height:1.6;}
+        .pav-clean-list li::before{content:'';position:absolute;left:0;top:0.9rem;width:6px;height:6px;border-radius:50%;background-color:#0284c7;}
+        .pav-clean-list strong{color:#0f172a;font-weight:800;}
+        .p-proc-line-steps{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;}
+        .step-card{flex:1;display:flex;flex-direction:column;align-items:center;background-color:#ffffff;border:1.5px solid #cbd5e1;padding:1.8rem 1.2rem;border-radius:1.4rem;text-align:center;}
+        .step-badge{font-size:1.3rem;font-weight:900;color:#0284c7;margin-bottom:0.6rem;}
+        .step-txt{font-size:1.55rem;font-weight:800;color:#0f172a;word-break:keep-all;}
+        .step-arrow{color:#64748b;width:2.2rem;height:2.2rem;flex-shrink:0;}
+        .pav-detail-notice{display:flex;align-items:flex-start;gap:1.4rem;padding:2.0rem 2.4rem;background-color:#fef2f2;border:1.5px solid #f87171;border-radius:1.4rem;}
+        .pav-detail-notice .notice-ic{width:2.4rem;height:2.4rem;color:#dc2626;flex-shrink:0;margin-top:0.2rem;}
+        .notice-txts strong{display:block;font-size:1.6rem;font-weight:800;color:#991b1b;margin-bottom:0.6rem;}
+        .notice-txts p{font-size:1.45rem;font-weight:600;color:#b91c1c;line-height:1.6;margin:0;word-break:keep-all;}
 
-        /* 사전 참여신청 모달 스타일 */
-        .modal-preapply-box { width: 100%; max-width: 62.0rem; max-height: 90vh; border-radius: 2.0rem; background-color: #ffffff; display: flex; flex-direction: column; overflow: hidden; }
-        .modal-preapply-box .modal-header { padding: 2.4rem 2.8rem; border-bottom: 1px solid #e2e8f0; flex-shrink: 0; }
-        .modal-preapply-box .modal-title { font-size: 2.2rem; font-weight: 800; color: #0f172a; margin: 0; }
-        .modal-preapply-box .modal-sub-tit { font-size: 1.45rem; color: #64748b; margin: 0.6rem 0 0; }
-        .modal-preapply-box .modal-body { padding: 2.8rem; flex: 1; overflow-y: auto; }
-        .modal-preapply-box .modal-footer { width: 100%; padding: 1.8rem 2.8rem 2.4rem; border-top: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background-color: #ffffff; box-sizing: border-box; }
-        .preapply-form-wrap { display: flex; flex-direction: column; }
-        .preapply-row { display: flex; align-items: center; padding: 1.4rem 0; border-bottom: 1px solid #f1f5f9; font-size: 1.5rem; }
-        .preapply-row .p-label { width: 14.0rem; font-weight: 700; color: #475569; flex-shrink: 0; }
-        .preapply-row .p-val { flex: 1; color: #0f172a; }
-        .preapply-guide-txt { font-size: 1.2rem; color: #ef4444; line-height: 1.6; margin: 1.2rem 0 0; word-break: keep-all; }
-        .preapply-privacy-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1.2rem; padding: 2.0rem 2.2rem; text-align: left; }
-        .privacy-box-tit { display: block; font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 1.2rem; }
-        .privacy-bullet-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem; }
-        .privacy-bullet-list li { position: relative; padding-left: 1.4rem; font-size: 1.35rem; color: #475569; line-height: 1.6; word-break: keep-all; }
-        .privacy-bullet-list li::before { content: '•'; position: absolute; left: 0; top: 0; color: #64748b; font-weight: 700; }
-        .privacy-bullet-list strong { color: #1e293b; }
+        /* 박람회 타임테이블 - 가로 스크롤 및 하단 테두리 보완 */
+        .expo-timetable-sec{position:relative;width:100%;margin-top:4.0rem;clear:both;}
+        .timetable-scroll-wrap{display:block;width:100%;max-width:100%;overflow-x:auto !important;overflow-y:hidden;-webkit-overflow-scrolling:touch;touch-action:pan-x;border-radius:1.2rem;border:1.5px solid #dbdbdb;box-shadow:0 4px 15px rgba(0,0,0,0.03);background:#ffffff;box-sizing:border-box;}
+        .expo-timetable{width:100%;min-width:72.0rem !important;border-collapse:collapse;table-layout:fixed;text-align:left;background:#ffffff;}
+        .expo-timetable thead th{background-color:#172554;color:#ffffff;font-size:1.55rem;font-weight:800;padding:1.6rem 2.0rem;border-right:1px solid rgba(255,255,255,0.15);letter-spacing:-0.01em;white-space:nowrap;}
+        .expo-timetable thead th:last-child{border-right:none;}
+        .expo-timetable tbody td{padding:1.4rem 2.0rem;font-size:1.45rem;color:#334155;border-bottom:1px solid #fde68a;border-right:1px solid #fef3c7;line-height:1.5;word-break:keep-all;}
+        .expo-timetable tbody tr:last-child td{border-bottom:none;}
+        .expo-timetable tbody td:last-child{border-right:none;}
+        .expo-timetable tbody td.td-time{font-weight:700;color:#1e293b;white-space:nowrap;}
+        .expo-timetable tbody td.td-prog{font-weight:800;color:#0f172a;word-break:keep-all;}
+        .expo-timetable tbody td.td-place{color:#475569;word-break:keep-all;}
+        .expo-timetable tbody tr.row-highlight{background-color:#f0fdf4;}
+        .expo-timetable tbody tr.row-highlight td{color:#065f46;border-bottom-color:#bbf7d0;}
+        .expo-timetable tbody tr.row-highlight td.td-prog{color:#047857;}
+        .expo-timetable tbody tr.row-highlight td.td-time{color:#065f46;font-weight:900;}
 
-        /* 커스텀 체크박스 (체크박스 사각형만 단독 클릭) */
-        .preapply-check-wrap { display: flex; align-items: center; padding: 0.6rem 0; }
-        .custom-check-group { display: inline-flex; align-items: center; gap: 1.0rem; }
-        .custom-check-input { position: absolute; opacity: 0; width: 0; height: 0; margin: 0; pointer-events: none; }
-        .custom-check-box { width: 2.0rem; height: 2.0rem; border: 1.5px solid #cbd5e1; border-radius: 0.4rem; background-color: #ffffff; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; }
-        .custom-check-input:checked + .custom-check-box { background-color: #0284c7; border-color: #0284c7; }
-        .custom-check-box::after { content: ''; display: none; width: 5px; height: 9px; border: solid #ffffff; border-width: 0 2px 2px 0; transform: rotate(45deg); margin-top: -2px; }
-        .custom-check-input:checked + .custom-check-box::after { display: block; }
-        .check-text { font-size: 1.45rem; font-weight: 700; color: #1e293b; user-select: none; cursor: default; }
+        .modal-inst-box{width:100%;max-width:68.0rem;max-height:85vh;border-radius:2.0rem;background-color:#ffffff;display:flex;flex-direction:column;overflow:hidden;}
+        .modal-inst-box .modal-header{padding:2.2rem 2.8rem;border-bottom:1px solid #e2e8f0;flex-shrink:0;}
+        .modal-inst-box .modal-title{font-size:2.2rem;font-weight:800;color:#0f172a;margin:0;}
+        .modal-inst-box .modal-body{padding:2.8rem;flex:1;overflow-y:auto;}
+        .modal-inst-box .modal-footer{width:100%;padding:1.6rem 2.8rem 2.0rem;border-top:1px solid #f1f5f9;display:flex;align-items:center;justify-content:center;text-align:center;flex-shrink:0;background-color:#ffffff;box-sizing:border-box;}
+        .btn-inst-close{display:inline-flex;align-items:center;justify-content:center;margin:0 auto;width:100%;max-width:16.0rem;height:4.4rem;font-size:1.45rem;font-weight:700;color:#475569;background-color:#ffffff;border:1.5px solid #cbd5e1;border-radius:0.8rem;cursor:pointer;transition:all 0.2s ease;box-sizing:border-box;}
+        .btn-inst-close:hover{background-color:#f8fafc;border-color:#0284c7;color:#0284c7;}
+        .inst-modal-intro{background-color:#f8fafc;border:1px solid #e2e8f0;border-radius:1.2rem;padding:2.0rem 2.4rem;text-align:left;}
+        .inst-modal-intro .intro-tit{font-size:1.45rem;font-weight:700;color:#1e293b;line-height:1.6;margin:0 0 1.2rem;word-break:keep-all;}
+        .inst-modal-intro .intro-bullet-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;}
+        .inst-modal-intro .intro-bullet-list li{position:relative;padding-left:1.4rem;font-size:1.35rem;color:#475569;}
+        .inst-modal-intro .intro-bullet-list li::before{content:'•';position:absolute;left:0;top:0;color:#0284c7;font-weight:700;}
+        .inst-table-wrap{width:100%;border:1px solid #cbd5e1;border-radius:1.0rem;overflow:hidden;}
+        .inst-data-table{width:100%;border-collapse:collapse;text-align:center;}
+        .inst-data-table thead th{background-color:#e2e8f0;color:#1e293b;font-size:1.4rem;font-weight:800;padding:1.2rem 1.0rem;border-bottom:1px solid #cbd5e1;}
+        .inst-data-table tbody td{padding:1.2rem 1.0rem;font-size:1.35rem;color:#334155;border-bottom:1px solid #f1f5f9;}
+        .inst-data-table tbody tr:last-child td{border-bottom:none;}
+        .inst-data-table tbody tr:hover{background-color:#f8fafc;}
+        .inst-data-table td.td-left{text-align:left;font-weight:600;color:#0f172a;padding-left:1.6rem;}
+        .btn-inst-link{display:inline-flex;align-items:center;justify-content:center;padding:0.5rem 1.2rem;background-color:#ffffff;color:#0284c7;border:1px solid #bae6fd;border-radius:0.6rem;font-size:1.25rem;font-weight:700;text-decoration:none;transition:all 0.2s ease;}
+        .btn-inst-link:hover{background-color:#0284c7;color:#ffffff;border-color:#0284c7;}
+        .modal-preapply-box{width:100%;max-width:62.0rem;max-height:90vh;border-radius:2.0rem;background-color:#ffffff;display:flex;flex-direction:column;overflow:hidden;}
+        .modal-preapply-box .modal-header{padding:2.4rem 2.8rem;border-bottom:1px solid #e2e8f0;flex-shrink:0;}
+        .modal-preapply-box .modal-title{font-size:2.2rem;font-weight:800;color:#0f172a;margin:0;}
+        .modal-preapply-box .modal-sub-tit{font-size:1.45rem;color:#64748b;margin:0.6rem 0 0;}
+        .modal-preapply-box .modal-body{padding:2.8rem;flex:1;overflow-y:auto;}
+        .modal-preapply-box .modal-footer{width:100%;padding:1.8rem 2.8rem 2.4rem;border-top:1px solid #f1f5f9;display:flex;align-items:center;justify-content:center;flex-shrink:0;background-color:#ffffff;box-sizing:border-box;}
+        .preapply-form-wrap{display:flex;flex-direction:column;}
+        .preapply-row{display:flex;align-items:center;padding:1.4rem 0;border-bottom:1px solid #f1f5f9;font-size:1.5rem;}
+        .preapply-row .p-label{width:14.0rem;font-weight:700;color:#475569;flex-shrink:0;}
+        .preapply-row .p-val{flex:1;color:#0f172a;}
+        .preapply-guide-txt{font-size:1.2rem;color:#ef4444;line-height:1.6;margin:1.2rem 0 0;word-break:keep-all;}
+        .preapply-privacy-box{background-color:#f8fafc;border:1px solid #e2e8f0;border-radius:1.2rem;padding:2.0rem 2.2rem;text-align:left;}
+        .privacy-box-tit{display:block;font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:1.2rem;}
+        .privacy-bullet-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.8rem;}
+        .privacy-bullet-list li{position:relative;padding-left:1.4rem;font-size:1.35rem;color:#475569;line-height:1.6;word-break:keep-all;}
+        .privacy-bullet-list li::before{content:'•';position:absolute;left:0;top:0;color:#64748b;font-weight:700;}
+        .privacy-bullet-list strong{color:#1e293b;}
+        .preapply-check-wrap{display:flex;align-items:center;padding:0.6rem 0;}
+        .custom-check-group{display:inline-flex;align-items:center;gap:1.0rem;}
+        .custom-check-input{position:absolute;opacity:0;width:0;height:0;margin:0;pointer-events:none;}
+        .custom-check-box{width:2.0rem;height:2.0rem;border:1.5px solid #cbd5e1;border-radius:0.4rem;background-color:#ffffff;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:all 0.2s ease;box-sizing:border-box;}
+        .custom-check-input:checked + .custom-check-box{background-color:#0284c7;border-color:#0284c7;}
+        .custom-check-box::after{content:'';display:none;width:5px;height:9px;border:solid #ffffff;border-width:0 2px 2px 0;transform:rotate(45deg);margin-top:-2px;}
+        .custom-check-input:checked + .custom-check-box::after{display:block;}
+        .check-text{font-size:1.45rem;font-weight:700;color:#1e293b;user-select:none;cursor:default;}
+        .btn-preapply-submit{width:100%;max-width:18.0rem;height:4.6rem;font-size:1.55rem;font-weight:800;border-radius:0.8rem;cursor:pointer;transition:all 0.2s ease;margin:0 auto;display:inline-flex;align-items:center;justify-content:center;border:none;}
+        .btn-preapply-submit:disabled{background-color:#cbd5e1 !important;color:#94a3b8 !important;cursor:not-allowed;opacity:0.7;}
 
-        .btn-preapply-submit { width: 100%; max-width: 18.0rem; height: 4.6rem; font-size: 1.55rem; font-weight: 800; border-radius: 0.8rem; cursor: pointer; transition: all 0.2s ease; margin: 0 auto; display: inline-flex; align-items: center; justify-content: center; border: none; }
-        .btn-preapply-submit:disabled { background-color: #cbd5e1 !important; color: #94a3b8 !important; cursor: not-allowed; opacity: 0.7; }
-
-        @media (max-width: 1024px) {
-        .expo-editorial-hero { grid-template-columns: 1fr; gap: 4.0rem; }
-        .poster-year-num { font-size: 8.4rem; }
-        .poster-sub-tit { font-size: 4.6rem; }
-        .poster-hero-tit { font-size: 8.8rem; }
-        .expo-spec-ticker { grid-template-columns: 1fr; }
-        .spec-item { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding: 2.2rem 0; }
-        .spec-item:last-child { border-bottom: none; }
-        .expo-sponsors-editorial { flex-direction: column; align-items: flex-start; gap: 1.6rem; }
-        .sponsors-inline-logos { display: flex; flex-wrap: wrap; gap: 1.2rem; width: 100%; justify-content: flex-start; }
-        .sponsors-inline-logos span { width: auto; flex: initial; }
-        .sponsors-inline-logos span.sponsor-logo-lg { width: auto; max-width: 100%; }
-        .pav-info-grid-3 { grid-template-columns: repeat(2, 1fr); }
-        .p-proc-line-steps { flex-direction: column; gap: 0.8rem; }
-        .step-card { width: 100%; justify-content: space-between; padding: 1.4rem 1.8rem; box-sizing: border-box; }
-        .step-arrow { transform: rotate(90deg); }
+        @media (max-width:1024px){
+        .expo-editorial-hero{grid-template-columns:1fr;gap:4.0rem;}
+        .poster-year-num{font-size:8.4rem;}
+        .poster-sub-tit{font-size:4.6rem;}
+        .poster-hero-tit{font-size:8.8rem;}
+        .expo-spec-ticker{grid-template-columns:1fr;}
+        .spec-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.2);padding:2.2rem 0;}
+        .spec-item:last-child{border-bottom:none;}
+        .expo-sponsors-editorial{flex-direction:column;align-items:flex-start;gap:1.6rem;}
+        .sponsors-inline-logos{display:flex;flex-wrap:wrap;gap:1.2rem;width:100%;justify-content:flex-start;}
+        .sponsors-inline-logos span{width:auto;flex:initial;}
+        .sponsors-inline-logos span.sponsor-logo-lg{width:auto;max-width:100%;}
+        .pav-info-grid-3{grid-template-columns:repeat(2,1fr);}
+        .p-proc-line-steps{flex-direction:column;gap:0.8rem;}
+        .step-card{width:100%;justify-content:space-between;padding:1.4rem 1.8rem;box-sizing:border-box;}
+        .step-arrow{transform:rotate(90deg);}
         }
-
-        @media (max-width: 768px) {
-        .pav-global-expo { padding: 4.0rem 0 0; }
-        .hero-left-editorial { text-align: center; }
-        .poster-year-num { font-size: 7.2rem; }
-        .poster-sub-tit { font-size: 4.0rem; }
-        .poster-hero-tit { font-size: 7.2rem; }
-        .pass-body-layout { flex-direction: column; text-align: center; }
-        .spec-item { text-align: center; align-items: center; }
-        .expo-sponsors-editorial { align-items: flex-start; }
-        .sponsors-inline-logos { justify-content: flex-start; }
-        .pav-white-guide-board { padding: 3.6rem 2.0rem; margin-top: 3.2rem; }
-        .p-guide-main-tit { font-size: 2.2rem; }
-        .pav-info-grid-3 { grid-template-columns: 1fr; }
+        @media (max-width:768px){
+        .pav-global-expo{padding:4.0rem 0 0;}
+        .hero-left-editorial{text-align:center;}
+        .poster-year-num{font-size:7.2rem;}
+        .poster-sub-tit{font-size:4.0rem;}
+        .poster-hero-tit{font-size:7.2rem;}
+        .pass-body-layout{flex-direction:column;text-align:center;}
+        .spec-item{text-align:center;align-items:center;}
+        .expo-sponsors-editorial{align-items:flex-start;}
+        .sponsors-inline-logos{justify-content:flex-start;}
+        .pav-white-guide-board{padding:3.6rem 2.0rem;margin-top:3.2rem;}
+        .p-guide-main-tit{font-size:2.2rem;}
+        .pav-info-grid-3{grid-template-columns:1fr;}
+        .expo-timetable thead th{padding:1.2rem 1.4rem;font-size:1.4rem;}
+        .expo-timetable tbody td{padding:1.2rem 1.4rem;font-size:1.35rem;}
         }
-
-        @media (max-width: 640px) {
-        .poster-year-num { font-size: 6.8rem; }
-        .poster-sub-tit { font-size: 3.6rem; }
-        .poster-hero-tit { font-size: 6.8rem; }
-        .expo-sponsors-editorial { align-items: flex-start; }
-        .sponsors-inline-logos { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 1.0rem; width: 100%; }
-        .sponsors-inline-logos span { width: auto; flex: initial; padding: 0.6rem 1.2rem; height: 4.0rem; }
-        .sponsors-inline-logos span img { max-height: 2.4rem; max-width: 13.0rem; }
-        .sponsors-inline-logos span.sponsor-logo-lg { width: auto; }
-        .sponsors-inline-logos span.sponsor-logo-lg img { max-height: 2.6rem; max-width: 22.0rem; }
-        .modal-inst-box, .modal-preapply-box { max-height: 90vh; }
-        .modal-inst-box .modal-header, .modal-preapply-box .modal-header { padding: 1.8rem 1.6rem; }
-        .modal-inst-box .modal-body, .modal-preapply-box .modal-body { padding: 1.6rem; }
-        .modal-inst-box .modal-footer, .modal-preapply-box .modal-footer { padding: 1.2rem 1.6rem 1.6rem; }
-        .btn-inst-close, .btn-preapply-submit { max-width: 100%; height: 4.4rem; margin: 0; }
-        .preapply-row .p-label { width: 10.0rem; }
-        .inst-modal-intro, .preapply-privacy-box { padding: 1.4rem 1.6rem; }
-        .inst-modal-intro .intro-tit { font-size: 1.35rem; }
-        .inst-data-table thead th { font-size: 1.25rem; padding: 1.0rem 0.6rem; }
-        .inst-data-table tbody td { font-size: 1.25rem; padding: 1.0rem 0.6rem; }
-        .inst-data-table td.td-left { padding-left: 1.0rem; }
-        .btn-inst-link { padding: 0.4rem 0.8rem; font-size: 1.15rem; }
-        }
+        @media (max-width:640px){
+        .poster-year-num{font-size:6.8rem;}
+        .poster-sub-tit{font-size:3.6rem;}
+        .poster-hero-tit{font-size:6.8rem;}
+        .expo-sponsors-editorial{align-items:flex-start;}
+        .sponsors-inline-logos{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:1.0rem;width:100%;}
+        .sponsors-inline-logos span{width:auto;flex:initial;padding:0.6rem 1.2rem;height:4.0rem;}
+        .sponsors-inline-logos span img{max-height:2.4rem;max-width:13.0rem;}
+        .sponsors-inline-logos span.sponsor-logo-lg{width:auto;}
+        .sponsors-inline-logos span.sponsor-logo-lg img{max-height:2.6rem;max-width:22.0rem;}
+        .modal-inst-box,.modal-preapply-box{max-height:90vh;}
+        .modal-inst-box .modal-header,.modal-preapply-box .modal-header{padding:1.8rem 1.6rem;}
+        .modal-inst-box .modal-body,.modal-preapply-box .modal-body{padding:1.6rem;}
+        .modal-inst-box .modal-footer,.modal-preapply-box .modal-footer{padding:1.2rem 1.6rem 1.6rem;}
+        .btn-inst-close,.btn-preapply-submit{max-width:100%;height:4.4rem;margin:0;}
+        .preapply-row .p-label{width:10.0rem;}
+        .inst-modal-intro,.preapply-privacy-box{padding:1.4rem 1.6rem;}
+        .inst-modal-intro .intro-tit{font-size:1.35rem;}
+        .inst-data-table thead th{font-size:1.25rem;padding:1.0rem 0.6rem;}
+        .inst-data-table tbody td{font-size:1.25rem;padding:1.0rem 0.6rem;}
+        .inst-data-table td.td-left{padding-left:1.0rem;}
+        .btn-inst-link{padding:0.4rem 0.8rem;font-size:1.15rem;}
+        }    
         </style>
 
         <section class="pavilion-detail-hero-sec">
             <div class="pav-global-expo">
                 <div class="global-expo-inner">
-
                     <!-- 에디토리얼 헤드라인 & 티켓 패스 모듈 -->
                     <div class="expo-editorial-hero">
                         <div class="hero-left-editorial">
                             <p class="poster-year-num">2026</p>
-                            <p class="poster-sub-tit">충청북도 &amp; 충청권</p>
+                            <p class="poster-sub-tit">충청북도 & 충청권</p>
                             <h1 class="poster-hero-tit">내일이음<br>취업박람회</h1>
                         </div>
 
@@ -335,20 +347,16 @@
                             <div class="expo-pass-card">
                                 <div class="pass-card-head">
                                     <span class="pass-badge">Official Fast</span>
-                                    <span class="pass-status">&bull; 사전등록 진행중</span>
+                                    <span class="pass-status">• 사전등록 진행중</span>
                                 </div>
                                 <div class="pass-body-layout">
-                                    <!-- <div class="pass-qr-frame">
-                                        <img src="./images/pavilion_qr.png" alt="사전등록 QR코드">
-                                    </div> -->
                                     <div class="pass-info-lines">
                                         <strong>온라인 사전등록</strong>
                                         <p>QR 스캔 또는 버튼 신청으로 대기 없는 현장 면접과 부대 프로그램 우선 예약이 가능합니다.</p>
                                     </div>
                                 </div>
-                                <button type="button" class="btn-expo-ticket" onclick="openModal('modalPreApply')">
+                                <button class="btn-expo-ticket" onclick="openModaLoginChk('modalPreApply')" type="button">
                                     <span>사전등록 신청하기 (무료)</span>
-                                    <i data-lucide="arrow-right"></i>
                                 </button>
                             </div>
                         </div>
@@ -369,7 +377,7 @@
                         <div class="spec-item">
                             <span class="spec-num-label">03 / PROGRAM</span>
                             <div class="spec-main-val">60+ 기업 1:1 현장면접</div>
-                            <span class="spec-sub-val">컨설팅 &middot; AI면접 &middot; 부대행사</span>
+                            <span class="spec-sub-val">컨설팅 · AI면접 · 부대행사</span>
                         </div>
                     </div>
 
@@ -379,24 +387,22 @@
                         <div class="expo-sponsors-editorial">
                             <span class="sponsors-tag-label">주관</span>
                             <div class="sponsors-inline-logos">
-                                <span class="sponsor-logo-lg"><img src="./images/tlogo_07.png" alt="충청북도기업진흥원 · 충북일자리지원센터"></span>
+                                <span class="sponsor-logo-lg"><img alt="충청북도기업진흥원 · 충북일자리지원센터" src="./images/tlogo_07.png"></span>
                             </div>
                         </div>
-
                         <!-- 주최 기관 -->
                         <div class="expo-sponsors-editorial">
                             <span class="sponsors-tag-label">주최</span>
                             <div class="sponsors-inline-logos">
-                                <span><img src="./images/tlogo_01.png" alt="고용노동부"></span>
-                                <span><img src="./images/tlogo_02.png" alt="충청북도"></span>
-                                <span><img src="./images/tlogo_03.png" alt="대전광역시"></span>
-                                <span><img src="./images/tlogo_04.png" alt="충청남도"></span>
-                                <span><img src="./images/tlogo_05.png" alt="세종특별자치시"></span>
-                                <span><img src="./images/tlogo_06.png" alt="충북지방중소벤처기업청"></span>
+                                <span><img alt="고용노동부" src="./images/tlogo_01.png"></span>
+                                <span><img alt="충청북도" src="./images/tlogo_02.png"></span>
+                                <span><img alt="대전광역시" src="./images/tlogo_03.png"></span>
+                                <span><img alt="충청남도" src="./images/tlogo_04.png"></span>
+                                <span><img alt="세종특별자치시" src="./images/tlogo_05.png"></span>
+                                <span><img alt="충북지방중소벤처기업청" src="./images/tlogo_06.png"></span>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -411,29 +417,34 @@
                         </div>
                         <div class="p-title-blue-line"></div>
                     </div>
+
                     <div class="pav-info-grid-3 mt-3">
                         <!-- 카드 1. 취업 역량상담 -->
                         <div class="p-grid-card">
-                            <div class="card-icon-circle ic-blue"><i data-lucide="user-check"></i></div>
+                            <div class="card-icon-circle ic-blue">
+                                <i data-lucide="user-check"><span></span></i>
+                            </div>
                             <strong class="card-tit">취업 역량상담</strong>
                             <p class="card-desc">이력서, 자기소개서 컨설팅 및<br>전문 직업상담사의 맞춤형 취업 상담</p>
-                            <!-- <a href="#none" class="btn-card-action">바로가기 <i data-lucide="chevron-right"></i></a> -->
                         </div>
 
                         <!-- 카드 2. 채용설명회 -->
                         <div class="p-grid-card">
-                            <div class="card-icon-circle ic-cyan"><i data-lucide="presentation"></i></div>
+                            <div class="card-icon-circle ic-cyan">
+                                <i data-lucide="presentation"><span></span></i>
+                            </div>
                             <strong class="card-tit">채용설명회</strong>
                             <p class="card-desc">우수 참여기업의 기업 비전 및<br>인재상, 채용 프로세스 안내</p>
-                            <!-- <a href="#none" class="btn-card-action">바로가기 <i data-lucide="chevron-right"></i></a> -->
                         </div>
 
                         <!-- 카드 3. 지방공공기관 채용설명존 -->
                         <div class="p-grid-card">
-                            <div class="card-icon-circle ic-indigo"><i data-lucide="building-2"></i></div>
+                            <div class="card-icon-circle ic-indigo">
+                                <i data-lucide="building-2"><span></span></i>
+                            </div>
                             <strong class="card-tit">지방공공기관 채용설명존</strong>
                             <p class="card-desc">지방공공기관 취업, 궁금한 모두를<br>한자리에서 만나보세요!</p>
-                            <button type="button" class="btn-card-action btn-open-inst-modal" onclick="openModal('modalInstList')">참여기관 확인 <i data-lucide="chevron-right"></i></button>
+                            <button class="btn-card-action btn-open-inst-modal" onclick="openModal('modalInstList')" type="button">참여기관 확인 <i data-lucide="chevron-right"><span></span></i></button>
                         </div>
                     </div>
 
@@ -445,60 +456,156 @@
                         </div>
                         <div class="p-title-yellow-line"></div>
                     </div>
+
                     <div class="pav-info-grid-3 mt-3">
+                        <!-- 1. 퍼스널 컬러 진단 -->
                         <div class="p-grid-card card-side-event">
-                            <div class="card-icon-circle ic-yellow"><i data-lucide="palette"></i></div>
+                            <div class="card-icon-circle ic-yellow">
+                                <i data-lucide="palette"><span></span></i>
+                            </div>
                             <strong class="card-tit">퍼스널 컬러 진단</strong>
-                            <p class="card-desc">나에게 꼭 맞는 면접 복장과<br> 메이크업 톤 찾기</p>
-                            <button type="button" class="btn-card-reserve" onclick="openModal('modalPreApply')">사전예약</button>
+                            <p class="card-desc">나에게 꼭 맞는 면접 복장과<br>메이크업 톤 찾기</p>
+                            <button class="btn-card-reserve" onclick="openModaLoginChk('modalPreApply')" type="button">사전예약</button>
                         </div>
 
+                        <!-- 2. 이력서 사진 촬영 -->
                         <div class="p-grid-card card-side-event">
-                            <div class="card-icon-circle ic-yellow"><i data-lucide="camera"></i></div>
+                            <div class="card-icon-circle ic-yellow">
+                                <i data-lucide="camera"><span></span></i>
+                            </div>
                             <strong class="card-tit">이력서 사진 촬영</strong>
-                            <p class="card-desc">전문 포토그래퍼가 촬영하는<br> 무료 이력서 사진</p>
-                            <button type="button" class="btn-card-reserve" onclick="openModal('modalPreApply')">사전예약</button>
+                            <p class="card-desc">전문 포토그래퍼가 촬영하는<br>무료 이력서 사진</p>
+                            <button class="btn-card-reserve" onclick="openModaLoginChk('modalPreApply')" type="button">사전예약</button>
                         </div>
 
+                        <!-- 3. AI 면접 체험 -->
                         <div class="p-grid-card card-side-event">
-                            <div class="card-icon-circle ic-yellow"><i data-lucide="bot"></i></div>
+                            <div class="card-icon-circle ic-yellow">
+                                <i data-lucide="bot"><span></span></i>
+                            </div>
                             <strong class="card-tit">AI 면접 체험</strong>
-                            <p class="card-desc">실전 같은 AI 면접 시뮬레이션 및<br> 맞춤 피드백</p>
-                            <button type="button" class="btn-card-reserve" onclick="openModal('modalPreApply')">사전예약</button>
+                            <p class="card-desc">실전 같은 AI 면접 시뮬레이션 및<br>맞춤 피드백</p>
+                            <button class="btn-card-reserve" onclick="openModaLoginChk('modalPreApply')" type="button">사전예약</button>
                         </div>
 
+                        <!-- 4. 취업 타로 -->
                         <div class="p-grid-card card-side-event">
-                            <div class="card-icon-circle ic-yellow"><i data-lucide="sparkles"></i></div>
+                            <div class="card-icon-circle ic-yellow">
+                                <i data-lucide="sparkles"><span></span></i>
+                            </div>
                             <strong class="card-tit">취업 타로</strong>
-                            <p class="card-desc">재미로 보는 나의 취업운과<br> 직무 적성 컨설팅</p>
-                            <button type="button" class="btn-card-reserve" onclick="openModal('modalPreApply')">사전예약</button>
+                            <p class="card-desc">재미로 보는 나의 취업운과<br>직무 적성 컨설팅</p>
+                            <button class="btn-card-reserve" onclick="openModaLoginChk('modalPreApply')" type="button">사전예약</button>
+                        </div>
+
+                        <!-- 5. 중장년 직무설계 -->
+                        <div class="p-grid-card card-side-event">
+                            <div class="card-icon-circle ic-yellow">
+                                <i data-lucide="compass"><span></span></i>
+                            </div>
+                            <strong class="card-tit">중장년 직무설계</strong>
+                            <p class="card-desc">경력과 강점을 바탕으로<br>나에게 맞는 직무 방향 찾기</p>
+                            <button class="btn-card-reserve" onclick="openModaLoginChk('modalPreApply')" type="button">사전예약</button>
+                        </div>
+
+                        <!-- 6. 기타 이벤트 -->
+                        <div class="p-grid-card card-side-event">
+                            <div class="card-icon-circle ic-yellow">
+                                <i data-lucide="gift"><span></span></i>
+                            </div>
+                            <strong class="card-tit">기타 이벤트</strong>
+                            <p class="card-desc">스탬프 미션, 뽑기, 추첨 등<br>누구나 즐길 수 있는 참여 이벤트</p>
+                            <button class="btn-card-reserve" onclick="openModaLoginChk('modalPreApply')" type="button">사전예약</button>
                         </div>
                     </div>
 
+                    <!-- 박람회 진행 타임테이블 (부대 프로그램 하단) -->
+                        <div class="expo-timetable-sec">
+                            <div class="timetable-scroll-wrap">
+                                <table class="expo-timetable">
+                                    <colgroup>
+                                        <col style="width: 18%;">
+                                        <col style="width: 25%;">
+                                        <col style="width: 37%;">
+                                        <col style="width: 20%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>시간</th>
+                                            <th>프로그램</th>
+                                            <th>내용</th>
+                                            <th>장소·담당</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="td-time">09:00 ~ 10:00</td>
+                                            <td class="td-prog">참가자 등록</td>
+                                            <td>사전등록 QR 패스트트랙 / 현장등록, 기업 부스 오픈 준비</td>
+                                            <td class="td-place">로비 · 등록 데스크</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-time">10:00 ~ 10:30</td>
+                                            <td class="td-prog">Pre-meeting 기업간담회</td>
+                                            <td>참여기업 대상 사전 브리핑 · 30분</td>
+                                            <td class="td-place">2층 208호 회의실</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-time">10:40 ~ 12:00</td>
+                                            <td class="td-prog">기업면접(오전) 시작</td>
+                                            <td>기업 110개, 공공기관 채용설명관 10개 부 스 순차 오픈</td>
+                                            <td class="td-place">채용상담 부스</td>
+                                        </tr>
+                                        <!-- 개막식 하이라이트 행 -->
+                                        <tr class="row-highlight">
+                                            <td class="td-time">11:00 ~ 11:40</td>
+                                            <td class="td-prog">개막식 / 부스 라운딩</td>
+                                            <td>개막식, 개막 세레모니 , 부스투어</td>
+                                            <td class="td-place">메인 행사장</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-time">12:00 ~ 12:40</td>
+                                            <td class="td-prog">점심 · 면접 브레이크</td>
+                                            <td>휴게공간 운영</td>
+                                            <td class="td-place">휴게존</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-time">12:40 ~ 17:00</td>
+                                            <td class="td-prog">기업면접(오후) 시작</td>
+                                            <td>채용설명회 · 취업컨설팅 · 이벤트</td>
+                                            <td class="td-place">HALL 3 전체 + 2층</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-time">17:00 ~</td>
+                                            <td class="td-prog">행사 종료</td>
+                                            <td>행사 종료</td>
+                                            <td class="td-place">전 구역</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
                     <div class="pav-detail-sub-box mt-3">
-                        <strong class="box-sec-tit"><i data-lucide="sparkles"></i> 주요 프로그램 및 현장 부대행사</strong>
+                        <strong class="box-sec-tit">주요 프로그램 및 현장 부대행사</strong>
                         <ul class="pav-clean-list">
-                            <li><strong>현장 채용 면접관</strong> : 60여 개 참여기업 인사담당자와의 1:1 실전 심층 현장면접 및 당일 채용 연계</li>
-                            <li><strong>취업 컨설팅관</strong> : 이력서/자기소개서 무료 첨삭 및 맞춤형 직무 코칭 지원</li>
-                            <li><strong>구직자 부대행사</strong> : 이력서 무료 사진촬영, 퍼스널 컬러 진단, 취업 타로, AI 역량검사 체험관 운영</li>
+                            <li><strong>현장 채용 면접관</strong> : 110개사 1:1 면접 업종별 채용상담</li>
+                            <li><strong>취업지원</strong> : 입사지원 컨설팅, 인·적성 컨설팅, 스피치 면접 등 다양한 취업지원 컨설팅존 운영</li>
+                            <li><strong>부대행사</strong> : 타로카드, 퍼스널컬러진단, 스탬프투어, 가차샵 뽑기 등 다양한 참여형 이벤트</li>
                         </ul>
                     </div>
 
                     <div class="pav-detail-sub-box mt-2">
-                        <strong class="box-sec-tit"><i data-lucide="check-circle-2"></i> 박람회 참여 방법</strong>
+                        <strong class="box-sec-tit">박람회 참여 방법</strong>
                         <div class="p-proc-line-steps">
                             <div class="step-card"><span class="step-badge">STEP 1</span><span class="step-txt">온라인 사전등록</span></div>
-                            <i data-lucide="chevron-right" class="step-arrow"></i>
                             <div class="step-card"><span class="step-badge">STEP 2</span><span class="step-txt">모바일 QR 출입증 발급</span></div>
-                            <i data-lucide="chevron-right" class="step-arrow"></i>
                             <div class="step-card"><span class="step-badge">STEP 3</span><span class="step-txt">오스코 전시장 방문</span></div>
-                            <i data-lucide="chevron-right" class="step-arrow"></i>
                             <div class="step-card"><span class="step-badge">STEP 4</span><span class="step-txt">현장 면접 및 채용</span></div>
                         </div>
                     </div>
 
                     <div class="pav-detail-notice mt-2">
-                        <i data-lucide="alert-circle" class="notice-ic"></i>
                         <div class="notice-txts">
                             <strong>참여자 안내사항</strong>
                             <p>사전등록 완료 시 모바일 알림톡으로 현장 입장용 QR코드가 전송됩니다. 현장 면접 희망자는 단정한 복장과 출력된 입사지원서 지참을 권장드립니다.</p>
@@ -507,9 +614,8 @@
                 </div>
 
                 <div class="pav-apply-btn-wrap tct mt4">
-                    <button type="button" class="btn-pav-shimmer" onclick="openModal('modalPreApply')">
+                    <button class="btn-pav-shimmer" onclick="openModaLoginChk('modalPreApply')" type="button">
                         <span class="btn-text">사전 참석신청 바로가기</span>
-                        <i data-lucide="chevron-right" class="btn-tail-icon"></i>
                     </button>
                 </div>
             </div>
@@ -519,13 +625,12 @@
         <div class="site-modal" id="modalInstList">
             <div class="modal-dim" onclick="closeModal('modalInstList')"></div>
             <div class="modal-box modal-inst-box">
-                <!-- 1. 고정 헤더 -->
                 <div class="modal-header flex-between">
                     <h3 class="modal-title">지방공공기관 채용설명존</h3>
-                    <button type="button" class="btn-modal-close" aria-label="닫기" onclick="closeModal('modalInstList')"><i data-lucide="x"></i></button>
+                    <button aria-label="닫기" class="btn-modal-close" onclick="closeModal('modalInstList')" type="button">
+                        <i data-lucide="x"><span></span></i>
+                    </button>
                 </div>
-                
-                <!-- 2. 중앙 내부 스크롤 바디 -->
                 <div class="modal-body custom-scroll">
                     <div class="inst-modal-intro">
                         <p class="intro-tit">기관별 채용정보와 복리후생, 직무정보까지 알아보고<br>채용담당자와 직접 소통하여 취업의 궁금증을 해결해보세요.</p>
@@ -535,8 +640,6 @@
                             <li>채용절차, 시험과목 등 주요정보 안내</li>
                         </ul>
                     </div>
-
-                    <!-- 기관 테이블 -->
                     <div class="inst-table-wrap mt-2">
                         <table class="inst-data-table">
                             <colgroup>
@@ -558,70 +661,68 @@
                                     <td>1</td>
                                     <td>충북</td>
                                     <td class="td-left">(재)충북기업진흥원</td>
-                                    <td><a href="https://www.cba.ne.kr/" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                    <td><a class="btn-inst-link" href="https://www.cba.ne.kr/" rel="noopener noreferrer" target="_blank">바로가기</a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>충북</td>
                                     <td class="td-left">축산물품질평가원</td>
-                                    <td><a href="https://www.ekape.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                    <td><a class="btn-inst-link" href="https://www.ekape.or.kr" rel="noopener noreferrer" target="_blank">바로가기</a></td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>충북</td>
                                     <td class="td-left">한국전기공사협회</td>
-                                    <td><a href="https://www.keca.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                    <td><a class="btn-inst-link" href="https://www.keca.or.kr" rel="noopener noreferrer" target="_blank">바로가기</a></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
                                     <td>충북</td>
                                     <td class="td-left">(재)충청북도창조경제혁신센터</td>
-                                    <td><a href="https://ccei.creativekorea.or.kr/chungbuk" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                    <td><a class="btn-inst-link" href="https://ccei.creativekorea.or.kr/chungbuk" rel="noopener noreferrer" target="_blank">바로가기</a></td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
                                     <td>충북</td>
                                     <td class="td-left">(사)충북바이오산학융합원</td>
-                                    <td><a href="https://osongbaio.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                    <td><a class="btn-inst-link" href="https://osongbaio.or.kr" rel="noopener noreferrer" target="_blank">바로가기</a></td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
                                     <td>충북</td>
                                     <td class="td-left">재단법인 충북테크노파크</td>
-                                    <td><a href="https://www.cbtp.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                    <td><a class="btn-inst-link" href="https://www.cbtp.or.kr" rel="noopener noreferrer" target="_blank">바로가기</a></td>
                                 </tr>
                                 <tr>
                                     <td>7</td>
                                     <td>충북</td>
                                     <td class="td-left">재단법인 충북인재평생교육진흥원</td>
-                                    <td><a href="https://www.cbitle.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                    <td><a class="btn-inst-link" href="https://www.cbitle.or.kr" rel="noopener noreferrer" target="_blank">바로가기</a></td>
                                 </tr>
                                 <tr>
                                     <td>8</td>
                                     <td>세종</td>
                                     <td class="td-left">세종특별자치시시설관리공단</td>
-                                    <td><a href="https://www.sjfmc.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                    <td><a class="btn-inst-link" href="https://www.sjfmc.or.kr" rel="noopener noreferrer" target="_blank">바로가기</a></td>
                                 </tr>
                                 <tr>
                                     <td>9</td>
                                     <td>대전</td>
                                     <td class="td-left">한국산림복지진흥원</td>
-                                    <td><a href="https://www.fowi.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                    <td><a class="btn-inst-link" href="https://www.fowi.or.kr" rel="noopener noreferrer" target="_blank">바로가기</a></td>
                                 </tr>
                                 <tr>
                                     <td>10</td>
                                     <td>충남</td>
                                     <td class="td-left">(재)충남경제진흥원</td>
-                                    <td><a href="https://www.cepa.or.kr" target="_blank" rel="noopener noreferrer" class="btn-inst-link">바로가기</a></td>
+                                    <td><a class="btn-inst-link" href="https://www.cepa.or.kr" rel="noopener noreferrer" target="_blank">바로가기</a></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-
-                <!-- 3. 고정 푸터 -->
                 <div class="modal-footer">
-                    <button type="button" class="btn-inst-close btn-modal-close" onclick="closeModal('modalInstList')">닫기</button>
+                    <button class="btn-inst-close btn-modal-close" onclick="closeModal('modalInstList')" type="button">닫기</button>
                 </div>
             </div>
         </div>
@@ -630,38 +731,30 @@
         <div class="site-modal" id="modalPreApply">
             <div class="modal-dim" onclick="closeModal('modalPreApply')"></div>
             <div class="modal-box modal-preapply-box">
-                <!-- 1. 고정 헤더 영역 -->
                 <div class="modal-header flex-between">
                     <div class="modal-tit-group">
                         <h3 class="modal-title">사전 참여신청</h3>
                         <p class="modal-sub-tit">기본 정보 확인 및 개인정보 제공 동의 후 신청해 주세요.</p>
                     </div>
-                    <button type="button" class="btn-modal-close" aria-label="닫기" onclick="closeModal('modalPreApply')"><i data-lucide="x"></i></button>
+                    <button aria-label="닫기" class="btn-modal-close" onclick="closeModal('modalPreApply')" type="button">
+                        <i data-lucide="x"><span></span></i>
+                    </button>
                 </div>
-                
-                <!-- 2. 중앙 스크롤 바디 영역 -->
                 <div class="modal-body custom-scroll">
                     <div class="preapply-form-wrap">
-                        <!-- 기본 정보 행 -->
                         <div class="preapply-row">
                             <span class="p-label">이름(아이디)</span>
-                            <div class="p-val"><strong>홍길동(kildong)</strong></div>
+                            <div class="p-val"><strong id="idNameArea">-</strong></div>
                         </div>
-
                         <div class="preapply-row">
                             <span class="p-label">연락처</span>
-                            <div class="p-val"><strong>010-1234-5678</strong></div>
+                            <div class="p-val"><strong id="telnoArea">-</strong></div>
                         </div>
-
                         <div class="preapply-row">
                             <span class="p-label">이메일</span>
-                            <div class="p-val"><strong>user@example.com</strong></div>
+                            <div class="p-val"><strong id="emailArea">-</strong></div>
                         </div>
-
-                        <!-- 이메일 하단 안내문구 -->
                         <p class="preapply-guide-txt">※ 신청 기본 정보(연락처)가 다를 경우 입장용 QR 수신을 하실 수 없습니다. 정보가 다를 경우 정보 수정 후 신청해 주세요.</p>
-
-                        <!-- 개인정보 제3자 제공 동의 박스 -->
                         <div class="preapply-privacy-box mt-3">
                             <strong class="privacy-box-tit">개인정보 제3자 제공 동의</strong>
                             <ul class="privacy-bullet-list">
@@ -672,31 +765,42 @@
                                 <li><strong>동의 거부:</strong> 개인정보 제공에 대한 동의를 거부할 수 있으나, 필수정보 제공에 동의하지 않을 경우 사전등록 및 관련 안내가 제한될 수 있습니다.</li>
                             </ul>
                         </div>
-
-                        <!-- 동의 체크박스 (체크박스 사각형만 단독 클릭) -->
                         <div class="preapply-check-wrap mt-2">
                             <div class="custom-check-group">
-                                <input type="checkbox" id="chkPrivacyAgree" class="custom-check-input" onchange="document.getElementById('btnSubmitPreApply').disabled = !this.checked;">
+                                <input class="custom-check-input" id="chkPrivacyAgree" onchange="document.getElementById('btnSubmitPreApply').disabled = !this.checked;" type="checkbox">
                                 <label for="chkPrivacyAgree" class="custom-check-box" aria-label="개인정보 제공 동의 체크"></label>
                                 <span class="check-text">개인정보 제공에 동의합니다.</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- 3. 하단 고정 푸터 버튼 영역 -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark btn-preapply-submit" id="btnSubmitPreApply" disabled onclick="submitPreApply()">신청하기</button>
+                    <button class="btn btn-dark btn-preapply-submit" disabled id="btnSubmitPreApply" onclick="submitPreApply()" type="button">신청하기</button>
                 </div>
             </div>
         </div>
 
+        
+        <!-- //에디터 영역 -->
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 if (typeof lucide !== 'undefined') {
                     lucide.createIcons();
                 }
             });
+
+            // 로그인 체크 함수 (로컬 테스트용)
+            function openModaLoginChk(modalId) {
+                // 필요시 로컬 로그인 더미 세팅
+                const nameEl = document.getElementById('idNameArea');
+                const telEl = document.getElementById('telnoArea');
+                const emailEl = document.getElementById('emailArea');
+                if (nameEl && nameEl.innerText === '-') nameEl.innerText = '홍길동(kildong)';
+                if (telEl && telEl.innerText === '-') telEl.innerText = '010-1234-5678';
+                if (emailEl && emailEl.innerText === '-') emailEl.innerText = 'user@example.com';
+
+                openModal(modalId);
+            }
 
             function openModal(modalId) {
                 const modal = document.getElementById(modalId);
@@ -724,8 +828,6 @@
                 closeModal('modalPreApply');
             }
         </script>
-        <!-- //에디터 영역 -->
-
         <!-- 참여기업 소개 -->
         <section class="pavilion-section pavilion-companies-sec pd6">
             <div class="inner-wrap">
