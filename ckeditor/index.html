@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>충북-에디터</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:@300;400;500;700&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
+	<script src="ckeditor.js"></script>
+	<style>
+		img{max-width:100%;}
+		.templete_list{display:flex;align-items:center;margin-bottom:8px;}
+		.templete_list .tit{font-size:14px;color:#666;padding-right:16px;}
+		.templete_list .tmp_sel{border:1px solid #ccc;position:relative;cursor:pointer;font-size:14px;padding:8px 16px;border-radius:4px;}
+		.templete_list .tmp_sel:hover{background-color:#ededed;}
+		.templete_list .tmp_sel .type{position:absolute;bottom:1px;right:1px;background:rgba(0,0,0,.5);color:#fff;font-size:12px;letter-spacing:-1px;padding:4px 8px;}
+		.templete_list .tmp_sel + .tmp_sel{margin-left:5px;}
+		.templete{display:none;}
+	</style>
+</head>
+<body>
+	<form>
+		<div class="templete_list">
+			<div class="tit">템플릿 선택</div>
+			<div class="tmp_sel" onclick="SetContents('01');">충북 A형</div>
+			<!-- <div class="tmp_sel" onclick="SetContents('02');">강원도일자리정보망 B형</div> -->
+		</div>
+		<textarea name="editor1" id="editor1" rows="10" cols="80">
+			템플릿을 선택하세요.
+		</textarea>
+		<div id="templete_01" class="templete"></div>
+		<div id="templete_02" class="templete"></div>
+	</form>
+	<script>
+		$(document).ready(function(){
+			$('#templete_01').load('templete_01.html');
+			$('#templete_02').load('templete_02.html');
+			$('#templete_03').load('templete_03.html');
+			$('#templete_04').load('templete_04.html');
+			$('#templete_05').load('templete_05.html');
+			$('#templete_06').load('templete_06.html');
+			$('#templete_07').load('templete_07.html');
+			$('#templete_08').load('templete_08.html');
+			$('#templete_09').load('templete_09.html');
+			$('#templete_10').load('templete_10.html');
+		});
+		
+		//CKEDITOR.config.contentsCss = 'templete.css';
+		//CKEDITOR.config.allowedContent = true;
+		var ckeditor_config = {
+			//extraPlugins: 'editorplaceholder',
+			//editorplaceholder: 'Start typing here...',
+			//resize_enable : false
+			//extraPlugins: 'autogrow',
+			//autoGrow_minHeight: 200,
+			//autoGrow_maxHeight: 600,
+			//autoGrow_bottomSpace: 50,
+			//fullPage : true,
+			height: 700,
+			//extraPlugins: 'charcount',
+			allowedContent : true,
+			enterMode : CKEDITOR.ENTER_BR,
+			shiftEnterMode : CKEDITOR.ENTER_P,
+			//removePlugins: 'resize',
+			//removeButtons: 'PasteFromWord'
+		};
+		CKEDITOR.replace( 'editor1', ckeditor_config);
+		function SetContents(type){
+			var editor = CKEDITOR.instances.editor1;
+			var value = document.getElementById('templete_'+type).innerHTML;
+			editor.setData(value);
+		}
+	</script>
+</body>
+</html>

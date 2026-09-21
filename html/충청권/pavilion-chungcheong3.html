@@ -14,7 +14,7 @@
             <div class="header-inner flex-between">
                 <div class="header-left">
                     <a href="index.html" class="brand-logo">
-                        <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img">
+                        <img src="/images/jobcloud/logo.png" alt="충청권 내일이음" class="brand-logo-img">
                     </a>
 
                     <nav class="header-nav">
@@ -70,7 +70,7 @@
         <aside class="drawer-menu" id="drawerMenu">
             <div class="drawer-header flex-between">
                 <a href="index.html" class="brand-logo">
-                    <img src="./images/logo.png" alt="충청권 내일이음" class="brand-logo-img drawer-logo-img">
+                    <img src="/images/jobcloud/logo.png" alt="충청권 내일이음" class="brand-logo-img drawer-logo-img">
                 </a>
                 <button type="button" class="btn-drawer-close" id="btnDrawerClose" aria-label="메뉴 닫기">
                     <i data-lucide="x"></i>
@@ -130,202 +130,146 @@
     <main class="site-main">
         <!-- 에디터 영역 -->
         <style>
-        @font-face{font-family:'Hiikr';src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101609@hikr-extrabold/hikr-extrabold/HiKR-ExtraBold.woff2') format('woff2');font-weight:700;font-display:swap;}
-        .mt8{margin-top:8.0rem;}
-        .pavilion-detail-hero-sec{background-color:#f8fafc;overflow-x:hidden;padding-bottom:6.0rem;}
-        .pav-global-expo{position:relative;width:100vw;margin-left:calc(-50vw + 50%);background:#05070d url('./images/pavilion_bg.jpg') center 40%/cover no-repeat;padding:4.0rem 0 0;color:#ffffff;}
-        .pav-global-expo::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,13,0.45) 0%,rgba(5,7,13,0.6) 60%,#0b0f19 100%);z-index:1;}
-        .global-expo-inner{position:relative;z-index:2;max-width:128.0rem;margin:0 auto;padding:0 3.2rem;box-sizing:border-box;}
-        .hero-left-editorial{line-height:1.2;}
-        .poster-year-num{display:inline-block;font-family:'Hiikr',sans-serif,system-ui;font-size:11.0rem;font-weight:900;letter-spacing:0.04em;color:#ffffff;}
-        .poster-sub-tit{font-size:6.0rem;font-weight:900;font-family:'Hiikr',sans-serif,system-ui;color:#f3fc61;letter-spacing:-0.03em;margin-top:0.4rem;}
-        .poster-hero-tit{font-size:12.0rem;font-weight:900;font-family:'Hiikr',sans-serif,system-ui;color:#fff;word-break:keep-all;line-height:1.05;}
-        .expo-editorial-hero{display:grid;grid-template-columns:1.35fr 0.85fr;gap:5.6rem;align-items:end;margin-bottom:5.6rem;}
-        .expo-pass-card{background:rgba(15,23,42,0.9);border:2px solid rgba(255,255,255,0.25);border-radius:1.8rem;padding:3.2rem;backdrop-filter:blur(16px);box-shadow:0 20px 50px rgba(0,0,0,0.6);}
-        .pass-card-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px dashed rgba(255,255,255,0.3);padding-bottom:1.6rem;margin-bottom:2.2rem;}
-        .pass-card-head .pass-badge{font-size:1.4rem;font-weight:900;letter-spacing:0.1em;color:#fde047;text-transform:uppercase;}
-        .pass-card-head .pass-status{font-size:1.4rem;color:#38bdf8;font-weight:800;}
-        .pass-body-layout{display:flex;align-items:center;gap:2.2rem;}
-        .pass-qr-frame{width:11.4rem;height:11.4rem;background:#ffffff;border-radius:1.2rem;padding:0.6rem;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
-        .pass-qr-frame img{width:100%;height:100%;object-fit:contain;}
-        .pass-info-lines{display:flex;flex-direction:column;gap:0.8rem;}
-        .pass-info-lines strong{font-size:1.85rem;font-weight:800;color:#ffffff;line-height:1.35;word-break:keep-all;}
-        .pass-info-lines p{font-size:1.45rem;color:#e2e8f0;line-height:1.5;margin:0;word-break:keep-all;}
-        .btn-expo-ticket{width:100%;height:5.2rem;margin-top:2.4rem;background:#38bdf8;color:#05070d;border:none;border-radius:1.0rem;font-size:1.65rem;font-weight:900;cursor:pointer;transition:all 0.2s ease;display:inline-flex;align-items:center;justify-content:center;gap:0.8rem;}
-        .btn-expo-ticket:hover{background:#ffffff;color:#0284c7;}
-        .expo-spec-ticker{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid rgba(255,255,255,0.25);border-bottom:2px solid rgba(255,255,255,0.25);margin-bottom:4.8rem;}
-        .spec-item{padding:3.2rem 2.4rem;border-right:1px solid rgba(255,255,255,0.2);display:flex;flex-direction:column;gap:1.0rem;}
-        .spec-item:last-child{border-right:none;}
-        .spec-num-label{font-size:1.4rem;font-weight:900;color:#38bdf8;letter-spacing:0.1em;}
-        .spec-main-val{font-size:2.6rem;font-weight:900;color:#ffffff;letter-spacing:-0.01em;line-height:1.25;}
-        .spec-sub-val{font-size:1.6rem;font-weight:700;color:#f1f5f9;}
-        .expo-agencies-container{display:flex;flex-direction:column;gap:2.0rem;padding-bottom:5.6rem;}
-        .expo-sponsors-editorial{display:flex;align-items:center;gap:2.4rem;flex-wrap:wrap;}
-        .sponsors-tag-label{font-size:1.6rem;font-weight:900;letter-spacing:0.08em;color:#ffffff;padding:0.4rem 0;text-transform:uppercase;flex-shrink:0;background:transparent;}
-        .sponsors-inline-logos{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;}
-        .sponsors-inline-logos span{display:inline-flex;align-items:center;justify-content:center;background:#ffffff;padding:0.8rem 1.6rem;border-radius:0.8rem;height:4.6rem;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,0,0,0.15);}
-        .sponsors-inline-logos span img{max-height:3.0rem;max-width:16.0rem;object-fit:contain;}
-        .sponsors-inline-logos span.sponsor-logo-lg img{max-height:3.4rem;max-width:26.0rem;}
-        .pav-white-guide-board{background-color:#ffffff;border:1.5px solid #cbd5e1;border-radius:2.4rem;padding:5.6rem 4.8rem;box-shadow:0 10px 30px rgba(0,0,0,0.05);}
-        .p-guide-head{margin-bottom:4.0rem;}
-        .p-guide-title-row{display:flex;align-items:center;justify-content:center;gap:1.4rem;flex-wrap:wrap;}
-        .p-deco-dots{color:#94a3b8;font-size:1.6rem;letter-spacing:0.2em;font-weight:900;}
-        .p-guide-main-tit{font-size:2.8rem;font-weight:900;color:#0f172a;margin:0;letter-spacing:-0.02em;word-break:keep-all;}
-        .p-title-blue-line{width:14.0rem;height:4px;background-color:#0284c7;margin:1.4rem auto 0;border-radius:2px;}
-        .p-title-yellow-line{width:14.0rem;height:4px;background-color:#eab308;margin:1.4rem auto 0;border-radius:2px;}
-        .p-title-navy-line{width:14.0rem;height:4px;background-color:#172554;margin:1.4rem auto 0;border-radius:2px;}
-        .pav-info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;}
-        .p-grid-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:3.6rem 2.4rem;background-color:#ffffff;border:1.5px solid #cbd5e1;border-radius:2.0rem;transition:transform 0.2s ease,box-shadow 0.2s ease,border-color 0.2s ease;}
-        .p-grid-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.08);border-color:#0284c7;}
-        .p-grid-card.card-side-event:hover{border-color:#eab308;box-shadow:0 12px 30px rgba(234,179,8,0.2);}
-        .card-icon-circle{width:6.8rem;height:6.8rem;border-radius:2.0rem;display:flex;align-items:center;justify-content:center;margin-bottom:2.2rem;}
-        .card-icon-circle svg{width:3.2rem;height:3.2rem;}
-        .ic-blue{background-color:#eff6ff;color:#0284c7;}
-        .ic-cyan{background-color:#ecfeff;color:#0891b2;}
-        .ic-indigo{background-color:#eef2ff;color:#4f46e5;}
-        .ic-yellow{background-color:#fefce8;color:#ca8a04;}
-        .card-tit{font-size:2.1rem;font-weight:900;color:#0f172a;margin-bottom:1.2rem;}
-        .card-desc{font-size:1.55rem;font-weight:600;color:#334155;line-height:1.6;margin:0;word-break:keep-all;}
-        .btn-card-action{display:inline-flex;align-items:center;justify-content:center;gap:0.6rem;width:100%;max-width:17.0rem;height:4.2rem;margin-top:2.2rem;background-color:#ffffff;color:#1e293b;border:1.5px solid #cbd5e1;border-radius:0.8rem;font-size:1.45rem;font-weight:700;text-decoration:none;cursor:pointer;transition:all 0.2s ease;box-sizing:border-box;}
-        .btn-card-action:hover{background-color:#0284c7;color:#ffffff;border-color:#0284c7;}
-        .btn-card-action svg{width:1.6rem;height:1.6rem;}
-        .btn-card-reserve{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;width:100%;max-width:18.0rem;height:4.4rem;margin-top:2.4rem;background-color:#fefce8;color:#713f12;border:1px solid #eab308;border-radius:0.8rem;font-size:1.5rem;font-weight:800;cursor:pointer;transition:all 0.2s ease;}
-        .btn-card-reserve:hover{background-color:#eab308;color:#ffffff;}
-        .pav-detail-sub-box{background-color:#f8fafc;border:1.5px solid #cbd5e1;border-radius:1.8rem;padding:2.8rem 3.2rem;}
-        .box-sec-tit{display:flex;align-items:center;gap:0.8rem;font-size:1.75rem;font-weight:900;color:#0284c7;margin-bottom:1.6rem;}
-        .box-sec-tit svg{width:2.0rem;height:2.0rem;}
-        .pav-clean-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1.2rem;}
-        .pav-clean-list li{position:relative;padding-left:2.0rem;font-size:1.55rem;font-weight:600;color:#334155;line-height:1.6;}
-        .pav-clean-list li::before{content:'';position:absolute;left:0;top:0.9rem;width:6px;height:6px;border-radius:50%;background-color:#0284c7;}
-        .pav-clean-list strong{color:#0f172a;font-weight:800;}
-        .p-proc-line-steps{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;}
-        .step-card{flex:1;display:flex;flex-direction:column;align-items:center;background-color:#ffffff;border:1.5px solid #cbd5e1;padding:1.8rem 1.2rem;border-radius:1.4rem;text-align:center;}
-        .step-badge{font-size:1.3rem;font-weight:900;color:#0284c7;margin-bottom:0.6rem;}
-        .step-txt{font-size:1.55rem;font-weight:800;color:#0f172a;word-break:keep-all;}
-        .step-arrow{color:#64748b;width:2.2rem;height:2.2rem;flex-shrink:0;}
-        .pav-detail-notice{display:flex;align-items:flex-start;gap:1.4rem;padding:2.0rem 2.4rem;background-color:#fef2f2;border:1.5px solid #f87171;border-radius:1.4rem;}
-        .pav-detail-notice .notice-ic{width:2.4rem;height:2.4rem;color:#dc2626;flex-shrink:0;margin-top:0.2rem;}
-        .notice-txts strong{display:block;font-size:1.6rem;font-weight:800;color:#991b1b;margin-bottom:0.6rem;}
-        .notice-txts p{font-size:1.45rem;font-weight:600;color:#b91c1c;line-height:1.6;margin:0;word-break:keep-all;}
-
-        /* 박람회 타임테이블 - 가로 스크롤 및 하단 테두리 완벽 마감 */
-        .expo-timetable-sec{position:relative;width:100%;margin-top:2.0rem;clear:both;}
-        .timetable-scroll-wrap{display:block;width:100%;max-width:100%;overflow-x:auto !important;overflow-y:hidden;-webkit-overflow-scrolling:touch;touch-action:pan-x;border-radius:1.2rem;border:1.5px solid #dbdbdb;box-shadow:0 4px 15px rgba(0,0,0,0.03);background:#ffffff;box-sizing:border-box;}
-        .expo-timetable{width:100%;min-width:68.0rem;border-collapse:collapse;table-layout:fixed;text-align:left;background:#ffffff;}
-        .expo-timetable thead th{background-color:#172554;color:#ffffff;font-size:1.55rem;font-weight:800;padding:1.6rem 2.0rem;border-right:1px solid rgba(255,255,255,0.15);letter-spacing:-0.01em;white-space:nowrap;}
-        .expo-timetable thead th:last-child{border-right:none;}
-        .expo-timetable tbody td{padding:1.4rem 2.0rem;font-size:1.45rem;color:#334155;border-bottom:1px solid #fde68a;border-right:1px solid #fef3c7;line-height:1.5;word-break:keep-all;background:#ffffff;}
-        .expo-timetable tbody tr:last-child td{border-bottom:none;}
-        .expo-timetable tbody td:last-child{border-right:none;}
-        .expo-timetable tbody td.td-time{font-weight:700;color:#1e293b;white-space:nowrap;}
-        .expo-timetable tbody td.td-prog{font-weight:800;color:#0f172a;word-break:keep-all;}
-        .expo-timetable tbody td.td-place{color:#475569;word-break:keep-all;}
-
-        .modal-inst-box{width:100%;max-width:68.0rem;max-height:85vh;border-radius:2.0rem;background-color:#ffffff;display:flex;flex-direction:column;overflow:hidden;}
-        .modal-inst-box .modal-header{padding:2.2rem 2.8rem;border-bottom:1px solid #e2e8f0;flex-shrink:0;}
-        .modal-inst-box .modal-title{font-size:2.2rem;font-weight:800;color:#0f172a;margin:0;}
-        .modal-inst-box .modal-body{padding:2.8rem;flex:1;overflow-y:auto;}
-        .modal-inst-box .modal-footer{width:100%;padding:1.6rem 2.8rem 2.0rem;border-top:1px solid #f1f5f9;display:flex;align-items:center;justify-content:center;text-align:center;flex-shrink:0;background-color:#ffffff;box-sizing:border-box;}
-        .btn-inst-close{display:inline-flex;align-items:center;justify-content:center;margin:0 auto;width:100%;max-width:16.0rem;height:4.4rem;font-size:1.45rem;font-weight:700;color:#475569;background-color:#ffffff;border:1.5px solid #cbd5e1;border-radius:0.8rem;cursor:pointer;transition:all 0.2s ease;box-sizing:border-box;}
-        .btn-inst-close:hover{background-color:#f8fafc;border-color:#0284c7;color:#0284c7;}
-        .inst-modal-intro{background-color:#f8fafc;border:1px solid #e2e8f0;border-radius:1.2rem;padding:2.0rem 2.4rem;text-align:left;}
-        .inst-modal-intro .intro-tit{font-size:1.45rem;font-weight:700;color:#1e293b;line-height:1.6;margin:0 0 1.2rem;word-break:keep-all;}
-        .inst-modal-intro .intro-bullet-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;}
-        .inst-modal-intro .intro-bullet-list li{position:relative;padding-left:1.4rem;font-size:1.35rem;color:#475569;}
-        .inst-modal-intro .intro-bullet-list li::before{content:'•';position:absolute;left:0;top:0;color:#0284c7;font-weight:700;}
-        .inst-table-wrap{width:100%;border:1px solid #cbd5e1;border-radius:1.0rem;overflow:hidden;}
-        .inst-data-table{width:100%;border-collapse:collapse;text-align:center;}
-        .inst-data-table thead th{background-color:#e2e8f0;color:#1e293b;font-size:1.4rem;font-weight:800;padding:1.2rem 1.0rem;border-bottom:1px solid #cbd5e1;}
-        .inst-data-table tbody td{padding:1.2rem 1.0rem;font-size:1.35rem;color:#334155;border-bottom:1px solid #f1f5f9;}
-        .inst-data-table tbody tr:last-child td{border-bottom:none;}
-        .inst-data-table tbody tr:hover{background-color:#f8fafc;}
-        .inst-data-table td.td-left{text-align:left;font-weight:600;color:#0f172a;padding-left:1.6rem;}
-        .btn-inst-link{display:inline-flex;align-items:center;justify-content:center;padding:0.5rem 1.2rem;background-color:#ffffff;color:#0284c7;border:1px solid #bae6fd;border-radius:0.6rem;font-size:1.25rem;font-weight:700;text-decoration:none;transition:all 0.2s ease;}
-        .btn-inst-link:hover{background-color:#0284c7;color:#ffffff;border-color:#0284c7;}
-        .modal-preapply-box{width:100%;max-width:62.0rem;max-height:90vh;border-radius:2.0rem;background-color:#ffffff;display:flex;flex-direction:column;overflow:hidden;}
-        .modal-preapply-box .modal-header{padding:2.4rem 2.8rem;border-bottom:1px solid #e2e8f0;flex-shrink:0;}
-        .modal-preapply-box .modal-title{font-size:2.2rem;font-weight:800;color:#0f172a;margin:0;}
-        .modal-preapply-box .modal-sub-tit{font-size:1.45rem;color:#64748b;margin:0.6rem 0 0;}
-        .modal-preapply-box .modal-body{padding:2.8rem;flex:1;overflow-y:auto;}
-        .modal-preapply-box .modal-footer{width:100%;padding:1.8rem 2.8rem 2.4rem;border-top:1px solid #f1f5f9;display:flex;align-items:center;justify-content:center;flex-shrink:0;background-color:#ffffff;box-sizing:border-box;}
-        .preapply-form-wrap{display:flex;flex-direction:column;}
-        .preapply-row{display:flex;align-items:center;padding:1.4rem 0;border-bottom:1px solid #f1f5f9;font-size:1.5rem;}
-        .preapply-row .p-label{width:14.0rem;font-weight:700;color:#475569;flex-shrink:0;}
-        .preapply-row .p-val{flex:1;color:#0f172a;}
-        .preapply-guide-txt{font-size:1.2rem;color:#ef4444;line-height:1.6;margin:1.2rem 0 0;word-break:keep-all;}
-        .preapply-privacy-box{background-color:#f8fafc;border:1px solid #e2e8f0;border-radius:1.2rem;padding:2.0rem 2.2rem;text-align:left;}
-        .privacy-box-tit{display:block;font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:1.2rem;}
-        .privacy-bullet-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.8rem;}
-        .privacy-bullet-list li{position:relative;padding-left:1.4rem;font-size:1.35rem;color:#475569;line-height:1.6;word-break:keep-all;}
-        .privacy-bullet-list li::before{content:'•';position:absolute;left:0;top:0;color:#64748b;font-weight:700;}
-        .privacy-bullet-list strong{color:#1e293b;}
-        .preapply-check-wrap{display:flex;align-items:center;padding:0.6rem 0;}
-        .custom-check-group{display:inline-flex;align-items:center;gap:1.0rem;}
-        .custom-check-input{position:absolute;opacity:0;width:0;height:0;margin:0;pointer-events:none;}
-        .custom-check-box{width:2.0rem;height:2.0rem;border:1.5px solid #cbd5e1;border-radius:0.4rem;background-color:#ffffff;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:all 0.2s ease;box-sizing:border-box;}
-        .custom-check-input:checked + .custom-check-box{background-color:#0284c7;border-color:#0284c7;}
-        .custom-check-box::after{content:'';display:none;width:5px;height:9px;border:solid #ffffff;border-width:0 2px 2px 0;transform:rotate(45deg);margin-top:-2px;}
-        .custom-check-input:checked + .custom-check-box::after{display:block;}
-        .check-text{font-size:1.45rem;font-weight:700;color:#1e293b;user-select:none;cursor:default;}
-        .btn-preapply-submit{width:100%;max-width:18.0rem;height:4.6rem;font-size:1.55rem;font-weight:800;border-radius:0.8rem;cursor:pointer;transition:all 0.2s ease;margin:0 auto;display:inline-flex;align-items:center;justify-content:center;border:none;}
-        .btn-preapply-submit:disabled{background-color:#cbd5e1 !important;color:#94a3b8 !important;cursor:not-allowed;opacity:0.7;}
-
-        @media (max-width:1024px){
-        .expo-editorial-hero{grid-template-columns:1fr;gap:4.0rem;}
-        .poster-year-num{font-size:8.4rem;}
-        .poster-sub-tit{font-size:4.6rem;}
-        .poster-hero-tit{font-size:8.8rem;}
-        .expo-spec-ticker{grid-template-columns:1fr;}
-        .spec-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.2);padding:2.2rem 0;}
-        .spec-item:last-child{border-bottom:none;}
-        .expo-sponsors-editorial{flex-direction:column;align-items:flex-start;gap:1.6rem;}
-        .sponsors-inline-logos{display:flex;flex-wrap:wrap;gap:1.2rem;width:100%;justify-content:flex-start;}
-        .sponsors-inline-logos span{width:auto;flex:initial;}
-        .sponsors-inline-logos span.sponsor-logo-lg{width:auto;max-width:100%;}
-        .pav-info-grid-3{grid-template-columns:repeat(2,1fr);}
-        .p-proc-line-steps{flex-direction:column;gap:0.8rem;}
-        .step-card{width:100%;justify-content:space-between;padding:1.4rem 1.8rem;box-sizing:border-box;}
-        .step-arrow{transform:rotate(90deg);}
-        }
-        @media (max-width:768px){
-        .pav-global-expo{padding:4.0rem 0 0;}
-        .hero-left-editorial{text-align:center;}
-        .poster-year-num{font-size:7.2rem;}
-        .poster-sub-tit{font-size:4.0rem;}
-        .poster-hero-tit{font-size:7.2rem;}
-        .pass-body-layout{flex-direction:column;text-align:center;}
-        .spec-item{text-align:center;align-items:center;}
-        .expo-sponsors-editorial{align-items:flex-start;}
-        .sponsors-inline-logos{justify-content:flex-start;}
-        .pav-white-guide-board{padding:3.6rem 2.0rem;margin-top:3.2rem;}
-        .p-guide-main-tit{font-size:2.2rem;}
-        .pav-info-grid-3{grid-template-columns:1fr;}
-        .expo-timetable thead th{padding:1.2rem 1.4rem;font-size:1.4rem;}
-        .expo-timetable tbody td{padding:1.2rem 1.4rem;font-size:1.35rem;}
-        }
-        @media (max-width:640px){
-        .poster-year-num{font-size:6.8rem;}
-        .poster-sub-tit{font-size:3.6rem;}
-        .poster-hero-tit{font-size:6.8rem;}
-        .expo-sponsors-editorial{align-items:flex-start;}
-        .sponsors-inline-logos{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:1.0rem;width:100%;}
-        .sponsors-inline-logos span{width:auto;flex:initial;padding:0.6rem 1.2rem;height:4.0rem;}
-        .sponsors-inline-logos span img{max-height:2.4rem;max-width:13.0rem;}
-        .sponsors-inline-logos span.sponsor-logo-lg{width:auto;}
-        .sponsors-inline-logos span.sponsor-logo-lg img{max-height:2.6rem;max-width:22.0rem;}
-        .modal-inst-box,.modal-preapply-box{max-height:90vh;}
-        .modal-inst-box .modal-header,.modal-preapply-box .modal-header{padding:1.8rem 1.6rem;}
-        .modal-inst-box .modal-body,.modal-preapply-box .modal-body{padding:1.6rem;}
-        .modal-inst-box .modal-footer,.modal-preapply-box .modal-footer{padding:1.2rem 1.6rem 1.6rem;}
-        .btn-inst-close,.btn-preapply-submit{max-width:100%;height:4.4rem;margin:0;}
-        .preapply-row .p-label{width:10.0rem;}
-        .inst-modal-intro,.preapply-privacy-box{padding:1.4rem 1.6rem;}
-        .inst-modal-intro .intro-tit{font-size:1.35rem;}
-        .inst-data-table thead th{font-size:1.25rem;padding:1.0rem 0.6rem;}
-        .inst-data-table tbody td{font-size:1.25rem;padding:1.0rem 0.6rem;}
-        .inst-data-table td.td-left{padding-left:1.0rem;}
-        .btn-inst-link{padding:0.4rem 0.8rem;font-size:1.15rem;}
-        }
+        @font-face { font-family: 'Hiikr'; src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101609@hikr-extrabold/hikr-extrabold/HiKR-ExtraBold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+        .blind { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+        .mt8 { margin-top: 8.0rem; }
+        .pavilion-detail-hero-sec { background-color: #f8fafc; overflow-x: hidden; padding-bottom: 6.0rem; }
+        .pav-global-expo { position: relative; width: 100vw; margin-left: calc(-50vw + 50%); background: #05070d url('/images/jobcloud/pavilion_bg.jpg') center 40%/cover no-repeat; padding: 4.0rem 0 0; color: #ffffff; }
+        .pav-global-expo::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,7,13,0.45) 0%, rgba(5,7,13,0.6) 60%, #0b0f19 100%); z-index: 1; }
+        .global-expo-inner { position: relative; z-index: 2; max-width: 128.0rem; margin: 0 auto; padding: 0 3.2rem; box-sizing: border-box; }
+        .hero-left-editorial { line-height: 1.2; }
+        .poster-year-num { display: inline-block; font-family: 'Hiikr', sans-serif, system-ui; font-size: 11.0rem; font-weight: 900; letter-spacing: 0.04em; color: #ffffff; }
+        .poster-sub-tit { font-size: 6.0rem; font-weight: 900; font-family: 'Hiikr', sans-serif, system-ui; color: #f3fc61; letter-spacing: -0.03em; margin-top: 0.4rem; }
+        .poster-hero-tit { font-size: 12.0rem; font-weight: 900; font-family: 'Hiikr', sans-serif, system-ui; color: #fff; word-break: keep-all; line-height: 1.05; }
+        .expo-editorial-hero { display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 5.6rem; align-items: end; margin-bottom: 5.6rem; }
+        .expo-pass-card { background: rgba(15,23,42,0.9); border: 2px solid rgba(255,255,255,0.25); border-radius: 1.8rem; padding: 3.2rem; backdrop-filter: blur(16px); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
+        .pass-card-head { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.3); padding-bottom: 1.6rem; margin-bottom: 2.2rem; }
+        .pass-card-head .pass-badge { font-size: 1.4rem; font-weight: 900; letter-spacing: 0.1em; color: #fde047; text-transform: uppercase; }
+        .pass-card-head .pass-status { font-size: 1.4rem; color: #38bdf8; font-weight: 800; }
+        .pass-body-layout { display: flex; align-items: center; gap: 2.2rem; }
+        .pass-qr-frame { width: 11.4rem; height: 11.4rem; background: #ffffff; border-radius: 1.2rem; padding: 0.6rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .pass-qr-frame img { width: 100%; height: 100%; object-fit: contain; }
+        .pass-info-lines { display: flex; flex-direction: column; gap: 0.8rem; }
+        .pass-info-lines strong { font-size: 1.85rem; font-weight: 800; color: #ffffff; line-height: 1.35; word-break: keep-all; }
+        .pass-info-lines p { font-size: 1.45rem; color: #e2e8f0; line-height: 1.5; margin: 0; word-break: keep-all; }
+        .btn-expo-ticket { width: 100%; height: 5.2rem; margin-top: 2.4rem; background: #38bdf8; color: #05070d; border: none; border-radius: 1.0rem; font-size: 1.65rem; font-weight: 900; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 0.8rem; }
+        .btn-expo-ticket:hover { background: #ffffff; color: #0284c7; }
+        .expo-spec-ticker { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid rgba(255,255,255,0.25); border-bottom: 2px solid rgba(255,255,255,0.25); margin-bottom: 4.8rem; }
+        .spec-item { padding: 3.2rem 2.4rem; border-right: 1px solid rgba(255,255,255,0.2); display: flex; flex-direction: column; gap: 1.0rem; }
+        .spec-item:last-child { border-right: none; }
+        .spec-num-label { font-size: 1.4rem; font-weight: 900; color: #38bdf8; letter-spacing: 0.1em; }
+        .spec-main-val { font-size: 2.6rem; font-weight: 900; color: #ffffff; letter-spacing: -0.01em; line-height: 1.25; }
+        .spec-sub-val { font-size: 1.6rem; font-weight: 700; color: #f1f5f9; }
+        .expo-agencies-container { display: flex; flex-direction: column; gap: 2.0rem; padding-bottom: 5.6rem; }
+        .expo-sponsors-editorial { display: flex; align-items: center; gap: 2.4rem; flex-wrap: wrap; }
+        .sponsors-tag-label { font-size: 1.6rem; font-weight: 900; letter-spacing: 0.08em; color: #ffffff; padding: 0.4rem 0; text-transform: uppercase; flex-shrink: 0; background: transparent; }
+        .sponsors-inline-logos { display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+        .sponsors-inline-logos span { display: inline-flex; align-items: center; justify-content: center; background: #ffffff; padding: 0.8rem 1.6rem; border-radius: 0.8rem; height: 4.6rem; box-sizing: border-box; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        .sponsors-inline-logos span img { max-height: 3.0rem; max-width: 16.0rem; object-fit: contain; }
+        .sponsors-inline-logos span.sponsor-logo-lg img { max-height: 3.4rem; max-width: 26.0rem; }
+        .pav-white-guide-board { background-color: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 2.4rem; padding: 5.6rem 4.8rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .p-guide-head { margin-bottom: 4.0rem; }
+        .p-guide-title-row { display: flex; align-items: center; justify-content: center; gap: 1.4rem; flex-wrap: wrap; }
+        .p-deco-dots { color: #94a3b8; font-size: 1.6rem; letter-spacing: 0.2em; font-weight: 900; }
+        .p-guide-main-tit { font-size: 2.8rem; font-weight: 900; color: #0f172a; margin: 0; letter-spacing: -0.02em; word-break: keep-all; }
+        .p-title-blue-line { width: 14.0rem; height: 4px; background-color: #0284c7; margin: 1.4rem auto 0; border-radius: 2px; }
+        .p-title-yellow-line { width: 14.0rem; height: 4px; background-color: #eab308; margin: 1.4rem auto 0; border-radius: 2px; }
+        .p-title-navy-line { width: 14.0rem; height: 4px; background-color: #172554; margin: 1.4rem auto 0; border-radius: 2px; }
+        .pav-info-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4rem; }
+        .p-grid-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 3.6rem 2.4rem; background-color: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 2.0rem; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+        .p-grid-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-color: #0284c7; }
+        .p-grid-card.card-side-event:hover { border-color: #eab308; box-shadow: 0 12px 30px rgba(234,179,8,0.2); }
+        .card-icon-circle { width: 6.8rem; height: 6.8rem; border-radius: 2.0rem; display: flex; align-items: center; justify-content: center; margin-bottom: 2.2rem; }
+        .card-icon-circle i, .card-icon-circle svg { width: 3.2rem !important; height: 3.2rem !important; stroke: currentColor !important; display: inline-block !important; vertical-align: middle; }
+        .ic-blue { background-color: #eff6ff; color: #0284c7; }
+        .ic-cyan { background-color: #ecfeff; color: #0891b2; }
+        .ic-indigo { background-color: #eef2ff; color: #4f46e5; }
+        .ic-yellow { background-color: #fefce8; color: #ca8a04; }
+        .card-tit { font-size: 2.1rem; font-weight: 900; color: #0f172a; margin-bottom: 1.2rem; }
+        .card-desc { font-size: 1.55rem; font-weight: 600; color: #334155; line-height: 1.6; margin: 0; word-break: keep-all; }
+        .btn-card-action { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; width: 100%; max-width: 17.0rem; height: 4.2rem; margin-top: 2.2rem; background-color: #ffffff; color: #1e293b; border: 1.5px solid #cbd5e1; border-radius: 0.8rem; font-size: 1.45rem; font-weight: 700; text-decoration: none; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; }
+        .btn-card-action:hover { background-color: #0284c7; color: #ffffff; border-color: #0284c7; }
+        .btn-card-action i, .btn-card-action svg { width: 1.6rem !important; height: 1.6rem !important; stroke: currentColor !important; display: inline-block; }
+        .btn-card-reserve { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; width: 100%; max-width: 18.0rem; height: 4.4rem; margin-top: 2.4rem; background-color: #fefce8; color: #713f12; border: 1px solid #eab308; border-radius: 0.8rem; font-size: 1.5rem; font-weight: 800; cursor: pointer; transition: all 0.2s ease; }
+        .btn-card-reserve:hover { background-color: #eab308; color: #ffffff; }
+        .pav-detail-sub-box { background-color: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 1.8rem; padding: 2.8rem 3.2rem; }
+        .box-sec-tit { display: flex; align-items: center; gap: 0.8rem; font-size: 1.75rem; font-weight: 900; color: #0284c7; margin-bottom: 1.6rem; }
+        .box-sec-tit svg { width: 2.0rem; height: 2.0rem; }
+        .pav-clean-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.2rem; }
+        .pav-clean-list li { position: relative; padding-left: 2.0rem; font-size: 1.55rem; font-weight: 600; color: #334155; line-height: 1.6; }
+        .pav-clean-list li::before { content: ''; position: absolute; left: 0; top: 0.9rem; width: 6px; height: 6px; border-radius: 50%; background-color: #0284c7; }
+        .pav-clean-list strong { color: #0f172a; font-weight: 800; }
+        .p-proc-line-steps { display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; }
+        .step-card { flex: 1; display: flex; flex-direction: column; align-items: center; background-color: #ffffff; border: 1.5px solid #cbd5e1; padding: 1.8rem 1.2rem; border-radius: 1.4rem; text-align: center; }
+        .step-badge { font-size: 1.3rem; font-weight: 900; color: #0284c7; margin-bottom: 0.6rem; }
+        .step-txt { font-size: 1.55rem; font-weight: 800; color: #0f172a; word-break: keep-all; }
+        .step-arrow { color: #64748b; width: 2.2rem; height: 2.2rem; flex-shrink: 0; }
+        .pav-detail-notice { display: flex; align-items: flex-start; gap: 1.4rem; padding: 2.0rem 2.4rem; background-color: #fef2f2; border: 1.5px solid #f87171; border-radius: 1.4rem; }
+        .pav-detail-notice .notice-ic { width: 2.4rem; height: 2.4rem; color: #dc2626; flex-shrink: 0; margin-top: 0.2rem; }
+        .notice-txts strong { display: block; font-size: 1.6rem; font-weight: 800; color: #991b1b; margin-bottom: 0.6rem; }
+        .notice-txts p { font-size: 1.45rem; font-weight: 600; color: #b91c1c; line-height: 1.6; margin: 0; word-break: keep-all; }
+        .expo-timetable-sec { position: relative; width: 100%; margin-top: 2.0rem; clear: both; }
+        .timetable-scroll-wrap { display: block; width: 100%; max-width: 100%; overflow-x: auto !important; overflow-y: hidden; -webkit-overflow-scrolling: touch; touch-action: pan-x; border-radius: 1.2rem; border: 1.5px solid #dbdbdb; box-shadow: 0 4px 15px rgba(0,0,0,0.03); background: #ffffff; box-sizing: border-box; }
+        .expo-timetable { width: 100%; min-width: 68.0rem; border-collapse: collapse; table-layout: fixed; text-align: left; background: #ffffff; }
+        .expo-timetable thead th { background-color: #172554; color: #ffffff; font-size: 1.55rem; font-weight: 800; padding: 1.6rem 2.0rem; border-right: 1px solid rgba(255,255,255,0.15); letter-spacing: -0.01em; white-space: nowrap; }
+        .expo-timetable thead th:last-child { border-right: none; }
+        .expo-timetable tbody td { padding: 1.4rem 2.0rem; font-size: 1.45rem; color: #334155; border-bottom: 1px solid #fde68a; border-right: 1px solid #fef3c7; line-height: 1.5; word-break: keep-all; background: #ffffff; }
+        .expo-timetable tbody tr:last-child td { border-bottom: none; }
+        .expo-timetable tbody td:last-child { border-right: none; }
+        .expo-timetable tbody td.td-time { font-weight: 700; color: #1e293b; white-space: nowrap; }
+        .expo-timetable tbody td.td-prog { font-weight: 800; color: #0f172a; word-break: keep-all; }
+        .expo-timetable tbody td.td-place { color: #475569; word-break: keep-all; }
+        .modal-inst-box { width: 100%; max-width: 68.0rem; max-height: 85vh; border-radius: 2.0rem; background-color: #ffffff; display: flex; flex-direction: column; overflow: hidden; }
+        .modal-inst-box .modal-header { padding: 2.2rem 2.8rem; border-bottom: 1px solid #e2e8f0; flex-shrink: 0; }
+        .modal-inst-box .modal-title { font-size: 2.2rem; font-weight: 800; color: #0f172a; margin: 0; }
+        .modal-inst-box .modal-body { padding: 2.8rem; flex: 1; overflow-y: auto; }
+        .modal-inst-box .modal-footer { width: 100%; padding: 1.6rem 2.8rem 2.0rem; border-top: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; background-color: #ffffff; box-sizing: border-box; }
+        .btn-inst-close { display: inline-flex; align-items: center; justify-content: center; margin: 0 auto; width: 100%; max-width: 16.0rem; height: 4.4rem; font-size: 1.45rem; font-weight: 700; color: #475569; background-color: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 0.8rem; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; }
+        .btn-inst-close:hover { background-color: #f8fafc; border-color: #0284c7; color: #0284c7; }
+        .inst-modal-intro { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1.2rem; padding: 2.0rem 2.4rem; text-align: left; }
+        .inst-modal-intro .intro-tit { font-size: 1.45rem; font-weight: 700; color: #1e293b; line-height: 1.6; margin: 0 0 1.2rem; word-break: keep-all; }
+        .inst-modal-intro .intro-bullet-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+        .inst-modal-intro .intro-bullet-list li { position: relative; padding-left: 1.4rem; font-size: 1.35rem; color: #475569; }
+        .inst-modal-intro .intro-bullet-list li::before { content: '•'; position: absolute; left: 0; top: 0; color: #0284c7; font-weight: 700; }
+        .inst-table-wrap { width: 100%; border: 1px solid #cbd5e1; border-radius: 1.0rem; overflow: hidden; }
+        .inst-data-table { width: 100%; border-collapse: collapse; text-align: center; }
+        .inst-data-table thead th { background-color: #e2e8f0; color: #1e293b; font-size: 1.4rem; font-weight: 800; padding: 1.2rem 1.0rem; border-bottom: 1px solid #cbd5e1; }
+        .inst-data-table tbody td { padding: 1.2rem 1.0rem; font-size: 1.35rem; color: #334155; border-bottom: 1px solid #f1f5f9; }
+        .inst-data-table tbody tr:last-child td { border-bottom: none; }
+        .inst-data-table tbody tr:hover { background-color: #f8fafc; }
+        .inst-data-table td.td-left { text-align: left; font-weight: 600; color: #0f172a; padding-left: 1.6rem; }
+        .btn-inst-link { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem 1.2rem; background-color: #ffffff; color: #0284c7; border: 1px solid #bae6fd; border-radius: 0.6rem; font-size: 1.25rem; font-weight: 700; text-decoration: none; transition: all 0.2s ease; }
+        .btn-inst-link:hover { background-color: #0284c7; color: #ffffff; border-color: #0284c7; }
+        .modal-preapply-box { width: 100%; max-width: 62.0rem; max-height: 90vh; border-radius: 2.0rem; background-color: #ffffff; display: flex; flex-direction: column; overflow: hidden; }
+        .modal-preapply-box .modal-header { padding: 2.4rem 2.8rem; border-bottom: 1px solid #e2e8f0; flex-shrink: 0; }
+        .modal-preapply-box .modal-title { font-size: 2.2rem; font-weight: 800; color: #0f172a; margin: 0; }
+        .modal-preapply-box .modal-sub-tit { font-size: 1.45rem; color: #64748b; margin: 0.6rem 0 0; }
+        .modal-preapply-box .modal-body { padding: 2.8rem; flex: 1; overflow-y: auto; }
+        .modal-preapply-box .modal-footer { width: 100%; padding: 1.8rem 2.8rem 2.4rem; border-top: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background-color: #ffffff; box-sizing: border-box; }
+        .preapply-form-wrap { display: flex; flex-direction: column; }
+        .preapply-row { display: flex; align-items: center; padding: 1.4rem 0; border-bottom: 1px solid #f1f5f9; font-size: 1.5rem; }
+        .preapply-row .p-label { width: 14.0rem; font-weight: 700; color: #475569; flex-shrink: 0; }
+        .preapply-row .p-val { flex: 1; color: #0f172a; }
+        .preapply-guide-txt { font-size: 1.2rem; color: #ef4444; line-height: 1.6; margin: 1.2rem 0 0; word-break: keep-all; }
+        .preapply-privacy-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1.2rem; padding: 2.0rem 2.2rem; text-align: left; }
+        .privacy-box-tit { display: block; font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 1.2rem; }
+        .privacy-bullet-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+        .privacy-bullet-list li { position: relative; padding-left: 1.4rem; font-size: 1.35rem; color: #475569; line-height: 1.6; word-break: keep-all; }
+        .privacy-bullet-list li::before { content: '•'; position: absolute; left: 0; top: 0; color: #64748b; font-weight: 700; }
+        .privacy-bullet-list strong { color: #1e293b; }
+        .preapply-check-wrap { display: flex; align-items: center; padding: 0.6rem 0; }
+        .custom-check-group { display: inline-flex; align-items: center; gap: 1.0rem; }
+        .custom-check-input { position: absolute; opacity: 0; width: 0; height: 0; margin: 0; pointer-events: none; }
+        .custom-check-box { width: 2.0rem; height: 2.0rem; border: 1.5px solid #cbd5e1; border-radius: 0.4rem; background-color: #ffffff; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; }
+        .custom-check-input:checked + .custom-check-box { background-color: #0284c7; border-color: #0284c7; }
+        .custom-check-box::after { content: ''; display: none; width: 5px; height: 9px; border: solid #ffffff; border-width: 0 2px 2px 0; transform: rotate(45deg); margin-top: -2px; }
+        .custom-check-input:checked + .custom-check-box::after { display: block; }
+        .check-text { font-size: 1.45rem; font-weight: 700; color: #1e293b; user-select: none; cursor: default; }
+        .btn-preapply-submit { width: 100%; max-width: 18.0rem; height: 4.6rem; font-size: 1.55rem; font-weight: 800; border-radius: 0.8rem; cursor: pointer; transition: all 0.2s ease; margin: 0 auto; display: inline-flex; align-items: center; justify-content: center; border: none; }
+        .btn-preapply-submit:disabled { background-color: #cbd5e1 !important; color: #94a3b8 !important; cursor: not-allowed; opacity: 0.7; }
+        @media (max-width: 1024px) { .expo-editorial-hero { grid-template-columns: 1fr; gap: 4.0rem; } .poster-year-num { font-size: 8.4rem; } .poster-sub-tit { font-size: 4.6rem; } .poster-hero-tit { font-size: 8.8rem; } .expo-spec-ticker { grid-template-columns: 1fr; } .spec-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 2.2rem 0; } .spec-item:last-child { border-bottom: none; } .expo-sponsors-editorial { flex-direction: column; align-items: flex-start; gap: 1.6rem; } .sponsors-inline-logos { display: flex; flex-wrap: wrap; gap: 1.2rem; width: 100%; justify-content: flex-start; } .sponsors-inline-logos span { width: auto; flex: initial; } .sponsors-inline-logos span.sponsor-logo-lg { width: auto; max-width: 100%; } .pav-info-grid-3 { grid-template-columns: repeat(2, 1fr); } .p-proc-line-steps { flex-direction: column; gap: 0.8rem; } .step-card { width: 100%; justify-content: space-between; padding: 1.4rem 1.8rem; box-sizing: border-box; } .step-arrow { transform: rotate(90deg); } }
+        @media (max-width: 768px) { .pav-global-expo { padding: 4.0rem 0 0; } .hero-left-editorial { text-align: center; } .poster-year-num { font-size: 7.2rem; } .poster-sub-tit { font-size: 4.0rem; } .poster-hero-tit { font-size: 7.2rem; } .pass-body-layout { flex-direction: column; text-align: center; } .spec-item { text-align: center; align-items: center; } .expo-sponsors-editorial { align-items: flex-start; } .sponsors-inline-logos { justify-content: flex-start; } .pav-white-guide-board { padding: 3.6rem 2.0rem; margin-top: 3.2rem; } .p-guide-main-tit { font-size: 2.2rem; } .pav-info-grid-3 { grid-template-columns: 1fr; } .expo-timetable thead th { padding: 1.2rem 1.4rem; font-size: 1.4rem; } .expo-timetable tbody td { padding: 1.2rem 1.4rem; font-size: 1.35rem; } }
+        @media (max-width: 640px) { .poster-year-num { font-size: 6.8rem; } .poster-sub-tit { font-size: 3.6rem; } .poster-hero-tit { font-size: 6.8rem; } .expo-sponsors-editorial { align-items: flex-start; } .sponsors-inline-logos { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 1.0rem; width: 100%; } .sponsors-inline-logos span { width: auto; flex: initial; padding: 0.6rem 1.2rem; height: 4.0rem; } .sponsors-inline-logos span img { max-height: 2.4rem; max-width: 13.0rem; } .sponsors-inline-logos span.sponsor-logo-lg { width: auto; } .sponsors-inline-logos span.sponsor-logo-lg img { max-height: 2.6rem; max-width: 22.0rem; } .modal-inst-box, .modal-preapply-box { max-height: 90vh; } .modal-inst-box .modal-header, .modal-preapply-box .modal-header { padding: 1.8rem 1.6rem; } .modal-inst-box .modal-body, .modal-preapply-box .modal-body { padding: 1.6rem; } .modal-inst-box .modal-footer, .modal-preapply-box .modal-footer { padding: 1.2rem 1.6rem 1.6rem; } .btn-inst-close, .btn-preapply-submit { max-width: 100%; height: 4.4rem; margin: 0; } .preapply-row .p-label { width: 10.0rem; } .inst-modal-intro, .preapply-privacy-box { padding: 1.4rem 1.6rem; } .inst-modal-intro .intro-tit { font-size: 1.35rem; } .inst-data-table thead th { font-size: 1.25rem; padding: 1.0rem 0.6rem; } .inst-data-table tbody td { font-size: 1.25rem; padding: 1.0rem 0.6rem; } .inst-data-table td.td-left { padding-left: 1.0rem; } .btn-inst-link { padding: 0.4rem 0.8rem; font-size: 1.15rem; } }
         </style>
 
         <section class="pavilion-detail-hero-sec">
@@ -384,19 +328,19 @@
                         <div class="expo-sponsors-editorial">
                             <span class="sponsors-tag-label">주관</span>
                             <div class="sponsors-inline-logos">
-                                <span class="sponsor-logo-lg"><img alt="충청북도기업진흥원 · 충북일자리지원센터" src="./images/tlogo_07.png"></span>
+                                <span class="sponsor-logo-lg"><img alt="충청북도기업진흥원 · 충북일자리지원센터" src="/images/jobcloud/tlogo_07.png"></span>
                             </div>
                         </div>
                         <!-- 주최 기관 -->
                         <div class="expo-sponsors-editorial">
                             <span class="sponsors-tag-label">주최</span>
                             <div class="sponsors-inline-logos">
-                                <span><img alt="고용노동부" src="./images/tlogo_01.png"></span>
-                                <span><img alt="충청북도" src="./images/tlogo_02.png"></span>
-                                <span><img alt="대전광역시" src="./images/tlogo_03.png"></span>
-                                <span><img alt="충청남도" src="./images/tlogo_04.png"></span>
-                                <span><img alt="세종특별자치시" src="./images/tlogo_05.png"></span>
-                                <span><img alt="충북지방중소벤처기업청" src="./images/tlogo_06.png"></span>
+                                <span><img alt="고용노동부" src="/images/jobcloud/tlogo_01.png"></span>
+                                <span><img alt="충청북도" src="/images/jobcloud/tlogo_02.png"></span>
+                                <span><img alt="대전광역시" src="/images/jobcloud/tlogo_03.png"></span>
+                                <span><img alt="충청남도" src="/images/jobcloud/tlogo_04.png"></span>
+                                <span><img alt="세종특별자치시" src="/images/jobcloud/tlogo_05.png"></span>
+                                <span><img alt="충북지방중소벤처기업청" src="/images/jobcloud/tlogo_06.png"></span>
                             </div>
                         </div>
                     </div>
@@ -419,7 +363,7 @@
                         <!-- 카드 1. 취업 역량상담 -->
                         <div class="p-grid-card">
                             <div class="card-icon-circle ic-blue">
-                                <i data-lucide="user-check"><span></span></i>
+                                <i data-lucide="user-check"><span class="blind">icon</span></i>
                             </div>
                             <strong class="card-tit">취업 역량상담</strong>
                             <p class="card-desc">이력서, 자기소개서 컨설팅 및<br>전문 직업상담사의 맞춤형 취업 상담</p>
@@ -428,7 +372,7 @@
                         <!-- 카드 2. 채용설명회 -->
                         <div class="p-grid-card">
                             <div class="card-icon-circle ic-cyan">
-                                <i data-lucide="presentation"><span></span></i>
+                                <i data-lucide="presentation"><span class="blind">icon</span></i>
                             </div>
                             <strong class="card-tit">채용설명회</strong>
                             <p class="card-desc">우수 참여기업의 기업 비전 및<br>인재상, 채용 프로세스 안내</p>
@@ -437,11 +381,11 @@
                         <!-- 카드 3. 지방공공기관 채용설명존 -->
                         <div class="p-grid-card">
                             <div class="card-icon-circle ic-indigo">
-                                <i data-lucide="building-2"><span></span></i>
+                                <i data-lucide="building-2"><span class="blind">icon</span></i>
                             </div>
                             <strong class="card-tit">지방공공기관 채용설명존</strong>
                             <p class="card-desc">지방공공기관 취업, 궁금한 모두를<br>한자리에서 만나보세요!</p>
-                            <button class="btn-card-action btn-open-inst-modal" onclick="openModal('modalInstList')" type="button">참여기관 확인 <i data-lucide="chevron-right"><span></span></i></button>
+                            <button class="btn-card-action btn-terms-modal" data-modal="modalInstList" type="button">참여기관 확인 <i data-lucide="chevron-right"><span class="blind">icon</span></i></button>
                         </div>
                     </div>
 
@@ -458,61 +402,61 @@
                         <!-- 1. 퍼스널 컬러 진단 -->
                         <div class="p-grid-card card-side-event">
                             <div class="card-icon-circle ic-yellow">
-                                <i data-lucide="palette"><span></span></i>
+                                <i data-lucide="palette"><span class="blind">icon</span></i>
                             </div>
                             <strong class="card-tit">퍼스널 컬러 진단</strong>
                             <p class="card-desc">나에게 꼭 맞는 면접 복장과<br>메이크업 톤 찾기</p>
-                            <button class="btn-card-reserve" onclick="openModaLoginChk('modalPreApply')" type="button">사전예약</button>
+                            <button class="btn-card-reserve btn-terms-modal" data-modal="modalPreApply" type="button">사전예약</button>
                         </div>
 
                         <!-- 2. 이력서 사진 촬영 -->
                         <div class="p-grid-card card-side-event">
                             <div class="card-icon-circle ic-yellow">
-                                <i data-lucide="camera"><span></span></i>
+                                <i data-lucide="camera"><span class="blind">icon</span></i>
                             </div>
                             <strong class="card-tit">이력서 사진 촬영</strong>
                             <p class="card-desc">전문 포토그래퍼가 촬영하는<br>무료 이력서 사진</p>
-                            <button class="btn-card-reserve" onclick="openModaLoginChk('modalPreApply')" type="button">사전예약</button>
+                            <button class="btn-card-reserve btn-terms-modal" data-modal="modalPreApply" type="button">사전예약</button>
                         </div>
 
                         <!-- 3. AI 면접 체험 -->
                         <div class="p-grid-card card-side-event">
                             <div class="card-icon-circle ic-yellow">
-                                <i data-lucide="bot"><span></span></i>
+                                <i data-lucide="bot"><span class="blind">icon</span></i>
                             </div>
                             <strong class="card-tit">AI 면접 체험</strong>
                             <p class="card-desc">실전 같은 AI 면접 시뮬레이션 및<br>맞춤 피드백</p>
-                            <button class="btn-card-reserve" onclick="openModaLoginChk('modalPreApply')" type="button">사전예약</button>
+                            <button class="btn-card-reserve btn-terms-modal" data-modal="modalPreApply" type="button">사전예약</button>
                         </div>
 
                         <!-- 4. 취업 타로 -->
                         <div class="p-grid-card card-side-event">
                             <div class="card-icon-circle ic-yellow">
-                                <i data-lucide="sparkles"><span></span></i>
+                                <i data-lucide="sparkles"><span class="blind">icon</span></i>
                             </div>
                             <strong class="card-tit">취업 타로</strong>
                             <p class="card-desc">재미로 보는 나의 취업운과<br>직무 적성 컨설팅</p>
-                            <button class="btn-card-reserve" onclick="openModaLoginChk('modalPreApply')" type="button">사전예약</button>
+                            <button class="btn-card-reserve btn-terms-modal" data-modal="modalPreApply" type="button">사전예약</button>
                         </div>
 
                         <!-- 5. 중장년 직무설계 -->
                         <div class="p-grid-card card-side-event">
                             <div class="card-icon-circle ic-yellow">
-                                <i data-lucide="compass"><span></span></i>
+                                <i data-lucide="compass"><span class="blind">icon</span></i>
                             </div>
                             <strong class="card-tit">중장년 직무설계</strong>
                             <p class="card-desc">경력과 강점을 바탕으로<br>나에게 맞는 직무 방향 찾기</p>
-                            <button class="btn-card-reserve" onclick="openModaLoginChk('modalPreApply')" type="button">사전예약</button>
+                            <button class="btn-card-reserve btn-terms-modal" data-modal="modalPreApply" type="button">사전예약</button>
                         </div>
 
                         <!-- 6. 기타 이벤트 -->
                         <div class="p-grid-card card-side-event">
                             <div class="card-icon-circle ic-yellow">
-                                <i data-lucide="gift"><span></span></i>
+                                <i data-lucide="gift"><span class="blind">icon</span></i>
                             </div>
                             <strong class="card-tit">기타 이벤트</strong>
                             <p class="card-desc">스탬프 미션, 뽑기, 추첨 등<br>누구나 즐길 수 있는 참여 이벤트</p>
-                            <button class="btn-card-reserve" onclick="openModaLoginChk('modalPreApply')" type="button">사전예약</button>
+                            <button class="btn-card-reserve btn-terms-modal" data-modal="modalPreApply" type="button">사전예약</button>
                         </div>
                     </div>
 
@@ -592,7 +536,7 @@
                         </div>
                     </div>
 
-                    <div class="pav-detail-sub-box mt-3">
+                    <div class="pav-detail-sub-box mt-2">
                         <strong class="box-sec-tit">주요 프로그램 및 현장 부대행사</strong>
                         <ul class="pav-clean-list">
                             <li><strong>현장 채용 면접관</strong> : 110개사 1:1 면접 업종별 채용상담</li>
@@ -634,7 +578,7 @@
                 <div class="modal-header flex-between">
                     <h3 class="modal-title">지방공공기관 채용설명존</h3>
                     <button aria-label="닫기" class="btn-modal-close" onclick="closeModal('modalInstList')" type="button">
-                        <i data-lucide="x"><span></span></i>
+                        <i data-lucide="x"><span class="blind">icon</span></i>
                     </button>
                 </div>
                 <div class="modal-body custom-scroll">
@@ -743,7 +687,7 @@
                         <p class="modal-sub-tit">기본 정보 확인 및 개인정보 제공 동의 후 신청해 주세요.</p>
                     </div>
                     <button aria-label="닫기" class="btn-modal-close" onclick="closeModal('modalPreApply')" type="button">
-                        <i data-lucide="x"><span></span></i>
+                        <i data-lucide="x"><span class="blind">icon</span></i>
                     </button>
                 </div>
                 <div class="modal-body custom-scroll">
@@ -785,7 +729,6 @@
                 </div>
             </div>
         </div>
-
         
         <!-- //에디터 영역 -->
         <script>
@@ -850,7 +793,7 @@
                 <div class="pav-comp-grid mt-3">
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="오토디맨스 모빌리티" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="/images/jobcloud/comp_logo_sample.png" alt="오토디맨스 모빌리티" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
                         </div>
                         <h3 class="p-comp-name">오토디맨스 모빌리티</h3>
                         <p class="p-comp-desc">자율주행 인지 AI 및 차세대 모빌리티 플랫폼을 선도합니다.</p>
@@ -859,7 +802,7 @@
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="넥스트에너지 솔루션" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="/images/jobcloud/comp_logo_sample.png" alt="넥스트에너지 솔루션" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
                         </div>
                         <h3 class="p-comp-name">넥스트에너지 솔루션</h3>
                         <p class="p-comp-desc">고효율 전기차 배터리 팩 및 차세대 에너지 저장 장치를 설계합니다.</p>
@@ -868,7 +811,7 @@
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="충청 모빌리티 혁신기업1" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="/images/jobcloud/comp_logo_sample.png" alt="충청 모빌리티 혁신기업1" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
                         </div>
                         <h3 class="p-comp-name">충청 모빌리티 혁신기업1</h3>
                         <p class="p-comp-desc">자율주행, 커넥티드, 전동화 등 미래 모빌리티 기술을 선도합니다.</p>
@@ -877,7 +820,7 @@
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="충청 모빌리티 혁신기업2" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="/images/jobcloud/comp_logo_sample.png" alt="충청 모빌리티 혁신기업2" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
                         </div>
                         <h3 class="p-comp-name">충청 모빌리티 혁신기업2</h3>
                         <p class="p-comp-desc">자율주행 인지 AI 및 차세대 모빌리티 플랫폼을 선도합니다.</p>
@@ -886,7 +829,7 @@
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="충청 모빌리티 혁신기업3" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="/images/jobcloud/comp_logo_sample.png" alt="충청 모빌리티 혁신기업3" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
                         </div>
                         <h3 class="p-comp-name">충청 모빌리티 혁신기업3</h3>
                         <p class="p-comp-desc">고효율 전기차 배터리 팩 및 차세대 에너지 저장 장치를 설계합니다.</p>
@@ -895,7 +838,7 @@
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="모빌리티 스마트랩" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="/images/jobcloud/comp_logo_sample.png" alt="모빌리티 스마트랩" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
                         </div>
                         <h3 class="p-comp-name">모빌리티 스마트랩</h3>
                         <p class="p-comp-desc">자율주행 인지 AI 및 차세대 모빌리티 플랫폼을 선도합니다.</p>
@@ -904,7 +847,7 @@
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="충청 그린에너지" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="/images/jobcloud/comp_logo_sample.png" alt="충청 그린에너지" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
                         </div>
                         <h3 class="p-comp-name">충청 그린에너지</h3>
                         <p class="p-comp-desc">친환경 수소 연료전지 모빌리티 구동 시스템 연구 개발 전문 기업입니다.</p>
@@ -913,7 +856,7 @@
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="모빌리티 테크솔루션" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="/images/jobcloud/comp_logo_sample.png" alt="모빌리티 테크솔루션" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
                         </div>
                         <h3 class="p-comp-name">모빌리티 테크솔루션</h3>
                         <p class="p-comp-desc">차량용 고정밀 센서 및 ECU 제어기 부품을 공급하는 전문 제조기업입니다.</p>
@@ -922,7 +865,7 @@
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="에코모빌리티 연구소" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="/images/jobcloud/comp_logo_sample.png" alt="에코모빌리티 연구소" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
                         </div>
                         <h3 class="p-comp-name">에코모빌리티 연구소</h3>
                         <p class="p-comp-desc">초경량 복합소재를 활용한 차체 프레임 구조 해석 및 제작 기업입니다.</p>
@@ -931,7 +874,7 @@
 
                     <a href="company-detail.html" class="c-card-pav-comp">
                         <div class="p-comp-logo">
-                            <img src="./images/comp_logo_sample.png" alt="퓨처비클 소프트" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
+                            <img src="/images/jobcloud/comp_logo_sample.png" alt="퓨처비클 소프트" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&auto=format&fit=crop&q=60'">
                         </div>
                         <h3 class="p-comp-name">퓨처비클 소프트</h3>
                         <p class="p-comp-desc">SDV 기반 차량용 임베디드 소프트웨어 및 OTA 통신 프로토콜 개발 기업입니다.</p>
@@ -1136,7 +1079,7 @@
             <div class="footer-top flex-between">
                 <div class="footer-brand">
                     <a href="index.html" class="brand-logo">
-                        <img src="./images/footer_logo.png" alt="충북권역 전략사업 특화 온라인 채용관" class="brand-logo-img">
+                        <img src="/images/jobcloud/footer_logo.png" alt="충북권역 전략사업 특화 온라인 채용관" class="brand-logo-img">
                     </a>
                     <p class="footer-desc">충청북도 기업진흥원이 함께 만드는 충북 지역 우수 중소·중견기업 통합 온라인 채용관입니다.</p>
                 </div>

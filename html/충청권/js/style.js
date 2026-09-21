@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (overlay) overlay.addEventListener('click', closeDrawer);
 
   document.addEventListener('click', (e) => {
-    // 클릭된 요소가 .btn-drawer-acc 이거나 그 자식(아이콘, 텍스트 등)인지 확인
+    // �대┃�� �붿냼媛� .btn-drawer-acc �닿굅�� 洹� �먯떇(�꾩씠肄�, �띿뒪�� ��)�몄� �뺤씤
     const btn = e.target.closest('.btn-drawer-acc');
     
     if (btn) {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-  // 모바일 드로어 아코디언 메뉴
+  // 紐⑤컮�� �쒕줈�� �꾩퐫�붿뼵 硫붾돱
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('.btn-drawer-acc');
     if (btn) {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-  // 1. 공통 모달 열기 제어
+  // 1. 怨듯넻 紐⑤떖 �닿린 �쒖뼱
   const modalOpenBtns = document.querySelectorAll('.btn-terms-modal');
   modalOpenBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -64,9 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 2. 공통 모달 닫기 제어 (모든 닫기 버튼/취소 버튼 및 Dim 클릭 완벽 대응)
+  // 2. 怨듯넻 紐⑤떖 �リ린 �쒖뼱 (紐⑤뱺 �リ린 踰꾪듉/痍⑥냼 踰꾪듉 諛� Dim �대┃ �꾨꼍 ����)
   document.addEventListener('click', (e) => {
-    // 닫기 버튼(.btn-modal-close) 클릭 시
+    // �リ린 踰꾪듉(.btn-modal-close) �대┃ ��
     const closeBtn = e.target.closest('.btn-modal-close');
     if (closeBtn) {
       const parentModal = closeBtn.closest('.site-modal');
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // 모달 배경(Dim) 클릭 시
+    // 紐⑤떖 諛곌꼍(Dim) �대┃ ��
     if (e.target.classList.contains('modal-dim')) {
       const parentModal = e.target.closest('.site-modal');
       if (parentModal) {
@@ -87,11 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 3. 임시 공유하기 URL 자동 세팅
+  // 3. �꾩떆 怨듭쑀�섍린 URL �먮룞 �명똿
   /*const shareInput = document.getElementById('shareCurrentUrl');
   if (shareInput) shareInput.value = window.location.href;*/
 
-  // 4. 임시 입사지원 단계 전환 스크립트
+  // 4. �꾩떆 �낆궗吏��� �④퀎 �꾪솚 �ㅽ겕由쏀듃
   const modalApply = document.getElementById('modalApply');
   if (modalApply) {
     const step1 = modalApply.querySelector('.step-1');
@@ -106,10 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Step 1 -> Step 2
     btnNext?.addEventListener('click', () => {
-      const checkedRadio = modalApply.querySelector('input[name="selectResume"]:checked');
+      const checkedRadio = modalApply.querySelector('input[name="resumeSeqChk"]:checked');
       if (checkedRadio) {
         const cardTitle = checkedRadio.closest('.resume-select-card')?.querySelector('.r-title')?.textContent;
-        if (confirmResumeName) confirmResumeName.textContent = cardTitle || '파일 첨부 이력서';
+        if (confirmResumeName) confirmResumeName.textContent = cardTitle || '�뚯씪 泥⑤� �대젰��';
       }
       step1.classList.remove('active');
       step2.classList.add('active');
@@ -121,18 +121,18 @@ document.addEventListener('DOMContentLoaded', () => {
       step1.classList.add('active');
     });
 
-    // Step 2 동의 체크 시 최종 제출 버튼 활성화
+    // Step 2 �숈쓽 泥댄겕 �� 理쒖쥌 �쒖텧 踰꾪듉 �쒖꽦��
     chkAgree?.addEventListener('change', (e) => {
       if (btnSubmit) btnSubmit.disabled = !e.target.checked;
     });
 
-    // Step 2 -> Step 3 (완료)
-    btnSubmit?.addEventListener('click', () => {
+    // Step 2 -> Step 3 (�꾨즺)
+    /*btnSubmit?.addEventListener('click', () => {
       step2.classList.remove('active');
       step3.classList.add('active');
-    });
+    });*/
 
-    // 파일 첨부 시 파일명 출력
+    // �뚯씪 泥⑤� �� �뚯씪紐� 異쒕젰
     const fileInput = document.getElementById('attachFileInput');
     const fileNamePreview = document.getElementById('fileNamePreview');
     const radioCustomFile = document.getElementById('radioCustomFile');
@@ -146,32 +146,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// 사전 참석신청 모달 열기
+// �ъ쟾 李몄꽍�좎껌 紐⑤떖 �닿린
+const btnOpenPreApply = document.getElementById('btnOpenPreApply');
 const modalPreApply = document.getElementById('modalPreApply');
-  const preApplyTriggers = document.querySelectorAll('.btn-open-preapply-trigger');
-  const btnCloseModal = modalPreApply?.querySelector('.btn-modal-close');
-  const modalDim = modalPreApply?.querySelector('.modal-dim');
-  const btnSubmitPreApply = document.getElementById('btnSubmitPreApply');
+btnOpenPreApply?.addEventListener('click', () => {
+  modalPreApply?.classList.add('active');
+});
 
-  // 1. 페이지 내 모든 사전신청 버튼에 모달 열기 이벤트 연결
-  preApplyTriggers.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      modalPreApply?.classList.add('active');
-    });
-  });
-
-  // 2. 모달 닫기 함수
-  const closeModal = () => {
-    modalPreApply?.classList.remove('active');
-  };
-
-  // 3. 닫기 버튼 및 배경(Dim) 클릭 시 닫기
-  btnCloseModal?.addEventListener('click', closeModal);
-  modalDim?.addEventListener('click', closeModal);
-
-  // 4. 신청 완료 버튼
-  btnSubmitPreApply?.addEventListener('click', () => {
-    alert('사전 참석신청이 완료되었습니다.');
-    closeModal();
-  });
+const btnSubmitPreApply = document.getElementById('btnSubmitPreApply');
+btnSubmitPreApply?.addEventListener('click', () => {
+  modalPreApply?.classList.remove('active');
+  document.body.style.overflow = '';
+  if (typeof showToast === 'function') {
+    showToast('�ъ쟾 李몄꽍�좎껌�� �꾨즺�섏뿀�듬땲��.', 'success');
+  } else {
+    alert('�ъ쟾 李몄꽍�좎껌�� �꾨즺�섏뿀�듬땲��.');
+  }
+});
