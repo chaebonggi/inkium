@@ -164,20 +164,20 @@
 
     <main class="site-main">
         <style>
-.r-sec-divider-group { padding-top: 2.8rem; border-top: 1px solid #f1f5f9; margin-top: 2.8rem; }
-.r-sec-divider-group:first-child { padding-top: 0; border-top: none; margin-top: 0; }
-.r-wage-input-grid { display: grid; grid-template-columns: 14.0rem 1fr; gap: 1.2rem; align-items: center; }
-.r-chips-wrap-spacious { display: flex; flex-wrap: wrap; gap: 1.2rem 2.4rem; }
-.r-date-input-wrap { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 1.35rem; color: #475569; font-weight: 600; }
-.r-date-input-wrap .c-input { width: 16.0rem; height: 4.2rem; }
-.r-agree-step-row { padding: 2.4rem; border-bottom: 1px solid #f1f5f9; }
-.r-agree-step-row:last-child { border-bottom: none; }
-.disabled-zone { opacity: 0.45; pointer-events: none; }
+            .r-sec-divider-group { padding-top: 2.4rem; border-top: 1px solid #f1f5f9; margin-top: 2.4rem; }
+            .r-sec-divider-group:first-child { padding-top: 0; border-top: none; margin-top: 0; }
+            .r-wage-input-grid { display: grid; grid-template-columns: 14.0rem 1fr; gap: 1.2rem; align-items: center; }
+            .c-form-label-wrap { white-space: normal !important; word-break: keep-all; line-height: 1.5; margin-bottom: 1.2rem; display: block; }
+            .r-chips-wrap-spacious { display: flex; flex-wrap: wrap; gap: 1.2rem 2.4rem; }
+            .r-date-input-wrap { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 1.35rem; color: #475569; font-weight: 600; }
+            .r-date-input-wrap .c-input { width: 16.0rem; height: 4.2rem; }
+            .r-agree-guide-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.8rem; padding: 1.2rem 1.6rem; margin-top: 1.2rem; font-size: 1.25rem; color: #64748b; line-height: 1.6; word-break: keep-all; }
+            .disabled-zone { opacity: 0.45; pointer-events: none; }
 
-@media (max-width: 768px) {
-  .r-wage-input-grid { grid-template-columns: 1fr; }
-  .r-chips-wrap-spacious { gap: 1.0rem 1.6rem; }
-}
+            @media (max-width: 768px) {
+            .r-wage-input-grid { grid-template-columns: 1fr; }
+            .r-chips-wrap-spacious { gap: 1.0rem 1.6rem; }
+            }
         </style>
 
         <section class="resume-write-sec pd6">
@@ -356,15 +356,17 @@
 
                                 <!-- [3] 희망임금 -->
                                 <div class="r-sec-divider-group">
-                                    <label class="c-form-label">희망임금</label>
-                                    <div class="r-wage-input-grid">
-                                        <select class="c-select sel-wage-type">
-                                            <option value="연봉">연봉</option>
-                                            <option value="월급">월급</option>
-                                            <option value="일급">일급</option>
-                                            <option value="시급">시급</option>
-                                        </select>
-                                        <input type="text" class="c-input input-wage-val" placeholder="금액 입력 (원 이상)">
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">희망임금</label>
+                                        <div class="r-wage-input-grid">
+                                            <select class="c-select sel-wage-type">
+                                                <option value="연봉">연봉</option>
+                                                <option value="월급">월급</option>
+                                                <option value="일급">일급</option>
+                                                <option value="시급">시급</option>
+                                            </select>
+                                            <input type="text" class="c-input input-wage-val" placeholder="금액 입력 (원 이상)">
+                                        </div>
                                     </div>
                                     <div class="mt-2">
                                         <label class="custom-check-label inline-check" style="width: auto;">
@@ -377,16 +379,18 @@
 
                                 <!-- [4] 고용형태 -->
                                 <div class="r-sec-divider-group">
-                                    <label class="c-form-label">고용형태 (복수 선택 가능)</label>
-                                    <div class="r-chips-wrap-spacious mt-1">
-                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">기간의 정함이 없는 근로계약</span></label>
-                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">기간의 정함이 있는 근로계약</span></label>
-                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">시간(선택)제</span></label>
-                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">교대제 근무</span></label>
-                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">파견근로</span></label>
-                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">대체인력</span></label>
-                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">관계없음</span></label>
-                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">재택근무 희망</span></label>
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">고용형태 (복수 선택 가능)</label>
+                                        <div class="r-chips-wrap-spacious mt-1">
+                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">기간의 정함이 없는 근로계약</span></label>
+                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">기간의 정함이 있는 근로계약</span></label>
+                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">시간(선택)제</span></label>
+                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">교대제 근무</span></label>
+                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">파견근로</span></label>
+                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">대체인력</span></label>
+                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">관계없음</span></label>
+                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">재택근무 희망</span></label>
+                                        </div>
                                     </div>
                                     <div class="address-input-wrap mt-3">
                                         <span class="c-form-label flex-center">근무가능(희망)시간:</span>
@@ -394,7 +398,7 @@
                                         <span class="flex-center">~</span>
                                         <input type="time" class="c-input" style="width: 14.0rem;">
                                     </div>
-                                    <p class="r-sec-guide mt-2">※ 출퇴근표기, 휴일 및 탄력근로 단면에 따른 대략 희망을 명시합니다.</p>
+                                    <p class="r-sec-guide mt-2">※ 출산휴가, 휴직 및 단축근로 단축에 따른 대체 인력을 말합니다.</p>
                                 </div>
                             </div>
                         </div>
@@ -593,13 +597,39 @@
                         <div class="r-sec-body">
                             <div class="r-dynamic-card">
                                 <div class="r-grid-2">
-                                    <div class="c-form-group"><label class="c-form-label">외국어명</label><input type="text" class="c-input" placeholder="예: 영어, 일본어"></div>
-                                    <div class="c-form-group"><label class="c-form-label">수준</label><select class="c-select"><option value="상">상 (일상/비즈니스 유창)</option><option value="중">중 (일상 대화 가능)</option><option value="하">하 (간단한 의사소통)</option></select></div>
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">외국어명</label>
+                                        <input type="text" class="c-input" placeholder="외국어명 입력">
+                                    </div>
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">수준</label>
+                                        <select class="c-select">
+                                            <option value="">수준 선택</option>
+                                            <option value="상">상</option>
+                                            <option value="중">중</option>
+                                            <option value="하">하</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="r-grid-3 mt-2">
-                                    <div class="c-form-group"><label class="c-form-label">공인시험 명칭</label><input type="text" class="c-input" placeholder="예: TOEIC"></div>
-                                    <div class="c-form-group"><label class="c-form-label">응시일자</label><input type="date" class="c-input"></div>
-                                    <div class="c-form-group"><label class="c-form-label">등급(점수)</label><input type="text" class="c-input" placeholder="예: 850점 또는 IH"></div>
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">공인시험 명칭</label>
+                                        <input type="text" class="c-input" placeholder="예: TOEIC">
+                                    </div>
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">응시일자</label>
+                                        <input type="date" class="c-input">
+                                    </div>
+                                    <div class="c-form-group">
+                                        <label class="c-form-label">등급(점수)</label>
+                                        <div class="score-input-wrap">
+                                            <input type="text" class="c-input" placeholder="점수 또는 급수">
+                                            <select class="c-select">
+                                                <option value="점">점</option>
+                                                <option value="급">급</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -620,7 +650,7 @@
                         </div>
                     </div>
 
-                    <!-- 12. 국외취업 희망여부 (박스 없음 + 이력서 공개여부와 완전히 동일한 .resume-visibility-wrap 클래스 사용) -->
+                    <!-- 12. 국외취업 희망여부 (박스 없음) -->
                     <div class="resume-sec-item">
                         <div class="r-sec-head">
                             <span class="r-sec-tit">국외취업 희망여부</span>
@@ -650,7 +680,7 @@
                             <div class="c-form-group">
                                 <input type="text" class="c-input" name="intrcnNm" placeholder="자기소개서 제목 입력">
                             </div>
-                            <div class="cover-letter-wrap mt-1">
+                            <div class="cover-letter-wrap mt-2">
                                 <textarea id="intrcnCnts" class="c-textarea" name="intrcnCnts" placeholder="자기소개서 내용을 작성해 주세요." maxlength="5000"></textarea>
                                 <div class="char-count-wrap">
                                     <span id="charCount">0</span> / 5000자
@@ -659,7 +689,7 @@
                         </div>
                     </div>
 
-                    <!-- 14. 이력서 공개 여부 (원본 .resume-visibility-wrap 표준) -->
+                    <!-- 14. 이력서 공개 여부 -->
                     <div class="resume-sec-item">
                         <div class="r-sec-head">
                             <span class="r-sec-tit">이력서 공개 여부 <span class="badge-req">필수</span></span>
@@ -695,93 +725,106 @@
                                 </div>
                             </div>
 
-                            <!-- 개인정보 수집·이용 동의 (1, 2, 3번 통합 박스) -->
+                            <!-- [1] 개인정보 수집·이용 등에 관한 사항 박스 -->
                             <div class="r-dynamic-card">
+                                <h3 class="r-block-sub-tit">개인정보 수집·이용 등에 관한 사항을 읽고 동의 여부를 작성하시기 바랍니다.</h3>
+
                                 <!-- 1항 -->
-                                <div class="r-agree-step-row">
-                                    <label class="c-form-label mb-2">1. 개인정보 수집·이용 동의 여부</label>
-                                    <p class="r-sec-guide mb-2">구직자의 취업알선을 위해 신청인의 구직정보 및 고용보험 가입 이력을 수집·이용하는 것에 대한 동의 여부입니다. 동의하지 않는 경우 원활한 취업알선과 관련된 업무처리에 일부 제한을 받을 수 있습니다.</p>
+                                <div class="r-sec-divider-group">
+                                    <label class="c-form-label c-form-label-wrap">1. 개인정보 수집·이용 동의 여부</label>
                                     <div class="resume-visibility-wrap">
                                         <label class="custom-check-label inline-radio"><input type="radio" name="privacyAgree1" value="Y" checked class="radio-privacy-primary"><span class="custom-radio"></span><span class="check-txt">동의</span></label>
                                         <label class="custom-check-label inline-radio"><input type="radio" name="privacyAgree1" value="N" class="radio-privacy-primary"><span class="custom-radio"></span><span class="check-txt">동의하지 않음</span></label>
                                     </div>
+                                    <div class="r-agree-guide-box">
+                                        ※ 구직자의 취업알선을 위해 신청인의 구직정보 및 고용보험 가입 이력을 수집·이용하는 것에 대한 동의 여부입니다. 동의하지 않는 경우 원활한 취업알선과 관련된 업무처리에 일부 제한을 받을 수 있습니다.
+                                    </div>
                                 </div>
 
-                                <!-- 2항 -->
-                                <div class="r-agree-step-row sub-agree-item">
-                                    <label class="c-form-label mb-2">2. 적합한 구인자와 알선을 위해 다른 기관(시스템)에 구직정보를 제공하는 것에 동의하는 경우 해당 기관 선택</label>
-                                    <p class="r-sec-guide mb-2">다른 기관의 구직자 취업알선을 받을 수 있도록 하기 위해 신청자의 구직정보를 제3자에게 제공하는 것에 대한 동의 여부입니다.</p>
-                                    <div class="r-chips-wrap-spacious" id="agencyShareList">
-                                        <label class="custom-check-label inline-check"><input type="checkbox" class="chk-agency"><span class="custom-checkbox"></span><span class="check-txt">지방자치단체 및 일자리센터</span></label>
+                                <!-- 2항 (텍스트 줄바꿈 및 체크박스 상단 간격 확보) -->
+                                <div class="r-sec-divider-group sub-agree-item">
+                                    <label class="c-form-label c-form-label-wrap">2. 적합한 구인자와 알선을 위해 다른 기관(시스템)에 구직정보를 제공하는 것에 동의하는 경우 해당 기관에 체크(☑) 표시하시기 바랍니다. (제공기간: 신청자의 구직신청 유효기간)</label>
+                                    <div class="r-chips-wrap-spacious mt-2" id="agencyShareList">
+                                        <label class="custom-check-label inline-check"><input type="checkbox" class="chk-agency"><span class="custom-checkbox"></span><span class="check-txt">지방자치단체 등 공공기관</span></label>
                                         <label class="custom-check-label inline-check"><input type="checkbox" class="chk-agency"><span class="custom-checkbox"></span><span class="check-txt">여성새로일하기센터</span></label>
                                         <label class="custom-check-label inline-check"><input type="checkbox" class="chk-agency"><span class="custom-checkbox"></span><span class="check-txt">한국장애인고용공단</span></label>
                                         <label class="custom-check-label inline-check"><input type="checkbox" class="chk-agency"><span class="custom-checkbox"></span><span class="check-txt">그 밖의 취업지원 기관</span></label>
                                         <label class="custom-check-label inline-check"><input type="checkbox" id="chkAgencyRefuse"><span class="custom-checkbox"></span><strong class="check-txt text-red">동의하지 않음</strong></label>
                                     </div>
+                                    <div class="r-agree-guide-box">
+                                        ※ 다른 기관의 구직자 취업알선을 받을 수 있도록 하기 위해 신청자의 구직정보, 고용보험 가입이력, 구직급여 등 수급이력, 직업훈련 이력, 자격정보 및 지원 받은 직업 고용서비스 내용을 제3자에게 제공하는 것에 대한 동의 여부입니다. 동의하지 않는 경우 다른 기관의 고용서비스 제공에 일부 제한을 받을 수 있습니다.
+                                    </div>
                                 </div>
 
                                 <!-- 3항 -->
-                                <div class="r-agree-step-row sub-agree-item">
-                                    <label class="c-form-label mb-2">3. 신청인의 구직정보를 워크넷 등을 통해 공개하는 것에 대하여 동의하십니까? (제공기간: 구직신청일로부터 1년)</label>
-                                    <p class="r-sec-guide mb-2">※ 예: 이름, 성별, 나이, 직종, 희망임금, 희망근무지역, 경력, 학력 등이 기업 인사담당자에게 제공됩니다.</p>
+                                <div class="r-sec-divider-group sub-agree-item">
+                                    <label class="c-form-label c-form-label-wrap">3. 신청인의 구직정보를 워크넷 등을 통해 공개하는 것에 대하여 동의하십니까? (제공기간: 구직신청일로부터 1년)</label>
                                     <div class="resume-visibility-wrap">
                                         <label class="custom-check-label inline-radio"><input type="radio" name="worknetOpenAgree" value="Y" checked><span class="custom-radio"></span><span class="check-txt">동의</span></label>
                                         <label class="custom-check-label inline-radio"><input type="radio" name="worknetOpenAgree" value="N"><span class="custom-radio"></span><span class="check-txt">동의하지 않음</span></label>
                                     </div>
+                                    <div class="r-agree-guide-box">
+                                        ※ 예: 이름, 성별, 나이, 직종, 희망임금, 희망근무지역, 경력, 학력 등이 기업 인사담당자에게 제공됩니다.
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- 취업지원 관련 설문 사항 박스 (1항 거부 시 함께 비활성화) -->
+                            <!-- [2] 취업지원과 관련된 사항 박스 (1항 거부 시 함께 비활성화) -->
                             <div class="r-dynamic-card mt-3 sub-agree-item" id="surveyAgreeContainer">
-                                <div class="r-agree-step-row">
-                                    <h3 class="r-sec-tit mb-3">취업지원과 관련된 사항을 읽고 동의 여부를 작성하시기 바랍니다.</h3>
-                                    
-                                    <div class="mt-3">
-                                        <label class="c-form-label">1. 안정적 일자리에 취업하기 전에 일경험을 희망하는지 여부</label>
-                                        <div class="resume-visibility-wrap mt-1">
-                                            <label class="custom-check-label inline-radio"><input type="radio" name="surveyExp" value="Y"><span class="custom-radio"></span><span class="check-txt">희망</span></label>
-                                            <label class="custom-check-label inline-radio"><input type="radio" name="surveyExp" value="N" checked><span class="custom-radio"></span><span class="check-txt">희망하지 않음</span></label>
+                                <h3 class="r-block-sub-tit">취업지원과 관련된 사항을 읽고 동의 여부를 작성하시기 바랍니다.</h3>
+
+                                <div class="r-sec-divider-group">
+                                    <label class="c-form-label c-form-label-wrap">1. 안정적 일자리에 취업하기 전에 일경험을 희망하는지 여부</label>
+                                    <div class="resume-visibility-wrap">
+                                        <label class="custom-check-label inline-radio"><input type="radio" name="surveyExp" value="Y"><span class="custom-radio"></span><span class="check-txt">희망</span></label>
+                                        <label class="custom-check-label inline-radio"><input type="radio" name="surveyExp" value="N" checked><span class="custom-radio"></span><span class="check-txt">희망하지 않음</span></label>
+                                    </div>
+                                </div>
+
+                                <div class="r-sec-divider-group">
+                                    <label class="c-form-label c-form-label-wrap">2. 구직신청의 목적(이유)</label>
+                                    <div class="r-chips-wrap-spacious mt-2">
+                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">취업알선</span></label>
+                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">구직급여</span></label>
+                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">국민취업지원제도</span></label>
+                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">직업훈련</span></label>
+                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">기타</span></label>
+                                    </div>
+                                </div>
+
+                                <div class="r-sec-divider-group">
+                                    <label class="c-form-label c-form-label-wrap">3. 취업알선 희망시기</label>
+                                    <div class="resume-visibility-wrap">
+                                        <label class="custom-check-label inline-radio"><input type="radio" name="surveyPeriod" value="now" checked><span class="custom-radio"></span><span class="check-txt">즉시</span></label>
+                                        <label class="custom-check-label inline-radio"><input type="radio" name="surveyPeriod" value="later"><span class="custom-radio"></span><span class="check-txt">특정시기 필요</span></label>
+                                        <div class="r-date-input-wrap">
+                                            <input type="date" class="c-input input-survey-date" disabled> <span>부터</span>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="mt-3">
-                                        <label class="c-form-label">2. 구직신청의 목적(이유)</label>
-                                        <div class="r-chips-wrap-spacious mt-1">
-                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">취업알선</span></label>
-                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">구직급여</span></label>
-                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">국민취업지원제도</span></label>
-                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">직업훈련</span></label>
-                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">기타</span></label>
-                                        </div>
+                                <div class="r-sec-divider-group">
+                                    <label class="c-form-label c-form-label-wrap">4. 취업취약계층 가입 동의 여부(여성가장, 중장년여성 및 도서지역거주자만 해당합니다.)</label>
+                                    <div class="r-chips-wrap-spacious mt-2">
+                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">여성가장</span></label>
+                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">고용촉진장려금</span></label>
+                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">심층 구직상담</span></label>
+                                        <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">희망하지 않음</span></label>
                                     </div>
-
-                                    <div class="mt-3">
-                                        <label class="c-form-label">3. 취업알선 희망시기</label>
-                                        <div class="resume-visibility-wrap mt-1">
-                                            <label class="custom-check-label inline-radio"><input type="radio" name="surveyPeriod" value="now" checked><span class="custom-radio"></span><span class="check-txt">즉시</span></label>
-                                            <label class="custom-check-label inline-radio"><input type="radio" name="surveyPeriod" value="later"><span class="custom-radio"></span><span class="check-txt">특정시기 필요</span></label>
-                                            <div class="r-date-input-wrap">
-                                                <input type="date" class="c-input input-survey-date" disabled> <span>부터</span>
-                                            </div>
-                                        </div>
+                                    <div class="r-agree-guide-box">
+                                        ※ 취업취약계층에 가입하여 고용촉진 등의 구직알선을 통해 취업하는 경우에는 고용촉진 지원금의 지급대상이 될 수 있습니다. 가입희망자는 사업시행지침을 증명할 수 있는 서류를 제출해야 합니다. 구체적인 사항은 취업상담사에게 문의하시기 바랍니다.
                                     </div>
+                                </div>
 
-                                    <div class="mt-3">
-                                        <label class="c-form-label">4. 취업취약계층 가입 동의 여부</label>
-                                        <div class="r-chips-wrap-spacious mt-1">
-                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">여성가장</span></label>
-                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">고용촉진장려금</span></label>
-                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">심층구직상담</span></label>
-                                            <label class="custom-check-label inline-check"><input type="checkbox"><span class="custom-checkbox"></span><span class="check-txt">희망하지 않음</span></label>
-                                        </div>
+                                <!-- 5항 (안내 텍스트 박스 복원) -->
+                                <div class="r-sec-divider-group">
+                                    <label class="c-form-label c-form-label-wrap">5. 구직신청 마감 시 유선 확인을 통한 재신청 희망 여부</label>
+                                    <div class="resume-visibility-wrap">
+                                        <label class="custom-check-label inline-radio"><input type="radio" name="surveyAutoRenew" value="Y" checked><span class="custom-radio"></span><span class="check-txt">희망</span></label>
+                                        <label class="custom-check-label inline-radio"><input type="radio" name="surveyAutoRenew" value="N"><span class="custom-radio"></span><span class="check-txt">희망하지 않음</span></label>
                                     </div>
-
-                                    <div class="mt-3">
-                                        <label class="c-form-label">5. 구직신청 마감 시 유선 확인을 통한 재신청 희망 여부</label>
-                                        <div class="resume-visibility-wrap mt-1">
-                                            <label class="custom-check-label inline-radio"><input type="radio" name="surveyAutoRenew" value="Y" checked><span class="custom-radio"></span><span class="check-txt">희망</span></label>
-                                            <label class="custom-check-label inline-radio"><input type="radio" name="surveyAutoRenew" value="N"><span class="custom-radio"></span><span class="check-txt">희망하지 않음</span></label>
-                                        </div>
+                                    <div class="r-agree-guide-box">
+                                        ※ 희망하지 않거나 처리하지 않는 경우에는 본인이 직접 방문하거나 워크넷을 통해 다시 신청하셔야 합니다.
                                     </div>
                                 </div>
                             </div>
@@ -878,126 +921,126 @@
     <!-- 스크립트 영역 -->
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-    if (typeof lucide !== 'undefined') lucide.createIcons();
+        if (typeof lucide !== 'undefined') lucide.createIcons();
 
-    // 1. 장애여부 활성화 제어
-    const selectDisability = document.getElementById('selectDisability');
-    const inputDisabilityDetail = document.getElementById('inputDisabilityDetail');
-    selectDisability?.addEventListener('change', (e) => {
-        if (e.target.value === '장애') {
-            inputDisabilityDetail.disabled = false;
-            inputDisabilityDetail.focus();
-        } else {
-            inputDisabilityDetail.disabled = true;
-            inputDisabilityDetail.value = '';
-        }
-    });
-
-    // 2. 경력구분 라디오 전환 (신입 vs 경력)
-    const radioCareerTypes = document.querySelectorAll('.radio-career-type');
-    const inputExpPeriods = document.querySelectorAll('.input-exp-period');
-    radioCareerTypes.forEach(radio => {
-        radio.addEventListener('change', (e) => {
-            const isExp = e.target.value === 'exp';
-            inputExpPeriods.forEach(input => {
-                input.disabled = !isExp;
-                if (!isExp) input.value = '';
-            });
+        // 1. 장애여부 활성화 제어
+        const selectDisability = document.getElementById('selectDisability');
+        const inputDisabilityDetail = document.getElementById('inputDisabilityDetail');
+        selectDisability?.addEventListener('change', (e) => {
+            if (e.target.value === '장애') {
+                inputDisabilityDetail.disabled = false;
+                inputDisabilityDetail.focus();
+            } else {
+                inputDisabilityDetail.disabled = true;
+                inputDisabilityDetail.value = '';
+            }
         });
-    });
 
-    // 3. 희망 근무지역 '지역 무관' 체크 시 1, 2순위 셀렉트 비활성화
-    const chkAnyRegion = document.getElementById('chkAnyRegion');
-    const selRegions = document.querySelectorAll('.sel-region');
-    chkAnyRegion?.addEventListener('change', (e) => {
-        selRegions.forEach(sel => {
-            sel.disabled = e.target.checked;
-            if (e.target.checked) sel.value = '';
-        });
-    });
-
-    // 4. 희망임금 '면접 후 결정 가능' 체크 시 금액 입력 비활성화
-    const chkWageNegotiable = document.getElementById('chkWageNegotiable');
-    const inputWageVal = document.querySelector('.input-wage-val');
-    chkWageNegotiable?.addEventListener('change', (e) => {
-        if (inputWageVal) {
-            inputWageVal.disabled = e.target.checked;
-            if (e.target.checked) inputWageVal.value = '';
-        }
-    });
-
-    // 5. 전산활용 '기타' 체크 시 텍스트 활성화
-    const chkEtcComputer = document.getElementById('chkEtcComputer');
-    const inputEtcComputer = document.getElementById('inputEtcComputer');
-    chkEtcComputer?.addEventListener('change', (e) => {
-        if (inputEtcComputer) {
-            inputEtcComputer.disabled = !e.target.checked;
-            if (!e.target.checked) inputEtcComputer.value = '';
-        }
-    });
-
-    // 6. 개인정보 1번 '동의하지 않음' 선택 시 2, 3항 및 취업지원 설문 영역 전체 비활성화
-    const radioPrivacy1 = document.querySelectorAll('.radio-privacy-primary');
-    const subAgreeItems = document.querySelectorAll('.sub-agree-item');
-    radioPrivacy1.forEach(radio => {
-        radio.addEventListener('change', (e) => {
-            const isRefused = e.target.value === 'N';
-            subAgreeItems.forEach(item => {
-                if (isRefused) {
-                    item.classList.add('disabled-zone');
-                } else {
-                    item.classList.remove('disabled-zone');
-                }
-                const inputs = item.querySelectorAll('input, select');
-                inputs.forEach(el => {
-                    el.disabled = isRefused;
+        // 2. 경력구분 라디오 전환 (신입 vs 경력)
+        const radioCareerTypes = document.querySelectorAll('.radio-career-type');
+        const inputExpPeriods = document.querySelectorAll('.input-exp-period');
+        radioCareerTypes.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const isExp = e.target.value === 'exp';
+                inputExpPeriods.forEach(input => {
+                    input.disabled = !isExp;
+                    if (!isExp) input.value = '';
                 });
             });
         });
-    });
 
-    // 7. 다른 기관 정보 제공 '동의하지 않음' 선택 시 타 기관 체크 해제 및 비활성화
-    const chkAgencyRefuse = document.getElementById('chkAgencyRefuse');
-    const chkAgencies = document.querySelectorAll('.chk-agency');
-    chkAgencyRefuse?.addEventListener('change', (e) => {
-        chkAgencies.forEach(chk => {
-            chk.disabled = e.target.checked;
-            if (e.target.checked) chk.checked = false;
+        // 3. 희망 근무지역 '지역 무관' 체크 시 1, 2순위 셀렉트 비활성화
+        const chkAnyRegion = document.getElementById('chkAnyRegion');
+        const selRegions = document.querySelectorAll('.sel-region');
+        chkAnyRegion?.addEventListener('change', (e) => {
+            selRegions.forEach(sel => {
+                sel.disabled = e.target.checked;
+                if (e.target.checked) sel.value = '';
+            });
         });
-    });
 
-    // 8. 취업알선 희망시기 '특정시기 필요' 선택 시 날짜 활성화
-    const radiosSurveyPeriod = document.querySelectorAll('input[name="surveyPeriod"]');
-    const inputSurveyDate = document.querySelector('.input-survey-date');
-    radiosSurveyPeriod.forEach(radio => {
-        radio.addEventListener('change', (e) => {
-            if (inputSurveyDate) {
-                const isLater = e.target.value === 'later';
-                inputSurveyDate.disabled = !isLater;
-                if (!isLater) inputSurveyDate.value = '';
+        // 4. 희망임금 '면접 후 결정 가능' 체크 시 금액 입력 비활성화
+        const chkWageNegotiable = document.getElementById('chkWageNegotiable');
+        const inputWageVal = document.querySelector('.input-wage-val');
+        chkWageNegotiable?.addEventListener('change', (e) => {
+            if (inputWageVal) {
+                inputWageVal.disabled = e.target.checked;
+                if (e.target.checked) inputWageVal.value = '';
             }
         });
-    });
 
-    // 9. 경력 재직 중 체크 시 퇴사년월 disabled 처리 (이벤트 위임)
-    document.addEventListener('change', (e) => {
-        if (e.target.classList.contains('chk-employed')) {
-            const parentCard = e.target.closest('.r-dynamic-card');
-            const leaveDateInput = parentCard?.querySelector('.input-leave-date');
-            if (leaveDateInput) {
-                leaveDateInput.disabled = e.target.checked;
-                if (e.target.checked) leaveDateInput.value = '';
+        // 5. 전산활용 '기타' 체크 시 텍스트 활성화
+        const chkEtcComputer = document.getElementById('chkEtcComputer');
+        const inputEtcComputer = document.getElementById('inputEtcComputer');
+        chkEtcComputer?.addEventListener('change', (e) => {
+            if (inputEtcComputer) {
+                inputEtcComputer.disabled = !e.target.checked;
+                if (!e.target.checked) inputEtcComputer.value = '';
             }
-        }
-    });
+        });
 
-    // 10. 자기소개서 글자수 카운팅
-    const intrcnCnts = document.getElementById('intrcnCnts');
-    const charCount = document.getElementById('charCount');
-    intrcnCnts?.addEventListener('input', (e) => {
-        if (charCount) charCount.textContent = e.target.value.length;
+        // 6. [중요] 개인정보 1번 '동의하지 않음' 선택 시 2, 3항 및 취업지원 설문 영역 전체 비활성화 연동
+        const radioPrivacy1 = document.querySelectorAll('.radio-privacy-primary');
+        const subAgreeItems = document.querySelectorAll('.sub-agree-item');
+        radioPrivacy1.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const isRefused = e.target.value === 'N';
+                subAgreeItems.forEach(item => {
+                    if (isRefused) {
+                        item.classList.add('disabled-zone');
+                    } else {
+                        item.classList.remove('disabled-zone');
+                    }
+                    const inputs = item.querySelectorAll('input, select');
+                    inputs.forEach(el => {
+                        el.disabled = isRefused;
+                    });
+                });
+            });
+        });
+
+        // 7. 다른 기관 정보 제공 '동의하지 않음' 선택 시 타 기관 체크 해제 및 비활성화
+        const chkAgencyRefuse = document.getElementById('chkAgencyRefuse');
+        const chkAgencies = document.querySelectorAll('.chk-agency');
+        chkAgencyRefuse?.addEventListener('change', (e) => {
+            chkAgencies.forEach(chk => {
+                chk.disabled = e.target.checked;
+                if (e.target.checked) chk.checked = false;
+            });
+        });
+
+        // 8. 취업알선 희망시기 '특정시기 필요' 선택 시 날짜 활성화
+        const radiosSurveyPeriod = document.querySelectorAll('input[name="surveyPeriod"]');
+        const inputSurveyDate = document.querySelector('.input-survey-date');
+        radiosSurveyPeriod.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (inputSurveyDate) {
+                    const isLater = e.target.value === 'later';
+                    inputSurveyDate.disabled = !isLater;
+                    if (!isLater) inputSurveyDate.value = '';
+                }
+            });
+        });
+
+        // 9. 경력 재직 중 체크 시 퇴사년월 disabled 처리 (이벤트 위임)
+        document.addEventListener('change', (e) => {
+            if (e.target.classList.contains('chk-employed')) {
+                const parentCard = e.target.closest('.r-dynamic-card');
+                const leaveDateInput = parentCard?.querySelector('.input-leave-date');
+                if (leaveDateInput) {
+                    leaveDateInput.disabled = e.target.checked;
+                    if (e.target.checked) leaveDateInput.value = '';
+                }
+            }
+        });
+
+        // 10. 자기소개서 글자수 카운팅
+        const intrcnCnts = document.getElementById('intrcnCnts');
+        const charCount = document.getElementById('charCount');
+        intrcnCnts?.addEventListener('input', (e) => {
+            if (charCount) charCount.textContent = e.target.value.length;
+        });
     });
-});
     </script>
 
 </body>

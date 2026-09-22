@@ -859,7 +859,7 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
 .resume-bottom-btns { display: flex; gap: 1.2rem; margin-top: 4.8rem; padding-top: 3.2rem; border-top: 1px solid #f1f5f9; }
 .resume-visibility-wrap { display: flex; align-items: center; justify-content: flex-start; gap: 3.2rem; }
 .resume-visibility-wrap .custom-check-label { width: auto; }
-.resume-visibility-wrap .inline-radio .check-txt { font-size: 1.5rem; font-weight: 600; color: #111827; }
+.resume-visibility-wrap .inline-radio .check-txt { font-size: 1.5rem; font-weight: 500; color: #111827; }
 @media (max-width: 768px) {
   .resume-form-card { padding: 2.8rem 2.0rem; }
   .r-grid-2, .r-grid-3 { grid-template-columns: 1fr; gap: 1.2rem; }
