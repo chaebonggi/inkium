@@ -553,7 +553,7 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
 .btn-back-link:hover { color: #111827; }
 .btn-back-link svg { width: 1.8rem; height: 1.8rem; }
 .comp-detail-card { background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 2.0rem; overflow: hidden; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); }
-.comp-cover-banner{position:relative;width:100%;height:20.0rem;background:radial-gradient(ellipse at top left,#10b981 0%,#064e3b 35%,#0b1329 100%);overflow:hidden;}
+.comp-cover-banner {position:relative;width:100%;height:20.0rem;background:radial-gradient(ellipse at top left,#10b981 0%,#064e3b 35%,#0b1329 100%);overflow:hidden;}
 .comp-cover-banner img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
 .comp-cover-banner::after{content:'';position:absolute;inset:0;background-color:rgba(0,0,0,0.5);pointer-events:none;}
 .comp-body-wrap { padding: 0 4.0rem 4.0rem; position: relative; }
@@ -1119,8 +1119,9 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
 
 /* 참여기업 5열 그리드 카드 */
 .pav-comp-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.6rem; }
-.c-card-pav-comp { display: flex; flex-direction: column; align-items: center; text-align: center; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 1.4rem; padding: 2.4rem 1.6rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); transition: all 0.2s ease; cursor: pointer; text-decoration: none; color: inherit; }
+.c-card-pav-comp { display: flex; flex-direction: column; align-items: center; position: relative; text-align: center; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 1.4rem; padding: 2.4rem 1.6rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); transition: all 0.2s ease; cursor: pointer; text-decoration: none; color: inherit; }
 .c-card-pav-comp:hover { transform: translateY(-4px); border-color: #059669; box-shadow: 0 10px 20px -4px rgba(5, 150, 105, 0.1); }
+.c-card-pav-comp .c-corp-badge {position: absolute; top: 1rem; left: 1rem; font-size: 1rem;}
 .p-comp-logo { width: 5.6rem; height: 5.6rem; border-radius: 1.2rem; background-color: #f8fafc; border: 1px solid #f1f5f9; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-bottom: 1.6rem; flex-shrink: 0; }
 .p-comp-logo img { width: 100%; height: 100%; object-fit: cover; }
 .p-comp-name { font-size: 1.55rem; font-weight: 700; color: #111827; margin-bottom: 0.8rem; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: color 0.15s ease; }
