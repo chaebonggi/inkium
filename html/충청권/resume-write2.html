@@ -173,6 +173,7 @@
             .r-date-input-wrap .c-input{width:16.0rem;height:4.2rem;}
             .r-agree-guide-box{background-color:#f8fafc;border:1px solid #e2e8f0;border-radius:0.8rem;padding:1.2rem 1.6rem;margin-top:1.2rem;font-size:1.25rem;color:#64748b;line-height:1.6;word-break:keep-all;}
             .disabled-zone{opacity:0.45;pointer-events:none;}
+
             @media (max-width:768px){
             .r-wage-input-grid{grid-template-columns:1fr;}
             .r-chips-wrap-spacious{gap:1.0rem 1.6rem;}
@@ -287,6 +288,7 @@
                         </div>
                         <div class="r-sec-body">
                             <div class="r-dynamic-card">
+                                <button type="button" class="btn-r-del" title="삭제"><i data-lucide="trash-2"></i></button>
                                 <div class="r-grid-2">
                                     <div class="c-form-group">
                                         <label class="c-form-label">직종명</label>
@@ -424,6 +426,7 @@
                         </div>
                         <div class="r-sec-body">
                             <div class="r-dynamic-card">
+                                <button type="button" class="btn-r-del" title="삭제"><i data-lucide="trash-2"></i></button>
                                 <div class="r-grid-2">
                                     <div class="c-form-group">
                                         <label class="c-form-label">학교명</label>
@@ -486,6 +489,7 @@
                         </div>
                         <div class="r-sec-body">
                             <div class="r-dynamic-card">
+                                <button type="button" class="btn-r-del" title="삭제"><i data-lucide="trash-2"></i></button>
                                 <div class="r-grid-2">
                                     <div class="c-form-group">
                                         <label class="c-form-label">회사명</label>
@@ -502,7 +506,7 @@
                                         <input type="month" class="c-input">
                                     </div>
                                     <div class="c-form-group">
-                                        <div class="c-form-label-row">
+                                        <div class="c-form-label-row flex-between">
                                             <label class="c-form-label">퇴사년월</label>
                                             <label class="custom-check-label inline-check">
                                                 <input type="checkbox" class="chk-employed">
@@ -535,6 +539,7 @@
                         </div>
                         <div class="r-sec-body">
                             <div class="r-dynamic-card">
+                                <button type="button" class="btn-r-del" title="삭제"><i data-lucide="trash-2"></i></button>
                                 <div class="r-grid-3">
                                     <div class="c-form-group"><label class="c-form-label">자격증명</label><input type="text" class="c-input" placeholder="자격증 명칭"></div>
                                     <div class="c-form-group"><label class="c-form-label">발급기관</label><input type="text" class="c-input" placeholder="발행처 입력"></div>
@@ -552,6 +557,7 @@
                         </div>
                         <div class="r-sec-body">
                             <div class="r-dynamic-card">
+                                <button type="button" class="btn-r-del" title="삭제"><i data-lucide="trash-2"></i></button>
                                 <div class="r-grid-2">
                                     <div class="c-form-group"><label class="c-form-label">훈련과정명</label><input type="text" class="c-input" placeholder="과정명 입력"></div>
                                     <div class="c-form-group">
@@ -608,6 +614,7 @@
                         </div>
                         <div class="r-sec-body">
                             <div class="r-dynamic-card">
+                                <button type="button" class="btn-r-del" title="삭제"><i data-lucide="trash-2"></i></button>
                                 <div class="r-grid-2">
                                     <div class="c-form-group">
                                         <label class="c-form-label">외국어명</label>
@@ -925,127 +932,142 @@
     <script src="./js/style.js"></script>
     <!-- 스크립트 영역 -->
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        if (typeof lucide !== 'undefined') lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') lucide.createIcons();
 
-        // 1. 장애여부 활성화 제어
-        const selectDisability = document.getElementById('selectDisability');
-        const inputDisabilityDetail = document.getElementById('inputDisabilityDetail');
-        selectDisability?.addEventListener('change', (e) => {
-            if (e.target.value === '장애') {
-                inputDisabilityDetail.disabled = false;
-                inputDisabilityDetail.focus();
-            } else {
-                inputDisabilityDetail.disabled = true;
-                inputDisabilityDetail.value = '';
-            }
-        });
-
-        // 2. 경력구분 라디오 전환 (신입 vs 경력)
-        const radioCareerTypes = document.querySelectorAll('.radio-career-type');
-        const inputExpPeriods = document.querySelectorAll('.input-exp-period');
-        radioCareerTypes.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                const isExp = e.target.value === 'exp';
-                inputExpPeriods.forEach(input => {
-                    input.disabled = !isExp;
-                    if (!isExp) input.value = '';
-                });
-            });
-        });
-
-        // 3. 희망 근무지역 '지역 무관' 체크 시 1, 2순위 셀렉트 비활성화
-        const chkAnyRegion = document.getElementById('chkAnyRegion');
-        const selRegions = document.querySelectorAll('.sel-region');
-        chkAnyRegion?.addEventListener('change', (e) => {
-            selRegions.forEach(sel => {
-                sel.disabled = e.target.checked;
-                if (e.target.checked) sel.value = '';
-            });
-        });
-
-        // 4. 희망임금 '면접 후 결정 가능' 체크 시 금액 입력 비활성화
-        const chkWageNegotiable = document.getElementById('chkWageNegotiable');
-        const inputWageVal = document.querySelector('.input-wage-val');
-        chkWageNegotiable?.addEventListener('change', (e) => {
-            if (inputWageVal) {
-                inputWageVal.disabled = e.target.checked;
-                if (e.target.checked) inputWageVal.value = '';
-            }
-        });
-
-        // 5. 전산활용 '기타' 체크 시 텍스트 활성화
-        const chkEtcComputer = document.getElementById('chkEtcComputer');
-        const inputEtcComputer = document.getElementById('inputEtcComputer');
-        chkEtcComputer?.addEventListener('change', (e) => {
-            if (inputEtcComputer) {
-                inputEtcComputer.disabled = !e.target.checked;
-                if (!e.target.checked) inputEtcComputer.value = '';
-            }
-        });
-
-        // 6. [중요] 개인정보 1번 '동의하지 않음' 선택 시 2, 3항 및 취업지원 설문 영역 전체 비활성화 연동
-        const radioPrivacy1 = document.querySelectorAll('.radio-privacy-primary');
-        const subAgreeItems = document.querySelectorAll('.sub-agree-item');
-        radioPrivacy1.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                const isRefused = e.target.value === 'N';
-                subAgreeItems.forEach(item => {
-                    if (isRefused) {
-                        item.classList.add('disabled-zone');
+            // 1. 블록 삭제 기능 (원본 로직 그대로 유지)
+            document.addEventListener('click', (e) => {
+                const btnDel = e.target.closest('.btn-r-del');
+                if (btnDel) {
+                    const card = btnDel.closest('.r-dynamic-card');
+                    const parentList = card?.parentElement;
+                    if (parentList && parentList.children.length > 1) {
+                        card.remove();
                     } else {
-                        item.classList.remove('disabled-zone');
+                        alert('최소 1개 이상의 항목이 유지되어야 합니다.');
                     }
-                    const inputs = item.querySelectorAll('input, select');
-                    inputs.forEach(el => {
-                        el.disabled = isRefused;
+                }
+            });
+
+            // 2. 장애여부 활성화 제어
+            const selectDisability = document.getElementById('selectDisability');
+            const inputDisabilityDetail = document.getElementById('inputDisabilityDetail');
+            selectDisability?.addEventListener('change', (e) => {
+                if (e.target.value === '장애') {
+                    inputDisabilityDetail.disabled = false;
+                    inputDisabilityDetail.focus();
+                } else {
+                    inputDisabilityDetail.disabled = true;
+                    inputDisabilityDetail.value = '';
+                }
+            });
+
+            // 3. 경력구분 라디오 전환 (신입 vs 경력)
+            const radioCareerTypes = document.querySelectorAll('.radio-career-type');
+            const inputExpPeriods = document.querySelectorAll('.input-exp-period');
+            radioCareerTypes.forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    const isExp = e.target.value === 'exp';
+                    inputExpPeriods.forEach(input => {
+                        input.disabled = !isExp;
+                        if (!isExp) input.value = '';
                     });
                 });
             });
-        });
 
-        // 7. 다른 기관 정보 제공 '동의하지 않음' 선택 시 타 기관 체크 해제 및 비활성화
-        const chkAgencyRefuse = document.getElementById('chkAgencyRefuse');
-        const chkAgencies = document.querySelectorAll('.chk-agency');
-        chkAgencyRefuse?.addEventListener('change', (e) => {
-            chkAgencies.forEach(chk => {
-                chk.disabled = e.target.checked;
-                if (e.target.checked) chk.checked = false;
+            // 4. 희망 근무지역 '지역 무관' 체크 제어
+            const chkAnyRegion = document.getElementById('chkAnyRegion');
+            const selRegions = document.querySelectorAll('.sel-region');
+            chkAnyRegion?.addEventListener('change', (e) => {
+                selRegions.forEach(sel => {
+                    sel.disabled = e.target.checked;
+                    if (e.target.checked) sel.value = '';
+                });
+            });
+
+            // 5. 희망임금 '면접 후 결정 가능' 체크 제어
+            const chkWageNegotiable = document.getElementById('chkWageNegotiable');
+            const inputWageVal = document.querySelector('.input-wage-val');
+            chkWageNegotiable?.addEventListener('change', (e) => {
+                if (inputWageVal) {
+                    inputWageVal.disabled = e.target.checked;
+                    if (e.target.checked) inputWageVal.value = '';
+                }
+            });
+
+            // 6. 전산활용 '기타' 체크 제어
+            const chkEtcComputer = document.getElementById('chkEtcComputer');
+            const inputEtcComputer = document.getElementById('inputEtcComputer');
+            chkEtcComputer?.addEventListener('change', (e) => {
+                if (inputEtcComputer) {
+                    inputEtcComputer.disabled = !e.target.checked;
+                    if (!e.target.checked) inputEtcComputer.value = '';
+                }
+            });
+
+            // 7. 개인정보 1번 '동의하지 않음' 선택 시 하위 영역 전체 비활성화
+            const radioPrivacy1 = document.querySelectorAll('.radio-privacy-primary');
+            const subAgreeItems = document.querySelectorAll('.sub-agree-item');
+            radioPrivacy1.forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    const isRefused = e.target.value === 'N';
+                    subAgreeItems.forEach(item => {
+                        if (isRefused) {
+                            item.classList.add('disabled-zone');
+                        } else {
+                            item.classList.remove('disabled-zone');
+                        }
+                        const inputs = item.querySelectorAll('input, select');
+                        inputs.forEach(el => {
+                            el.disabled = isRefused;
+                        });
+                    });
+                });
+            });
+
+            // 8. 타 기관 정보 제공 '동의하지 않음' 제어
+            const chkAgencyRefuse = document.getElementById('chkAgencyRefuse');
+            const chkAgencies = document.querySelectorAll('.chk-agency');
+            chkAgencyRefuse?.addEventListener('change', (e) => {
+                chkAgencies.forEach(chk => {
+                    chk.disabled = e.target.checked;
+                    if (e.target.checked) chk.checked = false;
+                });
+            });
+
+            // 9. 취업알선 희망시기 '특정시기 필요' 선택 제어
+            const radiosSurveyPeriod = document.querySelectorAll('input[name="surveyPeriod"]');
+            const inputSurveyDate = document.querySelector('.input-survey-date');
+            radiosSurveyPeriod.forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    if (inputSurveyDate) {
+                        const isLater = e.target.value === 'later';
+                        inputSurveyDate.disabled = !isLater;
+                        if (!isLater) inputSurveyDate.value = '';
+                    }
+                });
+            });
+
+            // 10. 경력 재직 중 체크 시 퇴사년월 제어 (이벤트 위임)
+            document.addEventListener('change', (e) => {
+                if (e.target.classList.contains('chk-employed')) {
+                    const parentCard = e.target.closest('.r-dynamic-card');
+                    const leaveDateInput = parentCard?.querySelector('.input-leave-date');
+                    if (leaveDateInput) {
+                        leaveDateInput.disabled = e.target.checked;
+                        if (e.target.checked) leaveDateInput.value = '';
+                    }
+                }
+            });
+
+            // 11. 자기소개서 실시간 글자 수 카운팅
+            const intrcnCnts = document.getElementById('intrcnCnts');
+            const charCount = document.getElementById('charCount');
+            intrcnCnts?.addEventListener('input', (e) => {
+                if (charCount) charCount.textContent = e.target.value.length;
             });
         });
 
-        // 8. 취업알선 희망시기 '특정시기 필요' 선택 시 날짜 활성화
-        const radiosSurveyPeriod = document.querySelectorAll('input[name="surveyPeriod"]');
-        const inputSurveyDate = document.querySelector('.input-survey-date');
-        radiosSurveyPeriod.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                if (inputSurveyDate) {
-                    const isLater = e.target.value === 'later';
-                    inputSurveyDate.disabled = !isLater;
-                    if (!isLater) inputSurveyDate.value = '';
-                }
-            });
-        });
-
-        // 9. 경력 재직 중 체크 시 퇴사년월 disabled 처리 (이벤트 위임)
-        document.addEventListener('change', (e) => {
-            if (e.target.classList.contains('chk-employed')) {
-                const parentCard = e.target.closest('.r-dynamic-card');
-                const leaveDateInput = parentCard?.querySelector('.input-leave-date');
-                if (leaveDateInput) {
-                    leaveDateInput.disabled = e.target.checked;
-                    if (e.target.checked) leaveDateInput.value = '';
-                }
-            }
-        });
-
-        // 10. 자기소개서 글자수 카운팅
-        const intrcnCnts = document.getElementById('intrcnCnts');
-        const charCount = document.getElementById('charCount');
-        intrcnCnts?.addEventListener('input', (e) => {
-            if (charCount) charCount.textContent = e.target.value.length;
-        });
-    });
     </script>
 
 </body>
