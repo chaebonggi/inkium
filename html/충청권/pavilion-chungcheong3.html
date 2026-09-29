@@ -259,7 +259,8 @@
         .privacy-bullet-list li::before { content: '•'; position: absolute; left: 0; top: 0; color: #64748b; font-weight: 700; }
         .privacy-bullet-list strong { color: #1e293b; }
         .preapply-check-wrap { display: flex; align-items: center; padding: 0.6rem 0; }
-        .custom-check-group { display: inline-flex; align-items: center; gap: 1.0rem; }
+        .custom-check-group {    display: flex; align-items: center; gap: 0.8rem;  cursor: pointer; }
+        .custom-check-group .check-text { cursor: pointer; user-select: none; }
         .custom-check-input { position: absolute; opacity: 0; width: 0; height: 0; margin: 0; pointer-events: none; }
         .custom-check-box { width: 2.0rem; height: 2.0rem; border: 1.5px solid #cbd5e1; border-radius: 0.4rem; background-color: #ffffff; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; }
         .custom-check-input:checked + .custom-check-box { background-color: #0284c7; border-color: #0284c7; }
@@ -748,11 +749,11 @@
                             </ul>
                         </div>
                         <div class="preapply-check-wrap mt-2">
-                            <div class="custom-check-group">
+                            <label class="custom-check-group" for="chkPrivacyAgree">
                                 <input class="custom-check-input" id="chkPrivacyAgree" onchange="document.getElementById('btnSubmitPreApply').disabled = !this.checked;" type="checkbox">
-                                <label for="chkPrivacyAgree" class="custom-check-box" aria-label="개인정보 제공 동의 체크"></label>
+                                <span class="custom-check-box"></span>
                                 <span class="check-text">개인정보 제공에 동의합니다.</span>
-                            </div>
+                            </label>
                         </div>
                     </div>
                 </div>
