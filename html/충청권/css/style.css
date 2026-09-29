@@ -53,8 +53,8 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
 }
 @media (max-width: 640px) {
   .brand-logo{padding:0 1.2rem;}
-  .brand-logo::before{bottom:-4px;border-radius:0 0 8px 8px;}
-  .brand-logo-img{height:28px;}
+  .brand-logo::before {top: 0.8rem; bottom: 0.8rem; border-radius: 0.5rem;}
+  .brand-logo-img{height:24px;}
 }
 /* //header */
 
