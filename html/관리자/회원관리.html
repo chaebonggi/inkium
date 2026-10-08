@@ -1,0 +1,594 @@
+<html>
+<head>
+	<title>회원관리</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Expires" content="-1">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=logout,menu,open_in_new,search" rel="stylesheet" />
+	<link  rel="stylesheet" type="text/css"  href="./css/krds.min.css" />
+	<link  rel="stylesheet" type="text/css"  href="./css/main.css" />
+	<link  rel="stylesheet" type="text/css"  href="./css/jquery-ui.css" />
+	<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="./js/krds.min.js" ></script>
+	<script type="text/javascript" src="./js/run.js" ></script>
+	<script type="text/javascript" src="./js/common.js" ></script>	
+	<script type="text/javascript" src="./js/util.js" ></script>		
+	<script type="text/javascript" src="./js/showModalDialog.js" ></script>	
+	<script type="text/javascript" src="./js/jquery-ui.js"></script>	
+	<script type="text/javascript" src="./js/jquery-sortable-lists.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+	
+	<!-- 로딩 -->
+	<div class="loading" style="display: none;text-align: center;top:50%;left:50%;position:absolute;z-index:99999;">
+	   <input type="hidden" id="progress_width" value="100.00000000000004">
+	   <div>
+		<img src="./images/loading.png" alt="로딩">
+		<p>Loading... Please Wait</p>
+		<div class="loading_pro">
+			<span class="loading_pro_bar"></span>
+		</div>
+		</div>
+	</div>
+	 <!-- //로딩 -->
+		
+	<div id="jc-wrap">
+        <!-- 건너뛰기 링크 -->
+        <div id="krds-skip-link">
+            <a href="#container">본문 바로가기</a>
+        </div>
+        <!-- //건너뛰기 링크 -->
+
+        <!-- header -->
+        <header id="jc-header">
+        	<div class="header-top">
+        		<div class="toggle_snb"><span class="material-symbols-outlined" id="toggle_snb">menu</span></div>
+        		<div id="gnb_wrap"><a href="javascript:;" onclick="topMenuClick('menuOrd_4');" class="top-item menuOrd_4 active">회원/기업관리</a><a href="javascript:;" onclick="topMenuClick('menuOrd_5');" class="top-item menuOrd_5">구인구직 관리</a><a href="javascript:;" onclick="topMenuClick('menuOrd_6');" class="top-item menuOrd_6">구인구직 관리(기업)</a><a href="javascript:;" onclick="topMenuClick('menuOrd_8');" class="top-item menuOrd_8">게시판 관리</a><a href="javascript:;" onclick="topMenuClick('menuOrd_10');" class="top-item menuOrd_10">환경설정</a></div>
+        		<div class="goto_site"><a href="/" target="_blank">사이트 바로가기 <span class="material-symbols-outlined">open_in_new</span></a></div>
+        	</div>
+         	<div class="breadcrumd_wrap">
+         		<ul id="naviArea">
+                    <li>홈</li>
+                    <li>통계 관리</li>
+                    <li>사이트 접속 현황</li>
+                    <li class="current">페이지별 접속 현황</li>
+                </ul>
+        	</div>
+            <style>
+                .snb_wrap .gnb-list .lnb-list .lnb-item:has(.lnb-submenu) [class*=lnb-toggle]::after{content:''!important;background-color:#94a3b8!important;transform:rotate(0deg)!important;transition:transform 0.2s ease!important;}
+                .snb_wrap .gnb-list .lnb-list .lnb-item:has(.lnb-submenu) [class*=lnb-toggle][aria-expanded="true"]::after{transform:rotate(180deg)!important;background-color:#fff!important;}
+                .snb_wrap .gnb-list .lnb-list .lnb-item .lnb-submenu{display:none;padding:2px 0 4px 12px;margin:2px 0 4px 0;}
+                .snb_wrap .gnb-list .lnb-list .lnb-item:has([aria-expanded="true"]) .lnb-submenu{display:block;}
+                .snb_wrap .gnb-list .lnb-list .lnb-item .lnb-submenu li{margin:1px 0;}
+                .snb_wrap .gnb-list .lnb-list .lnb-item .lnb-submenu li .lnb-btn{font-size:13px;color:#94a3b8!important;padding:5px 12px;border-radius:4px;border-left:none!important;background:none!important;}
+                .snb_wrap .gnb-list .lnb-list .lnb-item .lnb-submenu li .lnb-btn::before{content:'-';margin-right:6px;display:inline-block;}
+                .snb_wrap .gnb-list .lnb-list .lnb-item .lnb-submenu li:hover .lnb-btn{color:#fff!important;}
+                .snb_wrap .gnb-list .lnb-list .lnb-item .lnb-submenu li.active .lnb-btn{color:#38bdf8!important;font-weight:700!important;}
+            </style>
+            <div class="snb_wrap">
+            	<div class="site_info">
+            		<div class="logo">
+            			<img src="./images/cba_logo.svg" alt="cba_logo" class="img_logo"> 충북기업진흥원
+            		</div>
+            	</div>
+            	<div class="login_usr">
+           	 		<span id="loginName">-</span> (<span id="roleName">-</span>)님<br/>
+           	 		<button onclick="logout();"><span class="material-symbols-outlined">logout</span> 로그아웃</button>
+           		</div>
+           		<nav>
+                    <ul class="gnb-list" id="menuArea">
+                        <li class="gnb-item menuOrd_7 active" id="menuNo_stat">
+                            <div class="gnb-depth">
+                                <div class="krds-side-navigation">
+                                    <h3 class="lnb-tit">통계 관리</h3>
+                                    <ul class="lnb-list" role="menubar">
+                                        <li class="lnb-item" id="menuStat_1">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">회원 통계</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_2">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">기업 현황</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_3">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">입사 접수 현황</a>
+                                        </li>
+                                        <li class="lnb-item active" id="menuStat_4">
+                                            <a href="javascript:void(0);" class="lnb-btn lnb-toggle" role="menuitem" aria-expanded="true">사이트 접속 현황</a>
+                                            <div class="lnb-submenu">
+                                                <ul>
+                                                    <li class="active"><a href="javascript:void(0);" class="lnb-btn">페이지별 접속 현황</a></li>
+                                                    <li><a href="javascript:void(0);" class="lnb-btn">사용자별 접속 현황</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_5">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">전문채용관 현황</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+	            <footer>
+	            	ⓒ2026 충북기업진흥원. All rights reserved.
+	            </footer>    
+            </div>
+        </header>
+            
+<div id="container">
+		<section>
+			<h1 class="contain-title">회원 목록</h1>
+			<div class="search_wrap">
+				<div class="form-group">
+	                <div class="form-conts">
+	                    <div class="input-group full">
+	                        <select class="krds-form-select small type02 w200" id="searchKey" name="searchKey" title="검색">
+	                          <option value="1">회원명</option>
+	                          <option value="2">아이디</option>
+	                          <option value="2">이메일</option>
+	                          <option value="2">연락처</option>
+	                        </select>
+	                        <input type="text" class="krds-input small fgrow" id="searchWord" name="searchWord" placeholder="검색어 입력" value="">
+	                        <div class="btn-group">
+	                          <button type="button" class="krds-btn small search" onclick="goPage(1);"><i class="svg-icon ico-sch right"></i>검색</button>
+	                      	</div>                                       
+	                    </div>  
+	                    <div class="input-group cal">
+                            <dl>
+                              <dt>
+                                <p class="fw700">가입일</p>
+                              </dt>
+                              <dd>
+                                <!-- calendar -->
+                                <div class="form-group cal">
+                                  <div class="form-conts calendar-conts">
+                                      <div class="calendar-input">
+                                      		<ul class="input-group range set">
+	                                            <li class="datep-wrap">
+	                                                <input type="text" class="krds-input small datep w180 hasDatepicker" id="searchStDt" name="searchStDt" placeholder="시작날짜" title="시작날짜 입력" value=""><button type="button" class="ui-datepicker-trigger"><span class="sr-only">달력 열기</span><i class="svg-icon ico-calendar"></i></button>
+	                                            </li>
+	                                            <li class="mark">~</li>
+	                                            <li class="datep-wrap">
+	                                                <input type="text" class="krds-input small datep w180 hasDatepicker" id="searchEndDt" name="searchEndDt" placeholder="종료날짜" title="종료날짜 입력" value=""><button type="button" class="ui-datepicker-trigger"><span class="sr-only">달력 열기</span><i class="svg-icon ico-calendar"></i></button>
+	                                            </li>
+	                                        </ul>
+                                      </div>
+                                  </div>
+                                </div>
+                                <!-- //calendar -->
+                                <div class="btn-group">
+                                    <button type="button" class="krds-btn small nomal" onclick="javascript:setSearchDate('N')">오늘</button>  
+	                                <button type="button" class="krds-btn small nomal" onclick="javascript:setSearchDate('A')">15일</button>  
+	                                <button type="button" class="krds-btn small nomal" onclick="javascript:setSearchDate('B')">1개월</button> 
+	                                <button type="button" class="krds-btn small nomal" onclick="javascript:setSearchDate('C')">3개월</button> 
+	                                <button type="button" class="krds-btn small nomal" onclick="javascript:setSearchDate('D')">6개월</button> 
+                                </div>
+                              </dd>
+                            </dl>
+                          </div>
+                          <div class="input-group">
+		                      <div class="dl-group">
+	                            <dl>
+	                              <dt><p class="fw700">회원구분</p></dt>
+	                              <dd>
+	                                <div>
+	                                  <select class="krds-form-select small type02 w180" id="searchAuthorCode" name="searchAuthorCode" title="상태">
+	                                    <option value="">선택</option>
+										
+											<option value="ROLE_ADMIN">관리자</option>
+										
+											<option value="ROLE_COMPANY">기업회원</option>
+										
+											<option value="ROLE_CSLT">직업상담사</option>
+										
+											<option value="ROLE_USER">일반 사용자</option>
+										
+	                                  </select>
+	                                </div>
+	                              </dd>
+	                              
+	                              <dt><p class="fw700">회원상태</p></dt>
+	                              <dd>
+	                                <div>
+	                                  <select class="krds-form-select small type02 w180" id="searchUseYn" name="searchUseYn" title="상태">
+	                                    <option value="">선택</option>
+	                                    <option value="Y">사용</option>
+	                                    <option value="N">미사용</option>
+	                                  </select>
+	                                </div>
+	                              </dd>
+	                              
+	                              <dt><p class="fw700">승인상태</p></dt>
+	                              <dd>
+	                                <div>
+	                                  <select class="krds-form-select small type02 w180" id="searchMberSttus" name="searchMberSttus" title="상태">
+	                                    <option value="">선택</option>
+	                                    <option value="A">신청</option>
+	                                    <option value="P">승인</option>
+	                                  </select>
+	                                </div>
+	                              </dd>
+	                            </dl>
+	                          </div>  
+                          </div>                              
+	                </div>
+	       		</div>
+	       	</div>
+	       	<div class="table_wrap mt40">
+	       		<div class="table-group">
+	                  <div class="input-group">
+	                      <div>
+	                        <p class="total">총 729 명</p>
+	                      </div>                            
+	                      <div class="btn-group mla">	                      
+	                          <select class="krds-form-select small type02" id="recordCountPerPage" name="recordCountPerPage" onchange="goPage(1);">
+	                          	  <option value="1">1개</option>
+	                          	  <option value="10" selected="">10개</option>
+	                              <option value="20">20개</option>
+	                              <option value="30">30개</option>
+	                              <option value="50">50개</option>
+	                              <option value="100">100개</option>
+	                          </select>
+	                          <button type="button" class="krds-btn small type02 cBtn" onclick="goMemberEdit('');"><i class="svg-icon ico-plus02 right"></i> 신규 등록</button>
+	                          <button type="button" class="krds-btn small type03" onclick="excelDown();"><i class="svg-icon ico-download right"></i> 엑셀 다운로드</button>
+	                          <button type="button" class="krds-btn small type02" onclick="goMemberSttusChg();">선택일괄승인</button>
+	                      </div>
+	                  </div>
+	                  
+	                   <!-- table -->
+	                   <div class="table-container">
+	                    <div class="krds-table-wrap tbl-type02">
+	                      <table class="tbl col data min-full">
+	                          <caption>회원 목록</caption>
+	                          <colgroup>
+								  <col style="width: 50px;">		                          	
+	                              <col style="width: 80px;">
+	                              <col>
+	                              <col>
+	                              <col>
+	                              <col>
+	                              <col>
+	                              <col>
+	                              <col>
+	                              <col>
+	                          </colgroup>
+	                          <thead>
+	                              <tr>
+	                              	  <th scope="col">
+											<div class="krds-form-check">
+												<input type="checkbox" id="chkAll" name="chkAll">
+												<label for="chkAll"><span class="sr-only">선택</span></label>
+											</div>
+										</th>
+		                              <th scope="col">No.</th>
+		                              <th scope="col">구분</th>
+		                              <th scope="col">아이디</th>
+		                              <th scope="col">회원명</th>
+		                              <th scope="col">연락처</th>
+		                              <th scope="col">상태</th>
+		                              <th scope="col">승인</th>
+		                              <th scope="col">가입일</th>
+		                              <th scope="col">기관명</th>
+	                              </tr>
+	                          </thead>
+	                          <tbody>
+	                          	
+	                               	
+	                               		
+	                                		<tr>
+	                                			<td scope="row">
+	                                				<div class="krds-form-check">
+								                        <input type="checkbox" id="chk_0" name="chkUserNo" value="202610081657866">
+										                <label for="chk_0"><span class="sr-only">선택</span></label>
+									                </div>
+							                    </td>
+		                                  		<td scope="row">729</td>
+		                                  		<td>기업회원(면접관)</td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081657866')" class="krds-btn small link" title="상세페이지">sgpark0520</a></td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081657866')" class="krds-btn small link" title="상세페이지">박성근</a></td>
+		                                  		<td>010-6251-0132</td>
+		                                  		<td>사용</td>
+		                                  		<td>신청</td>
+		                                  		<td>2026-10-08</td>
+		                                  		<td>㈜삼아벤처</td>
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+	                                			<td scope="row">
+	                                				<div class="krds-form-check">
+								                        <input type="checkbox" id="chk_1" name="chkUserNo" value="202610081651865">
+										                <label for="chk_1"><span class="sr-only">선택</span></label>
+									                </div>
+							                    </td>
+		                                  		<td scope="row">728</td>
+		                                  		<td>일반 사용자(개인)</td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081651865')" class="krds-btn small link" title="상세페이지">suzz08</a></td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081651865')" class="krds-btn small link" title="상세페이지">박수정</a></td>
+		                                  		<td>010-3746-6090</td>
+		                                  		<td>사용</td>
+		                                  		<td>승인</td>
+		                                  		<td>2026-10-08</td>
+		                                  		<td></td>
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+	                                			<td scope="row">
+	                                				<div class="krds-form-check">
+								                        <input type="checkbox" id="chk_2" name="chkUserNo" value="202610081650864">
+										                <label for="chk_2"><span class="sr-only">선택</span></label>
+									                </div>
+							                    </td>
+		                                  		<td scope="row">727</td>
+		                                  		<td>일반 사용자(개인)</td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081650864')" class="krds-btn small link" title="상세페이지">ridridridrid90</a></td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081650864')" class="krds-btn small link" title="상세페이지">유혜지</a></td>
+		                                  		<td>010-9287-1431</td>
+		                                  		<td>사용</td>
+		                                  		<td>승인</td>
+		                                  		<td>2026-10-08</td>
+		                                  		<td></td>
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+	                                			<td scope="row">
+	                                				<div class="krds-form-check">
+								                        <input type="checkbox" id="chk_3" name="chkUserNo" value="202610081645863">
+										                <label for="chk_3"><span class="sr-only">선택</span></label>
+									                </div>
+							                    </td>
+		                                  		<td scope="row">726</td>
+		                                  		<td>일반 사용자(개인)</td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081645863')" class="krds-btn small link" title="상세페이지">gee011045</a></td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081645863')" class="krds-btn small link" title="상세페이지">전지현</a></td>
+		                                  		<td>010-4255-2174</td>
+		                                  		<td>사용</td>
+		                                  		<td>승인</td>
+		                                  		<td>2026-10-08</td>
+		                                  		<td></td>
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+	                                			<td scope="row">
+	                                				<div class="krds-form-check">
+								                        <input type="checkbox" id="chk_4" name="chkUserNo" value="202610081642862">
+										                <label for="chk_4"><span class="sr-only">선택</span></label>
+									                </div>
+							                    </td>
+		                                  		<td scope="row">725</td>
+		                                  		<td>일반 사용자(개인)</td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081642862')" class="krds-btn small link" title="상세페이지">suheepharma</a></td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081642862')" class="krds-btn small link" title="상세페이지">정수희</a></td>
+		                                  		<td>010-2201-2685</td>
+		                                  		<td>사용</td>
+		                                  		<td>승인</td>
+		                                  		<td>2026-10-08</td>
+		                                  		<td></td>
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+	                                			<td scope="row">
+	                                				<div class="krds-form-check">
+								                        <input type="checkbox" id="chk_5" name="chkUserNo" value="202610081640861">
+										                <label for="chk_5"><span class="sr-only">선택</span></label>
+									                </div>
+							                    </td>
+		                                  		<td scope="row">724</td>
+		                                  		<td>일반 사용자(개인)</td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081640861')" class="krds-btn small link" title="상세페이지">cogus0862</a></td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081640861')" class="krds-btn small link" title="상세페이지">황지빈</a></td>
+		                                  		<td>010-6775-0862</td>
+		                                  		<td>사용</td>
+		                                  		<td>승인</td>
+		                                  		<td>2026-10-08</td>
+		                                  		<td></td>
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+	                                			<td scope="row">
+	                                				<div class="krds-form-check">
+								                        <input type="checkbox" id="chk_6" name="chkUserNo" value="202610081635860">
+										                <label for="chk_6"><span class="sr-only">선택</span></label>
+									                </div>
+							                    </td>
+		                                  		<td scope="row">723</td>
+		                                  		<td>일반 사용자(공공기관)</td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081635860')" class="krds-btn small link" title="상세페이지">zoomihee</a></td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081635860')" class="krds-btn small link" title="상세페이지">주미희</a></td>
+		                                  		<td>010-3414-2064</td>
+		                                  		<td>사용</td>
+		                                  		<td>승인</td>
+		                                  		<td>2026-10-08</td>
+		                                  		<td></td>
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+	                                			<td scope="row">
+	                                				<div class="krds-form-check">
+								                        <input type="checkbox" id="chk_7" name="chkUserNo" value="202610081621859">
+										                <label for="chk_7"><span class="sr-only">선택</span></label>
+									                </div>
+							                    </td>
+		                                  		<td scope="row">722</td>
+		                                  		<td>일반 사용자(개인)</td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081621859')" class="krds-btn small link" title="상세페이지">honeybeelawn</a></td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081621859')" class="krds-btn small link" title="상세페이지">김성현</a></td>
+		                                  		<td>010-4166-8715</td>
+		                                  		<td>사용</td>
+		                                  		<td>승인</td>
+		                                  		<td>2026-10-08</td>
+		                                  		<td></td>
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+	                                			<td scope="row">
+	                                				<div class="krds-form-check">
+								                        <input type="checkbox" id="chk_8" name="chkUserNo" value="202610081621858">
+										                <label for="chk_8"><span class="sr-only">선택</span></label>
+									                </div>
+							                    </td>
+		                                  		<td scope="row">721</td>
+		                                  		<td>일반 사용자(개인)</td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081621858')" class="krds-btn small link" title="상세페이지">syyroek26</a></td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081621858')" class="krds-btn small link" title="상세페이지">신정욱</a></td>
+		                                  		<td>010-5483-4023</td>
+		                                  		<td>사용</td>
+		                                  		<td>승인</td>
+		                                  		<td>2026-10-08</td>
+		                                  		<td></td>
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+	                                			<td scope="row">
+	                                				<div class="krds-form-check">
+								                        <input type="checkbox" id="chk_9" name="chkUserNo" value="202610081621857">
+										                <label for="chk_9"><span class="sr-only">선택</span></label>
+									                </div>
+							                    </td>
+		                                  		<td scope="row">720</td>
+		                                  		<td>일반 사용자(개인)</td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081621857')" class="krds-btn small link" title="상세페이지">walshi2</a></td>
+		                                  		<td><a href="javascript:goMemberEdit('202610081621857')" class="krds-btn small link" title="상세페이지">최한별</a></td>
+		                                  		<td>010-5915-9905</td>
+		                                  		<td>사용</td>
+		                                  		<td>승인</td>
+		                                  		<td>2026-10-08</td>
+		                                  		<td></td>
+		                                  	</tr>
+	                                 	
+	                               	
+	                               	
+	                             
+	                          </tbody>
+	                      </table>
+	                    </div>
+	                  </div>
+	
+	                  <!-- //table -->
+	                  <!--paging-->
+				    		    
+				    	<div class="krds-pagination type02">
+		                    <a href="javascript:goPage('1');" class="page-navi prev-start"><span class="sr-only">처음으로</span></a>
+		                    
+				          		
+				          			<a href="javascript:alert('첫 페이지입니다.')" class="page-navi prev"><span class="sr-only">이전</span></a>
+				          		
+				          		
+				          	
+		                    
+		                    <div class="page-links">
+			                    
+						           	
+						           		
+						           			<a href="javascript:goPage('1')" id="page_1" class="page-link active"><span class="sr-only">현재페이지 </span>1</a>
+						           		
+						           		
+						           	
+					            
+						           	
+						           		
+						           		
+						           			<a href="javascript:goPage('2')" id="page_2" class="page-link">2</a>
+						           		
+						           	
+					            
+						           	
+						           		
+						           		
+						           			<a href="javascript:goPage('3')" id="page_3" class="page-link">3</a>
+						           		
+						           	
+					            
+						           	
+						           		
+						           		
+						           			<a href="javascript:goPage('4')" id="page_4" class="page-link">4</a>
+						           		
+						           	
+					            
+						           	
+						           		
+						           		
+						           			<a href="javascript:goPage('5')" id="page_5" class="page-link">5</a>
+						           		
+						           	
+					            
+						           	
+						           		
+						           		
+						           			<a href="javascript:goPage('6')" id="page_6" class="page-link">6</a>
+						           		
+						           	
+					            
+						           	
+						           		
+						           		
+						           			<a href="javascript:goPage('7')" id="page_7" class="page-link">7</a>
+						           		
+						           	
+					            
+						           	
+						           		
+						           		
+						           			<a href="javascript:goPage('8')" id="page_8" class="page-link">8</a>
+						           		
+						           	
+					            
+						           	
+						           		
+						           		
+						           			<a href="javascript:goPage('9')" id="page_9" class="page-link">9</a>
+						           		
+						           	
+					            
+						           	
+						           		
+						           		
+						           			<a href="javascript:goPage('10')" id="page_10" class="page-link">10</a>
+						           		
+						           	
+					            
+				            </div>
+				            
+							
+				            	
+				            	
+				            		<a href="javascript:goPage('2')" class="page-navi next"><span class="sr-only">다음</span></a>
+				            	
+				            				            		                    
+		                    <a href="javascript:goPage('73')" class="page-navi next-end"><span class="sr-only">마지막으로</span></a>
+		                </div>
+				    
+	              </div>
+	       	</div>	
+		</section>
+	    
+	    <div class="container_wr">
+	        <section>
+	            <div class="inner-section">
+	                
+	                
+	               
+	              
+	              
+	                
+	
+	                <!-- <div class="m-pagination">
+	                    <a href="javscript:void(0);">이전</a>
+	                    <span>1</span> / 15
+	                    <a href="javscript:void(0);">다음</a>
+	                </div> -->
+	            </div>
+	        </section>                
+	    </div>
+	</div>
+
+
+
+            
+        <!-- </div> -->
+    </div>
+		
+</body>
+</html>
