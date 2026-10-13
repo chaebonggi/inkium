@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>회원 통계</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Expires" content="-1">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=logout,menu,open_in_new,search" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="./css/krds.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="./css/통계현황.css" />
+	<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="./js/krds.min.js"></script>
+	<script type="text/javascript" src="./js/run.js"></script>
+	<script type="text/javascript" src="./js/common.js"></script>	
+	<script type="text/javascript" src="./js/util.js"></script>		
+	<script type="text/javascript" src="./js/showModalDialog.js"></script>	
+	<script type="text/javascript" src="./js/jquery-ui.js"></script>	
+	<script type="text/javascript" src="./js/jquery-sortable-lists.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	
+	<!-- 로딩 -->
+	<div class="loading" style="display: none;text-align: center;top:50%;left:50%;position:absolute;z-index:99999;">
+	   <input type="hidden" id="progress_width" value="100.00000000000004">
+	   <div>
+		<img src="./images/loading.png" alt="로딩">
+		<p>Loading... Please Wait</p>
+		<div class="loading_pro">
+			<span class="loading_pro_bar"></span>
+		</div>
+		</div>
+	</div>
+	<!-- //로딩 -->
+		
+	<div id="jc-wrap">
+        <div id="krds-skip-link">
+            <a href="#container">본문 바로가기</a>
+        </div>
+
+        <header id="jc-header">
+        	<div class="header-top">
+        		<div class="toggle_snb"><span class="material-symbols-outlined" id="toggle_snb">menu</span></div>
+        		<div id="gnb_wrap">
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_4');" class="top-item menuOrd_4">회원/기업관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_5');" class="top-item menuOrd_5">구인구직 관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_6');" class="top-item menuOrd_6">구인구직 관리(기업)</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_8');" class="top-item menuOrd_8">게시판 관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_7');" class="top-item menuOrd_7 active">통계 관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_10');" class="top-item menuOrd_10">환경설정</a>
+        		</div>
+        		<div class="goto_site"><a href="/" target="_blank">사이트 바로가기 <span class="material-symbols-outlined">open_in_new</span></a></div>
+        	</div>
+         	<div class="breadcrumd_wrap">
+         		<ul id="naviArea">
+                    <li>홈</li>
+                    <li>통계 관리</li>
+                    <li class="current">회원 통계</li>
+                </ul>
+        	</div>
+
+            <div class="snb_wrap">
+            	<div class="site_info">
+            		<div class="logo">
+            			<img src="./images/cba_logo.svg" alt="cba_logo" class="img_logo"> 충북기업진흥원
+            		</div>
+            	</div>
+            	<div class="login_usr">
+           	 		<span id="loginName">-</span> (<span id="roleName">-</span>)님<br/>
+           	 		<button onclick="logout();"><span class="material-symbols-outlined">logout</span> 로그아웃</button>
+           		</div>
+           		<nav>
+                    <ul class="gnb-list" id="menuArea">
+                        <li class="gnb-item menuOrd_7 active" id="menuNo_stat">
+                            <div class="gnb-depth">
+                                <div class="krds-side-navigation">
+                                    <h3 class="lnb-tit">통계 관리</h3>
+                                    <ul class="lnb-list" role="menubar">
+                                        <li class="lnb-item active" id="menuStat_1">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">회원 통계</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_2">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">기업 현황</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_3">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">입사 접수 현황</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_4">
+                                            <a href="javascript:void(0);" class="lnb-btn lnb-toggle" role="menuitem" aria-expanded="false">사이트 접속 현황</a>
+                                            <div class="lnb-submenu">
+                                                <ul>
+                                                    <li><a href="javascript:void(0);" class="lnb-btn">페이지별 접속 현황</a></li>
+                                                    <li><a href="javascript:void(0);" class="lnb-btn">사용자별 접속 현황</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_5">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">전문채용관 현황</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+	            <footer>
+	            	ⓒ2026 충북기업진흥원. All rights reserved.
+	            </footer>    
+            </div>
+        </header>
+            
+		<div id="container">
+			<section>
+				<h1 class="contain-title">회원 통계</h1>
+				
+				<!-- 1. 조회 기간 설정 -->
+				<div class="search_wrap">
+					<div class="form-group">
+						<div class="form-conts">
+							<div class="input-group cal alc">
+								<div class="calendar-conts">
+									<div class="calendar-input">
+										<ul class="input-group range set">
+											<li class="datep-wrap">
+												<input type="text" class="krds-input small datep w180 hasDatepicker" id="searchStDt" name="searchStDt" placeholder="시작날짜" title="시작날짜 입력" value="2026-07-22">
+												<button type="button" class="ui-datepicker-trigger"><span class="sr-only">달력 열기</span><i class="svg-icon ico-calendar"></i></button>
+											</li>
+											<li class="mark">~</li>
+											<li class="datep-wrap">
+												<input type="text" class="krds-input small datep w180 hasDatepicker" id="searchEndDt" name="searchEndDt" placeholder="종료날짜" title="종료날짜 입력" value="2026-07-28">
+												<button type="button" class="ui-datepicker-trigger"><span class="sr-only">달력 열기</span><i class="svg-icon ico-calendar"></i></button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="btn-group">
+									<button type="button" class="krds-btn small search wauto">조회</button>
+								</div>
+								<span class="range-txt">(조회가능한 기간 범위: 최대 31일)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 2. 회원현황 요약 차트 영역 -->
+				<div class="mt40">
+					<h2 class="stat-subtit">회원현황 요약</h2>
+					<div class="stat-card-grid">
+						<!-- 차트 1: 가입 및 탈퇴 추이 -->
+						<div class="stat-card">
+							<div class="stat-card-head">
+								<h3 class="card-tit">가입 및 탈퇴 추이</h3>
+								<div class="stat-legend">
+									<span class="lg-gray">가입</span>
+									<span class="lg-dark">탈퇴</span>
+								</div>
+							</div>
+							<div class="stat-chart-box">
+								<canvas id="chartJoinQuit"></canvas>
+								<div class="stat-nodata" style="display: none;">
+									<p class="nodata-txt">조회 기간 내 데이터가 없습니다.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- 차트 2: 연령별/성별 분포 -->
+						<div class="stat-card">
+							<div class="stat-card-head">
+								<h3 class="card-tit">연령별/성별 분포</h3>
+								<div class="stat-legend">
+									<span class="lg-gray">남성</span>
+									<span class="lg-dark">여성</span>
+								</div>
+							</div>
+							<div class="stat-chart-box">
+								<canvas id="chartAgeGender"></canvas>
+								<div class="stat-nodata" style="display: none;">
+									<p class="nodata-txt">조회 기간 내 데이터가 없습니다.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 3. 상세 데이터 테이블 영역 -->
+				<div class="table_wrap mt40">
+					<div class="table-group">
+						<div class="stat-tbl-head">
+							<div>
+								<p class="tit">상세 데이터</p>
+							</div>                            
+							<div class="btn-group mla">	                      
+								<button type="button" class="krds-btn small type03" onclick="excelDown();">
+									<i class="svg-icon ico-download right"></i> 엑셀 다운로드
+								</button>
+							</div>
+						</div>
+						
+						<div class="table-container">
+							<div class="krds-table-wrap tbl-type02">
+								<table class="tbl col data min-full">
+									<caption>회원 통계 상세 데이터</caption>
+									<colgroup>
+										<col style="width: 12rem;">
+										<col style="width: 8rem;">
+										<col style="width: 8rem;">
+										<col style="width: 10rem;">
+										<col style="width: 7rem;">
+										<col style="width: 7rem;">
+										<col style="width: 7rem;">
+										<col style="width: 7rem;">
+										<col style="width: 7rem;">
+										<col style="width: 7rem;">
+										<col style="width: 8rem;">
+										<col style="width: 8rem;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">일자</th>
+											<th scope="col">가입</th>
+											<th scope="col">탈퇴</th>
+											<th scope="col">누적</th>
+											<th scope="col">10대</th>
+											<th scope="col">20대</th>
+											<th scope="col">30대</th>
+											<th scope="col">40대</th>
+											<th scope="col">50대</th>
+											<th scope="col">60대</th>
+											<th scope="col">남성</th>
+											<th scope="col">여성</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- 데이터 0건일 때 사용 형태:
+										<tr>
+											<td colspan="100%" class="nodata">
+												<div class="stat-nodata">
+													<p class="nodata-txt">조회된 상세 데이터가 없습니다.</p>
+												</div>
+											</td>
+										</tr>
+										-->
+										<tr>
+											<td>2026-07-28</td>
+											<td>18</td>
+											<td>1</td>
+											<td>12,946</td>
+											<td>0</td>
+											<td>4</td>
+											<td>7</td>
+											<td>3</td>
+											<td>2</td>
+											<td>0</td>
+											<td>7</td>
+											<td>9</td>
+										</tr>
+										<tr>
+											<td>2026-07-27</td>
+											<td>20</td>
+											<td>2</td>
+											<td>12,931</td>
+											<td>1</td>
+											<td>5</td>
+											<td>4</td>
+											<td>4</td>
+											<td>3</td>
+											<td>3</td>
+											<td>8</td>
+											<td>12</td>
+										</tr>
+										<tr>
+											<td>2026-07-26</td>
+											<td>16</td>
+											<td>3</td>
+											<td>12,913</td>
+											<td>0</td>
+											<td>3</td>
+											<td>6</td>
+											<td>4</td>
+											<td>1</td>
+											<td>1</td>
+											<td>6</td>
+											<td>10</td>
+										</tr>
+										<tr>
+											<td>2026-07-25</td>
+											<td>13</td>
+											<td>0</td>
+											<td>12,901</td>
+											<td>0</td>
+											<td>6</td>
+											<td>4</td>
+											<td>2</td>
+											<td>1</td>
+											<td>0</td>
+											<td>7</td>
+											<td>6</td>
+										</tr>
+										<tr>
+											<td>2026-07-24</td>
+											<td>11</td>
+											<td>0</td>
+											<td>12,888</td>
+											<td>1</td>
+											<td>5</td>
+											<td>3</td>
+											<td>2</td>
+											<td>0</td>
+											<td>0</td>
+											<td>4</td>
+											<td>7</td>
+										</tr>
+										<tr>
+											<td>2026-07-23</td>
+											<td>28</td>
+											<td>4</td>
+											<td>12,877</td>
+											<td>2</td>
+											<td>10</td>
+											<td>7</td>
+											<td>5</td>
+											<td>3</td>
+											<td>1</td>
+											<td>12</td>
+											<td>16</td>
+										</tr>
+										<tr>
+											<td>2026-07-22</td>
+											<td>23</td>
+											<td>2</td>
+											<td>12,853</td>
+											<td>1</td>
+											<td>8</td>
+											<td>7</td>
+											<td>4</td>
+											<td>2</td>
+											<td>0</td>
+											<td>11</td>
+											<td>12</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</section>
+		</div>
+    </div>
+
+	<!-- Chart.js 렌더링 스크립트 -->
+	<script>
+		$(document).ready(function() {
+			// 1. 가입 및 탈퇴 추이 (세로 막대 차트)
+			const ctx1 = document.getElementById('chartJoinQuit').getContext('2d');
+			new Chart(ctx1, {
+				type: 'bar',
+				data: {
+					labels: ['07-22', '07-23', '07-24', '07-25', '07-26', '07-27', '07-28'],
+					datasets: [
+						{
+							label: '가입',
+							data: [23, 28, 11, 13, 16, 20, 18],
+							backgroundColor: '#cbd5e1',
+							borderRadius: 3,
+							barPercentage: 0.6,
+							categoryPercentage: 0.5
+						},
+						{
+							label: '탈퇴',
+							data: [2, 4, 0, 0, 3, 2, 1],
+							backgroundColor: '#334155',
+							borderRadius: 3,
+							barPercentage: 0.6,
+							categoryPercentage: 0.5
+						}
+					]
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					plugins: {
+						legend: { display: false },
+						tooltip: {
+							callbacks: {
+								label: (ctx) => ` ${ctx.dataset.label}: ${ctx.raw}명`
+							}
+						}
+					},
+					scales: {
+						x: {
+							grid: { display: false },
+							ticks: { color: '#64748b', font: { size: 12 } }
+						},
+						y: {
+							beginAtZero: true,
+							grid: { color: '#f1f5f9' },
+							ticks: { color: '#94a3b8', font: { size: 11 } }
+						}
+					}
+				}
+			});
+
+			// 2. 연령별/성별 분포 (한 줄 대칭 피라미드 막대 차트)
+			const ctx2 = document.getElementById('chartAgeGender').getContext('2d');
+			const maleData = [-5, -41, -38, -24, -14, -5];
+			const femaleData = [6, 44, 45, 23, 12, 4];
+
+			new Chart(ctx2, {
+				type: 'bar',
+				data: {
+					labels: ['10대 이하', '20대', '30대', '40대', '50대', '60대 이상'],
+					datasets: [
+						{
+							label: '남성',
+							data: maleData,
+							backgroundColor: '#cbd5e1',
+							borderRadius: 2,
+							barThickness: 12
+						},
+						{
+							label: '여성',
+							data: femaleData,
+							backgroundColor: '#334155',
+							borderRadius: 2,
+							barThickness: 12
+						}
+					]
+				},
+				options: {
+					indexAxis: 'y',
+					responsive: true,
+					maintainAspectRatio: false,
+					plugins: {
+						legend: { display: false },
+						tooltip: {
+							callbacks: {
+								label: (ctx) => ` ${ctx.dataset.label}: ${Math.abs(ctx.raw)}명`
+							}
+						}
+					},
+					scales: {
+						x: {
+							stacked: true,
+							grid: { color: '#f1f5f9' },
+							ticks: {
+								callback: (val) => Math.abs(val),
+								color: '#94a3b8',
+								font: { size: 11 }
+							}
+						},
+						y: {
+							stacked: true,
+							grid: { display: false },
+							ticks: { color: '#64748b', font: { size: 12, weight: '500' } }
+						}
+					}
+				}
+			});
+		});
+	</script>
+</body>
+</html>

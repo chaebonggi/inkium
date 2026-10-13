@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>사이트 접속 현황</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Expires" content="-1">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=logout,menu,open_in_new,search" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="./css/krds.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="./css/통계현황.css" />
+	<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="./js/krds.min.js"></script>
+	<script type="text/javascript" src="./js/run.js"></script>
+	<script type="text/javascript" src="./js/common.js"></script>	
+	<script type="text/javascript" src="./js/util.js"></script>		
+	<script type="text/javascript" src="./js/showModalDialog.js"></script>	
+	<script type="text/javascript" src="./js/jquery-ui.js"></script>	
+	<script type="text/javascript" src="./js/jquery-sortable-lists.js"></script>
+	<!-- Chart.js CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	
+	<!-- 로딩 -->
+	<div class="loading" style="display: none;text-align: center;top:50%;left:50%;position:absolute;z-index:99999;">
+	   <input type="hidden" id="progress_width" value="100.00000000000004">
+	   <div>
+		<img src="./images/loading.png" alt="로딩">
+		<p>Loading... Please Wait</p>
+		<div class="loading_pro">
+			<span class="loading_pro_bar"></span>
+		</div>
+		</div>
+	</div>
+	<!-- //로딩 -->
+		
+	<div id="jc-wrap">
+        <!-- 건너뛰기 링크 -->
+        <div id="krds-skip-link">
+            <a href="#container">본문 바로가기</a>
+        </div>
+        <!-- //건너뛰기 링크 -->
+
+        <!-- header -->
+        <header id="jc-header">
+        	<div class="header-top">
+        		<div class="toggle_snb"><span class="material-symbols-outlined" id="toggle_snb">menu</span></div>
+        		<div id="gnb_wrap">
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_4');" class="top-item menuOrd_4">회원/기업관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_5');" class="top-item menuOrd_5">구인구직 관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_6');" class="top-item menuOrd_6">구인구직 관리(기업)</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_8');" class="top-item menuOrd_8">게시판 관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_7');" class="top-item menuOrd_7 active">통계 관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_10');" class="top-item menuOrd_10">환경설정</a>
+        		</div>
+        		<div class="goto_site"><a href="/" target="_blank">사이트 바로가기 <span class="material-symbols-outlined">open_in_new</span></a></div>
+        	</div>
+         	<div class="breadcrumd_wrap">
+         		<ul id="naviArea">
+                    <li>홈</li>
+                    <li>통계 관리</li>
+                    <li class="current">사이트 접속 현황</li>
+                </ul>
+        	</div>
+
+            <div class="snb_wrap">
+            	<div class="site_info">
+            		<div class="logo">
+            			<img src="./images/cba_logo.svg" alt="cba_logo" class="img_logo"> 충북기업진흥원
+            		</div>
+            	</div>
+            	<div class="login_usr">
+           	 		<span id="loginName">-</span> (<span id="roleName">-</span>)님<br/>
+           	 		<button onclick="logout();"><span class="material-symbols-outlined">logout</span> 로그아웃</button>
+           		</div>
+           		<nav>
+                    <ul class="gnb-list" id="menuArea">
+                        <li class="gnb-item menuOrd_7 active" id="menuNo_stat">
+                            <div class="gnb-depth">
+                                <div class="krds-side-navigation">
+                                    <h3 class="lnb-tit">통계 관리</h3>
+                                    <ul class="lnb-list" role="menubar">
+                                        <li class="lnb-item" id="menuStat_1">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">회원 통계</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_2">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">기업 현황</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_3">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">입사 접수 현황</a>
+                                        </li>
+                                        <li class="lnb-item active" id="menuStat_4">
+                                            <a href="javascript:void(0);" class="lnb-btn lnb-toggle" role="menuitem" aria-expanded="true">사이트 접속 현황</a>
+                                            <div class="lnb-submenu">
+                                                <ul>
+                                                    <li><a href="javascript:void(0);" class="lnb-btn">페이지별 접속 현황</a></li>
+                                                    <li><a href="javascript:void(0);" class="lnb-btn">사용자별 접속 현황</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_5">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">전문채용관 현황</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+	            <footer>
+	            	ⓒ2026 충북기업진흥원. All rights reserved.
+	            </footer>    
+            </div>
+        </header>
+            
+		<div id="container">
+			<section>
+				<h1 class="contain-title">사이트 접속 현황</h1>
+				
+				<!-- 1. 조회 기간 설정 -->
+				<div class="search_wrap">
+					<div class="form-group">
+						<div class="form-conts">
+							<div class="input-group cal alc">
+								<div class="calendar-conts">
+									<div class="calendar-input">
+										<ul class="input-group range set">
+											<li class="datep-wrap">
+												<input type="text" class="krds-input small datep w180 hasDatepicker" id="searchStDt" name="searchStDt" placeholder="시작날짜" title="시작날짜 입력" value="2026-07-22">
+												<button type="button" class="ui-datepicker-trigger"><span class="sr-only">달력 열기</span><i class="svg-icon ico-calendar"></i></button>
+											</li>
+											<li class="mark">~</li>
+											<li class="datep-wrap">
+												<input type="text" class="krds-input small datep w180 hasDatepicker" id="searchEndDt" name="searchEndDt" placeholder="종료날짜" title="종료날짜 입력" value="2026-07-28">
+												<button type="button" class="ui-datepicker-trigger"><span class="sr-only">달력 열기</span><i class="svg-icon ico-calendar"></i></button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="btn-group">
+									<button type="button" class="krds-btn small search wauto">조회</button>
+								</div>
+								<span class="range-txt">(조회가능한 기간 범위: 최대 31일)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 2. 접속현황 요약 차트 및 인기 페이지 영역 -->
+				<div class="mt40">
+					<h2 class="stat-subtit">접속현황 요약</h2>
+					<div class="stat-card-grid">
+						<!-- 카드 1: 순방문자(UV) 및 페이지뷰(PV) 추이 (막대 + 꺾은선 복합) -->
+						<div class="stat-card">
+							<div class="stat-card-head">
+								<h3 class="card-tit">순방문자(UV) 및 페이지뷰(PV) 추이</h3>
+								<div class="stat-legend">
+									<span class="lg-gray">PV</span>
+									<span class="lg-dark">UV</span>
+								</div>
+							</div>
+							<div class="stat-chart-box">
+								<canvas id="chartPvUv"></canvas>
+								<div class="stat-nodata" style="display: none;">
+									<p class="nodata-txt">조회 기간 내 데이터가 없습니다.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- 카드 2: 인기 페이지 TOP 5 -->
+						<div class="stat-card">
+							<div class="stat-card-head">
+								<h3 class="card-tit">인기 페이지 TOP 5</h3>
+							</div>
+							<div class="stat-tbl-wrap">
+								<table class="stat-mini-tbl">
+									<caption>인기 페이지 TOP 5 목록</caption>
+									<colgroup>
+										<col style="width: auto;">
+										<col style="width: 15rem;">
+										<col style="width: 15rem;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">페이지명</th>
+											<th scope="col">페이지뷰(PV)</th>
+											<th scope="col">비율(%)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="tlt">메인 페이지</td>
+											<td class="tct">4,254</td>
+											<td class="tct">45%</td>
+										</tr>
+										<tr>
+											<td class="tlt">채용공고 목록</td>
+											<td class="tct">2,120</td>
+											<td class="tct">22%</td>
+										</tr>
+										<tr>
+											<td class="tlt">바이오 전문채용관</td>
+											<td class="tct">1,342</td>
+											<td class="tct">15%</td>
+										</tr>
+										<tr>
+											<td class="tlt">미래모빌리티 전문채용관</td>
+											<td class="tct">1,156</td>
+											<td class="tct">12%</td>
+										</tr>
+										<tr>
+											<td class="tlt">마이페이지</td>
+											<td class="tct">920</td>
+											<td class="tct">9.8%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 3. 상세 데이터 테이블 영역 -->
+				<div class="table_wrap mt40">
+					<div class="table-group">
+						<div class="stat-tbl-head">
+							<div>
+								<p class="tit">상세 데이터</p>
+							</div>                            
+							<div class="btn-group mla">	                      
+								<button type="button" class="krds-btn small type03" onclick="excelDown();">
+									<i class="svg-icon ico-download right"></i> 엑셀 다운로드
+								</button>
+							</div>
+						</div>
+						
+						<div class="table-container">
+							<div class="krds-table-wrap tbl-type02">
+								<table class="tbl col data min-full">
+									<caption>사이트 접속 현황 상세 데이터</caption>
+									<colgroup>
+										<col style="width: 14rem;">
+										<col style="width: 14rem;">
+										<col style="width: 14rem;">
+										<col style="width: 14rem;">
+										<col style="width: 12rem;">
+										<col style="width: 12rem;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">일자</th>
+											<th scope="col">방문자수(Visits)</th>
+											<th scope="col">순방문자수(UV)</th>
+											<th scope="col">페이지뷰(PV)</th>
+											<th scope="col">PC(%)</th>
+											<th scope="col">Mobile(%)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- 데이터 0건일 때 사용 형태:
+										<tr>
+											<td colspan="100%" class="nodata">
+												<div class="stat-nodata">
+													<p class="nodata-txt">조회된 상세 데이터가 없습니다.</p>
+												</div>
+											</td>
+										</tr>
+										-->
+										<tr>
+											<td>2026-07-28</td>
+											<td>1,380</td>
+											<td>1,150</td>
+											<td>4,210</td>
+											<td>60%</td>
+											<td>40%</td>
+										</tr>
+										<tr>
+											<td>2026-07-27</td>
+											<td>1,450</td>
+											<td>1,204</td>
+											<td>4,820</td>
+											<td>58%</td>
+											<td>42%</td>
+										</tr>
+										<tr>
+											<td>2026-07-26</td>
+											<td>320</td>
+											<td>276</td>
+											<td>1,245</td>
+											<td>48%</td>
+											<td>52%</td>
+										</tr>
+										<tr>
+											<td>2026-07-25</td>
+											<td>670</td>
+											<td>559</td>
+											<td>1,694</td>
+											<td>51%</td>
+											<td>49%</td>
+										</tr>
+										<tr>
+											<td>2026-07-24</td>
+											<td>870</td>
+											<td>670</td>
+											<td>2,120</td>
+											<td>58%</td>
+											<td>42%</td>
+										</tr>
+										<tr>
+											<td>2026-07-23</td>
+											<td>1,100</td>
+											<td>820</td>
+											<td>3,100</td>
+											<td>52%</td>
+											<td>48%</td>
+										</tr>
+										<tr>
+											<td>2026-07-22</td>
+											<td>1,025</td>
+											<td>800</td>
+											<td>2,600</td>
+											<td>57%</td>
+											<td>43%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</section>
+		</div>
+    </div>
+
+	<!-- Chart.js 렌더링 스크립트 -->
+	<script>
+		$(document).ready(function() {
+			// 순방문자(UV) 및 페이지뷰(PV) 추이: 복합 차트 (세로 막대 + 꺾은선)
+			const ctx = document.getElementById('chartPvUv').getContext('2d');
+			new Chart(ctx, {
+				data: {
+					labels: ['07-22', '07-23', '07-24', '07-25', '07-26', '07-27', '07-28'],
+					datasets: [
+						{
+							type: 'line',
+							label: 'UV',
+							data: [800, 820, 670, 559, 276, 1204, 1150],
+							borderColor: '#334155',
+							backgroundColor: '#334155',
+							borderWidth: 2.5,
+							pointRadius: 3,
+							tension: 0.35,
+							yAxisID: 'y1',
+							order: 1
+						},
+						{
+							type: 'bar',
+							label: 'PV',
+							data: [2600, 3100, 2120, 1694, 1245, 4820, 4210],
+							backgroundColor: '#cbd5e1',
+							borderRadius: 3,
+							barPercentage: 0.45,
+							yAxisID: 'y',
+							order: 2
+						}
+					]
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					plugins: {
+						legend: { display: false },
+						tooltip: {
+							callbacks: {
+								label: (ctx) => ` ${ctx.dataset.label}: ${ctx.raw.toLocaleString()}건`
+							}
+						}
+					},
+					scales: {
+						x: {
+							grid: { display: false },
+							ticks: { color: '#64748b', font: { size: 12 } }
+						},
+						y: {
+							type: 'linear',
+							position: 'left',
+							beginAtZero: true,
+							grid: { color: '#f1f5f9' },
+							ticks: { color: '#94a3b8', font: { size: 11 } }
+						},
+						y1: {
+							type: 'linear',
+							position: 'right',
+							beginAtZero: true,
+							grid: { display: false },
+							ticks: { color: '#94a3b8', font: { size: 11 } }
+						}
+					}
+				}
+			});
+		});
+	</script>
+</body>
+</html>

@@ -133,6 +133,7 @@
         @font-face { font-family: 'Hiikr'; src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101609@hikr-extrabold/hikr-extrabold/HiKR-ExtraBold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
         .blind { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
         .mt8 { margin-top: 8.0rem; }
+        .inner-wrap {padding: 2rem;}
         .pavilion-detail-hero-sec { background-color: #f8fafc; overflow-x: hidden; padding-bottom: 6.0rem; }
         .pav-global-expo { position: relative; width: 100vw; margin-left: calc(-50vw + 50%); background: #05070d url('/images/jobcloud/pavilion_bg.jpg') center 40%/cover no-repeat; padding: 4.0rem 0 0; color: #ffffff; }
         .pav-global-expo::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,7,13,0.45) 0%, rgba(5,7,13,0.6) 60%, #0b0f19 100%); z-index: 1; }
@@ -212,7 +213,7 @@
         .expo-timetable-sec { position: relative; width: 100%; margin-top: 2.0rem; clear: both; }
         .timetable-scroll-wrap { display: block; width: 100%; max-width: 100%; overflow-x: auto !important; overflow-y: hidden; -webkit-overflow-scrolling: touch; touch-action: pan-x; border-radius: 1.2rem; border: 1.5px solid #dbdbdb; box-shadow: 0 4px 15px rgba(0,0,0,0.03); background: #ffffff; box-sizing: border-box; }
         .expo-timetable { width: 100%; min-width: 68.0rem; border-collapse: collapse; table-layout: fixed; text-align: left; background: #ffffff; }
-        .expo-timetable thead th { background-color: #172554; color: #ffffff; font-size: 1.55rem; font-weight: 800; padding: 1.6rem 2.0rem; border-right: 1px solid rgba(255,255,255,0.15); letter-spacing: -0.01em; white-space: nowrap; }
+        .expo-timetable thead th { background-color: #172554; color: #ffffff; font-size: 1.55rem; font-weight: 800; padding: 1.6rem 2.0rem; border-right: 1px solid rgba(255,255,255,0.15); text-align: center; letter-spacing: -0.01em; white-space: nowrap; }
         .expo-timetable thead th:last-child { border-right: none; }
         .expo-timetable tbody td { padding: 1.4rem 2.0rem; font-size: 1.45rem; color: #334155; border-bottom: 1px solid #fde68a; border-right: 1px solid #fef3c7; line-height: 1.5; word-break: keep-all; background: #ffffff; }
         .expo-timetable tbody tr:last-child td { border-bottom: none; }
@@ -272,7 +273,7 @@
         .card-side-bridge { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important; border: 1.5px solid #bae6fd !important; justify-content: center; box-shadow: 0 4px 20px rgba(2, 132, 199, 0.06); } .card-side-bridge .ic-bridge { background-color: #ffffff; color: #0284c7; box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15); margin-bottom: 1.4rem; } .card-side-bridge .bridge-tag { display: inline-block; font-size: 1.25rem; font-weight: 800; color: #0369a1; background: #ffffff; border: 1px solid #bae6fd; padding: 0.35rem 1.2rem; border-radius: 2.0rem; margin-bottom: 1.0rem; } .card-side-bridge .card-tit { font-size: 2.0rem; font-weight: 900; color: #0f172a; margin-bottom: 1.0rem; letter-spacing: -0.02em; } .card-side-bridge .card-desc { font-size: 1.45rem; color: #334155; line-height: 1.6; } .card-side-bridge .card-desc strong { color: #0284c7; font-weight: 800; }
         @media (max-width: 1024px) { .expo-editorial-hero { grid-template-columns: 1fr; gap: 4.0rem; } .poster-year-num { font-size: 8.4rem; } .poster-sub-tit { font-size: 4.6rem; } .poster-hero-tit { font-size: 8.8rem; } .expo-spec-ticker { grid-template-columns: 1fr; } .spec-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 2.2rem 0; } .spec-item:last-child { border-bottom: none; } .expo-sponsors-editorial { flex-direction: column; align-items: flex-start; gap: 1.6rem; } .sponsors-inline-logos { display: flex; flex-wrap: wrap; gap: 1.2rem; width: 100%; justify-content: flex-start; } .sponsors-inline-logos span { width: auto; flex: initial; } .sponsors-inline-logos span.sponsor-logo-lg { width: auto; max-width: 100%; } .pav-info-grid-3 { grid-template-columns: repeat(2, 1fr); } .p-proc-line-steps { flex-direction: column; gap: 0.8rem; } .step-card { width: 100%; justify-content: space-between; padding: 1.4rem 1.8rem; box-sizing: border-box; } .step-arrow { transform: rotate(90deg); } .pc-only-bridge { display: none !important; }}
         @media (max-width: 768px) { .pav-global-expo { padding: 4.0rem 0 0; } .hero-left-editorial { text-align: center; } .poster-year-num { font-size: 7.2rem; } .poster-sub-tit { font-size: 4.0rem; } .poster-hero-tit { font-size: 7.2rem; } .pass-body-layout { flex-direction: column; text-align: center; } .spec-item { text-align: center; align-items: center; } .expo-sponsors-editorial { align-items: flex-start; } .sponsors-inline-logos { justify-content: flex-start; } .pav-white-guide-board { padding: 3.6rem 2.0rem; margin-top: 3.2rem; } .p-guide-main-tit { font-size: 2.2rem; } .pav-info-grid-3 { grid-template-columns: 1fr; } .expo-timetable thead th { padding: 1.2rem 1.4rem; font-size: 1.4rem; } .expo-timetable tbody td { padding: 1.2rem 1.4rem; font-size: 1.35rem; } }
-        @media (max-width: 640px) { .poster-year-num { font-size: 6.8rem; } .poster-sub-tit { font-size: 3.6rem; } .poster-hero-tit { font-size: 6.8rem; } .expo-sponsors-editorial { align-items: flex-start; } .sponsors-inline-logos { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 1.0rem; width: 100%; } .sponsors-inline-logos span { width: auto; flex: initial; padding: 0.6rem 1.2rem; height: 4.0rem; } .sponsors-inline-logos span img { max-height: 2.4rem; max-width: 13.0rem; } .sponsors-inline-logos span.sponsor-logo-lg { width: auto; } .sponsors-inline-logos span.sponsor-logo-lg img { max-height: 2.6rem; max-width: 22.0rem; } .modal-inst-box, .modal-preapply-box { max-height: 90vh; } .modal-inst-box .modal-header, .modal-preapply-box .modal-header { padding: 1.8rem 1.6rem; } .modal-inst-box .modal-body, .modal-preapply-box .modal-body { padding: 1.6rem; } .modal-inst-box .modal-footer, .modal-preapply-box .modal-footer { padding: 1.2rem 1.6rem 1.6rem; } .btn-inst-close, .btn-preapply-submit { max-width: 100%; height: 4.4rem; margin: 0; } .preapply-row .p-label { width: 10.0rem; } .inst-modal-intro, .preapply-privacy-box { padding: 1.4rem 1.6rem; } .inst-modal-intro .intro-tit { font-size: 1.35rem; } .inst-data-table thead th { font-size: 1.25rem; padding: 1.0rem 0.6rem; } .inst-data-table tbody td { font-size: 1.25rem; padding: 1.0rem 0.6rem; } .inst-data-table td.td-left { padding-left: 1.0rem; } .btn-inst-link { padding: 0.4rem 0.8rem; font-size: 1.15rem; } }
+        @media (max-width: 640px) {.inner-wrap {padding: 1rem;} .poster-year-num { font-size: 6.8rem; } .poster-sub-tit { font-size: 3.6rem; } .poster-hero-tit { font-size: 6.8rem; } .expo-sponsors-editorial { align-items: flex-start; } .sponsors-inline-logos { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 1.0rem; width: 100%; } .sponsors-inline-logos span { width: auto; flex: initial; padding: 0.6rem 1.2rem; height: 4.0rem; } .sponsors-inline-logos span img { max-height: 2.4rem; max-width: 13.0rem; } .sponsors-inline-logos span.sponsor-logo-lg { width: auto; } .sponsors-inline-logos span.sponsor-logo-lg img { max-height: 2.6rem; max-width: 22.0rem; } .modal-inst-box, .modal-preapply-box { max-height: 90vh; } .modal-inst-box .modal-header, .modal-preapply-box .modal-header { padding: 1.8rem 1.6rem; } .modal-inst-box .modal-body, .modal-preapply-box .modal-body { padding: 1.6rem; } .modal-inst-box .modal-footer, .modal-preapply-box .modal-footer { padding: 1.2rem 1.6rem 1.6rem; } .btn-inst-close, .btn-preapply-submit { max-width: 100%; height: 4.4rem; margin: 0; } .preapply-row .p-label { width: 10.0rem; } .inst-modal-intro, .preapply-privacy-box { padding: 1.4rem 1.6rem; } .inst-modal-intro .intro-tit { font-size: 1.35rem; } .inst-data-table thead th { font-size: 1.25rem; padding: 1.0rem 0.6rem; } .inst-data-table tbody td { font-size: 1.25rem; padding: 1.0rem 0.6rem; } .inst-data-table td.td-left { padding-left: 1.0rem; } .btn-inst-link { padding: 0.4rem 0.8rem; font-size: 1.15rem; } }
 
         .expo-pavilion-nav-module{margin-bottom:4.8rem;}
         .p-nav-mod-head{display:flex;align-items:center;gap:1.2rem;margin-bottom:2.0rem;}
@@ -305,7 +306,23 @@
         .btn-single-go:hover{background:#ffffff;color:#0284c7;transform:translateX(3px);}
         .btn-single-go i,.btn-single-go svg{width:1.8rem !important;height:1.8rem !important;stroke:currentColor !important;}
         @media (max-width:1024px){.expo-pavilions-quick-grid{grid-template-columns:1fr;gap:1.4rem;}.expo-pavilion-single-banner{flex-direction:column;align-items:flex-start;padding:2.4rem 2.0rem;gap:2.0rem;}.p-single-left{flex-direction:column;align-items:flex-start;gap:1.2rem;}.btn-single-go{width:100%;box-sizing:border-box;}}
-
+        .shuttle-timetable{width:100%;min-width:110.0rem;table-layout:fixed;border-collapse:collapse;border:none;background:#ffffff;}
+        .shuttle-timetable thead tr.main-head-row th{background-color:#1e293b;color:#ffffff;font-size:1.6rem;font-weight:800;text-align:center;padding:1.4rem 1.0rem;border-bottom:1px solid #e2e8f0;border-right:1px solid rgba(255,255,255,0.15);}
+        .shuttle-timetable thead tr.main-head-row th:last-child{border-right:none;}
+        .shuttle-timetable thead tr.sub-head-row th{background-color:#f8fafc;color:#334155;font-size:1.4rem;font-weight:700;text-align:center;padding:1.1rem 0.8rem;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;}
+        .shuttle-timetable thead tr.sub-head-row th:last-child{border-right:none;}
+        .shuttle-timetable tbody td{padding:1.2rem 1.2rem;vertical-align:middle;font-size:1.35rem;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;box-sizing:border-box;}
+        .shuttle-timetable tbody td:last-child{border-right:none;}
+        .shuttle-timetable tbody tr:last-child td{border-bottom:none;}
+        .shuttle-timetable tbody td.td-prog{text-align:left;color:#0f172a;line-height:1.45;word-break:keep-all;}
+        .shuttle-timetable tbody td.td-time{text-align:center;white-space:nowrap;font-size:1.3rem;font-weight:700;color:#2563eb;background-color:#f8fafc;line-height:1.4;}
+        .shuttle-timetable tbody td.empty-cell{background-color:#f8fafc;color:#cbd5e1;text-align:center;}
+        .shuttle-timetable tbody tr.tr-point-dest td{background-color:#eff6ff;border-top:1px solid #e2e8f0;font-weight:800;}
+        .shuttle-timetable tbody tr.tr-point-dest td.td-time{background-color:#dbeafe;color:#1e40af;}
+        .shuttle-timetable tbody tr.tr-point-depart td{background-color:#f0fdf4;border-top:1px solid #e2e8f0;font-weight:800;}
+        .shuttle-timetable tbody tr.tr-point-depart td.td-time{background-color:#dcfce7;color:#166534;}
+        .shuttle-timetable tbody td.text-point{color:#0f172a;}
+        
         </style>
 
         <section class="pavilion-detail-hero-sec">
@@ -674,6 +691,154 @@
                             <div class="step-card"><span class="step-badge">STEP 2</span><span class="step-txt">현장 입장용 QR코드<br> 개인모바일 발송</span></div>
                             <div class="step-card"><span class="step-badge">STEP 3</span><span class="step-txt">오스코 전시장 방문</span></div>
                             <div class="step-card"><span class="step-badge">STEP 4</span><span class="step-txt">현장 면접 및 채용</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 오스코행사 -->
+                    <div class="p-guide-head tct mt8">
+                        <div class="p-guide-title-row">
+                            <span class="p-deco-dots">•••</span>
+                            <h2 class="p-guide-main-tit">오스코행사 차량 셔틀노선</h2>
+                            <span class="p-deco-dots">•••</span>
+                        </div>
+                        <div class="p-title-navy-line"></div>
+                    </div>
+
+                    <!-- 셔틀버스 노선 시간표 -->
+                    <div class="expo-timetable-sec">
+                        <div class="timetable-scroll-wrap">
+                            <table class="expo-timetable shuttle-timetable">
+                                <colgroup>
+                                    <col style="width: 17.5%;">
+                                    <col style="width: 7.5%;">
+                                    <col style="width: 17.5%;">
+                                    <col style="width: 7.5%;">
+                                    <col style="width: 17.5%;">
+                                    <col style="width: 7.5%;">
+                                    <col style="width: 17.5%;">
+                                    <col style="width: 7.5%;">
+                                </colgroup>
+                                <thead>
+                                    <tr class="main-head-row">
+                                        <th colspan="2" class="th-shuttle-group">1호차</th>
+                                        <th colspan="2" class="th-shuttle-group">2호차</th>
+                                        <th colspan="2" class="th-shuttle-group">3호차</th>
+                                        <th colspan="2" class="th-shuttle-group">4호차</th>
+                                    </tr>
+                                    <tr class="sub-head-row">
+                                        <th>장소</th>
+                                        <th>출발</th>
+                                        <th>장소</th>
+                                        <th>출발</th>
+                                        <th>장소</th>
+                                        <th>출발</th>
+                                        <th>장소</th>
+                                        <th>출발</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="td-prog">동남지구 신협 신촌지점<br>(본사랑 정형외과 맞은편)</td>
+                                        <td class="td-time">11:30<br>14:00</td>
+                                        <td class="td-prog">분평현대대우A 버스정류장</td>
+                                        <td class="td-time">11:30<br>14:00</td>
+                                        <td class="td-prog">성화동 한전버스정류장</td>
+                                        <td class="td-time">11:30<br>14:00</td>
+                                        <td class="td-prog">율량2지구농협정류장</td>
+                                        <td class="td-time">11:30<br>14:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-prog">용암동롯데마트버스정류장</td>
+                                        <td class="td-time">11:35<br>14:05</td>
+                                        <td class="td-prog">모충일신장(농협)</td>
+                                        <td class="td-time">11:35<br>14:05</td>
+                                        <td class="td-prog">개신농협버스정류장</td>
+                                        <td class="td-time">11:35<br>14:05</td>
+                                        <td class="td-prog">신흥고버스정류장</td>
+                                        <td class="td-time">11:32<br>14:02</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-prog">금천광장 농협버스정류장</td>
+                                        <td class="td-time">11:40<br>14:10</td>
+                                        <td class="td-prog">꽃다리 버스정류장<br>(서원대학교 방면)</td>
+                                        <td class="td-time">11:40<br>14:10</td>
+                                        <td class="td-prog">가경소방서맞은편</td>
+                                        <td class="td-time">11:40<br>14:10</td>
+                                        <td class="td-prog">문화제조창농협앞</td>
+                                        <td class="td-time">11:40<br>14:10</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-prog">상당공원(지하도)</td>
+                                        <td class="td-time">11:50<br>14:20</td>
+                                        <td class="td-prog">모충방송통신대학교 맞은편<br>(버스정류장)</td>
+                                        <td class="td-time">11:46<br>14:16</td>
+                                        <td class="td-prog">가경동 고속버스정류장</td>
+                                        <td class="td-time">11:45<br>14:15</td>
+                                        <td class="td-prog">서원구청앞</td>
+                                        <td class="td-time">11:45<br>14:15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-prog">사직사거리(파리바게트)</td>
+                                        <td class="td-time">11:53<br>14:23</td>
+                                        <td class="td-prog">성화동KBS맞은편</td>
+                                        <td class="td-time">11:52<br>14:22</td>
+                                        <td class="td-prog">흥덕고 버스정류장</td>
+                                        <td class="td-time">11:50<br>14:20</td>
+                                        <td class="td-prog">봉명사거리(우리은행 앞)</td>
+                                        <td class="td-time">11:55<br>14:25</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-prog">사창사거리(국민은행앞)</td>
+                                        <td class="td-time">11:58<br>14:28</td>
+                                        <td class="td-prog">가경동 홈플러스버스정류장</td>
+                                        <td class="td-time">12:00<br>14:30</td>
+                                        <td class="td-prog">비하동 효성A버스정류장</td>
+                                        <td class="td-time">11:53<br>14:23</td>
+                                        <td class="td-prog">봉명동새마을금고앞</td>
+                                        <td class="td-time">11:57<br>14:27</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-prog">죽천교(아동병원)</td>
+                                        <td class="td-time">12:05<br>14:35</td>
+                                        <td class="td-prog">강내육교 버스정류장</td>
+                                        <td class="td-time">12:15<br>14:45</td>
+                                        <td class="td-prog empty-cell">-</td>
+                                        <td class="td-time empty-cell">-</td>
+                                        <td class="td-prog empty-cell">-</td>
+                                        <td class="td-time empty-cell">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-prog">강서사거리버스정류장</td>
+                                        <td class="td-time">12:10<br>14:40</td>
+                                        <td class="td-prog empty-cell">-</td>
+                                        <td class="td-time empty-cell">-</td>
+                                        <td class="td-prog empty-cell">-</td>
+                                        <td class="td-time empty-cell">-</td>
+                                        <td class="td-prog empty-cell">-</td>
+                                        <td class="td-time empty-cell">-</td>
+                                    </tr>
+                                    <tr class="tr-point-dest">
+                                        <td class="td-prog text-point">오스코 도착</td>
+                                        <td class="td-time text-point">12:30<br>15:00</td>
+                                        <td class="td-prog text-point">오스코 도착</td>
+                                        <td class="td-time text-point">12:30<br>15:00</td>
+                                        <td class="td-prog text-point">오스코 도착</td>
+                                        <td class="td-time text-point">12:30<br>15:00</td>
+                                        <td class="td-prog text-point">오스코 도착</td>
+                                        <td class="td-time text-point">12:30<br>15:00</td>
+                                    </tr>
+                                    <tr class="tr-point-depart">
+                                        <td class="td-prog text-point">오스코 출발</td>
+                                        <td class="td-time text-point">13:00<br>16:00</td>
+                                        <td class="td-prog text-point">오스코 출발</td>
+                                        <td class="td-time text-point">13:00<br>16:00</td>
+                                        <td class="td-prog text-point">오스코 출발</td>
+                                        <td class="td-time text-point">13:00<br>16:00</td>
+                                        <td class="td-prog text-point">오스코 출발</td>
+                                        <td class="td-time text-point">13:00<br>16:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 

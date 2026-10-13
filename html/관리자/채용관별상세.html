@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>채용관별 상세</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Expires" content="-1">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=logout,menu,open_in_new,search" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="./css/krds.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="./css/통계현황.css" />
+	<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="./js/krds.min.js"></script>
+	<script type="text/javascript" src="./js/run.js"></script>
+	<script type="text/javascript" src="./js/common.js"></script>	
+	<script type="text/javascript" src="./js/util.js"></script>		
+	<script type="text/javascript" src="./js/showModalDialog.js"></script>	
+	<script type="text/javascript" src="./js/jquery-ui.js"></script>	
+	<script type="text/javascript" src="./js/jquery-sortable-lists.js"></script>
+	<!-- Chart.js CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	
+	<!-- 로딩 -->
+	<div class="loading" style="display: none;text-align: center;top:50%;left:50%;position:absolute;z-index:99999;">
+	   <input type="hidden" id="progress_width" value="100.00000000000004">
+	   <div>
+		<img src="./images/loading.png" alt="로딩">
+		<p>Loading... Please Wait</p>
+		<div class="loading_pro">
+			<span class="loading_pro_bar"></span>
+		</div>
+		</div>
+	</div>
+	<!-- //로딩 -->
+		
+	<div id="jc-wrap">
+        <!-- 건너뛰기 링크 -->
+        <div id="krds-skip-link">
+            <a href="#container">본문 바로가기</a>
+        </div>
+        <!-- //건너뛰기 링크 -->
+
+        <!-- header -->
+        <header id="jc-header">
+        	<div class="header-top">
+        		<div class="toggle_snb"><span class="material-symbols-outlined" id="toggle_snb">menu</span></div>
+        		<div id="gnb_wrap">
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_4');" class="top-item menuOrd_4">회원/기업관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_5');" class="top-item menuOrd_5">구인구직 관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_6');" class="top-item menuOrd_6">구인구직 관리(기업)</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_8');" class="top-item menuOrd_8">게시판 관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_7');" class="top-item menuOrd_7 active">통계 관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_10');" class="top-item menuOrd_10">환경설정</a>
+        		</div>
+        		<div class="goto_site"><a href="/" target="_blank">사이트 바로가기 <span class="material-symbols-outlined">open_in_new</span></a></div>
+        	</div>
+         	<div class="breadcrumd_wrap">
+         		<ul id="naviArea">
+                    <li>홈</li>
+                    <li>통계 관리</li>
+                    <li>전문채용관 현황</li>
+                    <li class="current">채용관별 상세</li>
+                </ul>
+        	</div>
+
+            <div class="snb_wrap">
+            	<div class="site_info">
+            		<div class="logo">
+            			<img src="./images/cba_logo.svg" alt="cba_logo" class="img_logo"> 충북기업진흥원
+            		</div>
+            	</div>
+            	<div class="login_usr">
+           	 		<span id="loginName">-</span> (<span id="roleName">-</span>)님<br/>
+           	 		<button onclick="logout();"><span class="material-symbols-outlined">logout</span> 로그아웃</button>
+           		</div>
+           		<nav>
+                    <ul class="gnb-list" id="menuArea">
+                        <li class="gnb-item menuOrd_7 active" id="menuNo_stat">
+                            <div class="gnb-depth">
+                                <div class="krds-side-navigation">
+                                    <h3 class="lnb-tit">통계 관리</h3>
+                                    <ul class="lnb-list" role="menubar">
+                                        <li class="lnb-item" id="menuStat_1">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">회원 통계</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_2">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">기업 현황</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_3">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">입사 접수 현황</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_4">
+                                            <a href="javascript:void(0);" class="lnb-btn lnb-toggle" role="menuitem" aria-expanded="false">사이트 접속 현황</a>
+                                            <div class="lnb-submenu">
+                                                <ul>
+                                                    <li><a href="javascript:void(0);" class="lnb-btn">페이지별 접속 현황</a></li>
+                                                    <li><a href="javascript:void(0);" class="lnb-btn">사용자별 접속 현황</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_5">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">채용공고 현황</a>
+                                        </li>
+                                        <li class="lnb-item active" id="menuStat_6">
+                                            <a href="javascript:void(0);" class="lnb-btn lnb-toggle" role="menuitem" aria-expanded="true">전문채용관 현황</a>
+                                            <div class="lnb-submenu">
+                                                <ul>
+                                                    <li class="active"><a href="javascript:void(0);" class="lnb-btn">채용관실적 상세</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+	            <footer>
+	            	ⓒ2026 충북기업진흥원. All rights reserved.
+	            </footer>    
+            </div>
+        </header>
+            
+		<div id="container">
+			<section>
+				<h1 class="contain-title">채용관별 상세</h1>
+				
+				<!-- 1. 전문채용관 선택 드롭다운 -->
+				<div class="search_wrap">
+					<div class="form-group w-full">
+						<div class="form-conts w-full">
+							<select class="krds-form-select stat-select-full" id="selPavilion" title="전문채용관 선택">
+								<option value="">전문채용관 선택</option>
+								<option value="ONLINE_BIO">바이오 채용관 (온라인 전용)</option>
+								<option value="ONLINE_MOBILITY">미래모빌리티 채용관 (온라인 전용)</option>
+								<option value="HYBRID_EXPO">2026 채용박람회 (온/오프라인 공용)</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<!-- 2. 초기 미선택 시 안내 메시지 -->
+				<div class="stat-notice-box" id="boxInitGuide">
+					<p class="notice-txt">전문채용관을 선택하세요.</p>
+				</div>
+
+				<!-- 3. 온라인 전용 통계 영역 -->
+				<div id="boxOnlineOnly" style="display: none;">
+					<div class="stat-period-bar">
+						<span class="period-lbl">개설(운영) 기간</span>
+						<span class="period-val">2026-07-01 ~ 개설 중</span>
+					</div>
+
+					<div class="stat-kpi-grid cols-2 mt20">
+						<div class="stat-kpi-card">
+							<span class="kpi-lbl">누적 페이지 뷰</span>
+							<span class="kpi-val">231,569</span>
+						</div>
+						<div class="stat-kpi-card">
+							<span class="kpi-lbl">누적 지원자 수</span>
+							<span class="kpi-val">126<small>명(1.6%)</small></span>
+						</div>
+						<div class="stat-kpi-card">
+							<span class="kpi-lbl">누적 참여 기업 수</span>
+							<span class="kpi-val">131</span>
+						</div>
+						<div class="stat-kpi-card">
+							<span class="kpi-lbl">누적 채용공고 수</span>
+							<span class="kpi-val">274</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- 4. 온/오프라인 공용 통계 영역 -->
+				<div id="boxHybrid" style="display: none;">
+					<div class="stat-period-bar">
+						<span class="period-lbl">개설(운영) 기간</span>
+						<span class="period-val">2026-07-01 ~ 개설 중</span>
+					</div>
+
+					<!-- 상단 공용 통계 지표 -->
+					<div class="stat-kpi-grid cols-3 mt20">
+						<div class="stat-kpi-card">
+							<span class="kpi-lbl">누적 페이지 뷰</span>
+							<span class="kpi-val">231,569</span>
+						</div>
+						<div class="stat-kpi-card">
+							<span class="kpi-lbl">사전 신청자 수</span>
+							<span class="kpi-val">1,654<small>명</small></span>
+						</div>
+						<div class="stat-kpi-card">
+							<span class="kpi-lbl">현장 방문자 수</span>
+							<span class="kpi-val">1,544<small>명(93.3%)</small></span>
+						</div>
+					</div>
+
+					<div class="stat-kpi-grid cols-2 mt16">
+						<div class="stat-kpi-card">
+							<span class="kpi-lbl">누적 참여 기업 수</span>
+							<span class="kpi-val">131</span>
+						</div>
+						<div class="stat-kpi-card">
+							<span class="kpi-lbl">누적 채용공고 수</span>
+							<span class="kpi-val">274</span>
+						</div>
+					</div>
+
+					<!-- 면접 진행 지표 (4개 카드) -->
+					<div class="stat-section-box mt30">
+						<h2 class="stat-section-tit">면접 진행 지표</h2>
+						<div class="stat-kpi-grid cols-4">
+							<div class="stat-kpi-card">
+								<span class="kpi-lbl">현장 면접 신청 건</span>
+								<span class="kpi-val">2,451</span>
+							</div>
+							<div class="stat-kpi-card">
+								<span class="kpi-lbl">면접 진행 건</span>
+								<span class="kpi-val">1,654<small>(67.5%)</small></span>
+							</div>
+							<div class="stat-kpi-card">
+								<span class="kpi-lbl">면접 취소 건</span>
+								<span class="kpi-val">721<small>(29.4%)</small></span>
+							</div>
+							<div class="stat-kpi-card">
+								<span class="kpi-lbl">면접 No-Show건</span>
+								<span class="kpi-val">76<small>(3.1%)</small></span>
+							</div>
+						</div>
+					</div>
+
+					<!-- 시간대별 방문자 및 면접 신청 현황 차트 -->
+					<div class="stat-chart-container mt30">
+						<div class="stat-card-head">
+							<h3 class="card-tit">시간대별 방문자 및 면접 신청 현황</h3>
+							<div class="stat-legend">
+								<span class="lg-gray">방문자</span>
+								<span class="lg-dark">면접 신청</span>
+							</div>
+						</div>
+						<div class="stat-chart-box">
+							<canvas id="chartHourlyVisit"></canvas>
+							<div class="stat-nodata" style="display: none;">
+								<p class="nodata-txt">조회 기간 내 데이터가 없습니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</section>
+		</div>
+    </div>
+
+	<!-- 인터랙션 및 차트 스크립트 -->
+	<script>
+		let hourlyChart = null;
+
+		function renderHourlyChart() {
+			if (hourlyChart) {
+				hourlyChart.destroy();
+			}
+			const ctx = document.getElementById('chartHourlyVisit').getContext('2d');
+			hourlyChart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'],
+					datasets: [
+						{
+							label: '방문자',
+							data: [150, 280, 420, 210, 360, 480, 390, 310, 220, 90],
+							backgroundColor: '#cbd5e1',
+							borderRadius: 3,
+							barPercentage: 0.6,
+							categoryPercentage: 0.5
+						},
+						{
+							label: '면접 신청',
+							data: [80, 190, 290, 110, 240, 340, 270, 210, 140, 40],
+							backgroundColor: '#334155',
+							borderRadius: 3,
+							barPercentage: 0.6,
+							categoryPercentage: 0.5
+						}
+					]
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					plugins: {
+						legend: { display: false },
+						tooltip: {
+							callbacks: {
+								label: (ctx) => ` ${ctx.dataset.label}: ${ctx.raw.toLocaleString()}명`
+							}
+						}
+					},
+					scales: {
+						x: {
+							grid: { display: false },
+							ticks: { color: '#64748b', font: { size: 12 } }
+						},
+						y: {
+							beginAtZero: true,
+							grid: { color: '#f1f5f9' },
+							ticks: { color: '#94a3b8', font: { size: 11 } }
+						}
+					}
+				}
+			});
+		}
+
+		$(document).ready(function() {$('#selPavilion').on('change', function() {
+				const val = $(this).val();
+
+				$('#boxInitGuide').hide();
+				$('#boxOnlineOnly').hide();
+				$('#boxHybrid').hide();
+
+				if (!val) {
+					$('#boxInitGuide').show();
+				} else if (val === 'HYBRID_EXPO') {
+					$('#boxHybrid').fadeIn(200, function() {
+						renderHourlyChart();
+					});
+				} else {
+					$('#boxOnlineOnly').fadeIn(200);
+				}
+			});
+		});
+	</script>
+</body>
+</html>

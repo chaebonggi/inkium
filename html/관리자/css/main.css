@@ -33,6 +33,9 @@ textarea.krds-input {
   }
   #container .info_wrap .respon-table{grid-template-columns: 30fr 70fr;}
 }
+html,body{height:auto!important;min-height:100%!important;}
+#jc-wrap{height:auto!important;min-height:100vh!important;}
+#container{height:auto!important;min-height:calc(100vh - 94px)!important;}
 
 #jc-wrap {
   display: flex;
