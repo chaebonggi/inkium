@@ -1,0 +1,432 @@
+<html>
+<head>
+	<title>전문채용관 관리</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Expires" content="-1">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=logout,menu,open_in_new,search" rel="stylesheet" />
+	<link  rel="stylesheet" type="text/css"  href="https://newfair.job-cloud.kr/css/jobcloud/krds.min.css" />
+	<link  rel="stylesheet" type="text/css"  href="https://newfair.job-cloud.kr/css/jobcloud/main.css" />
+	<link  rel="stylesheet" type="text/css"  href="https://newfair.job-cloud.kr/css/jquery/jquery-ui.css" />
+	<script type="text/javascript" src="https://newfair.job-cloud.kr/js/jquery/1.12.4/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="https://newfair.job-cloud.kr/js/jobcloud/krds.min.js" ></script>
+	<script type="text/javascript" src="https://newfair.job-cloud.kr/js/jobcloud/component/run.js" ></script>
+	<script type="text/javascript" src="https://newfair.job-cloud.kr/js/jobcloud/common.js" ></script>	
+	<script type="text/javascript" src="https://newfair.job-cloud.kr/js/jobcloud/util.js" ></script>		
+	<script type="text/javascript" src="https://newfair.job-cloud.kr/js/egovframework/com/cmm/showModalDialog.js" ></script>	
+	<script type="text/javascript" src="https://newfair.job-cloud.kr/js/jquery/jquery-ui.js"></script>	
+	<script type="text/javascript" src="https://newfair.job-cloud.kr/js/jobcloud/plugin/jquery-sortable-lists.js"></script>	
+	<script type="text/javascript" src="https://newfair.job-cloud.kr/js/jobcloud/ckeditor/ckeditor.js?t=B37D54V" ></script>
+	<script type="text/javascript" src="https://newfair.job-cloud.kr/js/jobcloud/fileUpload/EgovMultiFiles.js" ></script>
+</head>
+<body>		
+	<div id="jc-wrap">
+        <!-- 건너뛰기 링크 -->
+        <div id="krds-skip-link">
+            <a href="#container">본문 바로가기</a>
+        </div>
+        <!-- //건너뛰기 링크 -->
+		<style>
+			#gnb_wrap.type02 { display: flex; align-items: center; gap: 8px; margin-left: 8px; }
+			#gnb_wrap.type02 a { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 18px; font-size: 15px; font-weight: 600; color: #1e293b; background-color: transparent; border-radius: 10px; text-decoration: none; white-space: nowrap; transition: background-color 0.15s ease, color 0.15s ease; }
+			#gnb_wrap.type02 a + a { margin-left: 0; }
+			#gnb_wrap.type02 a:hover { background-color: #f1f5f9; color: #0f172a; }
+			#gnb_wrap.type02 a.active { background-color: #1683ff; color: #ffffff; box-shadow: 0 2px 6px rgba(22, 131, 255, 0.25); }
+			.ico { display: inline-block; width: 20px; height: 20px; flex-shrink: 0; background-color: currentColor; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; }
+			.ico.ico-cap { width: 22px; height: 22px; -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2 10 14-7 14 7-14 7L2 10Z M7 13v10l9 5 9-5V13 M29 11v10'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2 10 14-7 14 7-14 7L2 10Z M7 13v10l9 5 9-5V13 M29 11v10'/%3E%3C/svg%3E"); }
+			.ico.ico-users { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='10' cy='7' r='4'/%3E%3Cpath d='M2 22v-3a8 8 0 0 1 16 0v3H2ZM17 4a4 4 0 0 1 0 7m3 4a8 8 0 0 1 2 6'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='10' cy='7' r='4'/%3E%3Cpath d='M2 22v-3a8 8 0 0 1 16 0v3H2ZM17 4a4 4 0 0 1 0 7m3 4a8 8 0 0 1 2 6'/%3E%3C/svg%3E"); }
+			.ico.ico-file { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 2h9l5 5v15H5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 0v6h6 M8 12h6m-6 5h7'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 2h9l5 5v15H5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 0v6h6 M8 12h6m-6 5h7'/%3E%3C/svg%3E"); }
+			.ico.ico-chat { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 3h14a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3l-5-3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z M7 10h1m4 0h5m-9 0c0 5 7 5 8 0'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 3h14a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3l-5-3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z M7 10h1m4 0h5m-9 0c0 5 7 5 8 0'/%3E%3C/svg%3E"); }
+			.ico.ico-chart { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 3v18h19 M6 15l5-6 5 3 6-7'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 3v18h19 M6 15l5-6 5 3 6-7'/%3E%3C/svg%3E"); }
+			.ico.ico-settings { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 2-1 3-3 1-3 3 2 3-1 3 3 3 3-1 2 4h4l1-4 3-1 3-3-2-3 1-3-3-3-3 1-2-3H9Z'/%3E%3Ccircle cx='12' cy='11' r='3.5'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 2-1 3-3 1-3 3 2 3-1 3 3 3 3-1 2 4h4l1-4 3-1 3-3-2-3 1-3-3-3-3 1-2-3H9Z'/%3E%3Ccircle cx='12' cy='11' r='3.5'/%3E%3C/svg%3E"); }
+			.ico.ico-grid { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='7' rx='1'/%3E%3Crect x='14' y='3' width='7' height='7' rx='1'/%3E%3Crect x='3' y='14' width='7' height='7' rx='1'/%3E%3Crect x='14' y='14' width='7' height='7' rx='1'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='7' rx='1'/%3E%3Crect x='14' y='3' width='7' height='7' rx='1'/%3E%3Crect x='3' y='14' width='7' height='7' rx='1'/%3E%3Crect x='14' y='14' width='7' height='7' rx='1'/%3E%3C/svg%3E"); }
+		</style>
+        <!-- header -->
+        <header id="jc-header">
+        	<div class="header-top">
+        		<div class="toggle_snb"><span class="material-symbols-outlined" id="toggle_snb">menu</span></div>
+        		<div id="gnb_wrap" class="type02">
+					<a href="javascript:;" onclick="topMenuClick('menuOrd_4');" class="top-item menuOrd_4"><i class="ico ico-users" aria-hidden="true"></i>회원/기업관리</a>
+					<a href="javascript:;" onclick="topMenuClick('menuOrd_5');" class="top-item menuOrd_5 active"><i class="ico ico-cap" aria-hidden="true"></i>구인구직 관리</a>
+					<a href="javascript:;" onclick="topMenuClick('menuOrd_6');" class="top-item menuOrd_6"><i class="ico ico-file" aria-hidden="true"></i>구인구직 관리(기업)</a>
+					<a href="javascript:;" onclick="topMenuClick('menuOrd_8');" class="top-item menuOrd_8"><i class="ico ico-chat" aria-hidden="true"></i>게시판 관리</a>
+					<a href="javascript:;" onclick="topMenuClick('menuOrd_9');" class="top-item menuOrd_9"><i class="ico ico-chart" aria-hidden="true"></i>통계관리</a>
+					<a href="javascript:;" onclick="topMenuClick('menuOrd_11');" class="top-item menuOrd_11"><i class="ico ico-settings" aria-hidden="true"></i>환경설정</a>
+					<a href="javascript:;" onclick="topMenuClick('menuOrd_19');" class="top-item menuOrd_19"><i class="ico ico-grid" aria-hidden="true"></i>부대행사 관리</a>
+				</div>
+        		<div class="goto_site"><a href="https://newfair.job-cloud.kr/" target="_blank">사이트 바로가기 <span class="material-symbols-outlined">open_in_new</span></a></div>
+        	</div>
+         	<div class="breadcrumd_wrap">
+         		<ul id="naviArea">
+         			
+         		</ul>
+        	</div>
+            <div class="snb_wrap">
+            	<div class="site_info">
+            		<div class="logo">
+            			<img src="https://newfair.job-cloud.kr/images/jobcloud/common/cba_logo.svg" alt="cba_logo" class="img_logo"> 충북기업진흥원
+            		</div>
+            	</div>
+            	<div class="login_usr">
+           	 		<span id="loginName">-</span> (<span id="roleName">-</span>)님<br/>
+           	 		<button onclick="logout();"><span class="material-symbols-outlined">logout</span> 로그아웃</button>
+           		</div>
+           		<nav>
+	                <ul class="gnb-list" id="menuArea">
+	                    
+	                </ul>
+	            </nav>
+	            <footer>
+	            	ⓒ2026 충북기업진흥원. All rights reserved.
+	            </footer>    
+            </div>
+        </header>
+            
+
+
+
+<form id="searchForm" name="searchForm" method="POST">
+	
+	<input type="hidden" name="fairSeq" value=""/>
+	<input type="hidden" id="currentPageNo" name="currentPageNo" value=""/> 
+		
+	<div id="container">
+		<section>
+			<h1 class="contain-title">전문채용관 관리</h1>
+			<div class="search_wrap">
+				<div class="form-group">
+                  <div class="input-group">
+                    <input type="text" class="krds-input small" id="searchKeyword" name="searchKeyword" placeholder="검색어 입력" value="">
+                    <div class="btn-group">
+                      <button type="button" class="krds-btn small search" onclick="goPage(1);"><i class="svg-icon ico-sch right"></i>검색</button>
+                    </div>                                       
+                  </div>  
+                
+                  <div class="input-group cal">
+		                    
+                    <div class="form-group">
+                         <dl>
+                         	<dt><p class="fw700">상태</p></dt>
+                         	<dd>
+                               <div>
+                                 <select class="krds-form-select small type02" id="srchProgress" name="srchProgress" title="상태">
+                                   <option value="" >선택</option>
+								<option value="01" >대기중</option>
+								<option value="02" >개설중</option>
+								<option value="03" >종료</option>
+								<option value="04" >중단</option>
+                                 </select>
+                               </div>
+                            	</dd>
+                            	<dt><p class="fw700">기간</p></dt>
+                           <dd>
+                             <!-- calendar -->
+                             <style>
+                             	html {height: auto !important;}
+                             	body {height: auto !important;}
+                             </style>
+                             <div class="form-group">
+                               <div class="form-conts calendar-conts">
+                                   <div class="calendar-input">
+                                       <ul class="input-group range set">
+                                           <li class="datep-wrap">
+                                               <input type="text" class="krds-input  small datep w180" id="searchStDt" name="searchStDt" placeholder="시작날짜" title="시작날짜 입력" value="">
+                                           </li>
+                                           <li class="mark">~</li>
+                                           <li class="datep-wrap">
+                                               <input type="text" class="krds-input  small datep w180" id="searchEndDt" name="searchEndDt" placeholder="종료날짜" title="종료날짜 입력" value="">
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </div>
+                             </div>
+                             <!-- //calendar -->
+                           </dd>
+                         </dl>
+                       </div>  
+                  </div> 
+                </div>
+			</div>
+			<div class="table_wrap mt40">
+				<div class="table-group">
+	                  <div class="input-group">
+	                      <div>
+	                        <p class="total">총 5 건</p>
+	                      </div>                            
+	                      <div class="btn-group mla">	                      
+	                          <select class="krds-form-select small type02" id="recordCountPerPage" name="recordCountPerPage" onchange="goPage(1);">
+	                          	  <option value="10" selected>10개</option>
+	                              <option value="20" >20개</option>
+	                              <option value="30" >30개</option>
+	                              <option value="50" >50개</option>
+	                              <option value="100" >100개</option>
+	                          </select>
+	                          <button type="button" class="krds-btn small type02 cBtn" onclick="fncWriteForm();"><i class="svg-icon ico-plus02 right"></i> 신규 채용관</button>
+	                          <button type="button" class="krds-btn small type03" onclick="excelDown();"><i class="svg-icon ico-download right"></i> 엑셀 다운로드</button>
+	                      </div>
+	                  </div>
+	                  
+	                   <!-- table -->
+	                   <div class="table-container">
+	                    <div class="krds-table-wrap tbl-type02">
+	                      <table class="tbl col data min-full">
+	                          <caption>관리자 정보</caption>
+	                          <colgroup>
+								<col width="5%" />
+								<col width="*" />
+								<col width="18%" />
+								<col width="7%" />
+								<col width="7%" />
+								<col width="7%" />
+								<col width="8%" />
+								<col width="8%" />
+							  </colgroup>
+	                          <thead>
+	                              <tr>
+	                              	<th scope="col">No.</th>
+									<th scope="col">전문채용관명</th>
+									<th scope="col">기간</th>
+									<th scope="col">참여기업수 </th>
+									<th scope="col">진행공고수</th>
+									<th scope="col">누적공고수</th>
+									<th scope="col">상태</th>
+									<th scope="col">관리</th>
+	                              </tr>
+	                          </thead>
+	                          <tbody>
+	                          	
+	                               	
+	                               		
+	                                		<tr>
+		                                  		<td scope="row">
+		                                  			5
+		                                  		</td>
+		                                  		<td class="tlt">
+		                                  			<a href="#" onclick="fncReadForm1('5');" title="오프라인채용관테스트">오프라인채용관테스트</a>
+		                                  		</td>
+		                                  		<td>
+		                                  			2026-11-04 ~ 2026-11-30
+		                                  		</td>
+		                                  		<td>
+		                                  			1
+		                                  		</td>
+		                                  		<td>
+		                                  			4
+		                                  		</td>
+		                                  		<td>
+		                                  			4
+		                                  		</td>
+		                                  		<td>
+		                                  			
+		                                  				
+		                                  					
+															개설중
+															
+		                                  				
+		                                  				
+		                                  			
+		                                  		</td>
+		                                  		<td>
+		                                  			<button type="button" class="krds-btn small type02" onclick="fncReadForm1('5');">관리</button>
+		                                  		</td>
+		                                  		
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+		                                  		<td scope="row">
+		                                  			4
+		                                  		</td>
+		                                  		<td class="tlt">
+		                                  			<a href="#" onclick="fncReadForm1('4');" title="온라인전용 채용관">온라인전용 채용관</a>
+		                                  		</td>
+		                                  		<td>
+		                                  			2026-10-01 ~ 2026-10-31
+		                                  		</td>
+		                                  		<td>
+		                                  			
+		                                  		</td>
+		                                  		<td>
+		                                  			0
+		                                  		</td>
+		                                  		<td>
+		                                  			0
+		                                  		</td>
+		                                  		<td>
+		                                  			
+		                                  				
+		                                  					
+															
+															종료
+		                                  				
+		                                  				
+		                                  			
+		                                  		</td>
+		                                  		<td>
+		                                  			<button type="button" class="krds-btn small type02" onclick="fncReadForm1('4');">관리</button>
+		                                  		</td>
+		                                  		
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+		                                  		<td scope="row">
+		                                  			3
+		                                  		</td>
+		                                  		<td class="tlt">
+		                                  			<a href="#" onclick="fncReadForm1('3');" title="충청북도 반도체 및 일반기업관">충청북도 반도체 및 일반기업관</a>
+		                                  		</td>
+		                                  		<td>
+		                                  			2026-09-21 ~ 2026-10-16
+		                                  		</td>
+		                                  		<td>
+		                                  			111
+		                                  		</td>
+		                                  		<td>
+		                                  			109
+		                                  		</td>
+		                                  		<td>
+		                                  			110
+		                                  		</td>
+		                                  		<td>
+		                                  			
+		                                  				
+		                                  					
+															
+															종료
+		                                  				
+		                                  				
+		                                  			
+		                                  		</td>
+		                                  		<td>
+		                                  			<button type="button" class="krds-btn small type02" onclick="fncReadForm1('3');">관리</button>
+		                                  		</td>
+		                                  		
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+		                                  		<td scope="row">
+		                                  			2
+		                                  		</td>
+		                                  		<td class="tlt">
+		                                  			<a href="#" onclick="fncReadForm1('2');" title="바이오헬스 기업관">바이오헬스 기업관</a>
+		                                  		</td>
+		                                  		<td>
+		                                  			2026-10-01 ~ 2026-10-31
+		                                  		</td>
+		                                  		<td>
+		                                  			28
+		                                  		</td>
+		                                  		<td>
+		                                  			28
+		                                  		</td>
+		                                  		<td>
+		                                  			28
+		                                  		</td>
+		                                  		<td>
+		                                  			
+		                                  				
+		                                  					
+															
+															종료
+		                                  				
+		                                  				
+		                                  			
+		                                  		</td>
+		                                  		<td>
+		                                  			<button type="button" class="krds-btn small type02" onclick="fncReadForm1('2');">관리</button>
+		                                  		</td>
+		                                  		
+		                                  	</tr>
+	                                 	
+	                                		<tr>
+		                                  		<td scope="row">
+		                                  			1
+		                                  		</td>
+		                                  		<td class="tlt">
+		                                  			<a href="#" onclick="fncReadForm1('1');" title="미래모빌리티 기업관">미래모빌리티 기업관</a>
+		                                  		</td>
+		                                  		<td>
+		                                  			2026-10-01 ~ 2026-10-31
+		                                  		</td>
+		                                  		<td>
+		                                  			36
+		                                  		</td>
+		                                  		<td>
+		                                  			34
+		                                  		</td>
+		                                  		<td>
+		                                  			35
+		                                  		</td>
+		                                  		<td>
+		                                  			
+		                                  				
+		                                  					
+															
+															종료
+		                                  				
+		                                  				
+		                                  			
+		                                  		</td>
+		                                  		<td>
+		                                  			<button type="button" class="krds-btn small type02" onclick="fncReadForm1('1');">관리</button>
+		                                  		</td>
+		                                  		
+		                                  	</tr>
+	                                 	
+	                               	
+	                               	
+	                             
+	                          </tbody>
+	                      </table>
+	                    </div>
+	                  </div>
+	
+	                  <!-- //table -->
+	              </div>
+	               
+	              <!--paging-->
+				    		    
+				    	<div class="krds-pagination type02">
+		                    <a href="javascript:goPage('1');" class="page-navi prev-start"><span class="sr-only">처음으로</span></a>
+		                    
+				          		
+				          			<a href="javascript:alert('첫 페이지입니다.')" class="page-navi prev"><span class="sr-only">이전</span></a>
+				          		
+				          		
+				          	
+		                    
+		                    <div class="page-links">
+			                    
+						           	
+						           		
+						           			<a href="javascript:goPage('1')" id="page_1" class="page-link active"><span class="sr-only">현재페이지 </span>1</a>
+						           		
+						           		
+						           	
+					            
+				            </div>
+				            
+							
+				            	
+				            		<a href="javascript:alert('마지막 페이지입니다.');" class="page-navi next"><span class="sr-only">다음</span></a>
+				            	
+				            	
+				            				            		                    
+		                    <a href="javascript:goPage('1')" class="page-navi next-end"><span class="sr-only">마지막으로</span></a>
+		                </div>
+				    
+			</div>
+			
+		</section>
+		
+	</div>
+</form>
+
+<!-- //body_wrap -->
+
+            
+        <!-- </div> -->
+    </div>
+		
+</body>
+</html>

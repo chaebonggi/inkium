@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>전문채용관 현황</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Expires" content="-1">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=logout,menu,open_in_new,search" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="./css/krds.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="./css/통계현황.css" />
+	<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="./js/krds.min.js"></script>
+	<script type="text/javascript" src="./js/run.js"></script>
+	<script type="text/javascript" src="./js/common.js"></script>	
+	<script type="text/javascript" src="./js/util.js"></script>		
+	<script type="text/javascript" src="./js/showModalDialog.js"></script>	
+	<script type="text/javascript" src="./js/jquery-ui.js"></script>	
+	<script type="text/javascript" src="./js/jquery-sortable-lists.js"></script>
+	<!-- Chart.js CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	
+	<!-- 로딩 -->
+	<div class="loading" style="display: none;text-align: center;top:50%;left:50%;position:absolute;z-index:99999;">
+	   <input type="hidden" id="progress_width" value="100.00000000000004">
+	   <div>
+		<img src="./images/loading.png" alt="로딩">
+		<p>Loading... Please Wait</p>
+		<div class="loading_pro">
+			<span class="loading_pro_bar"></span>
+		</div>
+		</div>
+	</div>
+	<!-- //로딩 -->
+		
+	<div id="jc-wrap">
+        <!-- 건너뛰기 링크 -->
+        <div id="krds-skip-link">
+            <a href="#container">본문 바로가기</a>
+        </div>
+        <!-- //건너뛰기 링크 -->
+
+        <!-- header -->
+        <header id="jc-header">
+        	<div class="header-top">
+        		<div class="toggle_snb"><span class="material-symbols-outlined" id="toggle_snb">menu</span></div>
+        		<div id="gnb_wrap">
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_4');" class="top-item menuOrd_4">회원/기업관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_5');" class="top-item menuOrd_5">구인구직 관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_6');" class="top-item menuOrd_6">구인구직 관리(기업)</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_8');" class="top-item menuOrd_8">게시판 관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_7');" class="top-item menuOrd_7 active">통계 관리</a>
+        			<a href="javascript:;" onclick="topMenuClick('menuOrd_10');" class="top-item menuOrd_10">환경설정</a>
+        		</div>
+        		<div class="goto_site"><a href="/" target="_blank">사이트 바로가기 <span class="material-symbols-outlined">open_in_new</span></a></div>
+        	</div>
+         	<div class="breadcrumd_wrap">
+         		<ul id="naviArea">
+                    <li>홈</li>
+                    <li>통계 관리</li>
+                    <li class="current">전문채용관 현황</li>
+                </ul>
+        	</div>
+
+            <div class="snb_wrap">
+            	<div class="site_info">
+            		<div class="logo">
+            			<img src="./images/cba_logo.svg" alt="cba_logo" class="img_logo"> 충북기업진흥원
+            		</div>
+            	</div>
+            	<div class="login_usr">
+           	 		<span id="loginName">-</span> (<span id="roleName">-</span>)님<br/>
+           	 		<button onclick="logout();"><span class="material-symbols-outlined">logout</span> 로그아웃</button>
+           		</div>
+           		<nav>
+                    <ul class="gnb-list" id="menuArea">
+                        <li class="gnb-item menuOrd_7 active" id="menuNo_stat">
+                            <div class="gnb-depth">
+                                <div class="krds-side-navigation">
+                                    <h3 class="lnb-tit">통계 관리</h3>
+                                    <ul class="lnb-list" role="menubar">
+                                        <li class="lnb-item" id="menuStat_1">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">회원 통계</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_2">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">기업 현황</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_3">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">입사 접수 현황</a>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_4">
+                                            <a href="javascript:void(0);" class="lnb-btn lnb-toggle" role="menuitem" aria-expanded="false">사이트 접속 현황</a>
+                                            <div class="lnb-submenu">
+                                                <ul>
+                                                    <li><a href="javascript:void(0);" class="lnb-btn">페이지별 접속 현황</a></li>
+                                                    <li><a href="javascript:void(0);" class="lnb-btn">사용자별 접속 현황</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="lnb-item" id="menuStat_5">
+                                            <a href="javascript:void(0);" class="lnb-btn" role="menuitem">채용공고 현황</a>
+                                        </li>
+                                        <li class="lnb-item active" id="menuStat_6">
+                                            <a href="javascript:void(0);" class="lnb-btn lnb-toggle" role="menuitem" aria-expanded="true">전문채용관 현황</a>
+                                            <div class="lnb-submenu">
+                                                <ul>
+                                                    <li><a href="javascript:void(0);" class="lnb-btn">채용관실적 상세</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+	            <footer>
+	            	ⓒ2026 충북기업진흥원. All rights reserved.
+	            </footer>    
+            </div>
+        </header>
+            
+		<div id="container">
+		<section>
+			<h1 class="contain-title">
+				
+				   	
+				   		회원 상세
+				   	
+				   	
+				   
+			</h1>
+			<div class="info_wrap">
+				<div class="flex felx-row jcs mb10">
+					<p class="tit">필수정보</p>
+					<p><span class="marking">*</span> 필수 입력정보</p>
+				</div>
+				<div class="respon-table">
+				 	<div class="table-item"><label for="mberId">아이디<span class="marking">*</span></label></div>
+				 	<div class="table-item">
+				 		
+						  		
+						  			<input type="text" id="mberId" class="krds-input small" name="mberId" value="for4clover" readonly="">
+						  			<input type="hidden" id="idCheckYn" name="idCheckYn" value="Y">
+						  		
+						  		
+						  	
+				 	</div>
+				 	<div class="table-item"><label for="mberNm">이름<span class="marking">*</span></label></div>
+				 	<div class="table-item"><input type="text" id="mberNm" name="mberNm" class="krds-input small" placeholder="이름" value="이태윤"></div>
+				 	<div class="table-item"><label for="moblphonNo">연락처<span class="marking">*</span></label></div>
+				 	<div class="table-item"><input type="text" id="moblphonNo" name="moblphonNo" class="krds-input small" placeholder="연락처" maxlength="15" value="010-4494-1503"></div>
+				 	<div class="table-item"><label for="email">이메일<span class="marking">*</span></label></div>
+				 	<div class="table-item"><input type="text" id="email" name="email" class="krds-input small" placeholder="이메일" value="for4clover@naver.com"></div>
+				 	<div class="table-item"><label for="password">패스워드<span class="marking">*</span></label></div>
+				 	<div class="table-item merge-rest flex-list alfs full">
+				 		<input type="password" id="password" name="password" class="krds-input small mxw640" value="">
+						<div>
+							- 8이상 20자리 이하<br>
+							- 영문자,숫자,특수문자(~!@#$%^&amp;*?)의 조합<br>
+							- 3자리 이상 반복 또는 연속된 문자 사용 금지. 예)kkk , 321 등 사용금지
+						</div>
+						
+							<div class="btn-group jce">
+							  <button type="button" class="krds-btn type04 small open-modal" data-target="tempPassword_modal" onclick="fnCheckBeforeTempPwModal(event);return false;">
+							  	<i class="svg-icon ico-password"></i>임시비밀번호 재발급
+							  </button>
+							</div>
+						
+				 	</div>
+				</div>
+				<div class="dashed-hr"></div>
+				<div class="flex felx-row jcs mb10">
+					<p class="tit">개인정보</p>
+				</div>
+				<div class="respon-table">
+					<div class="table-item"><label for="brtd">생년월일</label></div>
+					<div class="table-item"><input type="text" id="brtd" name="brtd" class="krds-input small" placeholder="생년월일" value="1997-02-16"></div>
+					<div class="table-item"><label for="sexdstnCode_M">성별</label></div>
+					<div class="table-item">
+						<div class="krds-check-area">
+							  <div class="krds-form-check">
+								<input type="radio" name="sexdstnCode" id="sexdstnCode_M" value="M" checked="">
+								<label for="sexdstnCode_M">남</label>
+							  </div>
+							  <div class="krds-form-check">
+								<input type="radio" name="sexdstnCode" id="sexdstnCode_F" value="F">
+								<label for="sexdstnCode_F">여</label>
+							  </div>
+							</div>
+					</div>
+					<div class="table-item"><label for="zip">주소<span class="marking">*</span></label></div>
+					<div class="table-item merge-rest flex-list alfs full">
+						<div class="flex">
+							<input type="text" id="zip" name="zip" class="krds-input small" placeholder="우편번호" value="28333" readonly="">
+							&nbsp;&nbsp;<button type="button" class="krds-btn small" onclick="goPopup();">검색</button>
+						  </div>
+						  <input type="text" id="adres" name="adres" class="krds-input small" placeholder="주소" value="충청북도 청주시 청원구 율봉로212번길 44" readonly="">
+						  <input type="text" id="detailAdres" name="detailAdres" class="krds-input small" placeholder="상세주소" value="305호">
+					</div>
+				</div>
+				<div class="dashed-hr"></div>
+				<div class="flex felx-row jcs mb10">
+					<p class="tit">소속정보</p>
+				</div>
+				<div class="respon-table">
+					<div class="table-item"><label for="authorCode">권한<span class="marking">*</span></label></div>
+					<div class="table-item">
+						<select id="authorCode" name="authorCode" class="krds-form-select small type02" title="권한">
+								<option value="">-선택-</option>
+								
+									<option value="ROLE_ADMIN">관리자</option>
+								
+									<option value="ROLE_COMPANY">기업회원</option>
+								
+									<option value="ROLE_CSLT">직업상담사</option>
+								
+									<option value="ROLE_USER" selected="">일반 사용자</option>
+								
+							</select>
+					</div>
+					<div class="table-item"><label for="useYn">상태</label></div>
+					<div class="table-item">
+						<select id="useYn" name="useYn" class="krds-form-select small type02" title="상태">
+								<option value="Y" selected="">사용</option>
+								<option value="N">미사용</option>
+							</select>
+					</div>
+					<div class="table-item"><label for="enterpriseTitle">기관명</label></div>
+					<div class="table-item"><input type="text" id="enterpriseTitle" name="enterpriseTitle" class="krds-input small" placeholder="기관명" value=""></div>
+					<div class="table-item"><label for="mberSttus">승인<span class="marking">*</span></label></div>
+					<div class="table-item">
+						<select id="mberSttus" name="mberSttus" class="krds-form-select small type02" title="일반회원상태코드">
+								<option value="">-선택-</option>
+								
+									<option value="A">신청</option>
+								
+									<option value="P" selected="">승인</option>
+								
+							</select>
+					</div>
+					
+					<div class="table-item"><label for="">사업자등록증(기업회원)</label></div>
+					<div class="table-item">
+						
+							
+								
+							
+
+
+
+
+
+
+<!-- link href="/css/egovframework/com/com.css" rel="stylesheet" type="text/css"-->
+
+<script type="text/javascript">
+
+	function fn_egov_downFile(atchFileId, fileSn){
+		window.open("/cmm/fms/FileDown.do?atchFileId="+atchFileId+"&fileSn="+fileSn+"");
+	}
+
+	function fn_egov_deleteFile(atchFileId, fileSn, delTrName) {
+		var msg = "삭제 시 해당 자료는 복구할 수 없습니다.\n정말 삭제를 진행하시겠습니까?";
+		if(confirm(msg)) {
+			var forms;
+			var form;
+			forms = document.getElementsByTagName("form");
+	
+			for (var i = 0; i < forms.length; i++) {
+				if (typeof(forms[i].atchFileId) != "undefined" &&
+						typeof(forms[i].fileSn) != "undefined" &&
+						typeof(forms[i].fileListCnt) != "undefined") {
+					form = forms[i];
+				}
+			}
+			
+			
+	
+			var newForm = document.createElement( 'form' );
+			var newfileSn = document.createElement( 'input' );
+			var newAtchFileId = document.createElement( 'input' );
+			// Chrome 56+ 동적 생성한 form submit 불가 (HTML5)
+			// HTML5 표준에선 Browsing contexts(document)에 form 이 연결되어 있지 않으면, form submit을 중단하도록 규정
+			// https://www.w3.org/TR/html5/forms.html#constraints 4.10.22.3
+			document.body.appendChild(newForm);
+			
+			newfileSn.setAttribute("name","fileSn");
+			newAtchFileId.setAttribute("name","atchFileId");
+			
+			newfileSn.setAttribute("type","hidden");
+			newAtchFileId.setAttribute("type","hidden");
+	
+			newfileSn.setAttribute("value",fileSn);
+			newAtchFileId.setAttribute("value",atchFileId);
+			
+			newForm.appendChild( newfileSn );
+			newForm.appendChild( newAtchFileId );
+	
+			//form = document.forms[0];
+			//form.atchFileId.value = atchFileId;
+			//form.fileSn.value = fileSn;
+			newForm.method = "post";
+			newForm.action = "/cmm/fms/deleteFileInfs.do";
+			newForm.target = "iframe_egov_file_delete" 
+			newForm.submit();
+			//console.log('del submit!!');
+			var objDelTr = document.getElementById(delTrName);
+			objDelTr.parentNode.removeChild(objDelTr);
+			//fn_egov_multi_selector_update_delete();
+			//console.log('egov_file_view_table delete!!');
+		}
+
+	}
+
+	function fn_egov_check_file(flag) {
+		if (flag=="Y") {
+			document.getElementById('file_upload_posbl').style.display = "block";
+			document.getElementById('file_upload_imposbl').style.display = "none";
+		} else {
+			document.getElementById('file_upload_posbl').style.display = "none";
+			document.getElementById('file_upload_imposbl').style.display = "block";
+		}
+	}
+</script>
+
+<!-- <form name="fileForm" action="" method="post" >  -->
+<input type="hidden" name="atchFileId" value="">
+<input type="hidden" name="fileSn">
+<input type="hidden" name="fileListCnt" id="fileListCnt" value="0">
+
+<!-- </form>  -->
+
+<!--<title>파일목록</title> -->
+
+	<table id="egov_file_view_table" style="border:0px solid #666;">
+		
+		
+			<tbody><tr>
+				<td style="border:0px solid #666;padding:0 0 0 0;margin:0 0 0 0;"></td>
+			</tr>
+	    
+	</tbody></table>
+
+		
+						
+					</div>
+					<div class="table-item"><label for="">재직증명서(기업회원)</label></div>
+					<div class="table-item">
+						
+							
+								
+							
+
+
+
+
+
+
+<!-- link href="/css/egovframework/com/com.css" rel="stylesheet" type="text/css"-->
+
+<script type="text/javascript">
+
+	function fn_egov_downFile(atchFileId, fileSn){
+		window.open("/cmm/fms/FileDown.do?atchFileId="+atchFileId+"&fileSn="+fileSn+"");
+	}
+
+	function fn_egov_deleteFile(atchFileId, fileSn, delTrName) {
+		var msg = "삭제 시 해당 자료는 복구할 수 없습니다.\n정말 삭제를 진행하시겠습니까?";
+		if(confirm(msg)) {
+			var forms;
+			var form;
+			forms = document.getElementsByTagName("form");
+	
+			for (var i = 0; i < forms.length; i++) {
+				if (typeof(forms[i].atchFileId) != "undefined" &&
+						typeof(forms[i].fileSn) != "undefined" &&
+						typeof(forms[i].fileListCnt) != "undefined") {
+					form = forms[i];
+				}
+			}
+			
+			
+	
+			var newForm = document.createElement( 'form' );
+			var newfileSn = document.createElement( 'input' );
+			var newAtchFileId = document.createElement( 'input' );
+			// Chrome 56+ 동적 생성한 form submit 불가 (HTML5)
+			// HTML5 표준에선 Browsing contexts(document)에 form 이 연결되어 있지 않으면, form submit을 중단하도록 규정
+			// https://www.w3.org/TR/html5/forms.html#constraints 4.10.22.3
+			document.body.appendChild(newForm);
+			
+			newfileSn.setAttribute("name","fileSn");
+			newAtchFileId.setAttribute("name","atchFileId");
+			
+			newfileSn.setAttribute("type","hidden");
+			newAtchFileId.setAttribute("type","hidden");
+	
+			newfileSn.setAttribute("value",fileSn);
+			newAtchFileId.setAttribute("value",atchFileId);
+			
+			newForm.appendChild( newfileSn );
+			newForm.appendChild( newAtchFileId );
+	
+			//form = document.forms[0];
+			//form.atchFileId.value = atchFileId;
+			//form.fileSn.value = fileSn;
+			newForm.method = "post";
+			newForm.action = "/cmm/fms/deleteFileInfs.do";
+			newForm.target = "iframe_egov_file_delete" 
+			newForm.submit();
+			//console.log('del submit!!');
+			var objDelTr = document.getElementById(delTrName);
+			objDelTr.parentNode.removeChild(objDelTr);
+			//fn_egov_multi_selector_update_delete();
+			//console.log('egov_file_view_table delete!!');
+		}
+
+	}
+
+	function fn_egov_check_file(flag) {
+		if (flag=="Y") {
+			document.getElementById('file_upload_posbl').style.display = "block";
+			document.getElementById('file_upload_imposbl').style.display = "none";
+		} else {
+			document.getElementById('file_upload_posbl').style.display = "none";
+			document.getElementById('file_upload_imposbl').style.display = "block";
+		}
+	}
+</script>
+
+<!-- <form name="fileForm" action="" method="post" >  -->
+<input type="hidden" name="atchFileId" value="">
+<input type="hidden" name="fileSn">
+<input type="hidden" name="fileListCnt" id="fileListCnt" value="0">
+
+<!-- </form>  -->
+
+<!--<title>파일목록</title> -->
+
+	<table id="egov_file_view_table" style="border:0px solid #666;">
+		
+		
+			<tbody><tr>
+				<td style="border:0px solid #666;padding:0 0 0 0;margin:0 0 0 0;"></td>
+			</tr>
+	    
+	</tbody></table>
+
+		
+						
+					</div>
+					<div class="table-item" id="corpRoleLabel" style="display: none;"><label for="corpRoleCd">기업회원 역할</label></div>
+					<div class="table-item merge-rest" id="corpRoleArea" style="display: none;">
+						<div class="krds-check-area">
+							
+								
+									
+										<div class="krds-form-check mr10">
+											<input type="checkbox" name="corpRoleCd" id="corpRoleCd_01" value="01">
+											<label for="corpRoleCd_01">면접관</label>
+										</div>
+									
+								
+								
+							
+						</div>
+					</div>
+					<div class="table-item" id="userTypeLabel"><label for="userTypeCd">개인회원 구분</label></div>
+					<div class="table-item merge-rest" id="userTypeArea">
+						<div class="krds-check-area">
+							
+								
+									
+										<div class="krds-form-check mr10">
+											<input type="radio" name="userTypeCd" id="userTypeCd_01" value="01">
+											<label for="userTypeCd_01">개인</label>
+										</div>
+									
+										<div class="krds-form-check mr10">
+											<input type="radio" name="userTypeCd" id="userTypeCd_02" value="02">
+											<label for="userTypeCd_02">일반기업</label>
+										</div>
+									
+										<div class="krds-form-check mr10">
+											<input type="radio" name="userTypeCd" id="userTypeCd_03" value="03" checked="">
+											<label for="userTypeCd_03">공공기관</label>
+										</div>
+									
+										<div class="krds-form-check mr10">
+											<input type="radio" name="userTypeCd" id="userTypeCd_04" value="04">
+											<label for="userTypeCd_04">유관기관</label>
+										</div>
+									
+								
+								
+							
+						</div>
+					</div>
+				</div>
+				<div class="dashed-hr"></div>
+				<div class="flex felx-row jcs mb10">
+					<p class="tit">기타정보</p>
+				</div>
+				<div class="respon-table">
+					<div class="table-item"><label for="createtime">가입일</label></div>
+					<div class="table-item">2026-11-01 19:45:05</div>
+					<div class="table-item"><label for="receiveType">알림 수신 매체</label></div>
+					<div class="table-item">
+						<div class="krds-check-area">
+								<div class="krds-form-check flex-1">
+								  <input type="radio" name="receiveType" id="receiveTypeS" value="S">
+								  <label for="receiveTypeS">SMS(알림톡)</label>
+								</div>
+								<div class="krds-form-check flex-1">
+								  <input type="radio" name="receiveType" id="receiveTypeE" value="E">
+								  <label for="receiveTypeE">이메일</label>
+								</div>
+								<div class="krds-form-check flex-1">
+								  <input type="radio" name="receiveType" id="receiveTypeA" value="A">
+								  <label for="receiveTypeA">SMS+이메일</label>
+								</div>
+								<div class="krds-form-check flex-1">
+								  <input type="radio" name="receiveType" id="receiveTypeN" value="N" checked="">
+								  <label for="receiveTypeN">미수신</label>
+								</div>
+							  </div>
+					</div>
+					<div class="table-item"><label for="createtime">최종로그인</label></div>
+					<div class="table-item">2026-11-01 19:45:11</div>
+					<div class="table-item"><label for="createtime">최종정보 수정</label></div>
+					<div class="table-item">2026-11-01 19:45:05</div>
+				</div>
+				<div class="dashed-hr"></div>
+				<div class="btn-group jce">
+						<button type="button" class="krds-btn type04 medium" onclick="fnListPage();">목록</button>
+						
+							
+								<button type="button" class="krds-btn medium uBtn" onclick="fnInsert();">수정</button>
+								<button type="button" class="krds-btn medium dBtn type03 delete" onclick="fnDelete();">삭제</button>
+							
+							
+						
+					</div>
+				
+			</div>
+			
+			<!-- 2026.09.28 이력서 목록 추가 -->
+			<div class="table_wrap mt40">
+				<div class="table-group">
+					<div class="input-group">
+	                      <div class="flex">
+	                        <p class="tit" id="totCnt">이력서 목록 (총 1건)</p>
+	                      </div>          
+		                    <div class="form-conts">
+		                        <div class="btn-group full">
+		                            <input type="text" class="krds-input small" id="searchKeyword" name="searchKeyword" placeholder="검색어 입력" value="">
+		                            <div class="btn-group">
+		                              <button type="button" class="krds-btn small search" onclick="goPage(1);"><i class="svg-icon ico-sch right"></i>검색</button>
+		                          </div>                                       
+		                        </div>                                    
+		                    </div>                 
+	                      <div class="btn-group mla">
+	                          <button type="button" class="krds-btn small type03" onclick="excelDown();"><i class="svg-icon ico-download right"></i> 엑셀 다운로드</button>
+	                      </div>
+	                  </div>
+	                  <!-- table -->
+	                  <div class="table-container">
+	                    <div class="krds-table-wrap tbl-type02">
+	                      <table class="tbl col data">
+	                          <caption>이력서 목록</caption>
+	                          <colgroup>	                          	
+                              	<col style="width: 80px;">
+                              	<col>
+                   				<col style="width: 200px;">
+                   				<col style="width: 200px;">
+                   				<col style="width: 250px;">
+							  </colgroup>
+	                          <thead>
+	                              <tr>
+									<th scope="col">No.</th>
+									<th scope="col">이력서명</th>
+									<th scope="col">최종수정일</th>
+									<th scope="col">공개여부</th>
+									<th scope="col">이력서확인</th>
+	                              </tr>
+	                          </thead>
+	                          <tbody id="listTable"><tr>	<td colspan="5">등록된 이력서가 없습니다.</td></tr></tbody>
+	                      </table>
+	                    </div>
+	                  </div>
+	
+	                  <!-- //table -->
+	              	</div>
+	               
+	              	<!--paging-->
+			    	<div class="krds-pagination type02" id="listPage"><a href="javascript:goPage('1');" class="page-navi prev-start"><span class="sr-only">처음으로</span></a>	<a href="javascript:alert('첫 페이지입니다.')" class="page-navi prev"><span class="sr-only">이전</span></a><div class="page-links">			<a href="javascript:goPage('1')" id="page_1" class="page-link active"><span class="sr-only">현재페이지 </span>1</a></div>	<a href="javascript:alert('마지막 페이지입니다.');" class="page-navi next"><span class="sr-only">다음</span></a><a href="javascript:goPage('1')" class="page-navi next-end"><span class="sr-only">마지막으로</span></a></div>
+				</div>
+		</section>
+
+	</div>
+    </div>
+
+	<!-- Chart.js 렌더링 스크립트 -->
+	<script>
+		$(document).ready(function() {
+			const pavilionLabels = ['바이오 채용관', '미래모빌리티 채용관', '2026 채용박람회'];
+
+			// 1. 채용관별 페이지뷰(PV) (가로 막대 차트)
+			const ctx1 = document.getElementById('chartPavilionPv').getContext('2d');
+			new Chart(ctx1, {
+				type: 'bar',
+				data: {
+					labels: pavilionLabels,
+					datasets: [{
+						data: [134841, 102456, 164325],
+						backgroundColor: ['#256ef4', '#3b82f6', '#64748b'],
+						borderRadius: 3,
+						barThickness: 16
+					}]
+				},
+				options: {
+					indexAxis: 'y',
+					responsive: true,
+					maintainAspectRatio: false,
+					plugins: {
+						legend: { display: false },
+						tooltip: {
+							callbacks: {
+								label: (ctx) => ` 페이지뷰: ${ctx.raw.toLocaleString()} PV`
+							}
+						}
+					},
+					scales: {
+						x: {
+							beginAtZero: true,
+							grid: { color: '#f1f5f9' },
+							ticks: {
+								callback: (val) => val.toLocaleString(),
+								color: '#94a3b8',
+								font: { size: 11 }
+							}
+						},
+						y: {
+							grid: { display: false },
+							ticks: { color: '#334155', font: { size: 12, weight: '500' } }
+						}
+					}
+				}
+			});
+
+			// 2. 채용관별 지원율(%) (가로 막대 차트)
+			const ctx2 = document.getElementById('chartPavilionRate').getContext('2d');
+			new Chart(ctx2, {
+				type: 'bar',
+				data: {
+					labels: pavilionLabels,
+					datasets: [{
+						data: [1.6, 3.4, 2.4],
+						backgroundColor: ['#256ef4', '#3b82f6', '#64748b'],
+						borderRadius: 3,
+						barThickness: 16
+					}]
+				},
+				options: {
+					indexAxis: 'y',
+					responsive: true,
+					maintainAspectRatio: false,
+					plugins: {
+						legend: { display: false },
+						tooltip: {
+							callbacks: {
+								label: (ctx) => ` 지원율: ${ctx.raw}%`
+							}
+						}
+					},
+					scales: {
+						x: {
+							beginAtZero: true,
+							max: 5,
+							grid: { color: '#f1f5f9' },
+							ticks: {
+								callback: (val) => val + '%',
+								color: '#94a3b8',
+								font: { size: 11 }
+							}
+						},
+						y: {
+							grid: { display: false },
+							ticks: { color: '#334155', font: { size: 12, weight: '500' } }
+						}
+					}
+				}
+			});
+		});
+	</script>
+</body>
+</html>
